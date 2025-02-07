@@ -1,0 +1,171 @@
+/* Container */
+.aiProductsPlatforms {
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+  padding: 3rem 3rem;
+}
+
+.aiHeader h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #ffffff; /* White */
+}
+
+/* Content Layout */
+.contentContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* White */
+  padding: 2rem 2rem 4rem 2rem;
+  border-radius: 20px;
+}
+
+.contentContainer::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  clip-path: polygon(0 0, 55% 0, 0 50%);
+}
+
+.leftSection {
+  width: 60%;
+}
+
+.leftSection h2 {
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.leftSection p {
+  padding-right: 4rem;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+/* Buttons */
+.exploreBtn {
+  background-color: transparent;
+  border: 2px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+
+.exploreBtn:hover {
+  background-color: #ffffff; /* White */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.contactSection {
+  font-size: 14px;
+}
+.contactSection p {
+  color: #000;
+}
+.contactBtn {
+  background-color: transparent;
+  border: 2px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactBtn:hover {
+  background-color: #ffffff; /* White */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.contactBtn span {
+  font-size: 18px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.rightSection {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  margin-bottom: 3rem;
+  /* overflow: hiddd; */
+  /* text-align: center; */
+}
+
+.robotImg {
+  width: 100%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.buttonGroup {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  /* height: 5rem; */
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  /* border-radius: 2rem 0 0 0; */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  /* clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 16%); */
+}
+
+.buttonGroup::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 4rem;
+  height: 4rem;
+  background-color: #ffffff; /* White */
+  clip-path: polygon(0 0, 55% 0, 0 50%);
+}
+.buttonGroup button {
+  width: 12rem;
+  padding: 20px 0;
+  /* border-radius: 20px 0 20px 0; */
+  font-size: 14px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.facegenieBtn {
+  background-color: #ffffff; /* White */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  border: none;
+  border-radius: 20px 4px 20px 4px;
+}
+.analyticskartBtn {
+  color: #ffffff; /* White */
+  border: 2px solid #ffffff; /* White */
+  background-color: transparent;
+  border-radius: 4px 20px 4px 20px;
+}
+/* .facegenieBtn:hover,
+.analyticskartBtn:hover {
+  background-color: rgba(250, 38, 9, 1);
+  color: #ffffff; 
+}  */

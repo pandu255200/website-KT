@@ -1,0 +1,57 @@
+.container{
+  width: 100%;
+  padding: 1rem 0;
+  /* padding: 2rem 0; */
+}
+.container h1 {
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  font-size: 46px;
+  font-weight: 400;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.scrollContainer {
+  width: 80rem;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative; /* Required for pseudo-elements positioning */
+}
+
+.scrollContainer::before,
+.scrollContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem; /* Adjust the width of the blur area */
+  z-index: 1;
+  pointer-events: none; /* Allow interaction with elements inside the container */
+}
+
+.scrollContainer::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.scrollContainer::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.scrollContent {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

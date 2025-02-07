@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 37.5rem;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container .title h1 {
+  color: #fa2609;
+  /* font-family: "Neue Montreal"; */
+  font-size: 4.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container .description {
+  width: 100%;
+}
+
+.container .description p {
+  color: #151515;
+  text-align: center;
+  /* font-family: "Plus Jakarta Sans"; */
+  font-size: 2.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}

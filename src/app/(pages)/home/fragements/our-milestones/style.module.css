@@ -1,0 +1,112 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* font-family: "Roboto", sans-serif; Match the font */
+}
+
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3.8rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  font-weight: 100;
+  margin: 0rem;
+} */
+
+.header div {
+  width: 80;
+  height: 80;
+  margin-right: 2rem;
+}
+
+.circle {
+  border-radius: 50%;
+  padding: 7.5px;
+  border: 10px dotted white;
+  position: absolute;
+  right: 20;
+}
+
+.innerCircle {
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 7.5px dotted white;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+}
+
+.cardsGrid {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 80%;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  height: 230px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  clip-path: polygon(9% 0, 100% 0, 100% 87%, 91% 100%, 0 100%, 0 13%);
+  background: linear-gradient(180deg, #ff2b0a 0%, #d22008 100%);
+  box-shadow: 0px 51.02px 102.04px 0px #3208023d;
+  box-shadow: 0px 15.87px 15.87px 0px #ff2c0a inset;
+  box-shadow: -0px -15.87px 15.87px 0px #c81e07 inset;
+  color: #ffffff;
+  padding: 0 0.5rem;
+}
+
+.card span {
+  color: var(--text-color);
+  /* font-family: "Neue Montreal"; */
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card p {
+  color: var(--text-color);
+  text-align: center;
+  /* font-family: "Neue Montreal"; */
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

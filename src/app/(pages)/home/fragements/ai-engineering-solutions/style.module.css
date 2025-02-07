@@ -1,0 +1,175 @@
+.container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  padding: 2rem 0;
+}
+
+.header {
+  width: 46rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  margin-bottom: 4rem;
+  margin-left: 3rem;
+}
+
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  padding: 0 0 5rem 0;
+}
+
+.slide {
+  width: 32rem;
+  height: 16rem;
+  padding: 0 0.2rem 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  font-size: 0.8rem;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.8);
+  pointer-events: none;
+  border: 2px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  border-radius: 60px 10px 60px 10px;
+  color: #ffffff; /* White text */
+  background-color: white;
+}
+
+.slide h2 {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  padding-right: 3rem;
+  font-weight: 100;
+}
+.slide p {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  padding: 1rem 0;
+}
+
+.centerSlide {
+  width: 45rem;
+  height: 22rem;
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+  font-size: 1.5rem;
+  background: linear-gradient(180deg, #ff2b0a 0%, #d22008 100%);
+  clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+  box-shadow: 4.165605967126505e-15px 68.02950286865234px 136.0590057373047px
+    rgba(50, 7.6, 1.8, 0.24);
+  line-height: 1.5rem;
+  color: #ffffff; /* White text */
+  padding: 0 1.5rem 2rem 1.5rem;
+
+  border-radius: 10px;
+  pointer-events: auto;
+  z-index: 10;
+}
+.centerSlide h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+.centerSlide p {
+  font-size: 1rem;
+  padding: 1rem 1rem 1rem 0;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.active {
+  display: flex;
+}
+
+.leftSection {
+  width: 70%;
+  text-align: left;
+}
+.slide .exploreBtn {
+  display: flex;
+  align-items: center;
+  gap: 4;
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+  background-color: transparent;
+  color: #cc3025; /* Button color */
+  font-size: 0.7rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.centerSlide .exploreBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.exploreBtn:hover {
+  background-color: #cc3025; /* Button color */
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightSection img {
+  width: 90%;
+  height: 90%;
+}
+
+.navigation {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.navBtn {
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.navBtn:hover {
+  background-color: #cc3025; /* Button color */
+}
+
+.bgImage {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  bottom: -3rem;
+  height: 350px;
+  background-image: url("../../../../../../public/home/ai-engineering/bg-design.svg");
+  background-size: contain;
+  background-position: center;
+}

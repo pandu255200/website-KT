@@ -1,0 +1,173 @@
+.main {
+  width: 100%;
+}
+.container {
+  position: relative;
+  max-height: 120vh;
+  height: 120vh;
+  border-radius: none;
+  overflow: hidden;
+  border-left: 5px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  border-right: 5px solid rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.header {
+  font-size: 3.8rem;
+  border-radius: none;
+  font-weight: 100;
+  text-align: left;
+  color: #ffffff; /* White text */
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+}
+.countSection {
+  width: 10rem;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 6rem;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.count {
+  font-size: 6rem;
+  font-weight: 100;
+  padding: 0.8rem 0;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.remainingCount {
+  padding-bottom: 2rem;
+  color: #000;
+  font-size: 1.4rem;
+}
+.remainingCount span {
+  margin: 0 0.3rem;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+.downArrow {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.left {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+.image {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+}
+.right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 8rem 20rem 10rem 1rem;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.title {
+  font-weight: lighter;
+  word-wrap: break-word;
+  font-size: 2rem;
+  margin: 4rem 0 5px 0;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.description {
+  width: 40rem;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #3a3a3a;
+  font-size: 18;
+  font-weight: 400;
+  line-height: 30px;
+  word-wrap: break-word;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+
+.exploreButton {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  background-color: #ffffff; /* White text */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  border-radius: 25px 5px 25px 5px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 3rem;
+  transition: 0.1s linear;
+}
+.exploreButton:hover {
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+}
+.footer {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  padding: 4rem 2rem;
+}
+
+.verticalTags {
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin: 10px 10px;
+  width: fit-content;
+  padding: 10px 15px;
+  border: 1px solid red;
+  border-radius: 20px;
+  color: #000;
+  font-size: 14px;
+}
+
+.activeTag {
+  width: fit-content;
+  padding: 10px 15px;
+  background-color: red;
+  color: #fff;
+  position: relative;
+}
+.activeTag::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  padding: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+}

@@ -1,0 +1,10 @@
+.git
+node_modules
+node_modules/*
+.gitpod.yml
+README.md
+Dockerfile
+.github 
+docker-compose.yml
+local1.Dockerfile
+.gitignore

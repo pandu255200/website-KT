@@ -1,0 +1,86 @@
+/* No :root section as per instructions */
+
+.container {
+  /* font-family: Arial, sans-serif; */
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  padding: 2rem 5rem;
+}
+
+.article {
+  position: relative;
+  margin-bottom: 2rem;
+  position: relative; /* Enable positioning for the hover effect */
+  transition: 0.5s ease-in-out;
+}
+
+.articleTitle {
+  margin: 0;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 45.36px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.articleDate {
+  margin: 5px 0;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+.hoveredArticle{
+  padding: 4rem 0;
+}
+.separator {
+  border: 0;
+  height: 1px;
+  background: rgba(250, 38, 9, 1); /* Exact red background color */
+  margin-top: 2rem;
+}
+
+/* Styling for the hover content (video or description) */
+.hoverContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  /* margin-top: 1rem; */
+  transition: 5s ease-in-out;
+  padding: 1rem;
+  background-color: #fff; /* White background for contrast */
+  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.videoThumbnail {
+  width: 20rem;
+  height: 10rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.textContent {
+  width: 60%;
+  color: #000; /* Black text color for better readability */
+}
+
+.textContent h2 {
+  margin: 0 0 0.5rem 0;
+  color: rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.textContent p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}

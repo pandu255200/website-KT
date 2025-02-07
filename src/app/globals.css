@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #f8f8f8;
+  color: #333;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s linear;
+  font-style: normal;
+}
+
+/* globals.css */
+
+/* Apply scrollbar styles globally */
+* {
+  scrollbar-width: thin; /* For Firefox - thinner scrollbar */
+  scrollbar-color: rgba(244, 37, 9) rgba(244, 37, 9, 0.5); /* Thumb color and transparent track */
+}
+
+*::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent */
+  border: none; /* Remove any borders */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker thumb color on hover */
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: #333; /* Even darker color when active (click/drag) */
+}
+
+/* COMMON HEADER AND ITS HEADING */
+.globalHeaderStyle {
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  display: flex;
+  padding: 2rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-family: "Outfit", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.font-anta {
+  font-family: "Anta", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.globalHeaderStyle .title {
+  font-family: "Anta", serif;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 400;
+  color: white;
+  font-size: 68px;
+  word-wrap: break-word;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.goBackButton {
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.goBackButton .arrow {
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s linear;
+}
+.goBackButton:hover .arrow {
+  transform: rotate(-45deg);
+}
+.designBtn {
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+  position: relative;
+  border: none;
+  border-radius: 200px;
+}
+.designBtn::after {
+  content: "";
+  position: absolute;
+  border: none;
+
+  width: 10%;
+  height: 2rem;
+  top: -5px;
+  left: -5px;
+  background-color: white;
+  clip-path: polygon(0 0, 55% 0, 0 50%);
+}
+.designBtn::before {
+  content: "";
+  position: absolute;
+  border: none;
+
+  width: 2rem;
+  height: 2rem;
+  right: -10px;
+  bottom: -20px;
+  background-color: green;
+  transform: rotate(180deg);
+  clip-path: polygon(0 0, 55% 0, 0 50%);
+}
+
+/* CUSTOM CLASS  */
+.flex {
+  display: flex;
+}
+
+/* Flex Direction */
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Alignment */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+/* Justify Content */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align Content (for multi-line flex containers) */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+/* Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Align Self */
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+/* Flex Grow */
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Flex Shrink */
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+/* Flex Basis */
+.basis-auto {
+  flex-basis: auto;
+}
+
+.basis-full {
+  flex-basis: 100%;
+}
+
+/* Gap */
+.gap-0 {
+  gap: 0;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+/* Justify Self */
+.justify-self-auto {
+  justify-self: auto;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
