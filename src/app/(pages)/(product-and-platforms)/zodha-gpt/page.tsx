@@ -1,40 +1,101 @@
-'use client';
+"use client";
 
-import AnalyticsKart from '../../../../../public/products-kart/analytics.svg';
-import {ProductsKartSlider} from '@/components/layout/products-kart';
-
+import Zodha1 from "../../../../../public/products-kart/zodhaGPT/zodha1.svg";
+import Zodha2 from "../../../../../public/products-kart/zodhaGPT/zodha2.svg";
+import Zodha3 from "../../../../../public/products-kart/zodhaGPT/zodha3.svg";
+import { ProductsKartSlider } from "@/components/layout/products-kart";
 
 const zondhaGptData = [
   {
     id: 1,
-    title: 'Data Visualization',
+    title: "Data Visualization",
     description:
-      'Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.',
-    image: AnalyticsKart,
-
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha1,
   },
   {
     id: 2,
-    title: 'Asset Management',
+    title: "Records Management Application",
     description:
-      'Streamline asset operations with our comprehensive management tools. Real-time tracking and reporting simplify maintenance, reduce downtime, and enhance operational efficiency.',
-    image: AnalyticsKart,
-
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha2,
   },
   {
     id: 3,
-    title: 'Gen AI Led Chatbot',
+    title: "Sales & Marketing",
     description:
-      'Leverage AI-driven chatbots to enhance customer interactions. Our technology ensures faster response times, increased accuracy, and improved user satisfaction.',
-    image: AnalyticsKart,
-
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 4,
+    title: "Product Recommendation",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 5,
+    title: "Conversational Bots",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 6,
+    title: "Social Media Content Creation",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 7,
+    title: "Brand Awareness",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 8,
+    title: "Personalized Marketing Content",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 9,
+    title: "E-commerce Product Description",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 10,
+    title: "Product Catalogues",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 11,
+    title: "Customer Segmentation",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
+  },
+  {
+    id: 12,
+    title: "Influencer Marketing",
+    description:
+      "Optimize operations with our Asset Management Module, offering real-time tracking for efficient monitoring. Our advanced technology ensures precise asset identification and a centralized database for seamless record-keeping and quick decision-making.",
+    image: Zodha3,
   },
 ];
 
 export default function AnalyticsKartSlider() {
-  return(
+  return (
     <>
-    <ProductsKartSlider data={zondhaGptData} pageTitle='ZODHA GPT' />
+      <ProductsKartSlider data={zondhaGptData} pageTitle="ZODHA GPT" />
     </>
-  )
+  );
 }

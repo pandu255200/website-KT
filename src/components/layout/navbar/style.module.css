@@ -54,7 +54,7 @@
 
 .partnerButton {
   display: flex;
-  padding: 5px 16px;
+  padding: 10px 16px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -66,7 +66,8 @@
 }
 
 .partnerButton > span {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  font-size: 15px;
 }
 
 .partnerButton:hover .arrow {

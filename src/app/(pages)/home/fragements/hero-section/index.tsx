@@ -14,6 +14,7 @@ import ZodhaLogo from "../../../../../../public/home/nav-icons/products/zodha.sv
 import FaceGenaiLogo from "../../../../../../public/home/nav-icons/products/facegenie.svg";
 import AnalyticsLogo from "../../../../../../public/home/nav-icons/products/analytics-kart.svg";
 import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
+import WatchVideoIcon from "../../../../../../public/home/watch-video.svg";
 import ScannerGif from "../../../../../../public/home/scanner.gif";
 import GlobeImage from "../../../../../../public/home/globe-image.svg";
 
@@ -140,17 +141,31 @@ export default function HeroSection() {
                 height={50}
                 layout="fixed"
               />
-              <button>
-                <span>Learn More</span>
-                <Image
-                  src={TopRightArrowIcon.src}
-                  className={Styles.arrow}
-                  alt="arrowIcon"
-                  layout="fixed"
-                  width={28}
-                  height={28}
-                />
-              </button>
+              <div className="flex justify-center items-center gap-8">
+                <button>
+                  <span>Learn More</span>
+                  <Image
+                    src={TopRightArrowIcon.src}
+                    className={Styles.arrow}
+                    alt="arrowIcon"
+                    layout="fixed"
+                    width={28}
+                    height={28}
+                  />
+                </button>
+                {activeButton === "Facegenie" && (
+                  <button className={Styles.watchVideo}>
+                    <Image
+                      src={WatchVideoIcon.src}
+                      alt="WatchVideoIcon"
+                      layout="fixed"
+                      width={15}
+                      height={15}
+                    />
+                    <span>Watch Video</span>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
           {/* LEFT SECTION */}

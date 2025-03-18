@@ -152,7 +152,7 @@ const solutionAndServices: MenuItem[] = [
 ];
 
 const aboutUs: MenuItem[] = [
-  { icon: TeamsIcon, text: "Meet our Teams", href: "our-team" },
+  { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
   { icon: Blogs, text: "Blogs", href: "#blogs" },
   { icon: VideosIcon, text: "Videos", href: "#videos" },
   { icon: InternshipIcon, text: "Internships", href: "#internships" },

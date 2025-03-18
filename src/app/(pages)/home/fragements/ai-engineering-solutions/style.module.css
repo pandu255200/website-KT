@@ -7,11 +7,11 @@
 }
 
 .header {
-  width: 46rem;
-  font-size: 3rem;
+  width: 58rem;
+  font-size: 4rem;
   font-weight: 400;
   color: rgba(250, 38, 9, 1); /* Exact red background color */
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
   margin-left: 3rem;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .navigation {
-  padding: 0 2rem;
+  padding: 0 7rem;
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
@@ -149,8 +149,8 @@
   background-color: rgba(250, 38, 9, 1); /* Exact red background color */
   color: #ffffff; /* White text */
   border: none;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   font-size: 1.1rem;
   font-weight: 900;
   cursor: pointer;

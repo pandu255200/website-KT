@@ -1,89 +1,153 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import Styles from './style.module.css';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Styles from "./style.module.css";
+import Image from "next/image";
 
 import RedTopRightArrowIcon from "../../../../../../public/home/red-top-right-arrow.svg";
-import RobotGif from "../../../../../../public/home/product-and-platforms/robot.gif"
+import RobotGif from "../../../../../../public/home/product-and-platforms/robot.gif";
+import FacegenieGif from "../../../../../../public/home/product-and-platforms/facegenie.gif";
+import AnalyticsKartGif from "../../../../../../public/home/product-and-platforms/analyticsKart.gif";
 
+const zodhaGPTContent = {
+  label: "Zodha GPT",
+  content: (
+    <div>
+      <h2 className="font-anta">ZODHA GPT</h2>
+      <p>
+        ZodhaGPT is an Open AI platform which leverages state-of-the-art Large
+        Language Model (LLM) technology. It offers unparalleled abilities in
+        understanding and generating human-like text and speech across various
+        subjects and contexts. Whether it is complex tasks, creative
+        brainstorming, or engaging storytelling, it harnesses the power of NLP &
+        LLM technology with Gen AI to deliver personalized and contextually
+        relevant responses.
+      </p>
+    </div>
+  ),
+};
+
+const facegenieContent = {
+  label: "Facegenie",
+  content: (
+    <div>
+      <h2 className="font-anta">FACEGENIE</h2>
+      <p>
+        FaceGenie Dynamic is a computer vision-powered 360-degree tracking
+        software for human faces, assets & objects - their movements, any events
+        & incidents, process automation & compliances - with real-time alerts,
+        analytics & reports for proactive action thus making campuses across
+        industries - safe, secure, hygienic, and touchless.
+      </p>
+    </div>
+  ),
+};
+
+const analyticsContent = {
+  label: "AnalyticsKart",
+  content: (
+    <div>
+      <h2 className="font-anta">ANALYTICSKART</h2>
+      <p>
+        AnalyticsKart is a powerful SAAS-enabled, end-to-end pipeline tool
+        offering you an in-depth advanced analysis (Descriptive, Diagnostic &
+        Predictive) of your business data.
+      </p>
+    </div>
+  ),
+};
 
 const ProductAndPlatforms = () => {
-    const [activeTab, setActiveTab] = useState('Facegenie'); // Default tab
+  const [content, setContent] = useState(zodhaGPTContent);
+  const [button1, setButton1] = useState(facegenieContent);
+  const [button2, setButton2] = useState(analyticsContent);
 
-    const facegenieContent = (
-        <div>
-            <h2 className='font-anta'>Facegenie</h2>
-            <p>
-                Facegenie is our cutting-edge AI solution designed for seamless face recognition, real-time
-                monitoring, and enhanced security. Leveraging advanced algorithms, it ensures high accuracy
-                and rapid identification across diverse use cases.
-            </p>
+  const handleButtonClick = (
+    target: { label: string; content: React.JSX.Element },
+    setTarget: (val: { label: string; content: React.JSX.Element }) => void
+  ) => {
+    const previousContent = content;
+    setContent(target);
+    setTarget(previousContent);
+  };
+
+  return (
+    <div className={Styles.aiProductsPlatforms}>
+      <div className={Styles.aiHeader}>
+        <h1 className="font-anta">AI - PRODUCTS & PLATFORMS</h1>
+      </div>
+      <div className={Styles.contentContainer}>
+        <div className={Styles.leftSection}>
+          <div>
+            {content.content}
+
+            <button className={`${Styles.exploreBtn} flex items-center gap-1`}>
+              <span>Explore More</span>
+              <Image
+                src={RedTopRightArrowIcon.src}
+                className={Styles.arrow}
+                alt="arrowIcon"
+                layout="fixed"
+                width={28}
+                height={20}
+              />
+            </button>
+          </div>
+          <div className={Styles.contactSection}>
+            <p>Curious to see how our solutions can benefit you?</p>
+            <button className={`${Styles.contactBtn} flex items-center gap-1`}>
+              <span>Contact us today</span>
+              <Image
+                src={RedTopRightArrowIcon.src}
+                className={Styles.arrow}
+                alt="arrowIcon"
+                layout="fixed"
+                width={28}
+                height={20}
+              />
+            </button>
+          </div>
         </div>
-    );
 
-    const analyticsContent = (
-        <div>
-            <h2 className='font-anta'>AnalyticsKart</h2>
-            <p>
-                AnalyticsKart is a powerful SAAS-enabled, end-to-end pipeline tool offering you an in-depth advanced analysis (Descriptive, Diagnostic & Predictive) of your business data.
-            </p>
+        <div className={Styles.rightSection}>
+          <Image
+            src={
+              content.label == "Zodha GPT"
+                ? RobotGif
+                : content.label === "Facegenie"
+                ? FacegenieGif
+                : AnalyticsKartGif
+            }
+            alt={
+              content.label == "ZodhaGPT"
+                ? "zodhaGPT Illustration"
+                : content.label === "Facegenie"
+                ? "Facegenie Illustration"
+                : "Analytics Kart Illustration"
+            }
+            className={Styles.robotImg}
+            width={1200}
+            height={450}
+            layout="fixed"
+          />
         </div>
-    );
-
-    return (
-        <div className={Styles.aiProductsPlatforms}>
-            <div className={Styles.aiHeader}>
-                <h1 className='font-anta'>AI - PRODUCTS & PLATFORMS</h1>
-            </div>
-            <div className={Styles.contentContainer}>
-                <div className={Styles.leftSection}>
-                    {activeTab === 'Facegenie' ? facegenieContent : analyticsContent}
-
-                    <button className={`${Styles.exploreBtn} flex items-center gap-1`}>
-                        <span>
-                            Explore More
-                        </span>
-                        <Image src={RedTopRightArrowIcon.src} className={Styles.arrow} alt="arrowIcon" layout="fixed" width={28} height={20} />
-                    </button>
-                    <div className={Styles.contactSection}>
-                        <p>Curious to see how our solutions can benefit you?</p>
-                        <button className={`${Styles.contactBtn} flex items-center gap-1`}>
-                            <span>
-                                Contact us today
-                            </span>
-                            <Image src={RedTopRightArrowIcon.src} className={Styles.arrow} alt="arrowIcon" layout="fixed" width={28} height={20} />
-                        </button>
-                    </div>
-                </div>
-
-                <div className={Styles.rightSection}>
-                    <Image
-                        src={activeTab === 'Facegenie' ? RobotGif : RobotGif}
-                        alt={activeTab === 'Facegenie' ? 'Facegenie Illustration' : 'Analytics Kart Illustration'}
-                        className={Styles.robotImg}
-                        width={900}
-                        height={400}
-                        layout='fixed'
-                    />
-                </div>
-                <div className={Styles.buttonGroup}>
-                    <button
-                        className={`${Styles.facegenieBtn} ${activeTab === 'Facegenie' ? Styles.active : ''}`}
-                        onClick={() => setActiveTab('Facegenie')}
-                    >
-                        Facegenie
-                    </button>
-                    <button
-                        className={`${Styles.analyticskartBtn} ${activeTab === 'Analytics Kart' ? Styles.active : ''}`}
-                        onClick={() => setActiveTab('Analytics Kart')}
-                    >
-                        Analytics Kart
-                    </button>
-                </div>
-            </div>
+        <div className={Styles.buttonGroup}>
+          <button
+            className={`${Styles.facegenieBtn}`}
+            onClick={() => handleButtonClick(button1, setButton1)}
+          >
+            {button1.label}
+          </button>
+          <button
+            className={`${Styles.analyticskartBtn}`}
+            onClick={() => handleButtonClick(button2, setButton2)}
+          >
+            {button2.label}
+          </button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ProductAndPlatforms;

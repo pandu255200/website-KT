@@ -111,6 +111,19 @@
   transform: rotate(45deg);
 }
 
+.content button:hover {
+  background-color: #fa2609;
+}
+
+.content .watchVideo {
+  background-color: #fa2609;
+  border: 1px solid transparent;
+}
+
+.content .watchVideo:hover {
+  border: 3px solid #fff;
+}
+
 .imageSection {
   width: 50%;
   height: 440px;

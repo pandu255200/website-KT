@@ -13,10 +13,11 @@ import { StartingAnimationSection } from "@/components/common/starting-animation
 import { PartnerWIthUs } from "@/components/layout/partner-with-us";
 import { WordFlick } from "@/components/common/animation";
 import OurMilestones from "./fragements/our-milestones";
-import Blogs from "./fragements/blogs";
-import Videos from "./fragements/videos";
-import CaseStudy from "./fragements/case-study";
-import Career from "./fragements/career";
+import { Footer } from "@/components/layout/footer";
+// import Blogs from "./fragements/blogs";
+// import Videos from "./fragements/videos";
+// import CaseStudy from "./fragements/case-study";
+// import Career from "./fragements/career";
 // import { usePathname } from "next/navigation";
 
 export default function Home() {
@@ -115,11 +116,15 @@ export default function Home() {
       <OurVerticals />
       <InternsTestimonials />
       <OurMilestones />
-      <Blogs />
+      {/* <Blogs />
       <Videos />
       <CaseStudy />
-      <Career />
+      <Career /> */}
       <PartnerWIthUs />
+
+      <div>
+        <Footer />
+      </div>
     </>
   );
 }

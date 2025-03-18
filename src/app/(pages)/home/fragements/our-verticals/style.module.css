@@ -39,7 +39,12 @@
   font-weight: 100;
   padding: 0.8rem 0;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  -webkit-text-stroke-color: rgba(
+    250,
+    38,
+    9,
+    1
+  ); /* Exact red background color */
   width: 100%;
   display: flex;
   align-items: center;
@@ -63,6 +68,12 @@
   background-color: rgba(250, 38, 9, 1); /* Exact red background color */
   border-radius: 50%;
   margin-bottom: 1rem;
+}
+.notActiveArrow {
+  background-color: transparent;
+}
+.rotateArrow {
+  transform: rotate(180deg);
 }
 .content {
   height: 100%;

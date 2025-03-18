@@ -47,9 +47,9 @@ export function ProductsKartSlider({ data, pageTitle }: ProductsKartSliderProps)
                 <div className={styles.leftSection}>
                     <div className={styles.getInTouch}>
                         <select className={styles.selectField}>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="zodhaGPT">Zodha GPT</option>
+                            <option value="faceGenie">FaceGenie</option>
+                            <option value="analyticsKart">AnalyticsKart</option>
                         </select>
                         <GoBackButton text={"Get in Touch"} type={"next"} linkUrl="/home#partner-with-us" />
                     </div>
@@ -78,7 +78,7 @@ export function ProductsKartSlider({ data, pageTitle }: ProductsKartSliderProps)
 
                 {/* Right Section */}
                 <div className={styles.rightSection}>
-                    <Image src={image} alt={title} className={styles.image} width={500} height={300} />
+                    <Image src={image} alt={title} className={styles.image} width={550} height={380} />
                 </div>
             </div>
 
