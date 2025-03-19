@@ -112,7 +112,7 @@ export default function HeroSection() {
               <div className={Styles.imageSection}>
                 <div className={Styles.image}>
                   <Image
-                    src={GlobeImage.src}
+                    src={GlobeImage}
                     alt={"GlobeImage"}
                     width={450}
                     height={450}
@@ -134,21 +134,21 @@ export default function HeroSection() {
 
             <div className="flex flex-col justify-start items-start gap-10">
               <Image
-                src={logo.src}
+                src={logo}
                 className={Styles.logo}
-                alt={logo}
+                alt={"logo"}
                 width={180}
                 height={50}
-                layout="fixed"
+                // layout="fixed"
               />
               <div className="flex justify-center items-center gap-8">
                 <button>
                   <span>Learn More</span>
                   <Image
-                    src={TopRightArrowIcon.src}
+                    src={TopRightArrowIcon}
                     className={Styles.arrow}
                     alt="arrowIcon"
-                    layout="fixed"
+                    // layout="fixed"
                     width={28}
                     height={28}
                   />
@@ -156,9 +156,9 @@ export default function HeroSection() {
                 {activeButton === "Facegenie" && (
                   <button className={Styles.watchVideo}>
                     <Image
-                      src={WatchVideoIcon.src}
+                      src={WatchVideoIcon}
                       alt="WatchVideoIcon"
-                      layout="fixed"
+                      // layout="fixed"
                       width={15}
                       height={15}
                     />
@@ -175,16 +175,16 @@ export default function HeroSection() {
             <div className={Styles.image}>
               {activeButton === "Facegenie" && (
                 <Image
-                  src={ScannerGif.src}
-                  alt={activeButton}
+                  src={ScannerGif}
+                  alt={"activeButton"}
                   width={300}
                   height={300}
                   className={Styles.scanner}
                 />
               )}
               <Image
-                src={image.src}
-                alt={activeButton}
+                src={image}
+                alt={"activeButton"}
                 width={500}
                 height={activeButton === "Facegenie" ? 700 : 430}
               />
@@ -209,11 +209,11 @@ export default function HeroSection() {
           </div>
           <button className={Styles.chatButton}>
             <Image
-              src={ChatIcon.src}
+              src={ChatIcon}
               alt={activeButton}
               width={25}
               height={25}
-              layout="fixed"
+              // layout="fixed"
             />
           </button>
         </div>

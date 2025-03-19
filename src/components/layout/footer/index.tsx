@@ -29,24 +29,6 @@ const data1 = [
   },
 ];
 
-const data2 = [
-  {
-    heading: "Core",
-    items: [
-      "AI - Products & Platforms",
-      "AI - Engineering Solutions & IT Services",
-    ],
-  },
-  {
-    heading: "Explore",
-    items: ["About", "Solutions", "Vedios", "Blogs", "About", "Testimonilas"],
-  },
-  {
-    heading: "Products",
-    items: ["Zodha GPT", "AnalyticsKart", "FaceGenie"],
-  },
-];
-
 export function Footer() {
   return (
     <div className={Styles.container}>

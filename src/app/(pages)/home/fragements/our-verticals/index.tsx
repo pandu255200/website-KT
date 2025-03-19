@@ -35,42 +35,42 @@ const verticalsData = [
   },
   {
     id: 4,
-    title: "Chemicals Pharmaceuticals & Medical Devices",
+    title: "Chemicals & Pharmaceuticals",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals2Gif,
   },
   {
     id: 5,
-    title: "Consumer Product & Electronic Goods",
+    title: "Consumer Goods, Electronics & Medical Devices",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,
   },
   {
     id: 6,
-    title: "Power, Energy & Industrial Automation",
+    title: "Power, Energy, Oil & Gas",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,
   },
   {
     id: 7,
-    title: "Real Estate, Construction & Technology Parks",
+    title: "Heavy Infrastructure, Real Estate, Construction & Tech Parks",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,
   },
   {
     id: 8,
-    title: "Mining, Metals & Heavy Infrastructure",
+    title: "Mining, Metal & Industrial Automation",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,
   },
   {
     id: 9,
-    title: "Automotives, Ancillaries & Heavy Engineerings",
+    title: "Automotive, Ancillaries & Heavy Engineering",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,
@@ -98,7 +98,7 @@ const verticalsData = [
   },
   {
     id: 13,
-    title: "Educational Institution",
+    title: "Educational Institute",
     description:
       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
     image: Verticals3Gif,

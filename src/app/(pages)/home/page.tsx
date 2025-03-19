@@ -29,9 +29,11 @@ export default function Home() {
   const showAnimation = counter <= 1 ? true : false;
 
   useEffect(() => {
-    let newCounter = counter + 1;
-    setCounter(newCounter);
-  }, [setCounter]);
+    const newCounter = counter + 1;
+    if (counter > 2) {
+      setCounter(newCounter);
+    }
+  }, [setCounter, counter]);
 
   // useEffect(() => {
   //   // Check if animation has already played (stored in localStorage)
