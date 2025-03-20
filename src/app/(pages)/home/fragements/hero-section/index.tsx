@@ -18,7 +18,7 @@ import WatchVideoIcon from "../../../../../../public/home/watch-video.svg";
 import ScannerGif from "../../../../../../public/home/scanner.gif";
 import GlobeImage from "../../../../../../public/home/globe-image.svg";
 
-type ButtonName = "Zodha GPT" | "Facegenie" | "AnalyticsKart";
+type ButtonName = "Zodha GPT" | "FaceGenie" | "AnalyticsKart";
 
 export default function HeroSection() {
   const { counter } = useCounter();
@@ -61,7 +61,7 @@ export default function HeroSection() {
       image: ZodhaImage,
       logo: ZodhaLogo,
     },
-    Facegenie: {
+    FaceGenie: {
       heading: "Safe, Secure, Hygienic, Automated & Touchless",
       description:
         "From Dynamic to Compact and Pro, we utilize the benefits of AI to the furthest extent possible to give you the competitive edge",
@@ -153,7 +153,7 @@ export default function HeroSection() {
                     height={28}
                   />
                 </button>
-                {activeButton === "Facegenie" && (
+                {activeButton === "FaceGenie" && (
                   <button className={Styles.watchVideo}>
                     <Image
                       src={WatchVideoIcon}
@@ -173,7 +173,7 @@ export default function HeroSection() {
           {/* RIGHT SECTION */}
           <div className={Styles.imageSection}>
             <div className={Styles.image}>
-              {activeButton === "Facegenie" && (
+              {activeButton === "FaceGenie" && (
                 <Image
                   src={ScannerGif}
                   alt={"activeButton"}
@@ -186,7 +186,7 @@ export default function HeroSection() {
                 src={image}
                 alt={"activeButton"}
                 width={500}
-                height={activeButton === "Facegenie" ? 700 : 430}
+                height={activeButton === "FaceGenie" ? 700 : 430}
               />
             </div>
           </div>
