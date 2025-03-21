@@ -5,192 +5,133 @@ import Image from "next/image";
 import Styles from "./style.module.css";
 
 import { useCounter } from "@/store/AnimationContext";
-import AnalyticsImage from "../../../../../../public/home/analytics-image.svg";
-import FaceGenAiImage from "../../../../../../public/home/face-genai-image.png";
-import ZodhaImage from "../../../../../../public/home/zondha-image.svg";
-import ChatIcon from "../../../../../../public/home/chat-icon.svg";
 
-import ZodhaLogo from "../../../../../../public/home/nav-icons/products/zodha.svg";
-import FaceGenaiLogo from "../../../../../../public/home/nav-icons/products/facegenie.svg";
-import AnalyticsLogo from "../../../../../../public/home/nav-icons/products/analytics-kart.svg";
-import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
-import WatchVideoIcon from "../../../../../../public/home/watch-video.svg";
-import ScannerGif from "../../../../../../public/home/scanner.gif";
-import GlobeImage from "../../../../../../public/home/globe-image.svg";
+// ✅ Use public directory (without "/public" prefix)
+const images = {
+  AnalyticsImage: "/home/analytics-image.svg",
+  FaceGenAiImage: "/home/face-genai-image.png",
+  ZodhaImage: "/home/zondha-image.svg",
+  ChatIcon: "/home/chat-icon.svg",
+  ZodhaLogo: "/home/nav-icons/products/zodha.svg",
+  FaceGenaiLogo: "/home/nav-icons/products/facegenie.svg",
+  AnalyticsLogo: "/home/nav-icons/products/analytics-kart.svg",
+  TopRightArrowIcon: "/home/top-right-arrow.svg",
+  WatchVideoIcon: "/home/watch-video.svg",
+  ScannerGif: "/home/scanner.gif",
+  GlobeImage: "/home/globe-image.svg",
+};
 
-type ButtonName = "Zodha GPT" | "Facegenie" | "AnalyticsKart";
+type ButtonName = "ZodhaGPT" | "FaceGenie" | "AnalyticsKart";
 
 export default function HeroSection() {
   const { counter } = useCounter();
-  const [activeButton, setActiveButton] = useState<ButtonName>("Zodha GPT");
-  const [animationDiv, setAnimationDiv] = useState(1); // Added state to manage visibility of rightDiv
-  const showAnimation = counter <= 1 ? true : false;
-
-  // useEffect(() => {
-  //   // Check if animation has already played in this session
-  //   const hasShownAnimation = localStorage.getItem("animationShown");
-
-  //   if (!hasShownAnimation) {
-  //     setAnimationDiv(1); // Show animation
-  //     setShowAnimation(true); // Make it visible
-  //     const timeout = setTimeout(() => {
-  //       localStorage.setItem("animationShown", "true"); // Prevent replaying on reload
-  //     }, 12000); // Hides after 6 seconds
-  //     return () => {
-  //       clearTimeout(timeout)
-  //     };
-  //   }
-  // }, []);
+  const [activeButton, setActiveButton] = useState<ButtonName>("ZodhaGPT");
+  const [animationDiv, setAnimationDiv] = useState(1);
+  const [isClient, setIsClient] = useState(false); // ✅ Fix hydration mismatch
 
   useEffect(() => {
+    setIsClient(true); // ✅ Ensure client-side rendering
+    console.log("HeroSection Mounted");
+
     const timeout = setTimeout(() => {
-      setAnimationDiv(0); // Set width to 0 to animate the disappearance
-    }, 7000); // Set timeout to hide rightDiv after 10 seconds
-    return () => {
-      clearTimeout(timeout);
-    };
-    // }, [showAnimation]);
+      setAnimationDiv(0);
+    }, 7000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   const contentData = {
-    "Zodha GPT": {
+    ZodhaGPT: {
       heading:
         "Easily Integrateable, Swiftly Deployable & Highly Customisable.",
       description:
         "A dashboard & prediction software that analyses customer & operational data from multiple sources & helps businesses make informed decisions.",
-      image: ZodhaImage,
-      logo: ZodhaLogo,
+      image: images.ZodhaImage,
+      logo: images.ZodhaLogo,
     },
-    Facegenie: {
+    FaceGenie: {
       heading: "Safe, Secure, Hygienic, Automated & Touchless",
       description:
         "From Dynamic to Compact and Pro, we utilize the benefits of AI to the furthest extent possible to give you the competitive edge",
-      image: FaceGenAiImage,
-      logo: FaceGenaiLogo,
+      image: images.FaceGenAiImage,
+      logo: images.FaceGenaiLogo,
     },
     AnalyticsKart: {
       heading: "AnalyticsKart: Smarter Data, Better Decisions",
       description:
         "An AI-driven analytics platform that provides insights to streamline business operations and enhance decision-making.",
-      image: AnalyticsImage,
-      logo: AnalyticsLogo,
+      image: images.AnalyticsImage,
+      logo: images.AnalyticsLogo,
     },
   };
 
   const handleButtonClick = (buttonName: ButtonName) => {
+    console.log("Button Clicked:", buttonName);
     setActiveButton(buttonName);
   };
 
   const { heading, description, image, logo } = contentData[activeButton];
 
+  // ✅ Prevent hydration mismatch
+  if (!isClient) return null;
+
   return (
     <div className="flex">
       <section className={Styles.hero}>
         {/* ANIMATED DIV */}
-        {showAnimation && (
+        {counter <= 1 && (
           <div
-            className={`${Styles.animatedDiv} `}
+            className={Styles.animatedDiv}
             style={{
               visibility: animationDiv > 0 ? "visible" : "hidden",
               opacity: animationDiv,
               transition: "0.8s linear",
             }}
           >
-            <div
-              className={Styles.innerAnimation}
-              style={{ width: "100%", padding: "7rem" }}
-            >
+            <div className={Styles.innerAnimation} style={{ padding: "7rem" }}>
               <div className={Styles.content}>
                 <h1 className={Styles.h1}>Empowering the future</h1>
                 <p className={Styles.para}>
-                  Our Purpose is to make AI accessible to everyone. With
-                  ResoluteAI Software, as your partner, you can look forward to
-                  a bright future
+                  Our Purpose is to make AI accessible to everyone.
                 </p>
               </div>
-
               <div className={Styles.imageSection}>
-                <div className={Styles.image}>
-                  <Image
-                    src={GlobeImage}
-                    alt={"GlobeImage"}
-                    width={450}
-                    height={450}
-                    // className={Styles.scanner}
-                  />
-                </div>
+                <Image src={images.GlobeImage} alt="Globe" width={450} height={450} priority />
               </div>
             </div>
           </div>
         )}
 
-        {/* ANIMATED DIV */}
-
         <div className={Styles.flex}>
           {/* LEFT SECTION */}
-          <div className={Styles.content}>
+          <div className={Styles.content} style={{ display: "block !important", opacity: 1 }}>
             <h1 className={`${Styles.h1} font-anta`}>{heading}</h1>
             <p className={Styles.para}>{description}</p>
 
-            <div className="flex flex-col justify-start items-start gap-10">
-              <Image
-                src={logo}
-                className={Styles.logo}
-                alt={"logo"}
-                width={180}
-                height={50}
-                // layout="fixed"
-              />
-              <div className="flex justify-center items-center gap-8">
+            <div className="flex flex-col gap-10">
+              <Image src={logo} className={Styles.logo} alt="logo" width={180} height={50} priority />
+              <div className="flex gap-8">
                 <button>
                   <span>Learn More</span>
-                  <Image
-                    src={TopRightArrowIcon}
-                    className={Styles.arrow}
-                    alt="arrowIcon"
-                    // layout="fixed"
-                    width={28}
-                    height={28}
-                  />
+                  <Image src={images.TopRightArrowIcon} alt="arrow" width={28} height={28} priority />
                 </button>
-                {activeButton === "Facegenie" && (
+                {activeButton === "FaceGenie" && (
                   <button className={Styles.watchVideo}>
-                    <Image
-                      src={WatchVideoIcon}
-                      alt="WatchVideoIcon"
-                      // layout="fixed"
-                      width={15}
-                      height={15}
-                    />
+                    <Image src={images.WatchVideoIcon} alt="WatchVideo" width={15} height={15} priority />
                     <span>Watch Video</span>
                   </button>
                 )}
               </div>
             </div>
           </div>
-          {/* LEFT SECTION */}
 
           {/* RIGHT SECTION */}
-          <div className={Styles.imageSection}>
-            <div className={Styles.image}>
-              {activeButton === "Facegenie" && (
-                <Image
-                  src={ScannerGif}
-                  alt={"activeButton"}
-                  width={300}
-                  height={300}
-                  className={Styles.scanner}
-                />
-              )}
-              <Image
-                src={image}
-                alt={"activeButton"}
-                width={500}
-                height={activeButton === "Facegenie" ? 700 : 430}
-              />
-            </div>
+          <div className={Styles.imageSection} style={{ display: "block !important", opacity: 1 }}>
+            {activeButton === "FaceGenie" && (
+              <Image src={images.ScannerGif} alt="Scanner" width={300} height={300} unoptimized  />
+            )}
+            <Image src={image} alt="ProductImage" width={500} height={activeButton === "FaceGenie" ? 700 : 430} priority />
           </div>
-          {/* RIGHT SECTION */}
         </div>
 
         <div className={Styles.imageContainer}>
@@ -198,9 +139,7 @@ export default function HeroSection() {
             {Object.keys(contentData).map((button) => (
               <button
                 key={button}
-                className={`${Styles.tabButton} ${
-                  activeButton === button ? Styles.activeTab : ""
-                }`}
+                className={`${Styles.tabButton} ${activeButton === button ? Styles.activeTab : ""}`}
                 onClick={() => handleButtonClick(button as ButtonName)}
               >
                 {button}
@@ -208,18 +147,10 @@ export default function HeroSection() {
             ))}
           </div>
           <button className={Styles.chatButton}>
-            <Image
-              src={ChatIcon}
-              alt={activeButton}
-              width={25}
-              height={25}
-              // layout="fixed"
-            />
+            <Image src={images.ChatIcon} alt="ChatIcon" width={25} height={25} priority />
           </button>
         </div>
       </section>
-
-      {/* { <section className={Styles.rightDiv} style={{ width: `${rightDivWidth}px` }}></section>} Added condition to show or hide rightDiv with width animation */}
     </div>
   );
 }

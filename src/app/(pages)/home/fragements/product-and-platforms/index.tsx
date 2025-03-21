@@ -28,7 +28,7 @@ const zodhaGPTContent = {
 };
 
 const facegenieContent = {
-  label: "Facegenie",
+  label: "FaceGenie",
   content: (
     <div>
       <h2 className="font-anta">FACEGENIE</h2>
