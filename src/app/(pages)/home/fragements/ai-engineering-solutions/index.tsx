@@ -33,41 +33,41 @@ const slides = [
     image: SlideImg2,
     alt: "Digital Logbook",
   },
-//   {
-//     title: "Data Lake Management",
-//     description:
-//       "Harness the power of AI to manage and analyze large-scale data for improved decision-making.",
-//     image: SlideImg2,
-//     alt: "Data Lake Management",
-//   },
-//   {
-//     title: "Cloud Engineering Services",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Cloud Engineering Services",
-//   },
-//   {
-//     title: "Android/iOS Application Development",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Android/iOS Application Development",
-//   },
-//   {
-//     title: "Flutter based Application Development",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Flutter based Application Development",
-//   },
-//   {
-//     title: "AI Trainings",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "AI Trainings",
-//   },
+  //   {
+  //     title: "Data Lake Management",
+  //     description:
+  //       "Harness the power of AI to manage and analyze large-scale data for improved decision-making.",
+  //     image: SlideImg2,
+  //     alt: "Data Lake Management",
+  //   },
+  //   {
+  //     title: "Cloud Engineering Services",
+  //     description:
+  //       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+  //     image: SlideImg2,
+  //     alt: "Cloud Engineering Services",
+  //   },
+  //   {
+  //     title: "Android/iOS Application Development",
+  //     description:
+  //       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+  //     image: SlideImg2,
+  //     alt: "Android/iOS Application Development",
+  //   },
+  //   {
+  //     title: "Flutter based Application Development",
+  //     description:
+  //       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+  //     image: SlideImg2,
+  //     alt: "Flutter based Application Development",
+  //   },
+  //   {
+  //     title: "AI Trainings",
+  //     description:
+  //       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+  //     image: SlideImg2,
+  //     alt: "AI Trainings",
+  //   },
 ];
 
 const EngineeringSolutions = () => {
@@ -88,7 +88,7 @@ const EngineeringSolutions = () => {
   };
 
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} id="solutionsAndServices">
       <h1 className={`${Styles.header} font-anta`}>
         AI ENGINEERING SOLUTIONS & IT SERVICES
       </h1>

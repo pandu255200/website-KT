@@ -50,7 +50,7 @@ import TestimonialsIcon from "../../../../public/home/nav-icons/about-us/terstim
 import PrivacyIcon from "../../../../public/home/nav-icons/about-us/privacy.svg";
 import CaseIcon from "../../../../public/home/nav-icons/about-us/case.svg";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 interface MenuItem {
   icon: StaticImageData;
@@ -76,32 +76,32 @@ const verticals: MenuItem[] = [
   { icon: FMCGIcon, text: "FMCG", href: "#fmcg" },
   {
     icon: RetailIcon,
-    text: "Retail, Ecommerce & Marketplaces",
+    text: "Retail, E- commerce & Market Places",
     href: "#retail",
   },
   {
     icon: ChemicalsIcon,
-    text: "Chemicals, Pharmaceuticals & Medical Devices",
+    text: "Chemicals & Pharmaceuticals",
     href: "#chemicals",
   },
   {
     icon: ConsumerIcon,
-    text: "Consumer Product & Electronic Goods",
+    text: "Consumer Goods, Electronics & Medical Devices",
     href: "#consumer",
   },
   {
     icon: PowerIcon,
-    text: "Power, Energy & Industrial Automation",
+    text: "Power, Energy, Oil & Gas",
     href: "#power",
   },
   {
     icon: RealEstateIcon,
-    text: "Real Estate, Construction & Technology Parks",
+    text: "Heavy Infrastructure, Real Estate, Construction & Tech Parks",
     href: "#real-estate",
   },
   {
     icon: MiningIcon,
-    text: "Mining, Metals & Heavy Infrastructure",
+    text: "Mining, Metal & Industrial Automation",
     href: "#mining",
   },
   {
@@ -118,7 +118,7 @@ const verticals: MenuItem[] = [
   { icon: HotelsIcon, text: "Hotels, QSR & Hospitality", href: "#hotels" },
   {
     icon: EducationalIcon,
-    text: "Educational Institution",
+    text: "Educational Institute",
     href: "#educational",
   },
 ];
@@ -166,13 +166,13 @@ const aboutUs: MenuItem[] = [
 const navLinks: NavLink[] = [
   {
     text: "Products & Platforms",
-    href: "#",
+    href: "#aiProductsPlatforms",
     menuItems: products,
     title: "Our Products & Platforms",
   },
   {
     text: "Solutions & Services",
-    href: "#",
+    href: "#solutionsAndServices",
     menuItems: solutionAndServices,
     title: "Our Solutions & Services",
   },
@@ -186,7 +186,7 @@ const navLinks: NavLink[] = [
     text: "About Us",
     href: "/about-us",
     menuItems: aboutUs,
-    title: "About ResoluteAi.in",
+    title: "About Resolute AI Software Pvt Ltd",
   },
 ];
 
@@ -233,14 +233,16 @@ export function Navbar() {
     <div className={Styles.container} ref={navRef}>
       {/* Header Section */}
       <header className={Styles.navbar}>
-        <Image
-          src={NavLogo.src}
-          alt="logo"
-          className={Styles.logo}
-          layout="fixed"
-          width={170}
-          height={59}
-        />
+        <Link href="/home">
+          <Image
+            src={NavLogo.src}
+            alt="logo"
+            className={Styles.logo}
+            layout="fixed"
+            width={170}
+            height={59}
+          />
+        </Link>
         <nav className={Styles.navLinks}>
           {navLinks.map((link, index) => (
             <div className={Styles.links} key={link.text}>
@@ -263,7 +265,10 @@ export function Navbar() {
             </div>
           ))}
         </nav>
-        <button onClick={() => router.push('#partner-with-us')} className={Styles.partnerButton}>
+        <button
+          onClick={() => router.push("#partner-with-us")}
+          className={Styles.partnerButton}
+        >
           <span>Partner with us</span>
           <Image
             src={TopRightArrowIcon.src}

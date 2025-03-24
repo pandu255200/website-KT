@@ -8,12 +8,14 @@ import RedTopRightArrowIcon from "../../../../../../public/home/red-top-right-ar
 import RobotGif from "../../../../../../public/home/product-and-platforms/robot.gif";
 import FacegenieGif from "../../../../../../public/home/product-and-platforms/facegenie.gif";
 import AnalyticsKartGif from "../../../../../../public/home/product-and-platforms/analyticsKart.gif";
+import Link from "next/link";
 
 const zodhaGPTContent = {
-  label: "Zodha GPT",
+  label: "ZodhaGPT",
+  link: "/zodha-gpt",
   content: (
     <div>
-      <h2 className="font-anta">ZODHA GPT</h2>
+      <h2 className="font-anta">ZODHAGPT</h2>
       <p>
         ZodhaGPT is an Open AI platform which leverages state-of-the-art Large
         Language Model (LLM) technology. It offers unparalleled abilities in
@@ -29,6 +31,7 @@ const zodhaGPTContent = {
 
 const facegenieContent = {
   label: "FaceGenie",
+  link: "/face-genie",
   content: (
     <div>
       <h2 className="font-anta">FACEGENIE</h2>
@@ -45,6 +48,7 @@ const facegenieContent = {
 
 const analyticsContent = {
   label: "AnalyticsKart",
+  link: "/analyticskart",
   content: (
     <div>
       <h2 className="font-anta">ANALYTICSKART</h2>
@@ -63,8 +67,12 @@ const ProductAndPlatforms = () => {
   const [button2, setButton2] = useState(analyticsContent);
 
   const handleButtonClick = (
-    target: { label: string; content: React.JSX.Element },
-    setTarget: (val: { label: string; content: React.JSX.Element }) => void
+    target: { label: string; link: string; content: React.JSX.Element },
+    setTarget: (val: {
+      label: string;
+      link: string;
+      content: React.JSX.Element;
+    }) => void
   ) => {
     const previousContent = content;
     setContent(target);
@@ -72,7 +80,7 @@ const ProductAndPlatforms = () => {
   };
 
   return (
-    <div className={Styles.aiProductsPlatforms}>
+    <div className={Styles.aiProductsPlatforms} id="aiProductsPlatforms">
       <div className={Styles.aiHeader}>
         <h1 className="font-anta">AI - PRODUCTS & PLATFORMS</h1>
       </div>
@@ -82,7 +90,7 @@ const ProductAndPlatforms = () => {
             {content.content}
 
             <button className={`${Styles.exploreBtn} flex items-center gap-1`}>
-              <span>Explore More</span>
+              <Link href={content.link || "/"}>Explore More</Link>
               <Image
                 src={RedTopRightArrowIcon.src}
                 className={Styles.arrow}
@@ -96,7 +104,7 @@ const ProductAndPlatforms = () => {
           <div className={Styles.contactSection}>
             <p>Curious to see how our solutions can benefit you?</p>
             <button className={`${Styles.contactBtn} flex items-center gap-1`}>
-              <span>Contact us today</span>
+              <Link href="#partner-with-us">Contact us today</Link>
               <Image
                 src={RedTopRightArrowIcon.src}
                 className={Styles.arrow}
@@ -112,17 +120,17 @@ const ProductAndPlatforms = () => {
         <div className={Styles.rightSection}>
           <Image
             src={
-              content.label == "Zodha GPT"
+              content.label == "ZodhaGPT"
                 ? RobotGif
-                : content.label === "Facegenie"
+                : content.label === "FaceGenie"
                 ? FacegenieGif
                 : AnalyticsKartGif
             }
             alt={
               content.label == "ZodhaGPT"
                 ? "zodhaGPT Illustration"
-                : content.label === "Facegenie"
-                ? "Facegenie Illustration"
+                : content.label === "FaceGenie"
+                ? "FaceGenie Illustration"
                 : "Analytics Kart Illustration"
             }
             className={Styles.robotImg}

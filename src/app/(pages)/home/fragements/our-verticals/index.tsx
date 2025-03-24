@@ -204,12 +204,15 @@ export default function OurVerticals() {
         </div>
         <div className={Styles.footer}>
           <div className={Styles.verticalTags}>
-            {verticalsData.map((vertical) => (
+            {verticalsData.map((vertical, index) => (
               <span
                 key={vertical.id}
                 className={`${Styles.tag} ${
                   currentVertical === vertical.id - 1 ? Styles.activeTag : ""
                 }`}
+                onClick={() => {
+                  setCurrentVertical(index);
+                }}
               >
                 {vertical.title}
               </span>

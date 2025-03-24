@@ -44,8 +44,8 @@ export const OurMission = () => {
           <h1>Our Products</h1>
           <div className={styles.logos}>
             <Image src={AnalyticsKart} alt="analytics_kart" />
-            <Image src={FaceGenie} alt="facegenie" />
-            <Image src={Zodha} alt="zodha" />
+            <Image src={FaceGenie} alt="faceGenie" />
+            <Image src={Zodha} alt="zodhaGPT" />
           </div>
         </div>
       </div>

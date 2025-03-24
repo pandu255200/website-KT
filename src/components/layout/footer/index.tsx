@@ -17,7 +17,7 @@ const data1 = [
   },
   {
     heading: "Products",
-    items: ["Zodha GPT", "AnalyticsKart", "FaceGenie"],
+    items: ["ZodhaGPT", "AnalyticsKart", "FaceGenie"],
   },
   {
     heading: "Company",
