@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import Styles from "./style.module.css";
 // import TopLeftArrowIcon from "../../../../../../public/home/case-study/top-left-arrow.svg";
-import RedArrowIcon from "../../../../../../public/home/case-study/red-arrow.svg";
-import WhiteArrowIcon from "../../../../../../public/home/case-study/white-arrow.svg";
-import PauseIcon from "../../../../../../public/home/videos/pauseIcon.svg";
-import Blog1 from "../../../../../../public/home/case-study/blog-1.svg";
-import AINybbles from "../../../../../../public/home/videos/ai-nybbles.png";
+import RedArrowIcon from "../../../../../public/home/case-study/red-arrow.svg";
+import WhiteArrowIcon from "../../../../../public/home/case-study/white-arrow.svg";
+import PauseIcon from "../../../../../public/home/videos/pauseIcon.svg";
+import Blog1 from "../../../../../public/home/case-study/blog-1.svg";
+import AINybbles from "../../../../../public/home/videos/ai-nybbles.png";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
 
@@ -112,15 +112,17 @@ const Videos = () => {
 
       <div className={Styles.optionToggle}>
         <div
-          className={`${Styles.optionItem} ${currentOption === "AI Nybbles" && Styles.activeOption
-            }`}
+          className={`${Styles.optionItem} ${
+            currentOption === "AI Nybbles" && Styles.activeOption
+          }`}
           onClick={() => setCurrentOption("AI Nybbles")}
         >
           AI Nybbles
         </div>
         <div
-          className={`${Styles.optionItem} ${currentOption === "Techy Bytes" && Styles.activeOption
-            }`}
+          className={`${Styles.optionItem} ${
+            currentOption === "Techy Bytes" && Styles.activeOption
+          }`}
           onClick={() => setCurrentOption("Techy Bytes")}
         >
           Techy Bytes
@@ -241,7 +243,11 @@ const Videos = () => {
         </div>
 
         <div className={Styles.nextNumber} onClick={handleNext}>
-          {currentIndex === data.length - 2 ? "" : currentIndex === -1 ? "02" : `0${currentIndex + 3}`}
+          {currentIndex === data.length - 2
+            ? ""
+            : currentIndex === -1
+            ? "02"
+            : `0${currentIndex + 3}`}
         </div>
       </div>
     </div>

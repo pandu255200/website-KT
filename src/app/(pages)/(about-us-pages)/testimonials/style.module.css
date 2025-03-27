@@ -1,0 +1,161 @@
+.container {
+  color: #ffffff; /* White text */
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Ensure scrolling cards don't overflow outside */
+  background: url("../../../../../public/home/testimonials/bg-cubic.png");
+  background-size: 400px 700px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.heading {
+  margin: 0;
+  font-size: 3.8rem;
+  font-weight: 100;
+  text-align: left;
+  color: #ffffff; /* White text */
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+}
+
+.grid {
+  margin-top: 5rem;
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+.card {
+  height: 13rem;
+  padding: 1rem 0.8rem;
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-transform: capitalize;
+  flex-shrink: 0; /* Prevent shrinking of cards */
+  width: 25rem; /* Set a fixed width */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+.cardEven {
+  margin-top: 15rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+.name {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.institute {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.testimonial {
+  text-align: left;
+  padding-left: 0.5rem;
+  color: #ffffff; /* White text */
+  font-size: 14px;
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto 5rem auto;
+  padding: 1rem 2rem;
+  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 4px 20px 4px 20px;
+    transition: 0.2s linear;
+  /* clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%); */
+}
+
+.button:hover {
+  transform: scale(1.05);
+  /* background-color: transparent;
+  outline: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  /* color: rgba(250, 38, 9, 1); Exact red background color */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Video Slider */
+.videoSlider {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.videoContainer {
+  width: 85%; /* Adjust the video width */
+  height: 40rem; /* Adjust the video height */
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000; /* Add background to make it cleaner */
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navButton {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+  background: rgba(250, 38, 9, 1); /* Exact red background color */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.navButton:hover {
+  transform: scale(1.1);
+}

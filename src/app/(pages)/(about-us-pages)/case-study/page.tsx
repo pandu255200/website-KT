@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Styles from "./style.module.css";
-import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
+import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
 // import TopLeftArrowIcon from "../../../../../../public/home/case-study/top-left-arrow.svg";
-import RedArrowIcon from "../../../../../../public/home/case-study/red-arrow.svg";
-import WhiteArrowIcon from "../../../../../../public/home/case-study/white-arrow.svg";
-import CalendarIcon from "../../../../../../public/home/case-study/calendar.svg";
-import Blog1 from "../../../../../../public/home/case-study/blog-1.svg";
-import Blog2 from "../../../../../../public/home/case-study/blog-2.svg";
-import Blog3 from "../../../../../../public/home/case-study/blog-3.svg";
+import RedArrowIcon from "../../../../../public/home/case-study/red-arrow.svg";
+import WhiteArrowIcon from "../../../../../public/home/case-study/white-arrow.svg";
+import CalendarIcon from "../../../../../public/home/case-study/calendar.svg";
+import Blog1 from "../../../../../public/home/case-study/blog-1.svg";
+import Blog2 from "../../../../../public/home/case-study/blog-2.svg";
+import Blog3 from "../../../../../public/home/case-study/blog-3.svg";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
 
@@ -82,11 +82,11 @@ const CaseStudy = () => {
       <div className={Styles.slider}>
         <div
           className={Styles.mainCrousel}
-        // style={{
-        //   transform: `translateX(-${
-        //     (currentIndex / blogsData.length) * 100
-        //   }%)`,
-        // }}
+          // style={{
+          //   transform: `translateX(-${
+          //     (currentIndex / blogsData.length) * 100
+          //   }%)`,
+          // }}
         >
           {currentBlogs.map((blog, index) => (
             <div className={Styles.item} key={index}>
@@ -101,7 +101,7 @@ const CaseStudy = () => {
                     height={25}
                   />
                 </div>
-                <h1 className='font-anta'>{blog.heading}</h1>
+                <h1 className="font-anta">{blog.heading}</h1>
                 <p>{blog.description}</p>
                 <div className={Styles.details}>
                   <div className={Styles.date}>
@@ -132,7 +132,7 @@ const CaseStudy = () => {
         </div>
 
         <div
-          className={`${Styles.previousButton} ${hasPrevious && Styles.active}`}
+          className={`${Styles.previousButton} ${hasPrevious ? Styles.active : ""}`}
           onClick={handlePrevious}
         >
           <Image
@@ -146,7 +146,7 @@ const CaseStudy = () => {
         </div>
 
         <div
-          className={`${Styles.nextButton} ${hasNext && Styles.active}`}
+          className={`${Styles.nextButton} ${hasNext ? Styles.active : ""}`}
           onClick={handleNext}
         >
           <Image

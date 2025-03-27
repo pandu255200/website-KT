@@ -18,8 +18,8 @@ export const WordFlick = () => {
     const len = words.length;
     let forwards = true;
     let skipCount = 0;
-    const skipDelay = 15;
-    const speed = 140;
+    const skipDelay = 5;
+    const speed = 170;
 
     const wordflick = () => {
       const interval = setInterval(() => {

@@ -88,6 +88,10 @@ p {
   font-size: 68px;
   word-wrap: break-word;
 }
+button {
+  font-family: "Outfit", serif;
+  font-weight: 500;
+}
 
 .disabled {
   opacity: 0.5;

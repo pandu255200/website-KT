@@ -153,14 +153,14 @@ const solutionAndServices: MenuItem[] = [
 
 const aboutUs: MenuItem[] = [
   { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
-  { icon: Blogs, text: "Blogs", href: "#blogs" },
-  { icon: VideosIcon, text: "Videos", href: "#videos" },
-  { icon: InternshipIcon, text: "Internships", href: "#internships" },
-  { icon: CareerIcon, text: "Careers", href: "#careers" },
+  { icon: Blogs, text: "Blogs", href: "blogs" },
+  { icon: VideosIcon, text: "Videos", href: "videos" },
+  { icon: InternshipIcon, text: "Internships", href: "internships" },
+  { icon: CareerIcon, text: "Careers", href: "career" },
   { icon: NewsIcon, text: "News & Press Coverage", href: "news" },
-  { icon: TestimonialsIcon, text: "Testimonials", href: "#testimonials" },
+  { icon: TestimonialsIcon, text: "Testimonials", href: "testimonials" },
   { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
-  { icon: CaseIcon, text: "Case Studies", href: "#case-study" },
+  { icon: CaseIcon, text: "Case Studies", href: "case-study" },
 ];
 
 const navLinks: NavLink[] = [

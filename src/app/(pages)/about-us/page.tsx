@@ -7,7 +7,7 @@ import { Achievements } from "./fragments/achievements";
 import { Vision } from "./fragments/vision";
 import { Mission } from "./fragments/mission";
 import OurValues from "./fragments/our-values";
-import CoreTeam from "../our-team/fragments/core-team";
+import CoreTeam from "../(about-us-pages)/our-team/fragments/core-team";
 import { PartnerWIthUs } from "@/components/layout/partner-with-us";
 
 export default function AboutUs() {

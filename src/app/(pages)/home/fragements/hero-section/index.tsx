@@ -3,10 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Styles from "./style.module.css";
-
 import { useCounter } from "@/store/AnimationContext";
 
-// ✅ Use public directory (without "/public" prefix)
 const images = {
   AnalyticsImage: "/home/analytics-image.svg",
   FaceGenAiImage: "/home/face-genai-image.png",
@@ -26,17 +24,25 @@ type ButtonName = "ZodhaGPT" | "FaceGenie" | "AnalyticsKart";
 export default function HeroSection() {
   const { counter } = useCounter();
   const [activeButton, setActiveButton] = useState<ButtonName>("ZodhaGPT");
-  const [animationDiv, setAnimationDiv] = useState(1);
+  const [animationDiv, setAnimationDiv] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
 
-    const timeout = setTimeout(() => {
-      setAnimationDiv(0);
-    }, 7000);
+    // Check if animation has already played using sessionStorage
+    const hasPlayed = sessionStorage.getItem("heroAnimationPlayed");
 
-    return () => clearTimeout(timeout);
+    if (!hasPlayed) {
+      setAnimationDiv(1); // Show animation
+
+      const timeout = setTimeout(() => {
+        setAnimationDiv(0); // Hide animation after timeout
+        // sessionStorage.setItem("heroAnimationPlayed", "true"); // Mark animation as played
+      }, 7000);
+
+      return () => clearTimeout(timeout);
+    }
   }, []);
 
   const contentData = {
@@ -68,46 +74,37 @@ export default function HeroSection() {
     setActiveButton(buttonName);
   };
 
-  const { heading, description, image, logo } = contentData[activeButton];
-
-  // ✅ Prevent hydration mismatch
   if (!isClient) return null;
 
   return (
     <div className="flex">
       <section className={Styles.hero}>
-        {/* ANIMATED DIV */}
+        {/* ANIMATED DIV (Only plays once per visit) */}
         {counter <= 1 && (
           <div
             className={Styles.animatedDiv}
             style={{
               visibility: animationDiv > 0 ? "visible" : "hidden",
               opacity: animationDiv,
-              transition: "0.8s linear",
+              transition: "opacity 0.8s linear",
             }}
           >
-            <div
-              className={Styles.innerAnimation}
-              style={{ width: "100%", padding: "7rem" }}
-            >
+            <div className={Styles.innerAnimation} style={{ padding: "7rem" }}>
               <div className={Styles.content}>
                 <h1 className={Styles.h1}>Empowering the future</h1>
                 <p className={Styles.para}>
-                  Our Purpose is to make AI accessible to everyone. With
-                  ResoluteAI Software, as your partner, you can look forward to
-                  a bright future
+                  Our Purpose is to make AI accessible to everyone.
                 </p>
               </div>
               <div className={Styles.imageSection}>
-                <div className={Styles.image}>
-                  <Image
-                    src={images.GlobeImage}
-                    alt="GlobeImage"
-                    width={450}
-                    height={450}
-                    priority
-                  />
-                </div>
+                <Image
+                  src={images.GlobeImage}
+                  alt="Globe"
+                  width={450}
+                  height={450}
+                  layout="fixed"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -115,29 +112,29 @@ export default function HeroSection() {
 
         <div className={Styles.flex}>
           {/* LEFT SECTION */}
-          <div
-            className={Styles.content}
-            // style={{ display: "block !important", opacity: 1 }}
-          >
-            <h1 className={`${Styles.h1} font-anta`}>{heading}</h1>
-            <p className={Styles.para}>{description}</p>
+          <div className={Styles.content} style={{ opacity: 1 }}>
+            <h1 className={`${Styles.h1} font-anta`}>
+              {contentData[activeButton].heading}
+            </h1>
+            <p className={Styles.para}>
+              {contentData[activeButton].description}
+            </p>
 
-            <div className="flex flex-col justify-start items-start gap-10">
+            <div className="flex flex-col gap-10">
               <Image
-                src={logo}
+                src={contentData[activeButton].logo}
                 className={Styles.logo}
                 alt="logo"
                 width={180}
                 height={50}
                 priority
               />
-              <div className="flex justify-center items-center gap-8">
+              <div className="flex gap-8">
                 <button>
                   <span>Learn More</span>
                   <Image
                     src={images.TopRightArrowIcon}
-                    className={Styles.arrow}
-                    alt="arrowIcon"
+                    alt="arrow"
                     width={28}
                     height={28}
                     priority
@@ -160,29 +157,23 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT SECTION */}
-          <div
-            className={Styles.imageSection}
-            // style={{ display: "block !important", opacity: 1 }}
-          >
-            <div className={Styles.image}>
-              {activeButton === "FaceGenie" && (
-                <Image
-                  src={images.ScannerGif}
-                  className={Styles.scanner}
-                  alt="Scanner"
-                  width={300}
-                  height={300}
-                  unoptimized
-                />
-              )}
+          <div className={Styles.imageSection} style={{ opacity: 1 }}>
+            {activeButton === "FaceGenie" && (
               <Image
-                src={image}
-                alt="ProductImage"
-                width={500}
-                height={activeButton === "FaceGenie" ? 700 : 430}
-                priority
+                src={images.ScannerGif}
+                alt="Scanner"
+                width={300}
+                height={300}
+                unoptimized
               />
-            </div>
+            )}
+            <Image
+              src={contentData[activeButton].image}
+              alt="ProductImage"
+              width={500}
+              height={activeButton === "FaceGenie" ? 700 : 430}
+              priority
+            />
           </div>
         </div>
 

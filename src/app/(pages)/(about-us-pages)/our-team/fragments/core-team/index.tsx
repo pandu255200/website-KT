@@ -4,10 +4,10 @@ import { useState } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
 
-import SanjayJhaImage from "../../../../../../public/core-team/sanjay-jha.png";
-import PawanImage from "../../../../../../public/core-team/pawan.png";
-import LinkedinIcon from "../../../../../../public/core-team/linkedin-icon.svg";
-import Globe from "../../../../../../public/core-team/globe.svg";
+import SanjayJhaImage from "../../../../../../../public/core-team/sanjay-jha.png";
+import PawanImage from "../../../../../../../public/core-team/pawan.png";
+import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
+import Globe from "../../../../../../../public/core-team/globe.svg";
 // import TopLeftArrow from "../../../../public/core-team/top-left-arrow.svg"
 import { GoBackButton } from "@/components/common/go-back-button";
 

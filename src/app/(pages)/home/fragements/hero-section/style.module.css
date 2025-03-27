@@ -54,10 +54,10 @@
   /* width: Fixed (569px) px; */
   width: 50%;
   height: Hug (408px) px;
+  color: #fff;
   top: 204px;
   left: 100px;
   gap: 500px;
-  opacity: 0px;
 }
 .content .h1 {
   /* font-family: pl  ; */
@@ -73,7 +73,7 @@
   height: 85px;
   gap: 0px;
   margin-top: 1rem;
-  opacity: 0.2px;
+  opacity: 0.2;
   /* font-family: Inter; */
   font-size: 18px;
   font-weight: 400;
@@ -133,7 +133,6 @@
   top: 204px;
   left: 1303px;
   gap: 0px;
-  opacity: 0px;
   overflow: hidden;
   /* background-color: green; */
 }

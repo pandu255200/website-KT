@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import Styles from "./style.module.css";
-import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
+import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
 // import TopLeftArrowIcon from "../../../../../../public/home/blogs/top-left-arrow.svg";
-import RedArrowIcon from "../../../../../../public/home/blogs/red-arrow.svg";
-import WhiteArrowIcon from "../../../../../../public/home/blogs/white-arrow.svg";
-import Blog1 from "../../../../../../public/home/blogs/blog-1.svg";
-import Blog2 from "../../../../../../public/home/blogs/blog-2.svg";
-import Blog3 from "../../../../../../public/home/blogs/blog-3.svg";
+import RedArrowIcon from "../../../../../public/home/blogs/red-arrow.svg";
+import WhiteArrowIcon from "../../../../../public/home/blogs/white-arrow.svg";
+import Blog1 from "../../../../../public/home/blogs/blog-1.svg";
+import Blog2 from "../../../../../public/home/blogs/blog-2.svg";
+import Blog3 from "../../../../../public/home/blogs/blog-3.svg";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
 
@@ -76,7 +76,7 @@ const Blogs = () => {
       <h1 className="globalHeaderStyle">
         <span className="title">BLOGS</span>
         <GoBackButton text={"Go Back"} type="prev" />
-        </h1>
+      </h1>
 
       <div className={Styles.slider}>
         <div
@@ -90,7 +90,7 @@ const Blogs = () => {
           {currentBlogs.map((blog, index) => (
             <div className={Styles.item} key={index}>
               <div className={Styles.content}>
-                <h1 className='font-anta'>{blog.heading}</h1>
+                <h1 className="font-anta">{blog.heading}</h1>
                 <p>{blog.description}</p>
                 <div className={Styles.imageContainer}>
                   <Image
