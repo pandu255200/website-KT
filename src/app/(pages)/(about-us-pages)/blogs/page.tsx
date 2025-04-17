@@ -16,39 +16,28 @@ const Blogs = () => {
   const blogsData = [
     {
       image: Blog1,
-      heading: "Collaboration 1",
+      heading: "The Evolution of GenAI: How It’s Transforming Industries",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "Artificial Intelligence (AI) has come a long way from rule-based automation to sophisticated machine learn...",
     },
     {
       image: Blog2,
-      heading: "Collaboration 2",
+      heading: "Agentic AI: The Role of Agentic AI in Advanced Problem Solving",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "Traditional AI systems follow instructions and operate within predefined rules. Agentic AI takes it a s...",
     },
     {
       image: Blog3,
-      heading: "Collaboration 3",
+      heading: "Enhancing Surveillance with FaceGenie’s Drone Integration",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "In today’s rapidly evolving security landscape, real-time surveillance and quick response to threats are criti...",
     },
     {
       image: Blog2,
-      heading: "Collaboration 4",
+      heading:
+        "AI and Compliance: Ensuring Ethical and Responsible AI Adoption",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
-    },
-    {
-      image: Blog3,
-      heading: "Collaboration 5",
-      description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
-    },
-    {
-      image: Blog1,
-      heading: "Collaboration 6",
-      description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "AI is transforming industries, driving efficiency, and ...",
     },
   ];
 

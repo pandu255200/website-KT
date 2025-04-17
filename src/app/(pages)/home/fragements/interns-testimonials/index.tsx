@@ -106,15 +106,17 @@ const InternsTestimonials = () => {
             />
 
             <div className={Styles.profile}>
-              <Image
-                src={CardImage.src}
-                className={Styles.image}
-                alt="CardImage"
-                layout="fixed"
-                width={50}
-                height={50}
-              />
-              <div>
+              <div className={Styles.profileImgDiv}>
+                <Image
+                  src={CardImage.src}
+                  className={Styles.image}
+                  alt="CardImage"
+                  // layout="fixed"
+                  width={10}
+                  height={10}
+                />
+              </div>
+              <div className={Styles.profileContentDiv}>
                 <span className={Styles.name}>{testimonial.name}</span>
                 <span className={Styles.institute}>
                   {testimonial.institute}

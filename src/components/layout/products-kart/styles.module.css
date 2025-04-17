@@ -70,24 +70,43 @@
 .slideTitle {
   /* font-size: 1.8rem;
     font-weight: bold; */
-  padding-top: 3rem;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
-  height: 11rem;
-  margin-bottom: 2rem;
+  /* height: 11rem; */
+  margin-bottom: 1rem;
   color: white;
-  font-size: 72px;
+  font-size: 50px;
   /* font-family: "Space Grotesk", sans-serif; */
   font-weight: 500;
   word-wrap: break-word;
 }
 
+.benefits_impact_title {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
 .slideDescription {
-  height: 5rem;
-  padding-bottom: 1rem;
+  min-height: 5rem;
+  padding-bottom: 1.5rem;
   color: #ffffff; /* White text */
   font-size: 1.1rem;
   /* font-family: "Space Grotesk", sans-serif; */
+  font-weight: 500;
+  line-height: 24px;
+  word-wrap: break-word;
+  letter-spacing: 1px;
+}
+
+.benefits_impact_description {
+  color: #ffffff; /* White text */
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 24px;
   word-wrap: break-word;

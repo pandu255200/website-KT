@@ -8,12 +8,12 @@ const data1 = [
     heading: "Core",
     items: [
       "AI - Products & Platforms",
-      "AI - Engineering Solutions & IT Services",
+      "AI - Solutions & IT Services",
     ],
   },
   {
     heading: "Explore",
-    items: ["About", "Solutions", "Vedios", "Blogs", "About", "Testimonilas"],
+    items: ["About", "Solutions", "Videos", "Blogs", "About", "Testimonials"],
   },
   {
     heading: "Products",
@@ -78,7 +78,7 @@ export function Footer() {
             <p style={{ fontWeight: 400, fontSize: "1rem" }}>7406937777</p>
           </div>
           <div style={{ fontWeight: 500, fontSize: "1rem" }}>
-            © 2023 ResoluteAI Software.in, All rights reserved.
+            © 2025 ResoluteAI Software.in, All rights reserved.
           </div>
         </div>
       </footer>

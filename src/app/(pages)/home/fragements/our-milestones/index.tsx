@@ -6,12 +6,13 @@ import Image from "next/image";
 // import DotCircle from "../../../../../../public/home/our-milestones/dot-circle.svg";
 
 const OurMilestones = () => {
-  const milestonesData = [
-    { title: "10+", description: "Successful Projects Delivered" },
-    { title: "100+", description: "Unique Challenges Solved" },
+  const milestonesData1 = [
+    { title: "300+", description: "Unique Challenges Solved" },
     { title: "3", description: "Proprietary Products Developed" },
+  ];
+  const milestonesData2 = [
     { title: "100+", description: "Corporate Professionals Upskilled" },
-    { title: "300+", description: "Students Trained" },
+    { title: "500+", description: "Students Trained" },
     { title: "3+", description: "Patents Filed" },
   ];
 
@@ -45,8 +46,16 @@ const OurMilestones = () => {
           height={10}
         />
 
-        <div className={Styles.cardsGrid}>
-          {milestonesData.map((milestone, index) => (
+        <div className={Styles.cardsGrid1}>
+          {milestonesData1.map((milestone, index) => (
+            <div className={Styles.card} key={index}>
+              <span>{milestone.title}</span>
+              <p>{milestone.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className={Styles.cardsGrid2}>
+          {milestonesData2.map((milestone, index) => (
             <div className={Styles.card} key={index}>
               <span>{milestone.title}</span>
               <p>{milestone.description}</p>

@@ -16,91 +16,105 @@ const verticalsData = [
     id: 1,
     title: "Textile, Fabric & Yarn",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Textile manufacturing today demands precision, consistency, and speed. With our AI-led ecosystem, textile companies are automating quality checks, reducing wastage, and enabling real-time decision-making across production and supply chain functions. Our solutions use computer vision, Agentic AI, and LLMs to transform traditional operations into intelligent, adaptive systems—reducing human error and accelerating go-to-market cycles.",
     image: VerticalsGif,
   },
   {
     id: 2,
     title: "FMCG",
     description:
-      "Our solutions for FMCG help in optimizing the supply chain and monitoring product quality with real-time data.",
+      "In an industry driven by volume and velocity, FMCG brands use our AI stack to accurately sense demand, automate distribution strategies, and extract real-time insights from consumer behavior. We deploy GenAI agents to simulate market scenarios, while predictive analytics ensures optimal stock levels and reduced wastage across channels.",
     image: Verticals2Gif,
   },
   {
     id: 3,
-    title: "Retail, E- commerce & Market Places",
+    title: "Retail, E-commerce & Market Places",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "From personalized shopping journeys to intelligent operations, our AI and GenAI platforms empower retailers and online marketplaces to deliver unmatched customer experiences while minimizing operational inefficiencies. We enable hyper-personalization, real-time insights, and automation at every digital and physical touchpoint.",
     image: Verticals3Gif,
   },
   {
     id: 4,
     title: "Chemicals & Pharmaceuticals",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Precision and compliance are non-negotiable in pharma and chemical industries. Our solutions leverage LLMs for document intelligence, GenAI for R&D optimization, and predictive models for process stability. From lab to launch, we bring intelligence and traceability to every stage.",
     image: Verticals2Gif,
   },
   {
     id: 5,
-    title: "Consumer Goods, Electronics & Medical Devices",
+    title: "Consumer, Electronics & Medical Devices",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "In this high-precision, fast-evolving sector, we integrate AI into design, manufacturing, and compliance workflows. With intelligent inspection, digital twins, and predictive fault detection, companies unlock both operational agility and compliance at scale.",
     image: Verticals3Gif,
   },
   {
     id: 6,
     title: "Power, Energy, Oil & Gas",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "We help energy-intensive sectors achieve safety, efficiency, and compliance through scalable AI. GenAI agents drive remote asset inspections, predictive maintenance prevents downtime, and LLMs automate risk and safety documentation across sites.",
     image: Verticals3Gif,
   },
   {
     id: 7,
-    title: "Heavy Infrastructure, Real Estate, Construction & Tech Parks",
+    title: "Real Estate & Heavy Infrastructure",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Our platform empowers infrastructure firms to digitally transform project execution—automating project tracking, enabling predictive resource planning, and ensuring safety at scale. With Agentic AI and IoT insights, we deliver measurable project certainty.",
     image: Verticals3Gif,
   },
   {
     id: 8,
-    title: "Mining, Metal & Industrial Automation",
+    title: "Mining, Metals & Industrial Automation",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Safety, scale, and uptime are everything in this sector. With AI-powered surveillance, predictive machine analytics, and autonomous agents, we help companies reduce hazards, maximize throughput, and ensure round-the-clock operational intelligence.",
     image: Verticals3Gif,
   },
   {
     id: 9,
-    title: "Automotive, Ancillaries & Heavy Engineering",
+    title: "Automotives, Ancillaries & Heavy Machineries",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "From smart factories to intelligent aftermarket services, our AI stack powers process automation, quality analytics, and supply chain agility. GenAI copilots enhance design simulations, and LLMs fast-track documentation and vendor coordination.",
     image: Verticals3Gif,
   },
   {
     id: 10,
     title: "Logistics, Warehousing & Transportation",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Efficiency at every node is what we deliver. AI-led route planning, warehouse intelligence, and real-time analytics help logistics networks scale without chaos. LLMs automate documentation while Agentic AI handles exception management in real time.",
     image: Verticals3Gif,
   },
   {
     id: 11,
-    title: "Hospitals & Healthcare",
+    title: "Hospitals, Healthcare & Lifesciences",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "Whether hospitals or hospitality chains, delivering seamless service and safety is critical. Our GenAI and AI-led automation solutions empower staff, reduce administrative load, and improve patient and guest satisfaction through intelligent personalization and planning.",
     image: Verticals3Gif,
   },
   {
     id: 12,
     title: "Hotels, QSR & Hospitality",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "AI and GenAI are redefining guest experiences across hotels, QSR chains, and the broader hospitality sector. From hyper-personalized services enabled by LLMs to intelligent staff allocation through Agentic AI, operations are becoming frictionless and guest satisfaction is soaring. Real-time analytics and voice-based GenAI agents offer actionable insights that empower faster decision-making and create memorable customer journeys.",
     image: Verticals3Gif,
   },
   {
     id: 13,
-    title: "Educational Institute",
+    title: "BFSI",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency. You are enabled to track any and all events or activities, so you can make data-driven decisions about your business.",
+      "We help financial institutions shift from reactive to proactive. From underwriting to fraud detection, our GenAI and LLM models enable faster decisions, lower risk, and smarter client engagement across the lifecycle.",
+    image: Verticals3Gif,
+  },
+  {
+    id: 14,
+    title: "Educational Institutes",
+    description:
+      "AI transforms learning and governance in academic institutions. Our solutions help educators track outcomes, personalize learning, and streamline campus operations—using GenAI and cognitive automation.",
+    image: Verticals3Gif,
+  },
+  {
+    id: 15,
+    title: "Telecom, Media & Entertainment",
+    description:
+      "We help media and telco giants reimagine content, customer interactions, and network insights. From GenAI-driven creation to LLM-powered discovery, we help unlock value across the entertainment ecosystem.",
     image: Verticals3Gif,
   },
 ];

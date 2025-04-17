@@ -78,6 +78,9 @@
   box-sizing: border-box;
   padding: 1rem;
   background-color: #fa2609;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .content h1 {
@@ -98,6 +101,12 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #ffffff;
+}
+
+.collaborationImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footerDiamond {

@@ -17,39 +17,51 @@ const CaseStudy = () => {
   const blogsData = [
     {
       image: Blog1,
-      heading: "Blog Heading 1",
+      heading:
+        "Streamlining Work Processes with a Mobile and Web based Application",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "An industry-leading organization sought to modernize its operational workflows to enhance productivity a...",
     },
     {
       image: Blog2,
-      heading: "Blog Heading 2",
-      description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+      heading:
+        "High-Speed Fabric Counting with Defect Detection at 2 plants of India’s one of the biggest Textile Manufacturing Company",
+      description: "Manual Process of fabric counting on a continuo...",
     },
     {
       image: Blog3,
-      heading: "Blog Heading 3",
+      heading:
+        "Digitalizing EHS Management System for Enhanced Efficiency and Integrity",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "A leading biotechnology organization sought to transition from a paper-based Environment, Health, a...",
     },
     {
       image: Blog2,
-      heading: "Blog Heading 4",
+      heading:
+        "Computer Vision-based AI Solution for Person Detection and Activity(Cleaning) Monitoring",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "One of the largest pharmaceutical company in India, were to rely on manual checks to monitor the num...",
     },
     {
       image: Blog3,
-      heading: "Blog Heading 5",
+      heading:
+        "Implementing a Comprehensive Control Center for Asset Health Monitoring and Control",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "In today's highly dynamic and technologically advanced world, organizations heavily rely on assets to deli...",
     },
     {
       image: Blog1,
-      heading: "Blog Heading 6",
+      heading:
+        "CountAI App: Revolutionizing Item Counting with CV-based AI Technology",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "Counting items accurately is a crucial task across various industries, including warehousing, logistics, retail, a...",
+    },
+    {
+      image: Blog2,
+      heading:
+        "Image and Template Matching using our proprietary CV led SaaS FaceGenie",
+      description:
+        "Image and template matching have numerous practical applications across various industries, inclu...",
     },
   ];
 
@@ -132,7 +144,9 @@ const CaseStudy = () => {
         </div>
 
         <div
-          className={`${Styles.previousButton} ${hasPrevious ? Styles.active : ""}`}
+          className={`${Styles.previousButton} ${
+            hasPrevious ? Styles.active : ""
+          }`}
           onClick={handlePrevious}
         >
           <Image

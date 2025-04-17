@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./mission.module.css";
-import GlobeImage from "../../../../../public/about-us/globe.svg";
+import GlobeGif from "../../../../../public/about-us/globe.gif";
 import MissionImage from "../../../../../public/about-us/mission-image.png";
 
 export const Mission = () => {
@@ -9,9 +9,9 @@ export const Mission = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <h2 className="font-anta">OUR MISSION</h2>
-        <h5>
+        <h6>
           Collaborate,develop and deploy unique AI products and solutions.
-        </h5>
+        </h6>
         <h6>Create Safe & Secure place to live and work.</h6>
         <h6>
           Transform individuals and organisations for the future through
@@ -20,7 +20,7 @@ export const Mission = () => {
         <h6>Partner and grow compassionate social ecosystem.</h6>
       </div>
       <div className={styles.illustration}>
-        <Image src={GlobeImage} alt="globe" />
+        <Image src={GlobeGif} alt="globe-gif" />
         <Image src={MissionImage} alt="mission-image" />
       </div>
     </div>

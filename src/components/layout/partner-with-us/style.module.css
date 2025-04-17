@@ -18,36 +18,18 @@
   );
 }
 
-/* Background Video */
-.backgroundVideo {
+.bgImage {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   object-fit: cover;
-  /* filter: brightness(
-    0.6
-  );  */
-}
-.bgImage {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-  background: conic-gradient(
-    from 119.35deg at 50% 58.75%,
-    #af1600 -48.8deg,
-    #fa2609 26.36deg,
-    #af1600 311.2deg,
-    #fa2609 386.36deg
-  );
+  opacity: 0.3;
 }
 /* Content Section */
 .content {
@@ -79,9 +61,10 @@
   border-radius: 24px;
 }
 .leftContent h1 {
-  padding: 0 1rem;
+  padding: 0 1.3rem;
   color: rgba(250, 38, 9, 1); /* Exact red background color */
-  font-size: 3rem;
+  font-size: 3.2rem;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 20px;
   margin-top: 20px;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useCounter } from "@/store/AnimationContext";
+// import { useCounter } from "@/store/AnimationContext";
 import { Navbar } from "../../../components/layout/navbar";
 import HeroSection from "@/app/(pages)/home/fragements/hero-section";
 import OurPartner from "./fragements/our-partners";
@@ -21,62 +21,55 @@ import { Footer } from "@/components/layout/footer";
 // import { usePathname } from "next/navigation";
 
 export default function Home() {
-  const { counter, setCounter } = useCounter();
+  // const { counter, setCounter } = useCounter();
 
   // const pathname = usePathname();
-  const [rightDivWidth, setRightDivWidth] = useState(800); // Controls width animation
-  const [animation, setAnimation] = useState(1); // Controls fade-out effect
-  const showAnimation = counter <= 1 ? true : false;
+  const [rightDivWidth, setRightDivWidth] = useState(0); // Controls width animation
+  const [animation, setAnimation] = useState(0); // Controls fade-out effect
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
-    const newCounter = counter + 1;
-    if (counter > 2) {
-      setCounter(newCounter);
+    if (typeof window !== "undefined") {
+      const played = sessionStorage.getItem("heroAnimationPlayed");
+      setHasPlayed(!!played); // Convert to boolean
     }
-  }, [setCounter, counter]);
-
-  // useEffect(() => {
-  //   // Check if animation has already played (stored in localStorage)
-  //   const hasShownAnimation = localStorage.getItem("animationShown");
-
-  //   if (!hasShownAnimation) {
-  //     setShowAnimation(true); // Show animation on first load
-  //     setAnimation(1);
-  //     const timeout = setTimeout(() => {
-  //       localStorage.setItem("animationShown", "true"); // Prevent replaying on reload
-  //     }, 12000); // Hides after 6 seconds
-
-  //     return () => clearTimeout(timeout);
-  //   }
-  // }, []);
-
-  useEffect(() => {
-    // if (showAnimation) {
-    const timeout = setTimeout(() => {
-      setRightDivWidth(0); // Animate width to 0
-    }, 6000); // Hides after 6 seconds
-
-    return () => clearTimeout(timeout);
-    // }
-    // }, [showAnimation]);
   }, []);
 
   useEffect(() => {
-    // if (showAnimation) {
-    const timeout = setTimeout(() => {
-      setAnimation(0); // Fade-out effect
-    }, 4000); // Hides after 4 seconds
+    if (!hasPlayed) {
+      setRightDivWidth(800); // Animate width to 0
+      const timeout = setTimeout(() => {
+        setRightDivWidth(0); // Animate width to 0
+      }, 6000); // Hides after 6 seconds
 
-    return () => clearTimeout(timeout);
-    // }
-    // }, [showAnimation]);
-  }, []);
+      return () => clearTimeout(timeout);
+    }
+  }, [hasPlayed]);
+
+  useEffect(() => {
+    if (!hasPlayed) {
+      setAnimation(1); // Fade-out effect
+      const timeout = setTimeout(() => {
+        setAnimation(0); // Fade-out effect
+      }, 4000); // Hides after 4 seconds
+
+      return () => clearTimeout(timeout);
+    }
+  }, [hasPlayed]);
+
+  useEffect(() => {
+    if (!hasPlayed && typeof window !== "undefined") {
+      setTimeout(() => {
+        sessionStorage.setItem("heroAnimationPlayed", "true");
+      }, 10000);
+    }
+  }, [hasPlayed]);
 
   return (
     <>
       <div className="flex overflow-hidden">
         {/* ANIMATION SECTION */}
-        {showAnimation && (
+        {!hasPlayed && (
           <section
             className="flex items-center"
             style={{
@@ -95,12 +88,13 @@ export default function Home() {
             <WordFlick />
           </section>
         )}
+
         <div>
           <Navbar />
           <HeroSection />
         </div>
 
-        {showAnimation && (
+        {!hasPlayed && (
           <section
             style={{
               height: "100vh",

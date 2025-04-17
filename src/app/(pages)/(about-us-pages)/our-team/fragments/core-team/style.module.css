@@ -1,7 +1,22 @@
 /* Section Container */
+.container {
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  /* padding: 4rem 2rem; */
+  box-sizing: border-box;
+  /* height: 31.5rem; */
+  /* background: #fa2609; */
+  width: 100%;
+}
+
 .coreTeamSection {
   position: relative;
-  background: radial-gradient(74.56% 80.33% at 50% 58%, rgba(250, 38, 9, 1) 5.01%, #CA1800 84.93%);
+  background: radial-gradient(
+    74.56% 80.33% at 50% 58%,
+    rgba(250, 38, 9, 1) 5.01%,
+    #ca1800 84.93%
+  );
   color: #ffffff;
   min-height: 100vh;
   overflow: hidden;
@@ -42,7 +57,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 40%;
   height: 100%;
   z-index: 0;
   object-fit: cover;
@@ -60,7 +75,18 @@
   color: white;
   font-size: 68px;
   font-weight: 400;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
+  width: 25rem;
+}
+
+.header div {
+  width: 32rem;
+  /* width: 35%; */
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  /* word-wrap: break-word; */
 }
 
 .backButton {
@@ -240,7 +266,7 @@
   justify-content: flex-end;
 }
 .description p {
-  width: 30%;
+  width: 35%;
   color: white;
   font-size: 18px;
   font-weight: 500;

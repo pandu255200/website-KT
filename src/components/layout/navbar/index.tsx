@@ -9,7 +9,7 @@ import RemoveIcon from "../../../../public/home/removeIcon.svg";
 import AddIcon from "../../../../public/home/add-icon.svg";
 
 import ZondhaImage from "../../../../public/home/nav-icons/products/zodha.svg";
-import FaceGenaiImage from "../../../../public/home/nav-icons/products/facegenie.svg";
+import FaceGenaiImage from "../../../../public/home/nav-icons/products/faceGenai.svg";
 import AnalyticsImage from "../../../../public/home/nav-icons/products/analytics-kart.svg";
 
 import VerticalsImage from "../../../../public/home/verticals-image.svg";
@@ -38,7 +38,7 @@ import CloudIcon from "../../../../public/home/nav-icons/solution-and-services/c
 import AndroidIcon from "../../../../public/home/nav-icons/solution-and-services/android.svg";
 import FlutterIcon from "../../../../public/home/nav-icons/solution-and-services/flutter.svg";
 import AiIcon from "../../../../public/home/nav-icons/solution-and-services/ai.svg";
-import MediaIcon from "../../../../public/home/nav-icons/solution-and-services/media.svg";
+import SupportIcon from "../../../../public/home/nav-icons/solution-and-services/support.svg";
 
 import TeamsIcon from "../../../../public/home/nav-icons/about-us/teams.svg";
 import Blogs from "../../../../public/home/nav-icons/about-us/blogs.svg";
@@ -76,7 +76,7 @@ const verticals: MenuItem[] = [
   { icon: FMCGIcon, text: "FMCG", href: "#fmcg" },
   {
     icon: RetailIcon,
-    text: "Retail, E- commerce & Market Places",
+    text: "Retail, E-commerce & Market Places",
     href: "#retail",
   },
   {
@@ -86,7 +86,7 @@ const verticals: MenuItem[] = [
   },
   {
     icon: ConsumerIcon,
-    text: "Consumer Goods, Electronics & Medical Devices",
+    text: "Consumer, Electronics & Medical Devices",
     href: "#consumer",
   },
   {
@@ -96,17 +96,17 @@ const verticals: MenuItem[] = [
   },
   {
     icon: RealEstateIcon,
-    text: "Heavy Infrastructure, Real Estate, Construction & Tech Parks",
+    text: "Real Estate & Heavy Infrastructure",
     href: "#real-estate",
   },
   {
     icon: MiningIcon,
-    text: "Mining, Metal & Industrial Automation",
+    text: "Mining, Metals & Industrial Automation",
     href: "#mining",
   },
   {
     icon: AutomotiveIcon,
-    text: "Automotive, Ancillaries & Heavy Engineering",
+    text: "Automotives, Ancillaries & Heavy Machineries",
     href: "#automotive",
   },
   {
@@ -114,13 +114,19 @@ const verticals: MenuItem[] = [
     text: "Logistics, Warehousing & Transportation",
     href: "#logistics",
   },
-  { icon: HospitalsIcon, text: "Hospitals & Healthcare", href: "#hospitals" },
+  {
+    icon: HospitalsIcon,
+    text: "Hospitals, Healthcare & Lifesciences",
+    href: "#hospitals",
+  },
   { icon: HotelsIcon, text: "Hotels, QSR & Hospitality", href: "#hotels" },
+  { icon: HotelsIcon, text: "BFSI", href: "#bfsi" },
   {
     icon: EducationalIcon,
-    text: "Educational Institute",
+    text: "Educational Institutes",
     href: "#educational",
   },
+  { icon: HotelsIcon, text: "Telecom, Media & Entertainment", href: "#media" },
 ];
 
 const solutionAndServices: MenuItem[] = [
@@ -144,11 +150,7 @@ const solutionAndServices: MenuItem[] = [
     href: "#flutter",
   },
   { icon: AiIcon, text: "AI Trainings", href: "#ai" },
-  {
-    icon: MediaIcon,
-    text: "Media, Entertainment & Technology",
-    href: "#media",
-  },
+  { icon: SupportIcon, text: "Tech Support & AMC", href: "#support" },
 ];
 
 const aboutUs: MenuItem[] = [
@@ -174,7 +176,7 @@ const navLinks: NavLink[] = [
     text: "Solutions & Services",
     href: "#solutionsAndServices",
     menuItems: solutionAndServices,
-    title: "Our Solutions & Services",
+    title: "Solutions Overview",
   },
   {
     text: "Verticals",
@@ -245,19 +247,22 @@ export function Navbar() {
         </Link>
         <nav className={Styles.navLinks}>
           {navLinks.map((link, index) => (
-            <div className={Styles.links} key={link.text}>
-              <Link
-                href={link.href}
-                onMouseEnter={(e) => {
-                  e.preventDefault();
-                  handleChangeMenuItems(link.menuItems, link.title, index);
-                }}
-              >
-                {link.text}
-              </Link>
+            <div
+              className={Styles.links}
+              key={link.text}
+              onMouseEnter={(e) => {
+                e.preventDefault();
+                handleChangeMenuItems(link.menuItems, link.title, index);
+              }}
+            >
+              <Link href={link.href}>{link.text}</Link>
               <Image
                 src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
                 alt={activeMenuIndex === index ? "Remove" : "Add"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleChangeMenuItems(link.menuItems, link.title, index);
+                }}
                 layout="fixed"
                 width={24}
                 height={24}

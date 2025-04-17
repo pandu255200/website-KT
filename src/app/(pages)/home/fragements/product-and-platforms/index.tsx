@@ -17,13 +17,16 @@ const zodhaGPTContent = {
     <div>
       <h2 className="font-anta">ZODHAGPT</h2>
       <p>
-        ZodhaGPT is an Open AI platform which leverages state-of-the-art Large
+        <span style={{ color: "#000", fontWeight: 500 }}>ZodhaGPT</span> is a
+        Gen AI/Agentic AI platform which leverages state-of-the-art Large
         Language Model (LLM) technology. It offers unparalleled abilities in
         understanding and generating human-like text and speech across various
         subjects and contexts. Whether it is complex tasks, creative
-        brainstorming, or engaging storytelling, it harnesses the power of NLP &
-        LLM technology with Gen AI to deliver personalized and contextually
-        relevant responses.
+        brainstorming, proactive problem-solving or engaging storytelling, it
+        harnesses the power of NLP & LLM technology to deliver personalized and
+        contextually relevant responses. Agentic AI layers in the platform
+        leverage advanced reasoning, goal-driven behavior, and real-world
+        adaptability to complete complex workflows.
       </p>
     </div>
   ),
@@ -36,11 +39,14 @@ const facegenieContent = {
     <div>
       <h2 className="font-anta">FACEGENIE</h2>
       <p>
-        FaceGenie Dynamic is a computer vision-powered 360-degree tracking
-        software for human faces, assets & objects - their movements, any events
-        & incidents, process automation & compliances - with real-time alerts,
-        analytics & reports for proactive action thus making campuses across
-        industries - safe, secure, hygienic, and touchless.
+        <span style={{ color: "#000", fontWeight: 500 }}>
+          FaceGenie Dynamic
+        </span>{" "}
+        is a Gen AI led computer vision-powered 360-degree tracking software for
+        human faces, assets & objects - their movements, any events & incidents,
+        process automation & compliances - with real-time alerts, text and
+        speech driven analytics & reports for proactive action thus making
+        campuses across industries - safe, secure, hygienic, and touchless.
       </p>
     </div>
   ),
@@ -53,9 +59,10 @@ const analyticsContent = {
     <div>
       <h2 className="font-anta">ANALYTICSKART</h2>
       <p>
-        AnalyticsKart is a powerful SAAS-enabled, end-to-end pipeline tool
-        offering you an in-depth advanced analysis (Descriptive, Diagnostic &
-        Predictive) of your business data.
+        <span style={{ color: "#000", fontWeight: 500 }}>AnalyticsKart</span> is
+        a data driven Gen AI led analytics platform offering you an in-depth
+        advanced analysis (Descriptive, Diagnostic & Predictive) of your
+        business data.
       </p>
     </div>
   ),

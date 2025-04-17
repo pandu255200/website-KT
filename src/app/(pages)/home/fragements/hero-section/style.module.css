@@ -73,7 +73,7 @@
   height: 85px;
   gap: 0px;
   margin-top: 1rem;
-  opacity: 0.2;
+  opacity: 0.9;
   /* font-family: Inter; */
   font-size: 18px;
   font-weight: 400;
@@ -207,6 +207,25 @@
   color: #fff;
   box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
 }
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    background: linear-gradient(121.87deg, #fa2609 13.39%, #bf270e 86.58%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    background: linear-gradient(121.87deg, #d21d08 13.39%, #a31f0c 86.58%);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    background: linear-gradient(121.87deg, #fa2609 13.39%, #bf270e 86.58%);
+    opacity: 1;
+  }
+}
+
 .chatButton {
   z-index: 5;
   width: 3.5rem;
@@ -222,6 +241,7 @@
   border-radius: 50%;
   border: 1px solid #fff;
   cursor: pointer;
+  animation: heartbeat 1.5s infinite ease-in-out;
 }
 .rightDiv {
   width: 30rem;

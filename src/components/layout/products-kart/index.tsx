@@ -10,6 +10,8 @@ interface SliderData {
   title: string;
   description: string;
   image: string;
+  benefits: string[];
+  impacts: string[];
 }
 
 interface ProductsKartSliderProps {
@@ -31,7 +33,7 @@ export function ProductsKartSlider({
     setCurrentSlide((prev) => (prev - 1 + data.length) % data.length);
   };
 
-  const { title, description, image } = data[currentSlide];
+  const { title, description, image, benefits, impacts } = data[currentSlide];
 
   return (
     <div className={styles.sliderContainer}>
@@ -62,6 +64,18 @@ export function ProductsKartSlider({
           <div className={styles.leftContent}>
             <h2 className={`${styles.slideTitle} font-anta`}>{title}</h2>
             <p className={styles.slideDescription}>{description}</p>
+            <h1 className={`${styles.benefits_impact_title} font-anta`}>
+              Benefits
+            </h1>
+            {benefits.map((benefit, index) => (
+              <p className={styles.benefits_impact_description} key={index}>- {benefit}</p>
+            ))}
+            <h1 className={`${styles.benefits_impact_title} font-anta`}>
+              Impact
+            </h1>
+            {impacts.map((impact, index) => (
+              <p className={styles.benefits_impact_description} key={index}>- {impact}</p>
+            ))}
             <div className={styles.navigation}>
               <span className={styles.pagination}>
                 {currentSlide + 1}/{data.length}

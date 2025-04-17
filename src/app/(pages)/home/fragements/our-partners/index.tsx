@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 
 import ZodhaImage from "../../../../../../public/home/nav-icons/products/zodha.svg";
-import FaceGenaiImage from "../../../../../../public/home/nav-icons/products/facegenie.svg";
+import FaceGenaiImage from "../../../../../../public/home/nav-icons/products/faceGenai.svg";
 import AnalyticsImage from "../../../../../../public/home/nav-icons/products/analytics-kart.svg";
 
 const slideImages = [

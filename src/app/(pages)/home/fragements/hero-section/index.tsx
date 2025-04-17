@@ -11,7 +11,7 @@ const images = {
   ZodhaImage: "/home/zondha-image.svg",
   ChatIcon: "/home/chat-icon.svg",
   ZodhaLogo: "/home/nav-icons/products/zodha.svg",
-  FaceGenaiLogo: "/home/nav-icons/products/facegenie.svg",
+  FaceGenaiLogo: "/home/nav-icons/products/faceGenai.svg",
   AnalyticsLogo: "/home/nav-icons/products/analytics-kart.svg",
   TopRightArrowIcon: "/home/top-right-arrow.svg",
   WatchVideoIcon: "/home/watch-video.svg",
@@ -47,10 +47,9 @@ export default function HeroSection() {
 
   const contentData = {
     ZodhaGPT: {
-      heading:
-        "Easily Integrateable, Swiftly Deployable & Highly Customisable.",
+      heading: "GenAI-Powered, Effortlessly Scalable & Exceptionally Adaptive.",
       description:
-        "A dashboard & prediction software that analyses customer & operational data from multiple sources & helps businesses make informed decisions.",
+        "The next-gen LLM with AgenticAI for adaptive, scalable, and intelligent decision-making.",
       image: images.ZodhaImage,
       logo: images.ZodhaLogo,
     },
@@ -157,11 +156,12 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className={Styles.imageSection} style={{ opacity: 1 }}>
+          <div className={Styles.image} style={{ opacity: 1 }}>
             {activeButton === "FaceGenie" && (
               <Image
                 src={images.ScannerGif}
                 alt="Scanner"
+                className={Styles.scanner}
                 width={300}
                 height={300}
                 unoptimized
@@ -171,7 +171,7 @@ export default function HeroSection() {
               src={contentData[activeButton].image}
               alt="ProductImage"
               width={500}
-              height={activeButton === "FaceGenie" ? 700 : 430}
+              height={activeButton === "FaceGenie" ? 550 : 430}
               priority
             />
           </div>
