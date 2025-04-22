@@ -96,17 +96,21 @@ const ProductAndPlatforms = () => {
           <div>
             {content.content}
 
-            <button className={`${Styles.exploreBtn} flex items-center gap-1`}>
-              <Link href={content.link || "/"}>Explore More</Link>
-              <Image
-                src={RedTopRightArrowIcon.src}
-                className={Styles.arrow}
-                alt="arrowIcon"
-                layout="fixed"
-                width={28}
-                height={20}
-              />
-            </button>
+            <Link href={content.link || "/"}>
+              <button
+                className={`${Styles.exploreBtn} flex items-center gap-1`}
+              >
+                Explore More
+                <Image
+                  src={RedTopRightArrowIcon.src}
+                  className={Styles.arrow}
+                  alt="arrowIcon"
+                  layout="fixed"
+                  width={28}
+                  height={20}
+                />
+              </button>
+            </Link>
           </div>
           <div className={Styles.contactSection}>
             <p>Curious to see how our solutions can benefit you?</p>

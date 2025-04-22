@@ -270,7 +270,11 @@ const facegenieData = [
 export default function AnalyticsKartSlider() {
   return (
     <>
-      <ProductsKartSlider data={facegenieData} pageTitle="FACEGENIE" />
+      <ProductsKartSlider
+        data={facegenieData}
+        pageTitle="FACEGENIE"
+        link="/face-genie"
+      />
     </>
   );
 }

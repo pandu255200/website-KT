@@ -19,6 +19,7 @@
   padding: 4rem 4rem;
   position: relative;
   min-height: 72vh;
+  margin-top: 95px;
 }
 .animatedDiv {
   display: flex;
@@ -169,7 +170,7 @@
 
 .tabs {
   display: flex;
-  margin-right: 5rem;
+  margin-right: 3.5rem;
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -226,6 +227,31 @@
   }
 }
 
+.chatWindow {
+  /* visibility: hidden; */
+  z-index: 50;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  width: 45vw;
+  height: 85vh;
+  border-radius: 35px;
+  background-color: white;
+}
+
+.chatWindow .crossButton {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.8rem;
+  margin-top: 0.8rem;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 36px;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+}
+
 .chatButton {
   z-index: 5;
   width: 3.5rem;
@@ -242,6 +268,38 @@
   border: 1px solid #fff;
   cursor: pointer;
   animation: heartbeat 1.5s infinite ease-in-out;
+}
+.message_box {
+  visibility: hidden;
+  z-index: 50;
+  position: fixed;
+  bottom: 7.5rem;
+  right: 2.5rem;
+  display: inline-block;
+  background-color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  max-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message_box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  margin-bottom: -8px;
+}
+.chatWrapper:hover .message_box {
+  visibility: visible;
 }
 .rightDiv {
   width: 30rem;

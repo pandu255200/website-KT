@@ -7,7 +7,7 @@ import HeroSection from "@/app/(pages)/home/fragements/hero-section";
 import OurPartner from "./fragements/our-partners";
 import ProductAndPlatforms from "./fragements/product-and-platforms";
 import EngineeringSolutions from "./fragements/ai-engineering-solutions";
-import OurVerticals from "./fragements/our-verticals";
+import { OurVerticals } from "./fragements/our-verticals";
 import InternsTestimonials from "./fragements/interns-testimonials";
 import { StartingAnimationSection } from "@/components/common/starting-animation-section";
 import { PartnerWIthUs } from "@/components/layout/partner-with-us";
@@ -108,8 +108,8 @@ export default function Home() {
       </div>
       <OurPartner />
       <ProductAndPlatforms />
-      <EngineeringSolutions />
-      <OurVerticals />
+      <EngineeringSolutions goback={false} solution={0} />
+      <OurVerticals goback={false} vertical={0} />
       <InternsTestimonials />
       <OurMilestones />
       {/* <Blogs />

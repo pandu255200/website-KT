@@ -26,6 +26,7 @@ export default function HeroSection() {
   const [activeButton, setActiveButton] = useState<ButtonName>("ZodhaGPT");
   const [animationDiv, setAnimationDiv] = useState(0);
   const [isClient, setIsClient] = useState(false);
+  const [showChatWindow, setShowChatWindow] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -193,15 +194,34 @@ export default function HeroSection() {
               </button>
             ))}
           </div>
-          <button className={Styles.chatButton}>
-            <Image
-              src={images.ChatIcon}
-              alt="ChatIcon"
-              width={25}
-              height={25}
-              priority
-            />
-          </button>
+          <div
+            className={Styles.chatWindow}
+            style={{ visibility: `${showChatWindow ? "visible" : "hidden"}` }}
+          >
+            <div
+              className={Styles.crossButton}
+              onClick={() => setShowChatWindow(false)}
+            >
+              X
+            </div>
+          </div>
+          <div className={Styles.chatWrapper}>
+            <div className={Styles.message_box}>
+              Do you need any Assistance ?
+            </div>
+            <button
+              className={Styles.chatButton}
+              onClick={() => setShowChatWindow(true)}
+            >
+              <Image
+                src={images.ChatIcon}
+                alt="ChatIcon"
+                width={25}
+                height={25}
+                priority
+              />
+            </button>
+          </div>
         </div>
       </section>
     </div>

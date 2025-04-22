@@ -12,14 +12,19 @@
 }
 
 .header {
-  font-size: 3.8rem;
+  display: flex;
+  justify-content: space-between;
+  /* font-size: 3.8rem; */
   border-radius: none;
   font-weight: 100;
   text-align: left;
   color: #ffffff; /* White text */
   background-color: rgba(250, 38, 9, 1); /* Exact red background color */
-  padding: 2rem 1.8rem;
+  padding: 2rem 0 2rem 1.8rem;
   border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+}
+.header h1 {
+  font-size: 3.8rem;
 }
 .countSection {
   width: 10rem;
@@ -50,6 +55,12 @@
   align-items: center;
   justify-content: center;
   background-color: white;
+}
+.goBackButtonRotate{
+  display: flex;
+  height: 3rem;
+  margin: 1rem -1.2rem;
+  transform: rotate(-90deg);
 }
 .remainingCount {
   padding-bottom: 2rem;

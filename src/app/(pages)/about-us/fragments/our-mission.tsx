@@ -3,7 +3,7 @@ import styles from "./our-mission.module.css";
 import Image from "next/image";
 import FaceGenie from "../../../../../public/home/nav-icons/products/faceGenai.svg";
 import Zodha from "../../../../../public/home/nav-icons/products/zodha.svg";
-import PolygonImage from "../../../../../public/about-us/polygon.svg";
+import PolygonImage from "../../../../../public/about-us/polygon.gif";
 import AnalyticsKart from "../../../../../public/home/nav-icons/products/analytics-kart.svg";
 
 export const OurMission = () => {

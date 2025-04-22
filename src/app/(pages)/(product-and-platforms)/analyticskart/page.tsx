@@ -158,7 +158,11 @@ const analyticsData = [
 export default function AnalyticsKartSlider() {
   return (
     <>
-      <ProductsKartSlider data={analyticsData} pageTitle="ANALYTICSKART" />
+      <ProductsKartSlider
+        data={analyticsData}
+        pageTitle="ANALYTICSKART"
+        link="/analyticskart"
+      />
       {/* <ProductsKartSlider data={facegenieData} pageTitle='FACEGENIE' />
     <ProductsKartSlider data={zondhaGptData} pageTitle='ZODHA GPT' /> */}
     </>

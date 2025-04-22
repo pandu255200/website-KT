@@ -10,6 +10,13 @@ import SlideImg3 from "../../../../../../public/home/ai-engineering/slide-img-3.
 // import BgDesign from "../../../../../../public/home/ai-engineering/bg-design.svg";
 import RIghtAngleIcon from "../../../../../../public/home/right-angle-icon.svg";
 import TopLeftArrow from "../../../../../../public/core-team/top-left-arrow.svg";
+import { GoBackButton } from "@/components/common/go-back-button";
+import Link from "next/link";
+
+interface EngineeringSolutionsProps {
+  goback: boolean;
+  solution: number;
+}
 
 const slides = [
   {
@@ -77,8 +84,11 @@ const slides = [
   },
 ];
 
-const EngineeringSolutions = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
+  goback,
+  solution,
+}) => {
+  const [currentSlide, setCurrentSlide] = useState(solution);
   const [bgImageRotation, setBgImageRotation] = useState(0);
 
   // Function to get visible slides (previous, current, next)
@@ -129,9 +139,12 @@ const EngineeringSolutions = () => {
 
   return (
     <div className={Styles.container} id="solutionsAndServices">
-      <h1 className={`${Styles.header} font-anta`}>
-        AI SOLUTIONS & IT SERVICES
-      </h1>
+      {/* <div > */}
+      <div className={Styles.header}>
+        <h1 className="font-anta">AI SOLUTIONS & IT SERVICES</h1>
+        {goback && <GoBackButton text={"Go Back"} type="prev" />}
+      </div>
+      {/* </div> */}
       <div className={Styles.sliderContainer}>
         <div className={Styles.slider}>
           {getVisibleSlides().map((item) => (
@@ -157,20 +170,22 @@ const EngineeringSolutions = () => {
               <div className={Styles.leftSection}>
                 <h2 className="font-anta">{item.slide.title}</h2>
                 <p>{item.slide.description}</p>
-                <button className={Styles.exploreBtn}>
-                  <span>Explore more</span>
-                  <Image
-                    src={TopLeftArrow}
-                    alt="TopLeftArrow"
-                    style={{
-                      background: "white",
-                      borderRadius: "50%",
-                      transform: "rotate(90deg)",
-                    }}
-                    width={30}
-                    height={30}
-                  />
-                </button>
+                <Link href={`/solutions-and-services/${item.index}`}>
+                  <button className={Styles.exploreBtn}>
+                    <span>Explore more</span>
+                    <Image
+                      src={TopLeftArrow}
+                      className={Styles.arrow}
+                      alt="TopLeftArrow"
+                      style={{
+                        background: "white",
+                        borderRadius: "50%",
+                      }}
+                      width={30}
+                      height={30}
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

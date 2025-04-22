@@ -196,7 +196,11 @@ const zondhaGptData = [
 export default function AnalyticsKartSlider() {
   return (
     <>
-      <ProductsKartSlider data={zondhaGptData} pageTitle="ZODHAGPT" />
+      <ProductsKartSlider
+        data={zondhaGptData}
+        pageTitle="ZODHAGPT"
+        link="/zodha-gpt"
+      />
     </>
   );
 }

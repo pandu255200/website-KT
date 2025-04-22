@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
+import { useRouter } from "next/navigation";
 
 interface SliderData {
   id: number;
@@ -17,13 +18,16 @@ interface SliderData {
 interface ProductsKartSliderProps {
   data: SliderData[];
   pageTitle: string;
+  link: string;
 }
 
 export function ProductsKartSlider({
   data,
   pageTitle,
+  link,
 }: ProductsKartSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % data.length);
@@ -34,6 +38,13 @@ export function ProductsKartSlider({
   };
 
   const { title, description, image, benefits, impacts } = data[currentSlide];
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const path = e.target.value;
+    if (path) {
+      router.push(path);
+    }
+  };
 
   return (
     <div className={styles.sliderContainer}>
@@ -49,10 +60,14 @@ export function ProductsKartSlider({
         {/* Left Section */}
         <div className={styles.leftSection}>
           <div className={styles.getInTouch}>
-            <select className={styles.selectField}>
-              <option value="zodhaGPT">ZodhaGPT</option>
-              <option value="faceGenie">FaceGenie</option>
-              <option value="analyticsKart">AnalyticsKart</option>
+            <select
+              className={styles.selectField}
+              onChange={handleSelectChange}
+              value={link}
+            >
+              <option value="/zodha-gpt">ZodhaGPT</option>
+              <option value="/face-genie">FaceGenie</option>
+              <option value="/analyticskart">AnalyticsKart</option>
             </select>
             <GoBackButton
               text={"Get in Touch"}
@@ -68,13 +83,17 @@ export function ProductsKartSlider({
               Benefits
             </h1>
             {benefits.map((benefit, index) => (
-              <p className={styles.benefits_impact_description} key={index}>- {benefit}</p>
+              <p className={styles.benefits_impact_description} key={index}>
+                - {benefit}
+              </p>
             ))}
             <h1 className={`${styles.benefits_impact_title} font-anta`}>
               Impact
             </h1>
             {impacts.map((impact, index) => (
-              <p className={styles.benefits_impact_description} key={index}>- {impact}</p>
+              <p className={styles.benefits_impact_description} key={index}>
+                - {impact}
+              </p>
             ))}
             <div className={styles.navigation}>
               <span className={styles.pagination}>

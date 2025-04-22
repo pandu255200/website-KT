@@ -9,6 +9,13 @@ import VerticalsGif from "../../../../../../public/home/our-verticals/verticals.
 import Verticals2Gif from "../../../../../../public/home/our-verticals/verticals-2.gif";
 import Verticals3Gif from "../../../../../../public/home/our-verticals/verticals-3.gif";
 import RedArrowIcon from "../../../../../../public/home/blogs/red-arrow.svg";
+import { GoBackButton } from "@/components/common/go-back-button";
+import Link from "next/link";
+
+interface OurVerticalsProps {
+  goback: boolean;
+  vertical: number;
+}
 
 // Vertical data array
 const verticalsData = [
@@ -119,8 +126,11 @@ const verticalsData = [
   },
 ];
 
-export default function OurVerticals() {
-  const [currentVertical, setCurrentVertical] = useState(0);
+export const OurVerticals: React.FC<OurVerticalsProps> = ({
+  goback,
+  vertical,
+}) => {
+  const [currentVertical, setCurrentVertical] = useState(vertical);
 
   const handleNext = () => {
     if (currentVertical < verticalsData.length - 1) {
@@ -139,7 +149,7 @@ export default function OurVerticals() {
       <div className={Styles.main} id="verticals">
         <div className={Styles.container}>
           <div className={Styles.header}>
-            <span className="font-anta">OUR VERTICALS</span>
+            <h1 className="font-anta">OUR VERTICALS</h1>
             <div className={Styles.countSection}>
               <div className={Styles.count}>
                 {verticalsData[currentVertical].id}
@@ -186,6 +196,11 @@ export default function OurVerticals() {
                 </div>
               </div>
             </div>
+            {goback && (
+              <div className={Styles.goBackButtonRotate}>
+                <GoBackButton text={"Go Back"} type="prev" />
+              </div>
+            )}
           </div>
           <div className={Styles.content}>
             {/* LEFT SECTION */}
@@ -211,7 +226,15 @@ export default function OurVerticals() {
                 {verticalsData[currentVertical].description}
               </p>
               {/* <Button  className={Styles.exploreButton} text='Explore more' /> */}
-              <button className={Styles.exploreButton}>Explore More</button>
+              <button className={Styles.exploreButton}>
+                <Link
+                  href={`/our-verticals/${
+                    verticalsData[currentVertical].id - 1
+                  }`}
+                >
+                  Explore More
+                </Link>
+              </button>
             </div>
             {/* RIGHT SECTION */}
           </div>
@@ -236,4 +259,4 @@ export default function OurVerticals() {
       </div>
     </>
   );
-}
+};
