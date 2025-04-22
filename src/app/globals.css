@@ -97,7 +97,7 @@ button {
   opacity: 0.5;
 }
 .goBackButton {
-  background: transparent;
+  background: rgba(250, 38, 9, 1);
   color: white;
   display: flex;
   align-items: center;

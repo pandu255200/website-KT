@@ -72,85 +72,117 @@ const products: MenuItem[] = [
 ];
 
 const verticals: MenuItem[] = [
-  { icon: TextileIcon, text: "Textile, Fabric & Yarn", href: "#verticals" },
-  { icon: FMCGIcon, text: "FMCG", href: "#fmcg" },
+  {
+    icon: TextileIcon,
+    text: "Textile, Fabric & Yarn",
+    href: "our-verticals/0",
+  },
+  { icon: FMCGIcon, text: "FMCG", href: "our-verticals/1" },
   {
     icon: RetailIcon,
     text: "Retail, E-commerce & Market Places",
-    href: "#retail",
+    href: "our-verticals/2",
   },
   {
     icon: ChemicalsIcon,
     text: "Chemicals & Pharmaceuticals",
-    href: "#chemicals",
+    href: "our-verticals/3",
   },
   {
     icon: ConsumerIcon,
     text: "Consumer, Electronics & Medical Devices",
-    href: "#consumer",
+    href: "our-verticals/4",
   },
   {
     icon: PowerIcon,
     text: "Power, Energy, Oil & Gas",
-    href: "#power",
+    href: "our-verticals/5",
   },
   {
     icon: RealEstateIcon,
     text: "Real Estate & Heavy Infrastructure",
-    href: "#real-estate",
+    href: "our-verticals/6",
   },
   {
     icon: MiningIcon,
     text: "Mining, Metals & Industrial Automation",
-    href: "#mining",
+    href: "our-verticals/7",
   },
   {
     icon: AutomotiveIcon,
     text: "Automotives, Ancillaries & Heavy Machineries",
-    href: "#automotive",
+    href: "our-verticals/8",
   },
   {
     icon: LogisticsIcon,
     text: "Logistics, Warehousing & Transportation",
-    href: "#logistics",
+    href: "our-verticals/9",
   },
   {
     icon: HospitalsIcon,
     text: "Hospitals, Healthcare & Lifesciences",
-    href: "#hospitals",
+    href: "our-verticals/10",
   },
-  { icon: HotelsIcon, text: "Hotels, QSR & Hospitality", href: "#hotels" },
-  { icon: HotelsIcon, text: "BFSI", href: "#bfsi" },
+  {
+    icon: HotelsIcon,
+    text: "Hotels, QSR & Hospitality",
+    href: "our-verticals/11",
+  },
+  { icon: HotelsIcon, text: "BFSI", href: "our-verticals/12" },
   {
     icon: EducationalIcon,
     text: "Educational Institutes",
-    href: "#educational",
+    href: "our-verticals/13",
   },
-  { icon: HotelsIcon, text: "Telecom, Media & Entertainment", href: "#media" },
+  {
+    icon: HotelsIcon,
+    text: "Telecom, Media & Entertainment",
+    href: "our-verticals/14",
+  },
 ];
 
 const solutionAndServices: MenuItem[] = [
   {
     icon: AutomationIcon,
     text: "Permit to Work Automation",
-    href: "#automation",
+    href: "solutions-and-services/0",
   },
-  { icon: EhsIcon, text: "EHS Digitalization", href: "#ehs" },
-  { icon: DigitalIcon, text: "Digital Logbook", href: "#digital" },
-  { icon: DataLakeIcon, text: "Data Lake Management", href: "#data-lake" },
-  { icon: CloudIcon, text: "Cloud Engineering Services", href: "#cloud" },
+  {
+    icon: EhsIcon,
+    text: "EHS Digitalization",
+    href: "solutions-and-services/1",
+  },
+  {
+    icon: DigitalIcon,
+    text: "Digital Logbook",
+    href: "solutions-and-services/2",
+  },
+  {
+    icon: DataLakeIcon,
+    text: "Data Lake Management",
+    href: "solutions-and-services/3",
+  },
+  {
+    icon: CloudIcon,
+    text: "Cloud Engineering Services",
+    href: "solutions-and-services/4",
+  },
   {
     icon: AndroidIcon,
     text: "Android/iOS application development",
-    href: "#android",
+    href: "solutions-and-services/5",
   },
   {
     icon: FlutterIcon,
     text: "Flutter based application development",
-    href: "#flutter",
+    href: "solutions-and-services/6",
   },
-  { icon: AiIcon, text: "AI Trainings", href: "#ai" },
-  { icon: SupportIcon, text: "Tech Support & AMC", href: "#support" },
+  { icon: AiIcon, text: "AI Trainings", href: "solutions-and-services/7" },
+  {
+    icon: SupportIcon,
+    text: "Tech Support & AMC",
+    href: "solutions-and-services/8",
+  },
 ];
 
 const aboutUs: MenuItem[] = [
@@ -174,13 +206,13 @@ const navLinks: NavLink[] = [
   },
   {
     text: "Solutions & Services",
-    href: "#solutionsAndServices",
+    href: "/solutions-and-services/0",
     menuItems: solutionAndServices,
     title: "Solutions Overview",
   },
   {
     text: "Verticals",
-    href: "#verticals",
+    href: "/our-verticals/0",
     menuItems: verticals,
     title: "Our Verticals",
   }, // Add anchor for "Verticals"
