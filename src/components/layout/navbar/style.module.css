@@ -12,8 +12,8 @@
   color: white;
   /* background: rgba(244, 37, 9);
   backdrop-filter: blur(18px); */
-  background: rgba(250, 38, 9,1);
-  backdrop-filter: blur(18px); 
+  background: rgba(250, 38, 9, 1);
+  backdrop-filter: blur(18px);
 
   /*   
   display: flex;
@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  cursor: pointer;
 }
 .navLinks a {
   /* margin: 0 0.5rem; */

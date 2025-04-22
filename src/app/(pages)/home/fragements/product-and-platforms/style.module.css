@@ -56,7 +56,7 @@
 }
 
 /* Buttons */
-.exploreBtn {
+.leftSection .exploreBtn {
   background-color: transparent;
   border: 2px solid rgba(250, 38, 9, 1); /* Exact red background color */
   color: rgba(250, 38, 9, 1); /* Exact red background color */
@@ -91,7 +91,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.contactBtn:hover {
+.contactSection .contactBtn:hover {
   background-color: #ffffff; /* White */
   color: rgba(250, 38, 9, 1); /* Exact red background color */
 }
@@ -100,6 +100,11 @@
   font-size: 18px;
   margin-left: 10px;
   vertical-align: middle;
+}
+
+.leftSection button:hover .arrow {
+  transition: 0.3s linear;
+  transform: rotate(45deg);
 }
 
 .rightSection {

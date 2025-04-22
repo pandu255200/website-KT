@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./our-mission.module.css";
 import Image from "next/image";
-import FaceGenie from "../../../../../public/home/nav-icons/products/facegenie.svg";
+import FaceGenie from "../../../../../public/home/nav-icons/products/faceGenai.svg";
 import Zodha from "../../../../../public/home/nav-icons/products/zodha.svg";
 import PolygonImage from "../../../../../public/about-us/polygon.svg";
 import AnalyticsKart from "../../../../../public/home/nav-icons/products/analytics-kart.svg";
@@ -22,14 +22,14 @@ export const OurMission = () => {
             <p>
               ResoluteAI Software was founded in 2018, with a single goal in
               mind- “To enhance trust with AI, for a safer and happier life”.
-              Today, our highly experienced team of technology experts, leading
-              specialists, seasoned business leaders and data scientists work
-              towards this common goal.
+              Today, our highly experienced team of seasoned business leaders,
+              solutioning experts, problem solvers, technology experts, leading
+              specialists,and data scientists work towards this common goal.
             </p>
             <p>
               We help companies improve productivity and profits by implementing
-              GenAI, LLM, Computer Vision machine vision, data analytics, NLP
-              technology and IoT.
+              GenAI, Agentic AI, LLM, Computer Vision, machine vision, Data
+              Analytics, NLP technology and IoT.
             </p>
             <p>
               We aim to empower our clients across industries with customized
@@ -41,11 +41,11 @@ export const OurMission = () => {
           </div>
         </div>
         <div className={styles.products}>
-          <h1>Our Products</h1>
+          <h1 className="font-anta">Our Products</h1>
           <div className={styles.logos}>
+            <Image src={Zodha} alt="zodhaGPT" />
+            <Image src={FaceGenie} width={175} alt="faceGenie" />
             <Image src={AnalyticsKart} alt="analytics_kart" />
-            <Image src={FaceGenie} alt="facegenie" />
-            <Image src={Zodha} alt="zodha" />
           </div>
         </div>
       </div>

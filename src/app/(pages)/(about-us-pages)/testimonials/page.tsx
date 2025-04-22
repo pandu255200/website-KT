@@ -4,10 +4,11 @@ import { useState } from "react";
 import Styles from "./style.module.css";
 import Image from "next/image";
 
-import CardImage from "../../../../../../public/home/testimonials/card-image.svg";
-import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
-import RIghtAngleIcon from "../../../../../../public/home/right-angle-icon.svg";
-import QuoteIcon from "../../../../../../public/home/quatation.svg";
+import CardImage from "../../../../../public/home/testimonials/card-image.svg";
+import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
+import RIghtAngleIcon from "../../../../../public/home/right-angle-icon.svg";
+import QuoteIcon from "../../../../../public/home/quatation.svg";
+import { GoBackButton } from "@/components/common/go-back-button";
 
 const InternsTestimonials = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0); // State to track the current video
@@ -86,7 +87,10 @@ const InternsTestimonials = () => {
 
   return (
     <div className={Styles.container} id="testimonials">
-      <h1 className={`${Styles.heading} font-anta`}>AI INTERNS TESTIMONIALS</h1>
+      <header className="globalHeaderStyle">
+        <h1 className="title">AI INTERNS TESTIMONIALS</h1>
+        <GoBackButton text={"Go Back"} type="prev" />
+      </header>
       <div className={Styles.grid}>
         {duplicateTestimonials.map((testimonial, index) => (
           <div
@@ -106,17 +110,15 @@ const InternsTestimonials = () => {
             />
 
             <div className={Styles.profile}>
-              <div className={Styles.profileImgDiv}>
-                <Image
-                  src={CardImage.src}
-                  className={Styles.image}
-                  alt="CardImage"
-                  // layout="fixed"
-                  width={10}
-                  height={10}
-                />
-              </div>
-              <div className={Styles.profileContentDiv}>
+              <Image
+                src={CardImage.src}
+                className={Styles.image}
+                alt="CardImage"
+                layout="fixed"
+                width={50}
+                height={50}
+              />
+              <div>
                 <span className={Styles.name}>{testimonial.name}</span>
                 <span className={Styles.institute}>
                   {testimonial.institute}

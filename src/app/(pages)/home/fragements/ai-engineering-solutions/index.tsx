@@ -15,127 +15,168 @@ const slides = [
   {
     title: "Permit to Work Automation",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+      "Our AI-led Permit to Work Automation streamlines the process of managing work permits, ensuring compliance and safety across industrial and operational environments. The system automates permit creation, tracking, and approvals while integrating with exist...",
     image: SlideImg,
     alt: "Work Permit Automation",
   },
   {
     title: "EHS Digitalization",
     description:
-      "With our advanced technology, we help clients streamline processes and improve workplace safety and compliance.",
+      "Our EHS Digitalization solution leverages AI to automate safety inspections, incident reporting, and compliance tracking. The platform provides real-time insights into safety metrics, ensuring proactive risk mitigation and improving workplace safety standards.",
     image: SlideImg3,
     alt: "EHS Digitalization",
   },
   {
     title: "Digital Logbook",
     description:
-      "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
+      "Our Digital Logbook replaces traditional paper-based logbooks with an AI-enabled digital platform. It captures operational data, maintenance records, and shift handovers in real time, ensuring accurate and secure data storage and retrieval.",
     image: SlideImg2,
     alt: "Digital Logbook",
   },
-//   {
-//     title: "Data Lake Management",
-//     description:
-//       "Harness the power of AI to manage and analyze large-scale data for improved decision-making.",
-//     image: SlideImg2,
-//     alt: "Data Lake Management",
-//   },
-//   {
-//     title: "Cloud Engineering Services",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Cloud Engineering Services",
-//   },
-//   {
-//     title: "Android/iOS Application Development",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Android/iOS Application Development",
-//   },
-//   {
-//     title: "Flutter based Application Development",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "Flutter based Application Development",
-//   },
-//   {
-//     title: "AI Trainings",
-//     description:
-//       "With our cutting-edge computer vision technology, we are able to provide our clients with a comprehensive analysis of their employees' work efficiency.",
-//     image: SlideImg2,
-//     alt: "AI Trainings",
-//   },
+  {
+    title: "Data Lake Management",
+    description:
+      "Our Data Lake Management solution organizes and manages large volumes of structured and unstructured data using AI and machine learning. It automates data ingestion, classification, and retrieval, providing actionable insights and enhancing data-driven decision-making.",
+    image: SlideImg2,
+    alt: "Data Lake Management",
+  },
+  {
+    title: "Cloud Engineering Services",
+    description:
+      "Our Cloud Engineering Services provide end-to-end cloud infrastructure management, including deployment, monitoring, and optimization. AI-driven automation ensures scalability, security, and high availability of cloud-based applications.",
+    image: SlideImg2,
+    alt: "Cloud Engineering Services",
+  },
+  {
+    title: "Android/iOS Application Development",
+    description:
+      "Our AI-enabled Android and iOS application development services deliver user-centric mobile apps with advanced features like real-time data processing, personalized recommendations, and seamless user experience.",
+    image: SlideImg2,
+    alt: "Android/iOS Application Development",
+  },
+  {
+    title: "Flutter based Application Development",
+    description:
+      "Our Flutter-based application development leverages AI to create high-performance, cross-platform apps from a single codebase. The platform ensures consistent UI/UX, rapid deployment, and real-time feature updates.",
+    image: SlideImg2,
+    alt: "Flutter based Application Development",
+  },
+  {
+    title: "AI Trainings",
+    description:
+      "Our AI Training programs equip businesses and teams with the knowledge and skills needed to implement and scale AI-driven solutions. The training covers AI model development, deployment, and performance optimization across industries.",
+    image: SlideImg2,
+    alt: "AI Trainings",
+  },
+  {
+    title: "Tech Support & AMC",
+    description:
+      "Our Tech Support & AMC services ensure the smooth functioning and long-term performance of your deployed systems, platforms, and infrastructure. From proactive maintenance to rapid issue resolution, our expert team provides round-the-cl...",
+    image: SlideImg2,
+    alt: "Tech Support & AMC",
+  },
 ];
 
 const EngineeringSolutions = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [translateX, setTranslateX] = useState(500);
-  const [bgImageRotation, setBgImageRotation] = useState(0); // Added state for bgImage rotation
+  const [bgImageRotation, setBgImageRotation] = useState(0);
+
+  // Function to get visible slides (previous, current, next)
+  const getVisibleSlides = () => {
+    const visibleSlides = [];
+
+    // Previous slide (if exists)
+    if (currentSlide > 0) {
+      visibleSlides.push({
+        slide: slides[currentSlide - 1],
+        position: "previous",
+        index: currentSlide - 1,
+      });
+    }
+
+    // Current slide
+    visibleSlides.push({
+      slide: slides[currentSlide],
+      position: "current",
+      index: currentSlide,
+    });
+
+    // Next slide (if exists)
+    if (currentSlide < slides.length - 1) {
+      visibleSlides.push({
+        slide: slides[currentSlide + 1],
+        position: "next",
+        index: currentSlide + 1,
+      });
+    }
+
+    return visibleSlides;
+  };
 
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setTranslateX((prev) => prev - 500);
-    setBgImageRotation((prev) => prev + 180); // Rotate bgImage on x-axis by 180 degrees
+    if (currentSlide < slides.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+      setBgImageRotation((prev) => prev + 180);
+    }
   };
 
   const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setTranslateX((prev) => prev + 500);
-    setBgImageRotation((prev) => prev - 180); // Rotate bgImage on x-axis by -180 degrees
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+      setBgImageRotation((prev) => prev - 180);
+    }
   };
 
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} id="solutionsAndServices">
       <h1 className={`${Styles.header} font-anta`}>
-        AI ENGINEERING SOLUTIONS & IT SERVICES
+        AI SOLUTIONS & IT SERVICES
       </h1>
-      <div
-        className={Styles.slider}
-        style={{
-          transform: `translateX(${translateX}px)`,
-          transition: "transform 0.5s ease-in-out", // Smooth transition
-        }}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`${Styles.slide} ${
-              index === currentSlide ? Styles.centerSlide : ""
-            }`}
-          >
-            <div className={Styles.rightSection}>
-              <Image
-                src={slide.image.src}
-                alt="SlideImg"
-                layout="fixed"
-                width={300}
-                height={600}
-              />
-            </div>
-            <div className={Styles.leftSection}>
-              <h2 className="font-anta">{slide.title}</h2>
-              <p>{slide.description}</p>
-              <button className={Styles.exploreBtn}>
-                <span>Explore more</span>
+      <div className={Styles.sliderContainer}>
+        <div className={Styles.slider}>
+          {getVisibleSlides().map((item) => (
+            <div
+              key={item.index}
+              className={`${Styles.slide} ${
+                item.position === "current"
+                  ? Styles.centerSlide
+                  : item.position === "previous"
+                  ? Styles.previousSlide
+                  : Styles.nextSlide
+              }`}
+            >
+              <div className={Styles.rightSection}>
                 <Image
-                  src={TopLeftArrow}
-                  alt="TopLeftArrow"
-                  style={{
-                    background: "white",
-                    borderRadius: "50%",
-                    transform: "rotate(90deg)",
-                  }}
-                  width={30}
-                  height={30}
+                  src={item.slide.image.src}
+                  alt={item.slide.alt}
+                  layout="fixed"
+                  width={300}
+                  height={600}
                 />
-              </button>
+              </div>
+              <div className={Styles.leftSection}>
+                <h2 className="font-anta">{item.slide.title}</h2>
+                <p>{item.slide.description}</p>
+                <button className={Styles.exploreBtn}>
+                  <span>Explore more</span>
+                  <Image
+                    src={TopLeftArrow}
+                    alt="TopLeftArrow"
+                    style={{
+                      background: "white",
+                      borderRadius: "50%",
+                      transform: "rotate(90deg)",
+                    }}
+                    width={30}
+                    height={30}
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
       <div className={Styles.navigation}>
         <button
           disabled={currentSlide === 0}
@@ -160,10 +201,6 @@ const EngineeringSolutions = () => {
           <Image src={RIghtAngleIcon.src} alt="Next" width={25} height={25} />
         </button>
       </div>
-      <div
-        className={Styles.bgImage}
-        style={{ opacity: currentSlide % 2 === 0 ? 1 : 0 }}
-      ></div>
 
       <div
         className={Styles.bgImage}
@@ -172,13 +209,7 @@ const EngineeringSolutions = () => {
           transition: "transform 0.5s ease-in-out",
         }}
       >
-        {/* <Image
-                    src={BgDesign.src}
-                    alt="SlideImg"
-                    layout="fixed"
-                    width={300}
-                    height={600}
-                /> */}
+        {/* Background image handled via CSS */}
       </div>
     </div>
   );

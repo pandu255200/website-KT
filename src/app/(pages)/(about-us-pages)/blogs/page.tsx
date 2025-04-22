@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import Styles from "./style.module.css";
-import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
+import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
 // import TopLeftArrowIcon from "../../../../../../public/home/blogs/top-left-arrow.svg";
-import RedArrowIcon from "../../../../../../public/home/blogs/red-arrow.svg";
-import WhiteArrowIcon from "../../../../../../public/home/blogs/white-arrow.svg";
-import Blog1 from "../../../../../../public/home/blogs/blog-1.svg";
-import Blog2 from "../../../../../../public/home/blogs/blog-2.svg";
-import Blog3 from "../../../../../../public/home/blogs/blog-3.svg";
+import RedArrowIcon from "../../../../../public/home/blogs/red-arrow.svg";
+import WhiteArrowIcon from "../../../../../public/home/blogs/white-arrow.svg";
+import Blog1 from "../../../../../public/home/blogs/blog-1.svg";
+import Blog2 from "../../../../../public/home/blogs/blog-2.svg";
+import Blog3 from "../../../../../public/home/blogs/blog-3.svg";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
 
@@ -16,39 +16,28 @@ const Blogs = () => {
   const blogsData = [
     {
       image: Blog1,
-      heading: "Collaboration 1",
+      heading: "The Evolution of GenAI: How It’s Transforming Industries",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "Artificial Intelligence (AI) has come a long way from rule-based automation to sophisticated machine learn...",
     },
     {
       image: Blog2,
-      heading: "Collaboration 2",
+      heading: "Agentic AI: The Role of Agentic AI in Advanced Problem Solving",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "Traditional AI systems follow instructions and operate within predefined rules. Agentic AI takes it a s...",
     },
     {
       image: Blog3,
-      heading: "Collaboration 3",
+      heading: "Enhancing Surveillance with FaceGenie’s Drone Integration",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "In today’s rapidly evolving security landscape, real-time surveillance and quick response to threats are criti...",
     },
     {
       image: Blog2,
-      heading: "Collaboration 4",
+      heading:
+        "AI and Compliance: Ensuring Ethical and Responsible AI Adoption",
       description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
-    },
-    {
-      image: Blog3,
-      heading: "Collaboration 5",
-      description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
-    },
-    {
-      image: Blog1,
-      heading: "Collaboration 6",
-      description:
-        "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
+        "AI is transforming industries, driving efficiency, and ...",
     },
   ];
 
@@ -76,7 +65,7 @@ const Blogs = () => {
       <h1 className="globalHeaderStyle">
         <span className="title">BLOGS</span>
         <GoBackButton text={"Go Back"} type="prev" />
-        </h1>
+      </h1>
 
       <div className={Styles.slider}>
         <div
@@ -90,7 +79,7 @@ const Blogs = () => {
           {currentBlogs.map((blog, index) => (
             <div className={Styles.item} key={index}>
               <div className={Styles.content}>
-                <h1 className='font-anta'>{blog.heading}</h1>
+                <h1 className="font-anta">{blog.heading}</h1>
                 <p>{blog.description}</p>
                 <div className={Styles.imageContainer}>
                   <Image

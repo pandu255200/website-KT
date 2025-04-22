@@ -30,7 +30,7 @@
   padding: 7.5px;
   border: 10px dotted white;
   position: absolute;
-  right: 20;
+  right: 20px;
 }
 
 .innerCircle {
@@ -62,9 +62,21 @@
   height: 100%;
 }
 
-.cardsGrid {
+.cardsGrid1 {
   position: absolute;
-  top: 40%;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  width: 52%;
+  z-index: 1;
+}
+
+.cardsGrid2 {
+  position: absolute;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;

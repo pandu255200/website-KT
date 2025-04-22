@@ -5,8 +5,8 @@
 import Styles from "./style.module.css";
 import { useState } from "react"; // Import useState to manage hover state
 // import TopLeftArrowIcon from "../../../../../../public/home/case-study/top-left-arrow.svg";
-import DownArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
-import JobBagIcon from "../../../../../../public/home/career/job-bag.svg";
+import DownArrowIcon from "../../../../../public/home/top-right-arrow.svg";
+import JobBagIcon from "../../../../../public/home/career/job-bag.svg";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
 

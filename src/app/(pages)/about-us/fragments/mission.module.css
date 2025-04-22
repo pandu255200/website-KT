@@ -26,26 +26,6 @@
   line-height: normal;
 }
 
-.container .content h5 {
-  text-align: left;
-  display: flex;
-  width: 44.625rem;
-  height: 6.5rem;
-  padding: 1rem 2.25rem;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-
-  color: #fa2609;
-  /* font-family: "Neue Haas Grotesk Text Pro"; */
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.25rem; /* 150% */
-  text-transform: capitalize;
-  background-color: #fff;
-}
-
 .container .content h6 {
   text-align: left;
   border: 1px solid #fff;
@@ -64,6 +44,12 @@
   align-items: center;
   gap: 0.625rem;
   flex-shrink: 0;
+}
+
+.content h5:hover,
+.content h6:hover {
+  background-color: white;
+  color: #fa2609;
 }
 
 .container .illustration {

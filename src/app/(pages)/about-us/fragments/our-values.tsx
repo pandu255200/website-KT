@@ -2,36 +2,36 @@
 
 import React from "react";
 import Styles from "./our-values.module.css";
-import Blog1 from "../../../../../public/home/blogs/blog-1.svg";
-import Blog2 from "../../../../../public/home/blogs/blog-2.svg";
-import Blog3 from "../../../../../public/home/blogs/blog-3.svg";
+import Collaboration1 from "../../../../../public/about-us/collaboration_1.svg";
+import Collaboration2 from "../../../../../public/about-us/collaboration_2.svg";
+import Collaboration3 from "../../../../../public/about-us/collaboration_3.svg";
 import Diamond from "../../../../../public/about-us/diamond.svg";
 import BigRedDiamond from "../../../../../public/about-us/bigRedDiamond.svg";
 import Image from "next/image";
 
 const OurValues = () => {
-  const blogsData = [
+  const CollaborationData = [
     {
-      image: Blog1,
+      image: Collaboration1,
       heading: "Collaboration",
       description:
         "We believe in evolving together within teams and beyond. Through our mutual learning approach, we design an optimal solution based for you.",
     },
     {
-      image: Blog2,
+      image: Collaboration2,
       heading: "Compassion",
       description:
         "We bring compassion into everything we do and for everyone we interact with. A great customer experience is something we deeply care for.",
     },
     {
-      image: Blog3,
+      image: Collaboration3,
       heading: "Credibility",
       description:
         "We work to establish everlasting credibility and integrity. Our products and solutions are built to give real-world accuracy without any embellishment.",
     },
   ];
 
-  const currentBlogs = blogsData;
+  const currentCollaborations = CollaborationData;
 
   return (
     <div className={Styles.fullScreenContainer}>
@@ -50,11 +50,22 @@ const OurValues = () => {
 
         <div className={Styles.slider}>
           <div className={Styles.mainCrousel}>
-            {currentBlogs.map((blog, index) => (
+            {currentCollaborations.map((collaboration, index) => (
               <div className={Styles.item} key={index}>
                 <div className={Styles.content}>
-                  <h1 className="font-anta">{blog.heading}</h1>
-                  <p>{blog.description}</p>
+                  <div>
+                    <h1 className="font-anta">{collaboration.heading}</h1>
+                    <p>{collaboration.description}</p>
+                  </div>
+                  <div className={Styles.collaborationImage}>
+                    <Image
+                      src={collaboration.image}
+                      alt="Collaboration Image"
+                      layout="fixed"
+                      width={250}
+                      height={250}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

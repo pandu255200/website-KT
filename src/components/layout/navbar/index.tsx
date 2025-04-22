@@ -9,7 +9,7 @@ import RemoveIcon from "../../../../public/home/removeIcon.svg";
 import AddIcon from "../../../../public/home/add-icon.svg";
 
 import ZondhaImage from "../../../../public/home/nav-icons/products/zodha.svg";
-import FaceGenaiImage from "../../../../public/home/nav-icons/products/facegenie.svg";
+import FaceGenaiImage from "../../../../public/home/nav-icons/products/faceGenai.svg";
 import AnalyticsImage from "../../../../public/home/nav-icons/products/analytics-kart.svg";
 
 import VerticalsImage from "../../../../public/home/verticals-image.svg";
@@ -38,7 +38,7 @@ import CloudIcon from "../../../../public/home/nav-icons/solution-and-services/c
 import AndroidIcon from "../../../../public/home/nav-icons/solution-and-services/android.svg";
 import FlutterIcon from "../../../../public/home/nav-icons/solution-and-services/flutter.svg";
 import AiIcon from "../../../../public/home/nav-icons/solution-and-services/ai.svg";
-import MediaIcon from "../../../../public/home/nav-icons/solution-and-services/media.svg";
+import SupportIcon from "../../../../public/home/nav-icons/solution-and-services/support.svg";
 
 import TeamsIcon from "../../../../public/home/nav-icons/about-us/teams.svg";
 import Blogs from "../../../../public/home/nav-icons/about-us/blogs.svg";
@@ -50,7 +50,7 @@ import TestimonialsIcon from "../../../../public/home/nav-icons/about-us/terstim
 import PrivacyIcon from "../../../../public/home/nav-icons/about-us/privacy.svg";
 import CaseIcon from "../../../../public/home/nav-icons/about-us/case.svg";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 interface MenuItem {
   icon: StaticImageData;
@@ -76,37 +76,37 @@ const verticals: MenuItem[] = [
   { icon: FMCGIcon, text: "FMCG", href: "#fmcg" },
   {
     icon: RetailIcon,
-    text: "Retail, Ecommerce & Marketplaces",
+    text: "Retail, E-commerce & Market Places",
     href: "#retail",
   },
   {
     icon: ChemicalsIcon,
-    text: "Chemicals, Pharmaceuticals & Medical Devices",
+    text: "Chemicals & Pharmaceuticals",
     href: "#chemicals",
   },
   {
     icon: ConsumerIcon,
-    text: "Consumer Product & Electronic Goods",
+    text: "Consumer, Electronics & Medical Devices",
     href: "#consumer",
   },
   {
     icon: PowerIcon,
-    text: "Power, Energy & Industrial Automation",
+    text: "Power, Energy, Oil & Gas",
     href: "#power",
   },
   {
     icon: RealEstateIcon,
-    text: "Real Estate, Construction & Technology Parks",
+    text: "Real Estate & Heavy Infrastructure",
     href: "#real-estate",
   },
   {
     icon: MiningIcon,
-    text: "Mining, Metals & Heavy Infrastructure",
+    text: "Mining, Metals & Industrial Automation",
     href: "#mining",
   },
   {
     icon: AutomotiveIcon,
-    text: "Automotive, Ancillaries & Heavy Engineering",
+    text: "Automotives, Ancillaries & Heavy Machineries",
     href: "#automotive",
   },
   {
@@ -114,13 +114,19 @@ const verticals: MenuItem[] = [
     text: "Logistics, Warehousing & Transportation",
     href: "#logistics",
   },
-  { icon: HospitalsIcon, text: "Hospitals & Healthcare", href: "#hospitals" },
+  {
+    icon: HospitalsIcon,
+    text: "Hospitals, Healthcare & Lifesciences",
+    href: "#hospitals",
+  },
   { icon: HotelsIcon, text: "Hotels, QSR & Hospitality", href: "#hotels" },
+  { icon: HotelsIcon, text: "BFSI", href: "#bfsi" },
   {
     icon: EducationalIcon,
-    text: "Educational Institution",
+    text: "Educational Institutes",
     href: "#educational",
   },
+  { icon: HotelsIcon, text: "Telecom, Media & Entertainment", href: "#media" },
 ];
 
 const solutionAndServices: MenuItem[] = [
@@ -144,37 +150,33 @@ const solutionAndServices: MenuItem[] = [
     href: "#flutter",
   },
   { icon: AiIcon, text: "AI Trainings", href: "#ai" },
-  {
-    icon: MediaIcon,
-    text: "Media, Entertainment & Technology",
-    href: "#media",
-  },
+  { icon: SupportIcon, text: "Tech Support & AMC", href: "#support" },
 ];
 
 const aboutUs: MenuItem[] = [
   { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
-  { icon: Blogs, text: "Blogs", href: "#blogs" },
-  { icon: VideosIcon, text: "Videos", href: "#videos" },
-  { icon: InternshipIcon, text: "Internships", href: "#internships" },
-  { icon: CareerIcon, text: "Careers", href: "#careers" },
+  { icon: Blogs, text: "Blogs", href: "blogs" },
+  { icon: VideosIcon, text: "Videos", href: "videos" },
+  { icon: InternshipIcon, text: "Internships", href: "internships" },
+  { icon: CareerIcon, text: "Careers", href: "career" },
   { icon: NewsIcon, text: "News & Press Coverage", href: "news" },
-  { icon: TestimonialsIcon, text: "Testimonials", href: "#testimonials" },
+  { icon: TestimonialsIcon, text: "Testimonials", href: "testimonials" },
   { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
-  { icon: CaseIcon, text: "Case Studies", href: "#case-study" },
+  { icon: CaseIcon, text: "Case Studies", href: "case-study" },
 ];
 
 const navLinks: NavLink[] = [
   {
     text: "Products & Platforms",
-    href: "#",
+    href: "#aiProductsPlatforms",
     menuItems: products,
     title: "Our Products & Platforms",
   },
   {
     text: "Solutions & Services",
-    href: "#",
+    href: "#solutionsAndServices",
     menuItems: solutionAndServices,
-    title: "Our Solutions & Services",
+    title: "Solutions Overview",
   },
   {
     text: "Verticals",
@@ -186,7 +188,7 @@ const navLinks: NavLink[] = [
     text: "About Us",
     href: "/about-us",
     menuItems: aboutUs,
-    title: "About ResoluteAi.in",
+    title: "About Resolute AI Software Pvt Ltd",
   },
 ];
 
@@ -233,29 +235,34 @@ export function Navbar() {
     <div className={Styles.container} ref={navRef}>
       {/* Header Section */}
       <header className={Styles.navbar}>
-        <Image
-          src={NavLogo.src}
-          alt="logo"
-          className={Styles.logo}
-          layout="fixed"
-          width={170}
-          height={59}
-        />
+        <Link href="/home">
+          <Image
+            src={NavLogo.src}
+            alt="logo"
+            className={Styles.logo}
+            layout="fixed"
+            width={170}
+            height={59}
+          />
+        </Link>
         <nav className={Styles.navLinks}>
           {navLinks.map((link, index) => (
-            <div className={Styles.links} key={link.text}>
-              <Link
-                href={link.href}
-                onMouseEnter={(e) => {
-                  e.preventDefault();
-                  handleChangeMenuItems(link.menuItems, link.title, index);
-                }}
-              >
-                {link.text}
-              </Link>
+            <div
+              className={Styles.links}
+              key={link.text}
+              onMouseEnter={(e) => {
+                e.preventDefault();
+                handleChangeMenuItems(link.menuItems, link.title, index);
+              }}
+            >
+              <Link href={link.href}>{link.text}</Link>
               <Image
                 src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
                 alt={activeMenuIndex === index ? "Remove" : "Add"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleChangeMenuItems(link.menuItems, link.title, index);
+                }}
                 layout="fixed"
                 width={24}
                 height={24}
@@ -263,7 +270,10 @@ export function Navbar() {
             </div>
           ))}
         </nav>
-        <button onClick={() => router.push('#partner-with-us')} className={Styles.partnerButton}>
+        <button
+          onClick={() => router.push("#partner-with-us")}
+          className={Styles.partnerButton}
+        >
           <span>Partner with us</span>
           <Image
             src={TopRightArrowIcon.src}
