@@ -51,7 +51,7 @@ export default function Home() {
       setAnimation(1); // Fade-out effect
       const timeout = setTimeout(() => {
         setAnimation(0); // Fade-out effect
-      }, 4000); // Hides after 4 seconds
+      }, 5000); // Hides after 4 seconds
 
       return () => clearTimeout(timeout);
     }
@@ -61,7 +61,7 @@ export default function Home() {
     if (!hasPlayed && typeof window !== "undefined") {
       setTimeout(() => {
         sessionStorage.setItem("heroAnimationPlayed", "true");
-      }, 10000);
+      }, 101000);
     }
   }, [hasPlayed]);
 

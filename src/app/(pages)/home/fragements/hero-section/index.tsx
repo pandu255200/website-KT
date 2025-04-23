@@ -40,7 +40,7 @@ export default function HeroSection() {
       const timeout = setTimeout(() => {
         setAnimationDiv(0); // Hide animation after timeout
         // sessionStorage.setItem("heroAnimationPlayed", "true"); // Mark animation as played
-      }, 7000);
+      }, 8000);
 
       return () => clearTimeout(timeout);
     }
