@@ -1,18 +1,15 @@
-"use client"
+"use client";
 
-import { useEffect } from 'react';
-import Styles from './style.module.css';
+import { useEffect } from "react";
+import Styles from "./style.module.css";
 
 import NavLogo from "../../../../public/home/nav-logo.png";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 export const WordFlick = () => {
   useEffect(() => {
-    const words = [
-      'Empowering the future',
-    ];
-    let part = '';
+    const words = ["Empowering the future"];
+    let part = "";
     let i = 0;
     let offset = 0;
     const len = words.length;
@@ -63,11 +60,15 @@ export const WordFlick = () => {
 
   return (
     <div className={Styles.container}>
-      <div className={Styles.word}>
-      </div>
-      <Image src={NavLogo.src} alt="logo" className={Styles.logo} layout="fixed" width={170} height={59} />
-
+      <div className={Styles.word}></div>
+      <Image
+        src={NavLogo.src}
+        alt="logo"
+        className={Styles.logo}
+        // layout="fixed"
+        width={170}
+        height={59}
+      />
     </div>
-  )
+  );
 };
-

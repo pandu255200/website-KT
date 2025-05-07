@@ -272,7 +272,7 @@ export function Navbar() {
             src={NavLogo.src}
             alt="logo"
             className={Styles.logo}
-            layout="fixed"
+            // layout="fixed"
             width={170}
             height={59}
           />
@@ -295,7 +295,7 @@ export function Navbar() {
                   e.preventDefault();
                   handleChangeMenuItems(link.menuItems, link.title, index);
                 }}
-                layout="fixed"
+                // layout="fixed"
                 width={24}
                 height={24}
               />
@@ -311,7 +311,7 @@ export function Navbar() {
             src={TopRightArrowIcon.src}
             className={Styles.arrow}
             alt="arrowIcon"
-            layout="fixed"
+            // layout="fixed"
             width={24}
             height={24}
           />
@@ -363,8 +363,9 @@ export function Navbar() {
                     ? VerticalsImage.src
                     : AboutUsImage.src
                 }
+                className={Styles.navImages}
                 alt="Verticals"
-                layout="fixed"
+                // layout="fixed"
                 width={500}
                 height={300}
               />

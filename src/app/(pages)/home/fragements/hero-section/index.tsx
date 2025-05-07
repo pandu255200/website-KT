@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Styles from "./style.module.css";
 import { useCounter } from "@/store/AnimationContext";
+import SendButton from "../../../../../../public/chat/send-button.svg";
+import ResoluteLogo from "../../../../../../public/chat/resolute-logo.svg";
+import Sender from "../../../../../../public/chat/sender.jpg";
 
 const images = {
   AnalyticsImage: "/home/analytics-image.svg",
@@ -40,7 +43,7 @@ export default function HeroSection() {
       const timeout = setTimeout(() => {
         setAnimationDiv(0); // Hide animation after timeout
         // sessionStorage.setItem("heroAnimationPlayed", "true"); // Mark animation as played
-      }, 7000);
+      }, 8000);
 
       return () => clearTimeout(timeout);
     }
@@ -71,9 +74,13 @@ export default function HeroSection() {
   };
 
   const handleButtonClick = (buttonName: ButtonName) => {
+    console.log("Button Clicked:", buttonName);
     setActiveButton(buttonName);
   };
 
+  if (!isClient) return null;
+
+  // ✅ Prevent hydration mismatch
   if (!isClient) return null;
 
   return (
@@ -196,11 +203,94 @@ export default function HeroSection() {
             className={Styles.chatWindow}
             style={{ visibility: `${showChatWindow ? "visible" : "hidden"}` }}
           >
-            <div
-              className={Styles.crossButton}
-              onClick={() => setShowChatWindow(false)}
-            >
-              X
+            <div className={Styles.chatWindow2ndLayer}>
+              <div
+                className={Styles.crossButton1stLayer}
+                style={{
+                  visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                }}
+              >
+                <div
+                  className={Styles.crossButton}
+                  onClick={() => setShowChatWindow(false)}
+                >
+                  X
+                </div>
+              </div>
+              <div className={Styles.chatWindow3rdLayer}>
+                <div className={Styles.questionMessageBox}>
+                  <div
+                    className={Styles.senderPhoto}
+                    style={{
+                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    }}
+                  >
+                    <Image
+                      src={Sender}
+                      alt="Sender Photo"
+                      className={Styles.senderPhotoImageTag}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                  <div
+                    className={Styles.questionMessageInput}
+                    style={{
+                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    }}
+                  >
+                    What document types are supported?
+                  </div>
+                </div>
+                <div className={Styles.answerMessageBox}>
+                  <div
+                    className={Styles.answerMessageInput}
+                    style={{
+                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    }}
+                  >
+                    The module supports a wide range of document types,
+                    including PDFs, Word documents, scanned images, and text
+                    files.
+                  </div>
+                  <div
+                    className={Styles.resoluteLogo}
+                    style={{
+                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    }}
+                  >
+                    <Image
+                      src={ResoluteLogo}
+                      alt="Resolute Logo"
+                      className={Styles.resoluteLogoImage}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                </div>
+                <div
+                  className={Styles.chatInputBox}
+                  style={{
+                    visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                  }}
+                >
+                  <div className={Styles.chatInput}>Type Here</div>
+                  <div
+                    className={Styles.sendButton}
+                    style={{
+                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    }}
+                  >
+                    <Image
+                      src={SendButton}
+                      alt="Send Button"
+                      className={Styles.sendButtonImage}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={Styles.chatWrapper}>

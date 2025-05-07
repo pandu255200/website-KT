@@ -1,8 +1,24 @@
 "use client";
 
+import Facegenie1 from "../../../../../public/products-kart/facegenie/facegenie1.svg";
 import Facegenie2 from "../../../../../public/products-kart/facegenie/facegenie2.svg";
 import Facegenie3 from "../../../../../public/products-kart/facegenie/facegenie3.svg";
 import Facegenie4 from "../../../../../public/products-kart/facegenie/facegenie4.svg";
+import Facegenie5 from "../../../../../public/products-kart/facegenie/facegenie5.svg";
+import Facegenie6 from "../../../../../public/products-kart/facegenie/facegenie6.svg";
+import Facegenie7 from "../../../../../public/products-kart/facegenie/facegenie7.svg";
+import Facegenie8 from "../../../../../public/products-kart/facegenie/facegenie8.svg";
+import Facegenie9 from "../../../../../public/products-kart/facegenie/facegenie9.svg";
+import Facegenie10 from "../../../../../public/products-kart/facegenie/facegenie10.svg";
+import Facegenie11 from "../../../../../public/products-kart/facegenie/facegenie11.svg";
+import Facegenie12 from "../../../../../public/products-kart/facegenie/facegenie12.svg";
+import Facegenie13 from "../../../../../public/products-kart/facegenie/facegenie13.svg";
+import Facegenie14 from "../../../../../public/products-kart/facegenie/facegenie14.svg";
+import Facegenie15 from "../../../../../public/products-kart/facegenie/facegenie15.svg";
+import Facegenie16 from "../../../../../public/products-kart/facegenie/facegenie16.svg";
+import Facegenie17 from "../../../../../public/products-kart/facegenie/facegenie17.svg";
+import Facegenie18 from "../../../../../public/products-kart/facegenie/facegenie18.svg";
+import Facegenie19 from "../../../../../public/products-kart/facegenie/facegenie19.svg";
 import { ProductsKartSlider } from "@/components/layout/products-kart";
 
 const facegenieData = [
@@ -11,7 +27,7 @@ const facegenieData = [
     title: "Android & iOS App for Counting Items",
     description:
       "FaceGenie’s mobile-based item counting solution enables users to scan and count objects with precision using Android and iOS devices. This eliminates the need for manual counting, reducing human error and improving efficiency. The app is user-friendly and seamlessly integrates with existing inventory and tracking systems.",
-    image: Facegenie3,
+    image: Facegenie1,
     benefits: [
       "Faster and more reliable item counting",
       "Reduced dependency on manual labor",
@@ -56,7 +72,7 @@ const facegenieData = [
     title: "Time & Motion Analysis",
     description:
       "By analyzing worker movements and task durations, FaceGenie provides valuable insights into process efficiency. It helps businesses identify inefficiencies and optimize workflows for maximum productivity.",
-    image: Facegenie3,
+    image: Facegenie4,
     benefits: [
       "Enhanced workforce management through data-driven insights",
       "Reduced idle time and improved operational efficiency",
@@ -69,7 +85,7 @@ const facegenieData = [
     title: "Volumetric Box Analysis",
     description:
       "FaceGenie accurately measures the dimensions of packages in real time, ensuring proper space utilization in warehouses, shipping, and logistics. This helps businesses optimize packaging strategies and reduce transportation costs.",
-    image: Facegenie3,
+    image: Facegenie5,
     benefits: [
       "Precise package dimension measurement for efficient logistics",
       "Minimized shipping costs through optimized space utilization",
@@ -82,7 +98,7 @@ const facegenieData = [
     title: "Shelf Occupancy Analytics",
     description:
       "FaceGenie continuously monitors retail shelves to detect product availability and gaps. This helps retailers manage inventory effectively and prevent stockouts, ensuring products are always available for customers.",
-    image: Facegenie3,
+    image: Facegenie6,
     benefits: [
       "Real-time shelf monitoring for optimized inventory control",
       "Automated restocking alerts for better supply chain efficiency",
@@ -97,7 +113,7 @@ const facegenieData = [
     title: "Label Print Verification",
     description:
       "Ensuring accurate labeling is crucial for compliance and branding. FaceGenie verifies printed labels to detect misprints, incorrect barcodes, and labeling errors before products reach customers.",
-    image: Facegenie3,
+    image: Facegenie7,
     benefits: [
       "Reduced compliance risks and regulatory penalties",
       "Prevention of labeling errors that affect product integrity",
@@ -110,7 +126,7 @@ const facegenieData = [
     title: "Entry and Exit Movement Detection",
     description:
       "FaceGenie tracks and records the movement of individuals and assets in various premises, improving security and operational monitoring. It provides real-time alerts for unauthorized access and helps businesses maintain a secure environment.",
-    image: Facegenie3,
+    image: Facegenie8,
     benefits: [
       "Strengthened security with automated access monitoring",
       "Reduced unauthorized movement and asset loss",
@@ -123,7 +139,7 @@ const facegenieData = [
     title: "Work Efficiency & Productivity Tracking",
     description:
       "FaceGenie enables businesses to monitor workforce productivity by analyzing task completion times and efficiency levels. It helps in performance evaluation and optimizing workforce allocation.",
-    image: Facegenie3,
+    image: Facegenie9,
     benefits: [
       "Real-time tracking of workforce efficiency",
       "Enhanced productivity through data-driven insights",
@@ -136,7 +152,7 @@ const facegenieData = [
     title: "Smart Parking Solution for Airports & Other Sectors",
     description:
       "FaceGenie’s AI-powered parking solution helps optimize space utilization in high-traffic areas like airports, malls, and corporate buildings. It detects available parking spots and provides real-time updates, reducing congestion.",
-    image: Facegenie3,
+    image: Facegenie10,
     benefits: [
       "Efficient parking space detection for reduced congestion",
       "Faster parking availability updates for improved user experience",
@@ -151,7 +167,7 @@ const facegenieData = [
     title: "Clean Room Analytics for Pharma Industry",
     description:
       "Maintaining hygiene in clean rooms is critical for pharmaceutical manufacturing. FaceGenie monitors personnel movements, contamination risks, and compliance with hygiene protocols, ensuring a controlled environment.",
-    image: Facegenie3,
+    image: Facegenie11,
     benefits: [
       "Automated compliance monitoring for strict regulatory adherence",
       "Real-time alerts for contamination risks",
@@ -166,7 +182,7 @@ const facegenieData = [
     title: "Barrel Verification During Oil Change",
     description:
       "FaceGenie verifies barrel authenticity and count during oil changes, ensuring proper inventory management and preventing fraud. This helps businesses maintain transparency and accountability in oil distribution and usage.",
-    image: Facegenie3,
+    image: Facegenie12,
     benefits: [
       "Accurate tracking of barrels to prevent inventory discrepancies",
       "Improved compliance with safety and regulatory guidelines",
@@ -179,7 +195,7 @@ const facegenieData = [
     title: "Face Recognition and Voice-Based Access Control",
     description:
       "FaceGenie provides a seamless and secure access control system using AI-powered facial recognition and voice authentication. It eliminates the need for traditional access methods like keycards or PINs, ensuring only authorized personnel can enter restricted areas. The system enhances security while offering a touchless and efficient user experience.",
-    image: Facegenie3,
+    image: Facegenie13,
     benefits: [
       "Secure and frictionless entry with AI-driven authentication",
       "Eliminates the risk of stolen or duplicated access cards",
@@ -192,7 +208,7 @@ const facegenieData = [
     title: "Geofencing and Perimeter Safety",
     description:
       "FaceGenie enables businesses to establish virtual boundaries (geofences) and monitor perimeter security in real-time. The system provides instant alerts if unauthorized movement is detected, ensuring safety in high-risk areas.",
-    image: Facegenie3,
+    image: Facegenie14,
     benefits: [
       "Real-time perimeter security monitoring",
       "Instant alerts for unauthorized breaches or intrusions",
@@ -205,7 +221,7 @@ const facegenieData = [
     title: "Fire and Violence Detection",
     description:
       "FaceGenie’s AI-driven system detects fire hazards and acts of violence in real-time, enabling immediate response and minimizing damage. The system integrates with security protocols to trigger alarms and alert emergency responders instantly.",
-    image: Facegenie3,
+    image: Facegenie15,
     benefits: [
       "Early detection of fire and violent incidents for proactive response",
       "Automated alerts to emergency personnel for faster action",
@@ -218,7 +234,7 @@ const facegenieData = [
     title: "Face ID, Name, Age, and Gender Detection",
     description:
       "FaceGenie accurately identifies individuals and extracts key demographic details like age and gender for security and analytics purposes. This feature enhances identity verification and customer insights in various industries.",
-    image: Facegenie3,
+    image: Facegenie16,
     benefits: [
       "Enhanced security with accurate identity verification",
       "Improved customer experience through personalized services",
@@ -231,7 +247,7 @@ const facegenieData = [
     title: "Crowd Detection",
     description:
       "FaceGenie’s crowd detection technology analyzes the density and movement of people in real-time. It helps manage crowd control, prevent congestion, and ensure safety in public spaces and commercial establishments.",
-    image: Facegenie3,
+    image: Facegenie17,
     benefits: [
       "Real-time monitoring of crowd density for better space management",
       "Enhanced safety by preventing overcrowding",
@@ -244,7 +260,7 @@ const facegenieData = [
     title: "Person Fall or Trip Detection",
     description:
       "FaceGenie uses AI to detect falls or trips in real-time, enabling quick assistance and reducing injury risks. This is crucial for elderly care, hospitals, and high-risk workplaces.",
-    image: Facegenie3,
+    image: Facegenie18,
     benefits: [
       "Instant fall detection and alerting for quick response",
       "Reduced risks for elderly and vulnerable individuals",
@@ -257,7 +273,7 @@ const facegenieData = [
     title: "Drone Video Analytics",
     description:
       "FaceGenie integrates AI-powered analytics with drone footage to monitor large-scale operations, security, and compliance in real time. This enables automated surveillance, asset tracking, and incident detection from an aerial perspective.",
-    image: Facegenie4,
+    image: Facegenie19,
     benefits: [
       "Aerial surveillance for enhanced security and monitoring",
       "Automated anomaly detection in large operational areas",

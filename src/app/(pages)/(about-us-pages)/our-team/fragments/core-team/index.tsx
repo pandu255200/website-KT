@@ -5,7 +5,13 @@ import styles from "./style.module.css";
 import Image from "next/image";
 
 import SanjayJhaImage from "../../../../../../../public/core-team/sanjay-jha.png";
-import PawanImage from "../../../../../../../public/core-team/pawan.png";
+import Anusha from "../../../../../../../public/core-team/anusha.png";
+import Jeenal from "../../../../../../../public/core-team/jeenal.png";
+import Nancy from "../../../../../../../public/core-team/nancy.png";
+import Nishi from "../../../../../../../public/core-team/nishi.png";
+import Parikshit from "../../../../../../../public/core-team/parikshit.png";
+import Preeti from "../../../../../../../public/core-team/preeti.png";
+import Rishika from "../../../../../../../public/core-team/rishika.png";
 import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
 import Globe from "../../../../../../../public/core-team/globe.svg";
 // import TopLeftArrow from "../../../../public/core-team/top-left-arrow.svg"
@@ -22,36 +28,56 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       title: "Founder & CEO",
       image: SanjayJhaImage,
       linkedin: "https://www.linkedin.com/in/sanjayjha",
+      style: "5px"
     },
     {
       name: "Preeti Joshi",
-      title: "Assistant VP & Head - AI Lab",
-      image: PawanImage,
-      linkedin: "https://www.linkedin.com/in/pawankumar",
+      title: "Chief Business & Operating Officer (Vice President)",
+      image: Preeti,
+      linkedin: "https://www.linkedin.com/in/preeti-j-a4433219a/",
+      style: "30px"
     },
     {
       name: "Jeenal Rajgor",
-      title: "Assistant VP & Head - AI Lab",
-      image: PawanImage,
-      linkedin: "https://www.linkedin.com/in/pawankumar",
+      title: "Vice President & Head- HR, Operations & Shared Services",
+      image: Jeenal,
+      linkedin: "https://www.linkedin.com/in/jeenal-rajgor/",
+      style: "5px"
     },
     {
       name: "Nancy Philip",
-      title: "Assistant VP & Head - AI Lab",
-      image: PawanImage,
-      linkedin: "https://www.linkedin.com/in/pawankumar",
+      title: "Senior Director - Delivery and Program management",
+      image: Nancy,
+      linkedin: "https://www.linkedin.com/in/nancy-philip-8254657/",
+      style: "10px"
     },
     {
       name: "Parikshit Bangde",
-      title: "Assistant VP & Head - AI Lab",
-      image: PawanImage,
-      linkedin: "https://www.linkedin.com/in/pawankumar",
+      title: "Director - AI Labs (Product & Solutions)",
+      image: Parikshit,
+      linkedin: "https://www.linkedin.com/in/parikshit-bangde/",
+      style: "10px"
     },
     {
-      name: "Kunal Verma",
-      title: "Assistant VP & Head - AI Lab",
-      image: PawanImage,
-      linkedin: "https://www.linkedin.com/in/pawankumar",
+      name: "Rishika Agarwala",
+      title: "Associate Director - Pre Sales & Marketing",
+      image: Rishika,
+      linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
+      style: "70px"
+    },
+    {
+      name: "Nishi Maheshwari",
+      title: "Senior Business Analyst",
+      image: Nishi,
+      linkedin: "https://www.linkedin.com/in/nishi-maheshwari-99b013128/",
+      style: "15px"
+    },
+    {
+      name: "Anusha Bai Kourampet",
+      title: "Senior Business Analyst",
+      image: Anusha,
+      linkedin: "https://www.linkedin.com/in/anusha-bai-kourampet-39815ba9/",
+      style: "10px"
     },
   ];
 
@@ -149,6 +175,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
                       alt={member.name}
                       layout="fill"
                       className={styles.image}
+                      style={{ marginTop: `${member.style}`, scale: `${index == 5 ? "3" : "0.9"}` }}
                     />
                   </div>
                   <div className={styles.info}>

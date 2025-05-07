@@ -239,6 +239,15 @@
   background-color: white;
 }
 
+.chatWindow .chatWindow2ndLayer {
+  width: inherit;
+  height: inherit;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .chatWindow .crossButton {
   width: 3rem;
   height: 3rem;
@@ -250,6 +259,112 @@
   text-align: center;
   float: right;
   cursor: pointer;
+}
+
+.chatWindow3rdLayer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chatWindow .chatInputBox {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #e3e5e5;
+  border-radius: 50px;
+  margin: 15px;
+}
+
+.chatWindow .chatInput {
+  /* background-color: yellow; */
+  width: calc(100% - 3rem);
+  border-radius: 50px 0 0 50px;
+  padding: 10px 5px 10px 20px;
+  font-size: 18px;
+  color: #747474;
+  text-align: left;
+}
+
+.chatWindow .sendButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.2rem;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 36px;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+}
+
+.chatWindow .sendButton .sendButtonImage {
+  width: 65%;
+  height: 65%;
+}
+
+.chatWindow .answerMessageBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 15px 15px 48px;
+}
+
+.chatWindow .answerMessageInput {
+  background-color: #fa2609;
+  width: calc(100% - 6rem);
+  border-radius: 15px;
+  padding: 12px 8px 12px 20px;
+  font-size: 17px;
+  color: #fff;
+  text-align: left;
+}
+
+.chatWindow .resoluteLogo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.chatWindow .resoluteLogo .resoluteLogoImage {
+  width: inherit;
+  height: inherit;
+}
+
+.chatWindow .questionMessageBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 15px 25px 15px 48px;
+}
+
+.chatWindow .questionMessageInput {
+  background-color: #fff;
+  width: calc(50%);
+  border-left: 5px solid red;
+  border-radius: 15px;
+  padding: 12px 8px 12px 20px;
+  font-size: 17px;
+  color: #151515;
+}
+
+.chatWindow .senderPhoto {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.chatWindow .senderPhoto .senderPhotoImageTag {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: yellow;
 }
 
 .chatButton {

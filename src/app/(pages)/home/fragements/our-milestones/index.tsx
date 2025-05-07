@@ -3,7 +3,7 @@
 import React from "react";
 import Styles from "./style.module.css";
 import Image from "next/image";
-// import DotCircle from "../../../../../../public/home/our-milestones/dot-circle.svg";
+import DotCircle from "../../../../../../public/home/our-milestones/dot_circle.png";
 
 const OurMilestones = () => {
   const milestonesData1 = [
@@ -20,11 +20,14 @@ const OurMilestones = () => {
     <div className={Styles.container} id="our-milestones">
       <h1 className="globalHeaderStyle">
         <span className="title">OUR MILESTONES</span>
-        <div className={Styles.circle}>
-          <div className={Styles.innerCircle}>
-            {/* <div className={Styles.innermostCircle}></div> */}
-          </div>
-        </div>
+        <Image
+          src={DotCircle}
+          alt="DotCircleImage"
+          // className={Styles.circleImage}
+          // layout="fixed"
+          width={110}
+          height={110}
+        />
       </h1>
 
       <div className={Styles.videoContainer}>
@@ -41,7 +44,7 @@ const OurMilestones = () => {
           src="/home/our-milestones/background.svg"
           alt="SlideImg"
           className={Styles.bgImage}
-          layout="fixed"
+          // layout="fixed"
           width={10}
           height={10}
         />

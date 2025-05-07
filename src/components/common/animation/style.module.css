@@ -14,7 +14,7 @@
   color: white;
   font-size: 3.5rem;
   font-weight: 700;
-  text-shadow: 0 10px 10px #222324, 0 0 20px #222324, 0 0 30px #222324;
+  /* text-shadow: 0 10px 10px #222324, 0 0 20px #222324, 0 0 30px #222324; */
   /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.149) 12.75%, #FFFFFF 100%); */
 }
 .logo {

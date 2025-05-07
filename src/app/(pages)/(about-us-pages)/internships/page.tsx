@@ -68,7 +68,7 @@ export default function Internships() {
                   src={DownArrowIcon}
                   className={Styles.downArrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={25}
                   height={25}
                 />
@@ -102,7 +102,7 @@ export default function Internships() {
                   src={DownArrowIcon}
                   className={Styles.downArrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={25}
                   height={25}
                 />
@@ -136,7 +136,7 @@ export default function Internships() {
                   src={DownArrowIcon}
                   className={Styles.downArrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={25}
                   height={25}
                 />
@@ -170,7 +170,7 @@ export default function Internships() {
                   src={DownArrowIcon}
                   className={Styles.downArrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={25}
                   height={25}
                 />
@@ -204,7 +204,7 @@ export default function Internships() {
                   src={DownArrowIcon}
                   className={Styles.downArrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={25}
                   height={25}
                 />

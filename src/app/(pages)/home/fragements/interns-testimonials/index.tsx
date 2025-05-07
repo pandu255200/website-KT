@@ -99,7 +99,7 @@ const InternsTestimonials = () => {
               src={QuoteIcon.src}
               className={Styles.image}
               alt="CardImage"
-              layout="fixed"
+              // layout="fixed"
               width={30}
               height={30}
               style={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}
@@ -132,7 +132,7 @@ const InternsTestimonials = () => {
         <Image
           src={TopRightArrowIcon.src}
           alt="arrowIcon"
-          layout="fixed"
+          // layout="fixed"
           width={28}
           height={20}
         />

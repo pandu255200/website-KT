@@ -2,16 +2,21 @@ import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 
-import ZodhaImage from "../../../../../../public/home/nav-icons/products/zodha.svg";
-import FaceGenaiImage from "../../../../../../public/home/nav-icons/products/faceGenai.svg";
-import AnalyticsImage from "../../../../../../public/home/nav-icons/products/analytics-kart.svg";
+// import ZodhaImage from "../../../../../../public/home/nav-icons/products/zodha.svg";
+// import FaceGenaiImage from "../../../../../../public/home/nav-icons/products/faceGenai.svg";
+// import AnalyticsImage from "../../../../../../public/home/nav-icons/products/analytics-kart.svg";
+import Biocon from "../../../../../../public/home/nav-icons/products/biocon.png";
+import MilkyMist from "../../../../../../public/home/nav-icons/products/milkymist.png";
+import NVIDIA from "../../../../../../public/home/nav-icons/products/nvidia.png";
+import PESITM from "../../../../../../public/home/nav-icons/products/pesitm.jpg";
+import Welspun from "../../../../../../public/home/nav-icons/products/welspun.png";
 
 const slideImages = [
-  { icon: ZodhaImage },
-  { icon: FaceGenaiImage },
-  { icon: AnalyticsImage },
-  { icon: ZodhaImage },
-  { icon: FaceGenaiImage },
+  { icon: Welspun, width: 300, height: 120 },
+  { icon: MilkyMist, width: 300, height: 100 },
+  { icon: NVIDIA, width: 330, height: 80 },
+  { icon: Biocon, width: 300, height: 90 },
+  { icon: PESITM, width: 270, height: 90 },
 ];
 
 const OurPartner = () => {
@@ -23,10 +28,11 @@ const OurPartner = () => {
           {slideImages.map((image, index) => (
             <Image
               key={index}
-              src={image.icon.src}
-              alt={image.icon}
-              width={250}
-              height={110}
+              src={image.icon}
+              className={styles.scrollImages}
+              alt="Partners Images"
+              width={image.width}
+              height={image.height}
             />
           ))}
         </div>
