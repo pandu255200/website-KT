@@ -132,7 +132,7 @@ const CaseStudy = () => {
                       src={TopRightArrowIcon}
                       alt="arrowIcon"
                       className={Styles.arrow}
-                      layout="fixed"
+                      // layout="fixed"
                       width={25}
                       height={25}
                     />
@@ -153,7 +153,7 @@ const CaseStudy = () => {
             src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
             className={Styles.previousIcon}
             alt="arrowIcon"
-            layout="fixed"
+            // layout="fixed"
             width={20}
             height={20}
           />
@@ -167,7 +167,7 @@ const CaseStudy = () => {
             src={hasNext ? WhiteArrowIcon : RedArrowIcon}
             className={Styles.nextIcon}
             alt="arrowIcon"
-            layout="fixed"
+            // layout="fixed"
             width={20}
             height={20}
           />

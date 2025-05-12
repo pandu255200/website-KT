@@ -66,7 +66,7 @@ export default function Career() {
                                     src={DownArrowIcon}
                                     className={Styles.downArrow}
                                     alt="arrowIcon"
-                                    layout="fixed"
+                                    // layout="fixed"
                                     width={25}
                                     height={25}
                                 />
@@ -100,7 +100,7 @@ export default function Career() {
                                     src={DownArrowIcon}
                                     className={Styles.downArrow}
                                     alt="arrowIcon"
-                                    layout="fixed"
+                                    // layout="fixed"
                                     width={25}
                                     height={25}
                                 />
@@ -134,7 +134,7 @@ export default function Career() {
                                     src={DownArrowIcon}
                                     className={Styles.downArrow}
                                     alt="arrowIcon"
-                                    layout="fixed"
+                                    // layout="fixed"
                                     width={25}
                                     height={25}
                                 />
@@ -168,7 +168,7 @@ export default function Career() {
                                     src={DownArrowIcon}
                                     className={Styles.downArrow}
                                     alt="arrowIcon"
-                                    layout="fixed"
+                                    // layout="fixed"
                                     width={25}
                                     height={25}
                                 />
@@ -202,7 +202,7 @@ export default function Career() {
                                     src={DownArrowIcon}
                                     className={Styles.downArrow}
                                     alt="arrowIcon"
-                                    layout="fixed"
+                                    // layout="fixed"
                                     width={25}
                                     height={25}
                                 />

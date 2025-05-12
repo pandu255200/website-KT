@@ -12,9 +12,9 @@ export const OurMission = () => {
       {/* <div> */}
       <div className={styles.content}>
         <div className={styles.introduction}>
-          <div className={styles.title}>
-            <h2>We Are</h2>
-            <h1>
+          <div className={`${styles.title}`}>
+            <h2 className="font-anta" style={{ fontFamily: "Anta, serif" }}>We Are</h2>
+            <h1 className="font-anta" style={{ fontFamily: "Anta, serif" }}>
               RESOLUTE<span>AI</span> SOFTWARE
             </h1>
           </div>

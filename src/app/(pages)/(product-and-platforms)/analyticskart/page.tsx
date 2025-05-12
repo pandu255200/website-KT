@@ -9,6 +9,7 @@ import AnalyticsKart6 from "../../../../../public/products-kart/analyticsKart/an
 import AnalyticsKart7 from "../../../../../public/products-kart/analyticsKart/analyticsKart7.svg";
 import AnalyticsKart8 from "../../../../../public/products-kart/analyticsKart/analyticsKart8.svg";
 import AnalyticsKart9 from "../../../../../public/products-kart/analyticsKart/analyticsKart9.svg";
+import AnalyticsKart10 from "../../../../../public/products-kart/analyticsKart/analyticsKart10.svg";
 import { ProductsKartSlider } from "@/components/layout/products-kart";
 
 // Slider data array
@@ -144,7 +145,7 @@ const analyticsData = [
     title: "Recommendation Engine",
     description:
       "AnalyticsKart’s Recommendation Engine personalised user experiences by suggesting relevant products, content, or services based on browsing behavior, purchase history, and preferences. This module enhances customer engagement, boosts conversions, and increases customer retention rates.",
-    image: AnalyticsKart9,
+    image: AnalyticsKart10,
     benefits: [
       "AI-driven personalized recommendations for improved engagement",
       "Increased sales and revenue through higher conversion rates",

@@ -25,7 +25,7 @@ export const PartnerWIthUs = () => {
         src={GodRays}
         alt="SlideImg"
         className={Styles.bgImage}
-        layout="fixed"
+        // layout="fixed"
         width={10}
         height={10}
       />
@@ -35,9 +35,7 @@ export const PartnerWIthUs = () => {
         {/* Left Panel */}
         <div className={Styles.leftPanel}>
           <div className={Styles.leftContent}>
-            <h1>
-              Contact Us
-            </h1>
+            <h1>Contact Us</h1>
             <Image
               src={PartnerImage}
               alt="PartnerImage"
@@ -54,13 +52,13 @@ export const PartnerWIthUs = () => {
             <div className={Styles.formGroup}>
               <input
                 type="text"
-                placeholder="First Name*"
+                placeholder="First Name"
                 className={Styles.input}
                 required
               />
               <input
                 type="text"
-                placeholder="Last Name*"
+                placeholder="Last Name"
                 className={Styles.input}
                 required
               />
@@ -68,13 +66,13 @@ export const PartnerWIthUs = () => {
             <div className={Styles.formGroup}>
               <input
                 type="text"
-                placeholder="Country*"
+                placeholder="Country"
                 className={Styles.input}
                 required
               />
               <input
                 type="tel"
-                placeholder="Phone Number*"
+                placeholder="Phone Number"
                 className={Styles.input}
                 required
               />
@@ -82,20 +80,22 @@ export const PartnerWIthUs = () => {
             <div className={Styles.formGroup}>
               <input
                 type="email"
-                placeholder="Email*"
+                placeholder="Email"
                 className={Styles.input}
                 required
               />
+            </div>
+            <div className={Styles.formGroup}>
               <input
                 type="text"
-                placeholder="Company*"
+                placeholder="Company"
                 className={Styles.input}
                 required
               />
             </div>
             <div className={Styles.formGroup}>
               <textarea
-                placeholder="Message*"
+                placeholder="Message"
                 className={Styles.textarea}
                 required
               ></textarea>

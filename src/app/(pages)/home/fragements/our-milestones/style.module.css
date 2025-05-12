@@ -25,20 +25,6 @@
   margin-right: 2rem;
 }
 
-.circle {
-  border-radius: 50%;
-  padding: 7.5px;
-  border: 10px dotted white;
-  position: absolute;
-  right: 20px;
-}
-
-.innerCircle {
-  border-radius: 50%;
-  box-sizing: border-box;
-  border: 7.5px dotted white;
-}
-
 .videoContainer {
   position: relative;
   width: 100%;
@@ -64,12 +50,12 @@
 
 .cardsGrid1 {
   position: absolute;
-  top: 23%;
+  top: 21%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  gap: 70px;
   width: 52%;
   z-index: 1;
 }
@@ -81,7 +67,7 @@
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 70px;
   width: 80%;
   z-index: 1;
 }

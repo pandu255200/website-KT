@@ -33,19 +33,20 @@
 }
 /* Content Section */
 .content {
-  padding: 2rem 0;
+  /* padding: 1rem 0; */
   position: relative;
   display: flex;
-  width: 80%;
-  max-width: 1200px;
-  gap: 2rem;
+  width: 100%;
+  margin: 0 2.5rem 0 6rem;
+  /* max-width: 1200px; */
+  gap: 2.5rem;
   z-index: 1; /* Ensures content appears over video */
   color: #ffffff; /* White text */
 }
 
 /* Left Panel */
 .leftPanel {
-  width: 35%;
+  width: 29%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +54,7 @@
 }
 .leftContent {
   background-color: #ffffff; /* White text */
-  width: 350px;
+  width: 100%;
   height: 650px;
   display: flex;
   flex-direction: column;
@@ -63,7 +64,7 @@
 .leftContent h1 {
   padding: 0 1.3rem;
   color: rgba(250, 38, 9, 1); /* Exact red background color */
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -136,7 +137,7 @@
   background: transparent;
   border: 1px solid #ffffff; /* White text */
   color: #ffffff; /* White text */
-  padding: 10px 50px;
+  padding: 16px 60px;
   border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
@@ -144,8 +145,8 @@
 }
 
 .submitButton:hover {
-  background: darkred;
-  color: #ffffff; /* White text */
+  background: #ffffff;
+  color: #af1600;
 }
 
 .wave {
@@ -159,10 +160,10 @@
 }
 .circle {
   position: absolute;
-  top: -8rem;
+  top: -15rem;
   left: -8rem;
-  width: 20rem;
-  height: 20rem;
+  width: 32rem;
+  height: 32rem;
   border-radius: 50%;
   transform: rotate(134.24deg);
   /* transform-origin: 0 0; */

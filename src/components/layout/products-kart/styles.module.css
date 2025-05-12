@@ -153,7 +153,7 @@
 }
 
 .rightSection {
-  /* background-color: green; */
+  background-color: #fff;
   width: 40%;
   /* flex: 1; */
   border-bottom: 3px solid rgba(250, 38, 9, 1); /* Exact red background color */
@@ -173,10 +173,10 @@
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  /* gap: 1px; */
 }
 .tag {
-  margin: 10px 10px;
+  margin: 10px 6px;
   width: fit-content;
   padding: 10px 15px;
   border: 1px solid red;

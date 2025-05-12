@@ -105,7 +105,7 @@ const ProductAndPlatforms = () => {
                   src={RedTopRightArrowIcon.src}
                   className={Styles.arrow}
                   alt="arrowIcon"
-                  layout="fixed"
+                  // layout="fixed"
                   width={28}
                   height={20}
                 />
@@ -120,7 +120,7 @@ const ProductAndPlatforms = () => {
                 src={RedTopRightArrowIcon.src}
                 className={Styles.arrow}
                 alt="arrowIcon"
-                layout="fixed"
+                // layout="fixed"
                 width={28}
                 height={20}
               />
@@ -147,7 +147,7 @@ const ProductAndPlatforms = () => {
             className={Styles.robotImg}
             width={1200}
             height={450}
-            layout="fixed"
+            // layout="fixed"
           />
         </div>
         <div className={Styles.buttonGroup}>

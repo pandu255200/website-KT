@@ -214,7 +214,7 @@ const Videos = () => {
             src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
             className={Styles.previousIcon}
             alt="arrowIcon"
-            layout="fixed"
+            // layout="fixed"
             width={20}
             height={20}
           />
@@ -228,7 +228,7 @@ const Videos = () => {
             src={hasNext ? WhiteArrowIcon : RedArrowIcon}
             className={Styles.nextIcon}
             alt="arrowIcon"
-            layout="fixed"
+            // layout="fixed"
             width={20}
             height={20}
           />

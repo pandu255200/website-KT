@@ -5,9 +5,21 @@ import Styles from "./style.module.css";
 import Image from "next/image";
 
 import DownArrowIcon from "../../../../../../public/home/down-arrow.svg";
-import VerticalsGif from "../../../../../../public/home/our-verticals/verticals.gif";
-import Verticals2Gif from "../../../../../../public/home/our-verticals/verticals-2.gif";
-import Verticals3Gif from "../../../../../../public/home/our-verticals/verticals-3.gif";
+import Verticals1 from "../../../../../../public/home/our-verticals/verticals-1.png";
+import Verticals2 from "../../../../../../public/home/our-verticals/verticals-2.png";
+import Verticals3 from "../../../../../../public/home/our-verticals/verticals-3.png";
+import Verticals4 from "../../../../../../public/home/our-verticals/verticals-4.png";
+import Verticals5 from "../../../../../../public/home/our-verticals/verticals-5.png";
+import Verticals6 from "../../../../../../public/home/our-verticals/verticals-6.png";
+import Verticals7 from "../../../../../../public/home/our-verticals/verticals-7.png";
+import Verticals8 from "../../../../../../public/home/our-verticals/verticals-8.png";
+import Verticals9 from "../../../../../../public/home/our-verticals/verticals-9.png";
+import Verticals10 from "../../../../../../public/home/our-verticals/verticals-10.png";
+import Verticals11 from "../../../../../../public/home/our-verticals/verticals-11.png";
+import Verticals12 from "../../../../../../public/home/our-verticals/verticals-12.png";
+import Verticals13 from "../../../../../../public/home/our-verticals/verticals-13.png";
+import Verticals14 from "../../../../../../public/home/our-verticals/verticals-14.png";
+import Verticals15 from "../../../../../../public/home/our-verticals/verticals-15.png";
 import RedArrowIcon from "../../../../../../public/home/blogs/red-arrow.svg";
 import { GoBackButton } from "@/components/common/go-back-button";
 import Link from "next/link";
@@ -21,108 +33,108 @@ interface OurVerticalsProps {
 const verticalsData = [
   {
     id: 1,
-    title: "Textile, Fabric & Yarn",
+    title: "Textiles, Fabric & Yarn",
     description:
       "Textile manufacturing today demands precision, consistency, and speed. With our AI-led ecosystem, textile companies are automating quality checks, reducing wastage, and enabling real-time decision-making across production and supply chain functions. Our solutions use computer vision, Agentic AI, and LLMs to transform traditional operations into intelligent, adaptive systems—reducing human error and accelerating go-to-market cycles.",
-    image: VerticalsGif,
+    image: Verticals1,
   },
   {
     id: 2,
-    title: "FMCG",
+    title: "Fast-Moving Consumer Goods",
     description:
       "In an industry driven by volume and velocity, FMCG brands use our AI stack to accurately sense demand, automate distribution strategies, and extract real-time insights from consumer behavior. We deploy GenAI agents to simulate market scenarios, while predictive analytics ensures optimal stock levels and reduced wastage across channels.",
-    image: Verticals2Gif,
+    image: Verticals2,
   },
   {
     id: 3,
     title: "Retail, E-commerce & Market Places",
     description:
       "From personalized shopping journeys to intelligent operations, our AI and GenAI platforms empower retailers and online marketplaces to deliver unmatched customer experiences while minimizing operational inefficiencies. We enable hyper-personalization, real-time insights, and automation at every digital and physical touchpoint.",
-    image: Verticals3Gif,
+    image: Verticals3,
   },
   {
     id: 4,
     title: "Chemicals & Pharmaceuticals",
     description:
       "Precision and compliance are non-negotiable in pharma and chemical industries. Our solutions leverage LLMs for document intelligence, GenAI for R&D optimization, and predictive models for process stability. From lab to launch, we bring intelligence and traceability to every stage.",
-    image: Verticals2Gif,
+    image: Verticals4,
   },
   {
     id: 5,
     title: "Consumer, Electronics & Medical Devices",
     description:
       "In this high-precision, fast-evolving sector, we integrate AI into design, manufacturing, and compliance workflows. With intelligent inspection, digital twins, and predictive fault detection, companies unlock both operational agility and compliance at scale.",
-    image: Verticals3Gif,
+    image: Verticals5,
   },
   {
     id: 6,
     title: "Power, Energy, Oil & Gas",
     description:
       "We help energy-intensive sectors achieve safety, efficiency, and compliance through scalable AI. GenAI agents drive remote asset inspections, predictive maintenance prevents downtime, and LLMs automate risk and safety documentation across sites.",
-    image: Verticals3Gif,
+    image: Verticals6,
   },
   {
     id: 7,
-    title: "Real Estate & Heavy Infrastructure",
+    title: "Real Estates & Heavy Infrastructure",
     description:
       "Our platform empowers infrastructure firms to digitally transform project execution—automating project tracking, enabling predictive resource planning, and ensuring safety at scale. With Agentic AI and IoT insights, we deliver measurable project certainty.",
-    image: Verticals3Gif,
+    image: Verticals7,
   },
   {
     id: 8,
     title: "Mining, Metals & Industrial Automation",
     description:
       "Safety, scale, and uptime are everything in this sector. With AI-powered surveillance, predictive machine analytics, and autonomous agents, we help companies reduce hazards, maximize throughput, and ensure round-the-clock operational intelligence.",
-    image: Verticals3Gif,
+    image: Verticals8,
   },
   {
     id: 9,
     title: "Automotives, Ancillaries & Heavy Machineries",
     description:
       "From smart factories to intelligent aftermarket services, our AI stack powers process automation, quality analytics, and supply chain agility. GenAI copilots enhance design simulations, and LLMs fast-track documentation and vendor coordination.",
-    image: Verticals3Gif,
+    image: Verticals9,
   },
   {
     id: 10,
     title: "Logistics, Warehousing & Transportation",
     description:
       "Efficiency at every node is what we deliver. AI-led route planning, warehouse intelligence, and real-time analytics help logistics networks scale without chaos. LLMs automate documentation while Agentic AI handles exception management in real time.",
-    image: Verticals3Gif,
+    image: Verticals10,
   },
   {
     id: 11,
     title: "Hospitals, Healthcare & Lifesciences",
     description:
       "Whether hospitals or hospitality chains, delivering seamless service and safety is critical. Our GenAI and AI-led automation solutions empower staff, reduce administrative load, and improve patient and guest satisfaction through intelligent personalization and planning.",
-    image: Verticals3Gif,
+    image: Verticals11,
   },
   {
     id: 12,
     title: "Hotels, QSR & Hospitality",
     description:
       "AI and GenAI are redefining guest experiences across hotels, QSR chains, and the broader hospitality sector. From hyper-personalized services enabled by LLMs to intelligent staff allocation through Agentic AI, operations are becoming frictionless and guest satisfaction is soaring. Real-time analytics and voice-based GenAI agents offer actionable insights that empower faster decision-making and create memorable customer journeys.",
-    image: Verticals3Gif,
+    image: Verticals12,
   },
   {
     id: 13,
-    title: "BFSI",
+    title: "Banking, Financial Services and Insurance",
     description:
       "We help financial institutions shift from reactive to proactive. From underwriting to fraud detection, our GenAI and LLM models enable faster decisions, lower risk, and smarter client engagement across the lifecycle.",
-    image: Verticals3Gif,
+    image: Verticals13,
   },
   {
     id: 14,
     title: "Educational Institutes",
     description:
       "AI transforms learning and governance in academic institutions. Our solutions help educators track outcomes, personalize learning, and streamline campus operations—using GenAI and cognitive automation.",
-    image: Verticals3Gif,
+    image: Verticals14,
   },
   {
     id: 15,
     title: "Telecom, Media & Entertainment",
     description:
       "We help media and telco giants reimagine content, customer interactions, and network insights. From GenAI-driven creation to LLM-powered discovery, we help unlock value across the entertainment ecosystem.",
-    image: Verticals3Gif,
+    image: Verticals15,
   },
 ];
 
@@ -166,7 +178,7 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
                       currentVertical === 0 ? RedArrowIcon : DownArrowIcon.src
                     }
                     alt="upArrowIcon"
-                    layout="fixed"
+                    // layout="fixed"
                     width={35}
                     height={35}
                   />
@@ -185,13 +197,15 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
                         : DownArrowIcon.src
                     }
                     alt="downArrowIcon"
-                    layout="fixed"
+                    // layout="fixed"
                     width={35}
                     height={35}
                   />
                 </button>
                 <div className={Styles.remainingCount}>
-                  <span>{verticalsData.length - 1 - currentVertical}</span>
+                  <span style={{ fontWeight: 300 }}>
+                    {verticalsData.length - 1 - currentVertical}
+                  </span>
                   {verticalsData.length - 1 - currentVertical > 0 && "more"}
                 </div>
               </div>
@@ -209,7 +223,7 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
                 src={verticalsData[currentVertical].image}
                 className={Styles.image}
                 alt="VerticalsGif"
-                layout="fixed"
+                // layout="fixed"
                 width={600}
                 height={370}
               />

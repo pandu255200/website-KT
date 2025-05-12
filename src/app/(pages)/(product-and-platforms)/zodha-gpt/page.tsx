@@ -3,6 +3,14 @@
 import Zodha1 from "../../../../../public/products-kart/zodhaGPT/zodha1.svg";
 import Zodha2 from "../../../../../public/products-kart/zodhaGPT/zodha2.svg";
 import Zodha3 from "../../../../../public/products-kart/zodhaGPT/zodha3.svg";
+import Zodha4 from "../../../../../public/products-kart/zodhaGPT/zodha4.svg";
+import Zodha5 from "../../../../../public/products-kart/zodhaGPT/zodha5.svg";
+import Zodha6 from "../../../../../public/products-kart/zodhaGPT/zodha6.svg";
+import Zodha7 from "../../../../../public/products-kart/zodhaGPT/zodha7.svg";
+import Zodha8 from "../../../../../public/products-kart/zodhaGPT/zodha8.svg";
+import Zodha9 from "../../../../../public/products-kart/zodhaGPT/zodha9.svg";
+import Zodha10 from "../../../../../public/products-kart/zodhaGPT/zodha10.svg";
+import Zodha11 from "../../../../../public/products-kart/zodhaGPT/zodha11.svg";
 import { ProductsKartSlider } from "@/components/layout/products-kart";
 
 const zondhaGptData = [
@@ -59,7 +67,7 @@ const zondhaGptData = [
     title: "Agentic AI & LLM-based Quality Process Manual Automation",
     description:
       "ZodhaGPT automates quality management processes by analyzing production data and identifying patterns that indicate defects or process failures. The platform generates automated reports, suggests corrective actions, and ensures compliance with industry standards. It continuously monitors production lines, flags issues in real time, and automates root cause analysis to minimize downtime and improve product quality.",
-    image: Zodha3,
+    image: Zodha4,
     benefits: [
       "Automated quality audits and defect tracking",
       "AI-driven root cause analysis and corrective action recommendations",
@@ -75,7 +83,7 @@ const zondhaGptData = [
     title: "Agentic AI-led Shared Services Conversational Platform",
     description:
       "ZodhaGPT’s shared services platform centralizes and automates enterprise-wide support functions, including IT, finance, and HR. It acts as a unified AI-powered helpdesk, handling employee queries, processing support tickets, and providing real-time resolutions. The platform’s agentic AI capabilities enable it to understand context, prioritize urgent requests, and improve overall response efficiency across departments.",
-    image: Zodha3,
+    image: Zodha5,
     benefits: [
       "Multi-lingual support for shared services across departments",
       "AI-driven ticketing, query handling, and resolution",
@@ -91,7 +99,7 @@ const zondhaGptData = [
     title: "Multi-domain/Agentic AI Conversational Platform",
     description:
       "ZodhaGPT’s multi-domain conversational platform offers intelligent, real-time support across various industries and functions. It leverages natural language understanding (NLU) and machine learning to automate complex queries, handle customer interactions, and provide actionable insights. The platform can be customized for industry-specific requirements and integrated with existing business systems to create a seamless conversational experience.",
-    image: Zodha3,
+    image: Zodha6,
     benefits: [
       "Domain-specific AI-driven automation",
       "Multi-lingual conversational support",
@@ -107,7 +115,7 @@ const zondhaGptData = [
     title: "Agentic AI/LLM-Led Data Visualization Platform",
     description:
       "ZodhaGPT’s data analytics and visualization platform converts complex datasets into clear, actionable insights. The platform uses AI to identify trends, generate predictive models, and create dynamic dashboards for real-time decision-making. Its agentic AI capabilities allow it to suggest strategies based on historical data and ongoing market conditions, helping businesses optimize performance.",
-    image: Zodha3,
+    image: Zodha7,
     benefits: [
       "Real-time data analysis and trend prediction",
       "Interactive dashboards with AI-generated insights",
@@ -123,7 +131,7 @@ const zondhaGptData = [
     title: "Agentic AI/LLM-Led Textile 3D Product Portfolio Management",
     description:
       "ZodhaGPT’s textile platform enables 3D product portfolio management, streamlining product design, production tracking, and inventory control. The platform generates 3D models, automates catalog updates, and forecasts demand based on market trends. It helps textile manufacturers reduce time to market, improve production efficiency, and minimize inventory waste.",
-    image: Zodha3,
+    image: Zodha8,
     benefits: [
       "AI-generated 3D product simulations",
       "Automated catalog management and production tracking",
@@ -139,7 +147,7 @@ const zondhaGptData = [
     title: "Gen AI-led Health Records Management Platform",
     description:
       "ZodhaGPT’s healthcare platform automates patient record management, ensuring secure and efficient handling of clinical data. It consolidates patient records from different sources, identifies treatment gaps, and provides real-time insights for better diagnosis and care. The platform ensures compliance with healthcare regulations and improves overall patient experience.",
-    image: Zodha3,
+    image: Zodha9,
     benefits: [
       "AI-driven patient record consolidation and analysis",
       "Automated scheduling and diagnosis assistance",
@@ -155,7 +163,7 @@ const zondhaGptData = [
     title: "Gen AI/LLM-Led Document Information Intelligence",
     description:
       "ZodhaGPT’s document intelligence platform automates data extraction from structured and unstructured documents. It leverages Gen AI and LLM to identify key information, validate data accuracy, and generate actionable insights. The platform supports various file formats and ensures compliance with data privacy regulations.",
-    image: Zodha3,
+    image: Zodha10,
     benefits: [
       "AI-based data extraction and validation",
       "Multi-format document processing",
@@ -171,7 +179,7 @@ const zondhaGptData = [
     title: "Gen AI-led Social Media Analytics",
     description:
       "ZodhaGPT’s social media analytics platform monitors social channels in real time, analyzing audience sentiment, engagement patterns, and competitor performance. It provides AI-driven insights to enhance content strategy, target the right audience, and maximize reach. The platform also suggests content adjustments to improve brand visibility.",
-    image: Zodha3,
+    image: Zodha11,
     benefits: [
       "AI-driven sentiment analysis and trend detection",
       "Automated content performance tracking",

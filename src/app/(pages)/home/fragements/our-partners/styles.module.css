@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   padding: 1rem 0;
   /* padding: 2rem 0; */
@@ -33,18 +33,32 @@
 
 .scrollContainer::before {
   left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .scrollContainer::after {
   right: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .scrollContent {
   display: flex;
-  gap: 2rem;
+  gap: 3.5rem;
+  justify-content: start;
   animation: scroll 20s linear infinite;
+}
+
+.scrollImages {
+  display: flex;
+  margin-top: -10px;
 }
 
 @keyframes scroll {

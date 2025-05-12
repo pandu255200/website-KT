@@ -106,7 +106,7 @@ export default function Home() {
           </section>
         )}
       </div>
-      <OurPartner />
+      {/* <OurPartner /> */}
       <ProductAndPlatforms />
       <EngineeringSolutions goback={false} solution={0} />
       <OurVerticals goback={false} vertical={0} />
