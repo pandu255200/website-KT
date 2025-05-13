@@ -37,36 +37,36 @@ export const Achievements = () => {
             <Image
               src={Achievement1}
               alt="Achievement 1"
-              style={{ marginTop: "35px" }}
-              height={320}
-              width={370}
+              style={{ objectFit:"cover" }}
+              height={360}
+              width={320}
             />
           </div>
           <div className={styles.box}>
             <Image
               src={Achievement2}
               alt="Achievement 2"
-              style={{ marginTop: "5px" }}
+              style={{ objectFit:"cover" }}
               height={190}
-              width={350}
+              width={320}
             />
           </div>
           <div className={styles.box}>
             <Image
               src={Achievement3}
               alt="Achievement 3"
-              width={240}
+              width={250}
               height={190}
-              style={{ marginTop: "5px" }}
+              style={{ objectFit:"cover" }}
             />
           </div>
           <div className={styles.box}>
             <Image
               src={Achievement4}
               alt="Achievement 4"
-              width={350}
+              width={320}
               height={190}
-              style={{ marginTop: "5px" }}
+              style={{ objectFit:"cover" }}
             />
           </div>
           <div className={styles.box}>
@@ -75,7 +75,7 @@ export const Achievements = () => {
               alt="Achievement 5"
               width={240}
               height={190}
-              style={{ marginTop: "5px" }}
+              style={{ objectFit:"cover" }}
             />
           </div>
         </div>

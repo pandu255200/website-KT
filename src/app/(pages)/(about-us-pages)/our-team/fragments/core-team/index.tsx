@@ -12,6 +12,7 @@ import Nancy from "../../../../../../../public/core-team/nancy.png";
 import Parikshit from "../../../../../../../public/core-team/parikshit.png";
 import Preeti from "../../../../../../../public/core-team/preeti.png";
 import Rishika from "../../../../../../../public/core-team/rishika.png";
+// import Rishika from "../../../../../../../public/core-team/rishika.png";
 import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
 import Globe from "../../../../../../../public/core-team/globe.svg";
 // import TopLeftArrow from "../../../../public/core-team/top-left-arrow.svg"
@@ -159,7 +160,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
             <div
               className={styles.cards}
               style={{
-                transform: `translateX(-${currentIndex * 20.5}rem)`,
+                transform: `translateX(-${currentIndex * (3 * teamMembers.length)}rem)`,
               }}
             >
               {teamMembers.map((member, index) => (
