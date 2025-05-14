@@ -48,7 +48,7 @@ const Videos = () => {
     },
   ];
 
-  const TechyBytesData = [
+  const techieBytesData = [
     {
       image: Blog1,
       description:
@@ -96,7 +96,7 @@ const Videos = () => {
     }
   };
 
-  const data = currentOption === "AI Nybbles" ? AINybblesData : TechyBytesData;
+  const data = currentOption === "AI Nybbles" ? AINybblesData : techieBytesData;
 
   const currentBlogs =
     currentIndex === -1
@@ -121,11 +121,11 @@ const Videos = () => {
         </div>
         <div
           className={`${Styles.optionItem} ${
-            currentOption === "Techy Bytes" && Styles.activeOption
+            currentOption === "Techie Bytes" && Styles.activeOption
           }`}
-          onClick={() => setCurrentOption("Techy Bytes")}
+          onClick={() => setCurrentOption("Techie Bytes")}
         >
-          Techy Bytes
+          Techie Bytes
         </div>
       </div>
 

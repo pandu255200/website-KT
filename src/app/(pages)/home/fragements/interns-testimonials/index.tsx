@@ -138,7 +138,7 @@ const InternsTestimonials = () => {
         />
       </button>
 
-      <div className={Styles.videoSlider}>
+      {/* <div className={Styles.videoSlider}>
         <button onClick={prevVideo} className={Styles.navButton}>
           <Image
             src={RIghtAngleIcon.src}
@@ -159,7 +159,7 @@ const InternsTestimonials = () => {
         <button onClick={nextVideo} className={Styles.navButton}>
           <Image src={RIghtAngleIcon.src} alt="Next" width={20} height={20} />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

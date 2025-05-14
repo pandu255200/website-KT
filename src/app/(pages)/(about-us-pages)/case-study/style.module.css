@@ -127,7 +127,7 @@
 
 .content .imageContainer {
   width: 100%;
-  height: 55%;
+  height: 50%;
 }
 
 .imageContainer .image {
@@ -136,11 +136,11 @@
 }
 
 .content h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 30.24px;
   color: #ffffff;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .content p {
@@ -194,7 +194,7 @@
   color: #ffffff;
   padding-top: 3px;
 }
-.details:hover .arrow {
+.readMore:hover .arrow {
   transform: rotate(45deg);
   margin-left: 0.5rem;
 }

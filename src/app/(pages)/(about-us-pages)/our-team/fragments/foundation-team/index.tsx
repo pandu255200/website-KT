@@ -29,7 +29,7 @@ const teamMembers = [
       style: "5px"
     },
     {
-      name: "Rakhi Deepak",
+      name: "Rakhi Vipat",
       image: RakhiImage,
       linkedin: "https://www.linkedin.com/in/rakhivipat",
       style: "5px"
