@@ -187,6 +187,7 @@
   top: 15;
   left: 15;
   backdrop-filter: blur(28px);
+  cursor: pointer;
 }
 
 .watchVideo span {
@@ -281,4 +282,36 @@
   position: absolute;
   bottom: 25;
   right: 29;
+}
+
+.dialogBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialogContent {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
