@@ -21,29 +21,8 @@
   min-height: 72vh;
   margin-top: 95px;
 }
-.animatedDiv {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  /* margin-bottom: 3.5rem; */
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: conic-gradient(
-    from 119.35deg at 50% 58.75%,
-    #af1600 -48.8deg,
-    #fa2609 26.36deg,
-    #af1600 311.2deg,
-    #fa2609 386.36deg
-  );
-  z-index: 2;
-}
-.innerAnimation {
-  width: 100%;
-  display: flex;
-}
+
+
 .flex {
   /* width: 100%; */
   height: 28rem;
@@ -420,4 +399,105 @@
   width: 30rem;
   height: 100vh;
   background-color: white;
+}
+
+/* Smooth fade + slide-up - Faster version */
+.fadeInText {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideInText 0.35s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  animation-delay: 0.2s; /* Optional: stagger after background/globe */
+  will-change: transform, opacity;
+}
+
+@keyframes fadeSlideInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth zoom-in - Faster + bounce feel */
+.fadeInGlobe {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeZoomInGlobe 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes fadeZoomInGlobe {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Main animated container (fade-in smoother too) */
+.animatedDiv {
+  animation: fadeInContainer 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Optional cleanup: Improve layout flexibility */
+.innerAnimation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  width: 100%;
+  max-width: 1200px;
+  padding: 5vh 5vw;
+}
+
+.animatedDiv {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: conic-gradient(
+    from 119.35deg at 50% 58.75%,
+    #af1600 -48.8deg,
+    #fa2609 26.36deg,
+    #af1600 311.2deg,
+    #fa2609 386.36deg
+  );
+  z-index: 2;
+}
+
+.imageSection {
+  width: min(100%, 500px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+.fadeInText,
+.fadeInGlobe {
+  will-change: transform, opacity;
 }

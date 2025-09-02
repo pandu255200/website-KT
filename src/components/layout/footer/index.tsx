@@ -1,19 +1,43 @@
 "use client";
-
 import React from "react";
+import Link from "next/link"; // ✅ Add this
 import Styles from "./style.module.css";
+
+const linkMap = {
+  // Core
+  "AI - Products & Platforms": "/zodha-gpt",
+  "AI - Solutions & IT Services": "/solutions-and-services/0",
+  // Explore
+  About: "/about-us",
+  Solutions: "/solutions-and-services/0",
+  Videos: "/videos",
+  Blogs: "/blogs",
+  Testimonials: "/testimonials",
+  // Products
+  ZodhaGPT: "/zodha-gpt",
+  AnalyticsKart: "/analyticskart",
+  FaceGenie: "/face-genie",
+  // Company
+  Internships: "/internships",
+  Careers: "/career",
+  "Privacy Policy": "/privacy-policy",
+  "Terms of Use": "/terms-of-use",
+  // Social
+  LinkedIn: "https://linkedin.com",
+  Instagram: "https://instagram.com",
+  Twitter: "https://twitter.com",
+  Facebook: "https://facebook.com",
+  YouTube: "https://youtube.com",
+};
 
 const data1 = [
   {
     heading: "Core",
-    items: [
-      "AI - Products & Platforms",
-      "AI - Solutions & IT Services",
-    ],
+    items: ["AI - Products & Platforms", "AI - Solutions & IT Services"],
   },
   {
     heading: "Explore",
-    items: ["About", "Solutions", "Videos", "Blogs", "About", "Testimonials"],
+    items: ["About", "Solutions", "Videos", "Blogs", "Testimonials"],
   },
   {
     heading: "Products",
@@ -32,7 +56,6 @@ const data1 = [
 export function Footer() {
   return (
     <div className={Styles.container}>
-      {/* Footer Section */}
       <footer className={Styles.footer}>
         <h1>
           Resolute<span style={{ color: "#fa2609" }}>AI</span>Software
@@ -43,11 +66,31 @@ export function Footer() {
             <div key={index} className={Styles.column}>
               <h2 className={Styles.heading}>{column.heading}</h2>
               <ul className={Styles.list}>
-                {column.items.map((item, idx) => (
-                  <li key={idx} className={Styles.listItem}>
-                    {item}
-                  </li>
-                ))}
+                {column.items.map((item, idx) => {
+                  const href = linkMap[item] || "#";
+                  const isExternal = href.startsWith("http");
+                  return (
+                    <li key={idx} className={Styles.listItem}>
+                      {isExternal ? (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          {item}
+                        </a>
+                      ) : (
+                        <Link
+                          href={href}
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          {item}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -61,22 +104,39 @@ export function Footer() {
             <br />
             Bannerghatta Main Road, Bangalore 560076, India.
           </div>
-          <div className={Styles.lastRowColumn}>
-            <span
-              style={{
-                fontWeight: 600,
-                fontSize: "1.375rem",
-              }}
-            >
-              Contact
-            </span>
-            <p
-              style={{ margin: "0.4rem 0", fontWeight: 400, fontSize: "1rem" }}
-            >
-              7406938888
-            </p>
-            <p style={{ fontWeight: 400, fontSize: "1rem" }}>7406937777</p>
-          </div>
+         <div className={Styles.lastRowColumn}>
+  <span style={{ fontWeight: 600, fontSize: "1.375rem" }}>Contact</span>
+
+  <a
+    href="tel:7406938888"
+    style={{
+      display: "block", // ⬅️ This makes it stack vertically
+      margin: "0.4rem 0",
+      fontWeight: 400,
+      fontSize: "1rem",
+      cursor: "pointer",
+      textDecoration: "none",
+      color: "inherit"
+    }}
+  >
+    7406938888
+  </a>
+
+  <a
+    href="tel:7406937777"
+    style={{
+      display: "block", // ⬅️ This also stacks it
+      fontWeight: 400,
+      fontSize: "1rem",
+      cursor: "pointer",
+      textDecoration: "none",
+      color: "inherit"
+    }}
+  >
+    7406937777
+  </a>
+</div>
+
           <div style={{ fontWeight: 500, fontSize: "1rem" }}>
             © 2025 ResoluteAI Software.in, All rights reserved.
           </div>

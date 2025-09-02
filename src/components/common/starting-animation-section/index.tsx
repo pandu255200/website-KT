@@ -12,7 +12,7 @@ export const StartingAnimationSection = () => {
     <div className={styles.container}>
       <div className={styles.leftSection}>
         <h1 className={styles.title}>
-          Easily Integrateable, Swifty Deployable & Highly Customisable.
+          Easily Integrable, Swifty Deployable & Highly Customisable.
         </h1>
 
         <Image
@@ -39,7 +39,7 @@ export const StartingAnimationSection = () => {
           />
         </div>
         <div className={styles.bottomRightBox}>
-          <p className={styles.repeatedText}>Easily Integrateable, Swifty Deployable & Highly Customisable.</p>
+          <p className={styles.repeatedText}>Easily Integrable, Swifty Deployable & Highly Customisable.</p>
           <Image
             src={AnalyticsImage.src}
             className={styles.logo}

@@ -3,11 +3,12 @@ import EngineeringSolutions from "@/app/(pages)/home/fragements/ai-engineering-s
 import { notFound } from "next/navigation";
 
 interface PageProps {
-  params: {
-    id: string;
+  params?: {
+    id?: string;
   };
 }
 
+// ✅ REQUIRED for static export with dynamic routes
 export async function generateStaticParams() {
   const solutionsCount = 9;
   return Array.from({ length: solutionsCount }, (_, i) => ({
@@ -15,8 +16,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function SolutionsAndServicesPage({ params }: PageProps) {
-  const solutionIndex = Number(params.id);
+export default async function SolutionsAndServicesPage({ params = {} }: PageProps) {
+  const solutionIndex = Number(params.id ?? -1);
 
   if (isNaN(solutionIndex) || solutionIndex < 0 || solutionIndex >= 9) {
     notFound();

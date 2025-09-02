@@ -36,26 +36,28 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!hasPlayed) {
-      setRightDivWidth(800); // Animate width to 0
-      const timeout = setTimeout(() => {
-        setRightDivWidth(0); // Animate width to 0
-      }, 6000); // Hides after 6 seconds
+  if (!hasPlayed) {
+    setRightDivWidth(800);
+    const timeout = setTimeout(() => {
+      setRightDivWidth(0);
+    }, 7000); // ⬅ increased from 4000 to 6000
 
-      return () => clearTimeout(timeout);
-    }
-  }, [hasPlayed]);
+    return () => clearTimeout(timeout);
+  }
+}, [hasPlayed]);
 
-  useEffect(() => {
-    if (!hasPlayed) {
-      setAnimation(1); // Fade-out effect
-      const timeout = setTimeout(() => {
-        setAnimation(0); // Fade-out effect
-      }, 5000); // Hides after 4 seconds
 
-      return () => clearTimeout(timeout);
-    }
-  }, [hasPlayed]);
+useEffect(() => {
+  if (!hasPlayed) {
+    setAnimation(1);
+    const timeout = setTimeout(() => {
+      setAnimation(0);
+    }, 5000); // ⬅ increased from 4000 to 6000
+
+    return () => clearTimeout(timeout);
+  }
+}, [hasPlayed]);
+
 
   useEffect(() => {
     if (!hasPlayed && typeof window !== "undefined") {
