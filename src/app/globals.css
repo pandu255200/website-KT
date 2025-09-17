@@ -30,35 +30,45 @@ body {
 
 /* Apply scrollbar styles globally */
 * {
-  scrollbar-width: thin; /* For Firefox - thinner scrollbar */
-  scrollbar-color: rgba(244, 37, 9) rgba(244, 37, 9, 0.5); /* Thumb color and transparent track */
+  scrollbar-width: thin;
+  /* For Firefox - thinner scrollbar */
+  scrollbar-color: rgba(244, 37, 9) rgba(244, 37, 9, 0.5);
+  /* Thumb color and transparent track */
 }
 
 *::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
+  /* Width of the scrollbar */
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent; /* Make the track transparent */
-  border: none; /* Remove any borders */
+  background: transparent;
+  /* Make the track transparent */
+  border: none;
+  /* Remove any borders */
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #888; /* Thumb color */
-  border-radius: 10px; /* Rounded corners for the thumb */
+  background: #888;
+  /* Thumb color */
+  border-radius: 10px;
+  /* Rounded corners for the thumb */
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Darker thumb color on hover */
+  background: #555;
+  /* Darker thumb color on hover */
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background: #333; /* Even darker color when active (click/drag) */
+  background: #333;
+  /* Even darker color when active (click/drag) */
 }
 
 /* COMMON HEADER AND ITS HEADING */
 .globalHeaderStyle {
-  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  background-color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   display: flex;
   padding: 2rem 2rem;
   justify-content: space-between;
@@ -74,11 +84,13 @@ p {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
 .font-anta {
   font-family: "Anta", serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .globalHeaderStyle .title {
   font-family: "Anta", serif;
   font-size: 2rem;
@@ -88,6 +100,7 @@ p {
   font-size: 68px;
   word-wrap: break-word;
 }
+
 button {
   font-family: "Outfit", serif;
   font-weight: 500;
@@ -96,6 +109,7 @@ button {
 .disabled {
   opacity: 0.5;
 }
+
 .goBackButton {
   background: rgba(250, 38, 9, 1);
   color: white;
@@ -108,21 +122,27 @@ button {
   cursor: pointer;
   font-size: 1rem;
 }
+
 .goBackButton .arrow {
   background: white;
   border-radius: 50%;
   transition: 0.2s linear;
 }
+
 .goBackButton:hover .arrow {
   transform: rotate(-45deg);
 }
+
 .designBtn {
-  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
-  color: #ffffff; /* White text */
+  background-color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
+  color: #ffffff;
+  /* White text */
   position: relative;
   border: none;
   border-radius: 200px;
 }
+
 .designBtn::after {
   content: "";
   position: absolute;
@@ -135,6 +155,7 @@ button {
   background-color: white;
   clip-path: polygon(0 0, 55% 0, 0 50%);
 }
+
 .designBtn::before {
   content: "";
   position: absolute;
@@ -360,6 +381,24 @@ button {
 .justify-self-stretch {
   justify-self: stretch;
 }
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+
+@media screen and (max-width: 480px) {
+  .globalHeaderStyle {
+    padding: 1rem;
+  }
+
+  .globalHeaderStyle .title {
+    font-family: Anta;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0%;
+
+  }
 }

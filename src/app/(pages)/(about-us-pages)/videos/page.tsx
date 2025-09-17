@@ -22,7 +22,6 @@ const Videos = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
-
   useEffect(() => {
     const fetchVideos = async (playlistId: string, setter: any) => {
       try {
@@ -58,15 +57,19 @@ const Videos = () => {
   const getImageUrl = (item: any) => {
     return item?.snippet?.thumbnails?.medium?.url || null;
   };
-  
+
   const getDescription = (item: any) => {
     return item?.snippet?.title || "";
   };
-  
 
   const getVideoUrl = (item: any) => {
-      const videoId = item?.snippet?.resourceId?.videoId;
-      return `https://www.youtube.com/watch?v=${videoId}`;
+    const videoId = item?.snippet?.resourceId?.videoId;
+    return `https://www.youtube.com/watch?v=${videoId}`;
+  };
+
+  // Get the current video title (middle video)
+  const getCurrentVideoTitle = () => {
+    return currentBlogs[1]?.snippet?.title || "No video selected";
   };
 
   return (
@@ -119,16 +122,11 @@ const Videos = () => {
                   onClick={() => {
                     const selectedItem = currentBlogs[1];
                     const url = getVideoUrl(selectedItem);
-                    if (url) {  
+                    if (url) {
                       setSelectedVideoUrl(url);
                       setIsDialogOpen(true);
                     }
                   }}
-                  // onClick={() => {
-                  //   const selectedItem = currentBlogs[1];
-                  //   const url = getVideoUrl(selectedItem);
-                  //   if (url) window.open(url, "_blank");
-                  // }}
                 >
                   <span>Watch Video</span>
                   <div className={Styles.pauseVideo}>
@@ -205,7 +203,7 @@ const Videos = () => {
       </div>
 
       <div className={Styles.videoTitle}>
-        <div className={Styles.videoTitleContent}>VIDEO TITLE HERE</div>
+        <div className={Styles.videoTitleContent}>{getCurrentVideoTitle()}</div>
         <div className={Styles.previousNumber} onClick={handlePrevious}>
           {String(currentIndex + 1).padStart(2, "0")}
         </div>
@@ -214,24 +212,22 @@ const Videos = () => {
         </div>
       </div>
 
-
       {isDialogOpen && selectedVideoUrl && (
-  <div className={Styles.dialogBackdrop} onClick={() => setIsDialogOpen(false)}>
-    <div className={Styles.dialogContent} onClick={(e) => e.stopPropagation()}>
-      <button className={Styles.closeButton} onClick={() => setIsDialogOpen(false)}>×</button>
-      <iframe
-        width="100%"
-        height="400"
-        src={selectedVideoUrl.replace("watch?v=", "embed/")}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  </div>
-)}
-
+        <div className={Styles.dialogBackdrop} onClick={() => setIsDialogOpen(false)}>
+          <div className={Styles.dialogContent} onClick={(e) => e.stopPropagation()}>
+            <button className={Styles.closeButton} onClick={() => setIsDialogOpen(false)}>×</button>
+            <iframe
+              width="100%"
+              height="400"
+              src={selectedVideoUrl.replace("watch?v=", "embed/")}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

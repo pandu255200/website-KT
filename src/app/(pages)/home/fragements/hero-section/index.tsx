@@ -30,21 +30,21 @@ export default function HeroSection() {
   const [animationDiv, setAnimationDiv] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [showChatWindow, setShowChatWindow] = useState(false);
-  
+
 
 
   useEffect(() => {
-  setIsClient(true);
+    setIsClient(true);
 
-  // Always play animation on every page load
-  setAnimationDiv(1);
+    // Always play animation on every page load
+    setAnimationDiv(1);
 
-  const timeout = setTimeout(() => {
-    setAnimationDiv(0);
-  }, 10000); // Adjust duration if needed
+    const timeout = setTimeout(() => {
+      setAnimationDiv(0);
+    }, 10000); // Adjust duration if needed
 
-  return () => clearTimeout(timeout);
-}, []);
+    return () => clearTimeout(timeout);
+  }, []);
 
 
   const contentData = {
@@ -76,36 +76,36 @@ export default function HeroSection() {
     setActiveButton(buttonName);
   };
 
-  
+
 
   return (
     <div className="flex">
       <section className={Styles.hero}>
-    
-{animationDiv > 0 && (
-  <div className={Styles.animatedDiv}>
-    <div className={Styles.innerAnimation}>
-      <div className={Styles.content}>
-        <div className={Styles.fadeInText}>
-          <h1 className={Styles.h1}>Empowering the future</h1>
-          <p className={Styles.para}>
-            Our Purpose is to make AI accessible to everyone.
-          </p>
-        </div>
-      </div>
-      <div className={`${Styles.imageSection} ${Styles.fadeInGlobe}`}>
-        <Image
-          src={images.GlobeImage}
-          alt="Globe"
-          width={450}
-          height={450}
-          style={{ maxWidth: "100%", height: "auto" }}
-          priority
-        />
-      </div>
-    </div>
-  </div>
-)}
+
+        {/* {animationDiv > 0 && (
+          <div className={Styles.animatedDiv}>
+            <div className={Styles.innerAnimation}>
+              <div className={Styles.content}>
+                <div className={Styles.fadeInText}>
+                  <h1 className={Styles.h1}>Empowering the future</h1>
+                  <p className={Styles.para}>
+                    Our Purpose is to make AI accessible to everyone.
+                  </p>
+                </div>
+              </div>
+              <div className={`${Styles.imageSection} ${Styles.fadeInGlobe}`}>
+                <Image
+                  src={images.GlobeImage}
+                  alt="Globe"
+                  width={450}
+                  height={450}
+                  style={{ maxWidth: "100%", height: "auto" }}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        )} */}
 
         <div className={Styles.flex}>
           {/* LEFT SECTION */}
@@ -163,14 +163,16 @@ export default function HeroSection() {
                 width={300}
                 height={300}
                 unoptimized
-              />
-            )}
+                layout="responsive"
+                />
+              )}
             <Image
               src={contentData[activeButton].image}
               alt="ProductImage"
               width={500}
               height={activeButton === "FaceGenie" ? 550 : 430}
               priority
+              layout="responsive"
             />
           </div>
         </div>
@@ -281,25 +283,25 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-         {animationDiv === 0 && (
-  <div className={Styles.chatWrapper}>
-    <div className={Styles.message_box}>
-      Do you need any Assistance ?
-    </div>
-    <button
-      className={Styles.chatButton}
-      onClick={() => setShowChatWindow(true)}
-    >
-      <Image
-        src={images.ChatIcon}
-        alt="ChatIcon"
-        width={25}
-        height={25}
-        priority
-      />
-    </button>
-  </div>
-)}
+          {animationDiv === 0 && (
+            <div className={Styles.chatWrapper}>
+              <div className={Styles.message_box}>
+                Do you need any Assistance ?
+              </div>
+              <button
+                className={Styles.chatButton}
+                onClick={() => setShowChatWindow(true)}
+              >
+                <Image
+                  src={images.ChatIcon}
+                  alt="ChatIcon"
+                  width={25}
+                  height={25}
+                  priority
+                />
+              </button>
+            </div>
+          )}
 
         </div>
       </section>

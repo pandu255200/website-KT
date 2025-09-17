@@ -167,7 +167,7 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
                 <Image
                   src={item.slide.image.src}
                   alt={item.slide.alt}
-                  // layout="fixed"
+                  layout="responsive"
                   width={300}
                   height={600}
                 />
