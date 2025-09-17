@@ -153,7 +153,6 @@
   transition: transform 0.5s ease-in-out;
   align-items: flex-end;
   padding: 0rem 2rem 1rem 2rem;
-  
 }
 
 /* Individual Card */
@@ -274,4 +273,208 @@
   font-weight: 500;
   line-height: 30px;
   word-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .header div p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .coreTeamSection {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  /* Globe image */
+  .globe {
+    width: 80%;
+    height: 80%;
+    top: 20%;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardsContainer{
+    overflow-x: auto;
+  }
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 13rem;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 2px 1rem 0;
+    /* margin-left: 10px; */
+  }
+
+  .image {
+    object-fit: contain;
+    scale: 1;
+  }
+
+  .info {
+    height: auto;
+    clip-path: none;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .infoContent {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    gap: 0.3rem;
+    text-align: center;
+  }
+
+  .infoContent h2 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .infoContent p {
+    font-size: 0.7m;
+    line-height: 1.2rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 12px;
+    margin: 0 10px;
+  }
+
+  .infoContent a img {
+    margin-right: 100px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 25px;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .header div p {
+    font-size: 15px;
+    line-height: 1.6;
+    /* margin: 0 auto; */
+    max-width: 70%;
+    align-items: justify;
+     margin: 0 7px 0 2pxpx;
+    padding: 0 9px; 
+  }
+  .coreTeamSection {
+    margin-left: 0px;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .globe {
+    width: 90%;
+    height: auto;
+    top: 25%;
+    opacity: 0.25;
+  }
+
+  .imageContainer {
+    height: 11rem;
+    margin: 0 0 0.8rem 0;
+  }
+
+ .info{
+  width: 70%;
+ }
+ 
+  .infoContent h2 {
+    
+    font-size: 0.9rem;
+  }
+
+  .infoContent p {
+    /* width: 30%; */
+    font-size:9px;
+    padding: 0.15rem 0.35rem;
+    /* margin-right: 40px; */
+  }
+
+  .infoContent a img {
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header div p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .imageContainer {
+    height: 10rem;
+  }
+
+  .infoContent h2 {
+    font-size: 0.8rem;
+  }
+
+  .infoContent p {
+    font-size: 0.6rem;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .cardsContainer {
+    display: flex;
+    justify-content: flex-start;   /* align cards to the left */
+    overflow-x: auto;              /* allow horizontal scroll if needed */
+    scroll-snap-type: x mandatory; /* smooth snapping for cards */
+    gap: 0.6rem;                   /* spacing between cards */
+    padding: 0.4rem;               /* add breathing space */
+    width: 100%;                   /* ensure full width */
+  }
+
+  .cardsContainer::-webkit-scrollbar {
+    display: none; /* hide scrollbar for mobile */
+  }
+
+  
+ .imageContainer{
+  width: 60%;
+ }
 }

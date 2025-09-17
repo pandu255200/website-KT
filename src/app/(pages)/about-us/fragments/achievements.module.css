@@ -82,3 +82,77 @@
 .left {
   grid-row: span 2;
 }
+
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 31.5rem;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  
+  .container .content {
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  
+  .container .content div:nth-child(1) {
+    gap: 0.75rem;
+  }
+  
+  .container .content div:nth-child(1) h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .container .content div:nth-child(1) p {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    text-align: center;
+  }
+  
+  .container .content div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .container .content div:nth-child(2) button {
+    padding: 8px 20px;
+    font-size: 0.875rem;
+  }
+  
+  .collageContainer {
+    padding: 10px;
+    width: 90%;
+    order: 1; 
+  }
+  
+  .grid {
+    width: 100%;
+    height: 20rem;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px;
+  }
+  
+  .left {
+    grid-row: span 2;
+    grid-column:  span 1; 
+  }
+  
+  
+  .box {
+    min-height: 6rem;
+  }
+   .box img {
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover;
+  }
+}

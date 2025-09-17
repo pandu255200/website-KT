@@ -211,3 +211,106 @@
     flex-direction: column;
   }
 }
+
+
+
+@media (max-width: 480px) {
+  .partnerSection {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+
+  .content {
+    flex-direction: column;
+    margin: 0 1rem;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .leftPanel {
+    width: 100%;
+    align-items: center;
+  }
+
+  .leftContent {
+    height: auto;
+    min-height: 400px;
+    padding: 1.5rem;
+  }
+
+  .leftContent h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+  }
+
+  .leftContent h1 span {
+    font-size: 1.5rem;
+  }
+
+  .illustration {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .rightPanel {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .formGroup {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .textarea {
+    height: 80px;
+  }
+
+  .submitButton {
+    width: 90%;
+    padding: 14px 40px;
+    font-size: 0.9rem;
+  }
+
+  .wave {
+    bottom: -2rem;
+    scale: 1;
+    opacity: 0.5;
+  }
+
+  .circle {
+    top: -5rem;
+    left: -5rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .styleDiv1,
+  .styleDiv2 {
+    width: 10rem;
+    height: 10rem;
+    bottom: -4rem;
+  }
+
+  .styleDiv1 {
+    left: -2rem;
+  }
+
+  .styleDiv2 {
+    right: -2rem;
+  }
+
+  .bgImage {
+    opacity: 0.2;
+  }
+}
