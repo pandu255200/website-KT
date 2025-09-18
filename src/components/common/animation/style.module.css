@@ -42,4 +42,20 @@
   flex-shrink: 0;
 }
 
+/* Mobile styles for screens up to 480px */
+@media (max-width: 480px) {
+  .container {
+    gap: 2.5rem;
+    padding: 0 1rem;
+  }
 
+  .word {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 45px;
+  }
+}

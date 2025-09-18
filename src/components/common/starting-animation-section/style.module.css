@@ -1,29 +1,21 @@
 /* components/DesignComponent.module.css */
 .container {
-  /* width: 100%; */
   display: flex;
   justify-content: flex-start;
   height: 100vh;
-  /* font-family: Arial, sans-serif; */
 }
 
 .leftSection {
   background: rgba(205, 33, 0, 1);
   width: 70%;
   color: white;
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   padding: 2rem 1rem;
 }
 
 .title {
-  /* font-size: 2rem;
-  font-weight: bold;
-  text-align: left; */
-
   margin-top: 8rem;
   font-size: 30px;
   font-weight: 700;
@@ -39,12 +31,10 @@
   align-items: center;
   justify-content: center;
   object-fit: cover;
-  /* width: 12rem;
-    height: 3.2rem; */
   box-shadow: 0 0 20px 5px #fff;
 }
+
 .rightSection {
-  /* flex: 1; */
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -57,14 +47,8 @@
 .bottomRightBox {
   text-align: left;
 }
-/* .bottomRightBox {
-  text-align: right;
-} */
 
 .infoText {
-  /* font-size: 1rem;
-  color: #333; */
-
   margin-bottom: 1rem;
   font-size: 16px;
   font-weight: 700;
@@ -84,9 +68,6 @@
 }
 
 .repeatedText {
-  /* font-size: 1rem;
-  color: #333; */
-
   margin-bottom: 1rem;
   font-size: 16px;
   font-weight: 700;
@@ -94,4 +75,67 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+}
+
+/* Mobile styles for <= 480px */
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .leftSection {
+    width: 95%;
+    padding: 1.5rem 0.75rem 1rem 0.5rem;
+    min-height: 45vh;
+    margin: 0;
+  }
+
+  .title {
+    margin-top: 2.5rem;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .ZodhaLogo {
+    margin-top: 1.5rem;
+    width: 110px !important;
+    height: 36px !important;
+    box-shadow: 0 0 10px 2px #fff;
+  }
+
+  .rightSection {
+    width: 95%;
+    padding: 1.5rem 0.75rem 1.5rem 0.5rem;
+    min-height: 40vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .topRightBox,
+  .bottomRightBox {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoText,
+  .repeatedText {
+    font-size: 13px;
+    line-height: 17px;
+    margin-bottom: 0.75rem;
+  }
+
+  .faceGenieLogo,
+  .analyticsKartLogo {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .logo {
+    width: 90px !important;
+    height: 32px !important;
+  }
 }
