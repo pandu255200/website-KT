@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./style.module.css";
 import Image from "next/image";
 
@@ -72,6 +72,16 @@ const ProductAndPlatforms = () => {
   const [content, setContent] = useState(zodhaGPTContent);
   const [button1, setButton1] = useState(facegenieContent);
   const [button2, setButton2] = useState(analyticsContent);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleButtonClick = (
     target: { label: string; link: string; content: React.JSX.Element },
@@ -92,74 +102,122 @@ const ProductAndPlatforms = () => {
         <h1 className="font-anta">AI - PRODUCTS & PLATFORMS</h1>
       </div>
       <div className={Styles.contentContainer}>
-        <div className={Styles.leftSection}>
+        <div
+          className={Styles.leftSection}
+          style={{
+            width: isMobile ? "100%" : "60%",
+            textAlign: isMobile ? "center" : "left",
+          }}
+        >
           <div>
             {content.content}
-
             <Link href={content.link || "/"}>
               <button
                 className={`${Styles.exploreBtn} flex items-center gap-1`}
+                style={{
+                  padding: isMobile ? "8px 16px" : "10px 20px",
+                  fontSize: isMobile ? "12px" : "14px",
+                }}
               >
                 Explore More
                 <Image
                   src={RedTopRightArrowIcon.src}
                   className={Styles.arrow}
                   alt="arrowIcon"
-                  // layout="fixed"
-                  width={28}
-                  height={20}
+                  width={isMobile ? 20 : 28}
+                  height={isMobile ? 14 : 20}
                 />
               </button>
             </Link>
           </div>
-          <div className={Styles.contactSection}>
-            <p>Curious to see how our solutions can benefit you?</p>
-            <button className={`${Styles.contactBtn} flex items-center gap-1`}>
+          <div
+            className={Styles.contactSection}
+            style={{ fontSize: isMobile ? "12px" : "14px" }}
+          >
+            <p style={{ marginBottom: isMobile ? "0.5rem" : "1rem" }}>
+              Curious to see how our solutions can benefit you?
+            </p>
+            <button
+              className={`${Styles.contactBtn} flex items-center gap-1`}
+              style={{
+                padding: isMobile ? "8px 16px" : "10px 20px",
+                fontSize: isMobile ? "12px" : "14px",
+              }}
+            >
               <Link href="#partner-with-us">Contact us today</Link>
               <Image
                 src={RedTopRightArrowIcon.src}
                 className={Styles.arrow}
                 alt="arrowIcon"
-                // layout="fixed"
-                width={28}
-                height={20}
+                width={isMobile ? 20 : 28}
+                height={isMobile ? 14 : 20}
               />
             </button>
           </div>
         </div>
 
-        <div className={Styles.rightSection}>
+        <div
+          className={Styles.rightSection}
+          style={{
+            width: isMobile ? "100%" : "50%",
+            marginBottom: isMobile ? "1rem" : "3rem",
+          }}
+        >
           <Image
             src={
-              content.label == "ZodhaGPT"
+              content.label === "ZodhaGPT"
                 ? RobotGif
                 : content.label === "FaceGenie"
                 ? FacegenieGif
                 : AnalyticsKartGif
             }
             alt={
-              content.label == "ZodhaGPT"
+              content.label === "ZodhaGPT"
                 ? "zodhaGPT Illustration"
                 : content.label === "FaceGenie"
                 ? "FaceGenie Illustration"
                 : "Analytics Kart Illustration"
             }
             className={Styles.robotImg}
-            width={1200}
-            height={450}
-            // layout="fixed"
+            width={isMobile ? 300 : 1200}
+            height={isMobile ? 150 : 450}
+            layout="responsive"
           />
         </div>
-        <div className={Styles.buttonGroup}>
+        <div
+          className={Styles.buttonGroup}
+          style={{
+            position: isMobile ? "relative" : "absolute",
+            bottom: isMobile ? "auto" : 0,
+            right: isMobile ? "auto" : 0,
+            padding: isMobile ? "1rem" : "1.5rem 1.5rem 0 1.5rem",
+            width: isMobile ? "100%" : "auto",
+            justifyContent: isMobile ? "center" : "flex-end",
+            // Removed flexDirection: "column" to allow default row behavior
+            gap: isMobile ? "0.5rem" : "10px",
+          }}
+        >
           <button
             className={`${Styles.facegenieBtn}`}
             onClick={() => handleButtonClick(button1, setButton1)}
+            style={{
+              width: isMobile ? "100%" : "12rem",
+              maxWidth: isMobile ? "200px" : "12rem",
+              padding: isMobile ? "12px 0" : "20px 0",
+              fontSize: isMobile ? "1.2rem" : "1.6rem",
+            }}
           >
             {button1.label}
           </button>
           <button
             className={`${Styles.analyticskartBtn}`}
             onClick={() => handleButtonClick(button2, setButton2)}
+            style={{
+              width: isMobile ? "100%" : "12rem",
+              maxWidth: isMobile ? "200px" : "12rem",
+              padding: isMobile ? "12px 0" : "20px 0",
+              fontSize: isMobile ? "1.2rem" : "1.6rem",
+            }}
           >
             {button2.label}
           </button>

@@ -1,9 +1,11 @@
 .container {
-  color: #ffffff; /* White text */
+  color: #ffffff;
+  /* White text */
   text-align: center;
   min-height: 100vh;
   position: relative;
-  overflow: hidden; /* Ensure scrolling cards don't overflow outside */
+  overflow: hidden;
+  /* Ensure scrolling cards don't overflow outside */
   background: url("../../../../../../public/home/testimonials/bg-cubic.png");
   background-size: 400px 700px;
   background-repeat: repeat;
@@ -15,10 +17,13 @@
   font-size: 3.8rem;
   font-weight: 100;
   text-align: left;
-  color: #ffffff; /* White text */
-  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: #ffffff;
+  /* White text */
+  background-color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   padding: 2rem 1.8rem;
-  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  border: 1px solid rgba(250, 38, 9, 1);
+  /* Exact red background color */
 }
 
 .grid {
@@ -30,22 +35,28 @@
 .card {
   height: 13rem;
   padding: 1rem 0.8rem;
-  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
-  color: #ffffff; /* White text */
+  background-color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
+  color: #ffffff;
+  /* White text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   text-transform: capitalize;
-  flex-shrink: 0; /* Prevent shrinking of cards */
-  width: 25rem; /* Set a fixed width */
+  flex-shrink: 0;
+  /* Prevent shrinking of cards */
+  width: 25rem;
+  /* Set a fixed width */
   transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
   transform: translateY(-10px);
 }
+
 .cardEven {
   margin-top: 15rem;
 }
+
 .profile {
   display: flex;
   align-items: center;
@@ -87,7 +98,8 @@
 .testimonial {
   text-align: left;
   padding-left: 0.5rem;
-  color: #ffffff; /* White text */
+  color: #ffffff;
+  /* White text */
   font-size: 14px;
   /* font-family: "Plus Jakarta Sans", sans-serif; */
   font-weight: 500;
@@ -99,8 +111,10 @@
   align-items: center;
   margin: 5rem auto 5rem auto;
   padding: 1rem 2rem;
-  background-color: rgba(250, 38, 9, 1); /* Exact red background color */
-  color: #ffffff; /* White text */
+  background-color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
+  color: #ffffff;
+  /* White text */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -123,6 +137,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -138,11 +153,14 @@
 }
 
 .videoContainer {
-  width: 85%; /* Adjust the video width */
-  height: 40rem; /* Adjust the video height */
+  width: 85%;
+  /* Adjust the video width */
+  height: 40rem;
+  /* Adjust the video height */
   overflow: hidden;
   border-radius: 10px;
-  background: #000; /* Add background to make it cleaner */
+  background: #000;
+  /* Add background to make it cleaner */
   position: relative;
 }
 
@@ -156,7 +174,8 @@
   width: 3rem;
   height: 3rem;
   font-size: 1rem;
-  background: rgba(250, 38, 9, 1); /* Exact red background color */
+  background: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -166,4 +185,110 @@
 
 .navButton:hover {
   transform: scale(1.1);
+}
+
+
+
+/* MOBILE VERSION */
+@media screen and (max-width: 480px) {
+  .container {
+    background-size: 200px 350px;
+  }
+
+  .heading {
+
+    font-family: Anta;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    padding: 1rem 1rem;
+  }
+
+  /* .grid {
+    margin-top: 5rem;
+    display: flex;
+    animation: scroll 15s linear infinite;
+  } */
+
+  .card {
+    width: 18rem;
+    max-height: 11rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .cardEven {
+    margin-top: 12rem;
+  }
+
+
+  .image {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .institute {
+    font-size: 0.8rem;
+  }
+
+  .testimonial {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+
+  /* Video Slider */
+  .videoSlider {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 2rem auto;
+    gap: 1rem;
+  }
+
+  .videoContainer {
+    width: 85%;
+    /* Adjust the video width */
+    height: 40rem;
+    /* Adjust the video height */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+    /* Add background to make it cleaner */
+    position: relative;
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .navButton {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    background: rgba(250, 38, 9, 1);
+    /* Exact red background color */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+  }
+
+  .navButton:hover {
+    transform: scale(1.1);
+  }
+
 }

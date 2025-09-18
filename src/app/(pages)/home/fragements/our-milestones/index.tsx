@@ -23,8 +23,7 @@ const OurMilestones = () => {
         <Image
           src={DotCircle}
           alt="DotCircleImage"
-          // className={Styles.circleImage}
-          // layout="fixed"
+          className={Styles.circleImage}
           width={110}
           height={110}
         />
@@ -48,23 +47,26 @@ const OurMilestones = () => {
           width={10}
           height={10}
         />
+        <div className={Styles.gridContainer}>
 
-        <div className={Styles.cardsGrid1}>
-          {milestonesData1.map((milestone, index) => (
-            <div className={Styles.card} key={index}>
-              <span>{milestone.title}</span>
-              <p>{milestone.description}</p>
-            </div>
-          ))}
+          <div className={Styles.cardsGrid1}>
+            {milestonesData1.map((milestone, index) => (
+              <div className={Styles.card} key={index}>
+                <span>{milestone.title}</span>
+                <p>{milestone.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className={Styles.cardsGrid2}>
+            {milestonesData2.map((milestone, index) => (
+              <div className={Styles.card} key={index}>
+                <span>{milestone.title}</span>
+                <p>{milestone.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className={Styles.cardsGrid2}>
-          {milestonesData2.map((milestone, index) => (
-            <div className={Styles.card} key={index}>
-              <span>{milestone.title}</span>
-              <p>{milestone.description}</p>
-            </div>
-          ))}
-        </div>
+
       </div>
     </div>
   );

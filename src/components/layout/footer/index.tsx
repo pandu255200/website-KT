@@ -5,7 +5,8 @@ import Styles from "./style.module.css";
 
 const linkMap = {
   // Core
-  "AI - Products & Platforms": "/zodha-gpt",
+  // "AI - Products & Platforms": "/zodha-gpt",
+  "AI - Products & Platforms": "#aiProductsPlatforms",
   "AI - Solutions & IT Services": "/solutions-and-services/0",
   // Explore
   About: "/about-us",

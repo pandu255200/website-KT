@@ -79,8 +79,7 @@
   font-size: 1.5rem;
   background: linear-gradient(180deg, #ff2b0a 0%, #d22008 100%);
   clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
-  box-shadow: 4.165605967126505e-15px 68.02950286865234px 136.0590057373047px
-    rgba(50, 7.6, 1.8, 0.24);
+  box-shadow: 4.165605967126505e-15px 68.02950286865234px 136.0590057373047px rgba(50, 7.6, 1.8, 0.24);
   line-height: 1.5rem;
   color: #ffffff;
   padding: 0 1.5rem 2rem 1.5rem;
@@ -218,3 +217,135 @@
 
 
 
+/* MOBILE CSS */
+@media screen and (max-width: 480px) {
+  .container {
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .header {
+    flex-direction: column;
+    margin: 0 1rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 36px;
+    width: 100%;
+  }
+
+
+  .sliderContainer {
+    position: relative;
+    /* overflow: hidden; */
+    padding: 1rem 0;
+  }
+
+  .slider {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0 3rem 0;
+    position: relative;
+  }
+
+  .slide {
+    width: 20rem !important;
+    height: 15rem !important;
+    padding: 0 0.2rem 0.5rem 0;
+  }
+
+  .previousSlide {
+    left: -100px;
+    transform: translateX(5%) scale(0.8);
+    z-index: 1;
+    color: #000;
+  }
+
+  .nextSlide {
+    right: -100px;
+    transform: translateX(-5%) scale(0.8);
+    z-index: 1;
+    color: #000;
+  }
+
+  .centerSlide {
+    width: 24rem !important;
+    height: 15rem !important;
+  }
+
+  .slide h2 {
+    font-size: 1.6rem;
+    line-height: 1rem;
+    padding-right: 1rem;
+    font-weight: 100;
+  }
+
+  .slide p {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    padding: 1rem 0;
+  }
+
+  .centerSlide h2 {
+    /* background-color: green; */
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .centerSlide p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0rem 0.5rem 0;
+  }
+
+  .leftSection {
+    width: 80%;
+    text-align: left;
+  }
+
+  .slide .exploreBtn {
+    gap: 4;
+    right: 0.8rem;
+    bottom: 0.2rem;
+    font-size: 0.5rem;
+    border: none;
+  }
+
+  .centerSlide .exploreBtn {
+    font-size: 0.7rem;
+  }
+
+  .exploreBtn:hover {
+    background-color: #cc3025;
+  }
+
+  .leftSection button .arrow {
+    transform: rotate(90deg);
+    width: 20px;
+    height: 20px;
+  }
+
+  .rightSection img {
+    width: 70% !important;
+  }
+
+  .navigation {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .navBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .navBtn Image {
+    width: 5px;
+    height: 5px;
+  }
+
+  .navBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+}

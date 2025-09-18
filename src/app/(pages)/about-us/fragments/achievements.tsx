@@ -69,13 +69,19 @@ export const Achievements = () => {
               style={{ objectFit:"cover" }}
             />
           </div>
-          <div className={styles.box}>
+          <div className={styles.box} style={{ overflow: "hidden" }}>
             <Image
               src={Achievement5}
               alt="Achievement 5"
               width={240}
               height={190}
-              style={{ objectFit:"cover" }}
+              style={{ 
+                marginTop:"6rem",
+                marginLeft:"-7rem",
+                objectFit: "cover",
+                objectPosition: "top top",
+                scale:"2"
+              }}
             />
           </div>
         </div>

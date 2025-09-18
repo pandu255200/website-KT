@@ -1,9 +1,4 @@
 .hero {
-  /* width: 1440px;
-  height: 815px;
-  flex-shrink: 0;
-  background: var(--Angular-Background-V1, conic-gradient(from 119deg at 50% 58.75%, #FA2609 26.35770857334137deg, #AF1600 311.2034511566162deg)); */
-
   background: conic-gradient(
     from 119.35deg at 50% 58.75%,
     #af1600 -48.8deg,
@@ -22,39 +17,35 @@
   margin-top: 95px;
 }
 
-
 .flex {
-  /* width: 100%; */
   height: 28rem;
   margin-bottom: 3.5rem;
   display: flex;
   justify-content: space-between;
 }
+
 .content {
-  /* width: Fixed (569px) px; */
   width: 50%;
-  height: Hug (408px) px;
+  height: 408px;
   color: #fff;
   top: 204px;
   left: 100px;
   gap: 500px;
 }
+
 .content .h1 {
-  /* font-family: pl  ; */
   font-size: 48px;
-  /* font-weight: bolder; */
   line-height: 60.48px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
 .para {
   width: 31.25rem;
   height: 85px;
-  gap: 0px;
   margin-top: 1rem;
   opacity: 0.9;
-  /* font-family: Inter; */
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -62,16 +53,17 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
 .logo {
+  background-color: green;
   margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: cover;
-  /* width: 12rem;
-  height: 3.2rem; */
   box-shadow: 0 0 30px 5px #fff;
 }
+
 .content button {
   display: flex;
   align-items: center;
@@ -83,9 +75,9 @@
   color: white;
   background-color: transparent;
   text-align: left;
-  /* transition:  0.3s ease-in-out; */
   cursor: pointer;
 }
+
 .content button:hover .arrow {
   transition: 0.3s linear;
   transform: rotate(45deg);
@@ -114,8 +106,8 @@
   left: 1303px;
   gap: 0px;
   overflow: hidden;
-  /* background-color: green; */
 }
+
 .image {
   position: relative;
   width: 487px;
@@ -124,15 +116,18 @@
   place-content: center;
   flex-shrink: 0;
 }
+
 .scanner {
   position: absolute;
   top: -1.5rem;
   left: 50%;
   transform: translate(-50%);
 }
+
 .image > img {
   object-fit: contain;
 }
+
 .imageContainer {
   display: flex;
   align-items: center;
@@ -140,12 +135,6 @@
   align-self: flex-end;
   justify-self: flex-end;
 }
-
-/* img {
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 1rem;
-    } */
 
 .tabs {
   display: flex;
@@ -182,7 +171,6 @@
 }
 
 .activeTab {
-  /* background-color: #e74c3c; */
   background: linear-gradient(121.87deg, #fa2609 13.39%, #bf270e 86.58%);
   color: #fff;
   box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
@@ -207,7 +195,6 @@
 }
 
 .chatWindow {
-  /* visibility: hidden; */
   z-index: 50;
   position: fixed;
   bottom: 0rem;
@@ -221,7 +208,6 @@
 .chatWindow .chatWindow2ndLayer {
   width: inherit;
   height: inherit;
-  /* background-color: green; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -255,7 +241,6 @@
 }
 
 .chatWindow .chatInput {
-  /* background-color: yellow; */
   width: calc(100% - 3rem);
   border-radius: 50px 0 0 50px;
   padding: 10px 5px 10px 20px;
@@ -356,13 +341,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(250, 38, 9, 1);*/
   background: linear-gradient(121.87deg, #fa2609 13.39%, #bf270e 86.58%);
   border-radius: 50%;
   border: 1px solid #fff;
   cursor: pointer;
   animation: heartbeat 1.5s infinite ease-in-out;
 }
+
 .message_box {
   visibility: hidden;
   z-index: 50;
@@ -392,21 +377,22 @@
   border-bottom: 0;
   margin-bottom: -8px;
 }
+
 .chatWrapper:hover .message_box {
   visibility: visible;
 }
+
 .rightDiv {
   width: 30rem;
   height: 100vh;
   background-color: white;
 }
 
-/* Smooth fade + slide-up - Faster version */
 .fadeInText {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeSlideInText 0.35s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-  animation-delay: 0.2s; /* Optional: stagger after background/globe */
+  animation-delay: 0.2s;
   will-change: transform, opacity;
 }
 
@@ -421,7 +407,6 @@
   }
 }
 
-/* Smooth zoom-in - Faster + bounce feel */
 .fadeInGlobe {
   opacity: 0;
   transform: scale(0.9);
@@ -440,7 +425,6 @@
   }
 }
 
-/* Main animated container (fade-in smoother too) */
 .animatedDiv {
   animation: fadeInContainer 0.5s ease-in-out forwards;
 }
@@ -454,8 +438,6 @@
   }
 }
 
-
-/* Optional cleanup: Improve layout flexibility */
 .innerAnimation {
   display: flex;
   flex-wrap: wrap;
@@ -495,9 +477,238 @@
   overflow: hidden;
 }
 
-
-
 .fadeInText,
 .fadeInGlobe {
   will-change: transform, opacity;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+    margin-top: 60px;
+  }
+
+  .flex {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .content {
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .content .h1 {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .para {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-top: 1.5rem;
+    width: 8rem;
+    height: 2rem;
+  }
+
+  .content button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem auto;
+  }
+
+  .imageSection {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    margin-top: 2rem;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .scanner {
+    top: -1rem;
+  }
+
+  .tabs {
+    margin-right: 0;
+    padding: 0.3rem;
+    border-radius: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tabButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .chatWindow {
+    width: 90vw;
+    height: 80vh;
+    border-radius: 20px;
+  }
+
+  .chatWindow .crossButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+    font-size: 24px;
+  }
+
+  .chatWindow .chatInputBox {
+    margin: 10px;
+  }
+
+  .chatWindow .chatInput {
+    font-size: 16px;
+    padding: 8px 5px 8px 15px;
+  }
+
+  .chatWindow .sendButton {
+    width: 2rem;
+    height: 2rem;
+    font-size: 24px;
+  }
+
+  .chatWindow .answerMessageBox {
+    margin: 10px 10px 10px 20px;
+  }
+
+  .chatWindow .answerMessageInput {
+    font-size: 15px;
+    padding: 10px 6px 10px 15px;
+  }
+
+  .chatWindow .questionMessageInput {
+    width: 70%;
+    font-size: 15px;
+    padding: 10px 6px 10px 15px;
+  }
+
+  .chatWindow .resoluteLogo,
+  .chatWindow .senderPhoto {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .chatButton {
+    width: 3rem;
+    height: 3rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .message_box {
+    bottom: 6rem;
+    right: 1.5rem;
+    font-size: 14px;
+    max-width: 250px;
+    padding: 6px 12px;
+  }
+
+  .rightDiv {
+    width: 100%;
+    height: auto;
+  }
+
+  .innerAnimation {
+    padding: 3vh 3vw;
+    gap: 2vw;
+  }
+
+  .animatedDiv {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flex {
+    /* background-color: green; */
+    padding: 1.5rem 0.5rem;
+    /* margin-top: 50px; */
+  }
+
+  .content .h1 {
+    text-align: left;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  
+  .para {
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 1.5rem;
+  }
+
+  .content button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .image {
+    max-width: 250px;
+  }
+  .imageContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .tabs {
+    /* flex-direction: column; */
+    padding: 0.2rem;
+    margin-left: 1rem
+    /* margin-right: 2rem; */
+  }
+
+  .tabButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+
+  .chatWindow {
+    width: 95vw;
+    height: 90vh;
+    border-radius: 15px;
+  }
+
+  .chatButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .message_box {
+    font-size: 12px;
+    max-width: 200px;
+    padding: 5px 10px;
+  }
 }

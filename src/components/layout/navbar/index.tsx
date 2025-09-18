@@ -3,7 +3,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Styles from "./style.module.css";
 import Image, { StaticImageData } from "next/image";
+import CloseIcon from "../../../../public/home/close-icon.svg";
+import MenuIcon from "../../../../public/home/menu-icon.svg";
 import NavLogo from "../../../../public/home/nav-logo.png";
+import MobileNavLogo from "../../../../public/home/mobile-navlogo.svg";
 import TopRightArrowIcon from "../../../../public/home/top-right-arrow.svg";
 import RemoveIcon from "../../../../public/home/removeIcon.svg";
 import AddIcon from "../../../../public/home/add-icon.svg";
@@ -66,78 +69,78 @@ interface NavLink {
 }
 
 const products: MenuItem[] = [
-  { icon: ZondhaImage, href: "zodha-gpt" },
-  { icon: FaceGenaiImage, href: "face-genie" },
-  { icon: AnalyticsImage, href: "analyticskart" },
+  { icon: ZondhaImage, href: "/zodha-gpt" },
+  { icon: FaceGenaiImage, href: "/face-genie" },
+  { icon: AnalyticsImage, href: "/analyticskart" },
 ];
 
 const verticals: MenuItem[] = [
   {
     icon: TextileIcon,
     text: "Textiles, Fabric & Yarn",
-    href: "our-verticals/0",
+    href: "/our-verticals/0",
   },
-  { icon: FMCGIcon, text: "FMCG", href: "our-verticals/1" },
+  { icon: FMCGIcon, text: "FMCG", href: "/our-verticals/1" },
   {
     icon: RetailIcon,
     text: "Retail, E-commerce & Market Places",
-    href: "our-verticals/2",
+    href: "/our-verticals/2",
   },
   {
     icon: ChemicalsIcon,
     text: "Chemicals & Pharmaceuticals",
-    href: "our-verticals/3",
+    href: "/our-verticals/3",
   },
   {
     icon: ConsumerIcon,
     text: "Consumer, Electronics & Medical Devices",
-    href: "our-verticals/4",
+    href: "/our-verticals/4",
   },
   {
     icon: PowerIcon,
     text: "Power, Energy, Oil & Gas",
-    href: "our-verticals/5",
+    href: "/our-verticals/5",
   },
   {
     icon: RealEstateIcon,
     text: "Real Estates & Heavy Infrastructure",
-    href: "our-verticals/6",
+    href: "/our-verticals/6",
   },
   {
     icon: MiningIcon,
     text: "Mining, Metals & Industrial Automation",
-    href: "our-verticals/7",
+    href: "/our-verticals/7",
   },
   {
     icon: AutomotiveIcon,
     text: "Automotives, Ancillaries & Heavy Machineries",
-    href: "our-verticals/8",
+    href: "/our-verticals/8",
   },
   {
     icon: LogisticsIcon,
     text: "Logistics, Warehousing & Transportation",
-    href: "our-verticals/9",
+    href: "/our-verticals/9",
   },
   {
     icon: HospitalsIcon,
     text: "Hospitals, Healthcare & Lifesciences",
-    href: "our-verticals/10",
+    href: "/our-verticals/10",
   },
   {
     icon: HotelsIcon,
     text: "Hotels, QSR & Hospitality",
-    href: "our-verticals/11",
+    href: "/our-verticals/11",
   },
-  { icon: HotelsIcon, text: "BFSI", href: "our-verticals/12" },
+  { icon: HotelsIcon, text: "BFSI", href: "/our-verticals/12" },
   {
     icon: EducationalIcon,
     text: "Educational Institutes",
-    href: "our-verticals/13",
+    href: "/our-verticals/13",
   },
   {
     icon: HotelsIcon,
     text: "Telecom, Media & Entertainment",
-    href: "our-verticals/14",
+    href: "/our-verticals/14",
   },
 ];
 
@@ -145,56 +148,56 @@ const solutionAndServices: MenuItem[] = [
   {
     icon: AutomationIcon,
     text: "Permit to Work Automation",
-    href: "solutions-and-services/0",
+    href: "/solutions-and-services/0",
   },
   {
     icon: EhsIcon,
     text: "EHS Digitalization",
-    href: "solutions-and-services/1",
+    href: "/solutions-and-services/1",
   },
   {
     icon: DigitalIcon,
     text: "Digital Logbook",
-    href: "solutions-and-services/2",
+    href: "/solutions-and-services/2",
   },
   {
     icon: DataLakeIcon,
     text: "Data Lake Management",
-    href: "solutions-and-services/3",
+    href: "/solutions-and-services/3",
   },
   {
     icon: CloudIcon,
     text: "Cloud Engineering Services",
-    href: "solutions-and-services/4",
+    href: "/solutions-and-services/4",
   },
   {
     icon: AndroidIcon,
     text: "Android/iOS application development",
-    href: "solutions-and-services/5",
+    href: "/solutions-and-services/5",
   },
   {
     icon: FlutterIcon,
     text: "Flutter based application development",
-    href: "solutions-and-services/6",
+    href: "/solutions-and-services/6",
   },
-  { icon: AiIcon, text: "AI Trainings", href: "solutions-and-services/7" },
+  { icon: AiIcon, text: "AI Trainings", href: "/solutions-and-services/7" },
   {
     icon: SupportIcon,
     text: "Tech Support & AMC",
-    href: "solutions-and-services/8",
+    href: "/solutions-and-services/8",
   },
 ];
 
 const aboutUs: MenuItem[] = [
-  { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
-  { icon: Blogs, text: "Blogs", href: "blogs" },
-  { icon: VideosIcon, text: "Videos", href: "videos" },
-  { icon: InternshipIcon, text: "Internships", href: "internships" },
-  { icon: CareerIcon, text: "Careers", href: "career" },
-  { icon: NewsIcon, text: "News & Press Coverage", href: "news" },
-  { icon: TestimonialsIcon, text: "Testimonials", href: "testimonials" },
-  { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
-  { icon: CaseIcon, text: "Case Studies", href: "case-study" },
+  { icon: TeamsIcon, text: "Meet our Team", href: "/our-team" },
+  { icon: Blogs, text: "Blogs", href: "/blogs" },
+  { icon: VideosIcon, text: "Videos", href: "/videos" },
+  { icon: InternshipIcon, text: "Internships", href: "/internships" },
+  { icon: CareerIcon, text: "Careers", href: "/career" },
+  { icon: NewsIcon, text: "News & Press Coverage", href: "/news" },
+  { icon: TestimonialsIcon, text: "Testimonials", href: "/testimonials" },
+  { icon: PrivacyIcon, text: "Privacy Policy", href: "/#privacy" },
+  { icon: CaseIcon, text: "Case Studies", href: "/case-study" },
 ];
 
 const navLinks: NavLink[] = [
@@ -215,7 +218,7 @@ const navLinks: NavLink[] = [
     href: "/our-verticals/0",
     menuItems: verticals,
     title: "Our Verticals",
-  }, // Add anchor for "Verticals"
+  },
   {
     text: "About Us",
     href: "/about-us",
@@ -225,9 +228,10 @@ const navLinks: NavLink[] = [
 ];
 
 export function Navbar() {
-  const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null); // Track the active menu item
+  const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
   const [menuItem, setMenuItem] = useState<MenuItem[]>([]);
   const [heading, setHeading] = useState<string>("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -237,6 +241,7 @@ export function Navbar() {
         setActiveMenuIndex(null);
         setMenuItem([]);
         setHeading("");
+        setIsMobileMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -251,30 +256,45 @@ export function Navbar() {
     index: number
   ) => {
     if (activeMenuIndex === index) {
-      // If the same menu item is clicked, close it
       setActiveMenuIndex(null);
       setMenuItem([]);
       setHeading("");
     } else {
-      // Open the selected menu item
       setActiveMenuIndex(index);
       setMenuItem(selectItem);
       setHeading(title);
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSubItemClick = (href: string) => {
+    router.push(href);
+    setIsMobileMenuOpen(false);
+    setActiveMenuIndex(null);
+    setMenuItem([]);
+    setHeading("");
+  };
+
   return (
     <div className={Styles.container} ref={navRef}>
-      {/* Header Section */}
       <header className={Styles.navbar}>
         <Link href="/home">
           <Image
             src={NavLogo.src}
             alt="logo"
             className={Styles.logo}
-            // layout="fixed"
             width={170}
             height={59}
+          />
+          <Image
+            src={MobileNavLogo.src}
+            alt="logo"
+            className={Styles.mobileNavLogo}
+            width={40}
+            height={49}
           />
         </Link>
         <nav className={Styles.navLinks}>
@@ -295,7 +315,6 @@ export function Navbar() {
                   e.preventDefault();
                   handleChangeMenuItems(link.menuItems, link.title, index);
                 }}
-                // layout="fixed"
                 width={24}
                 height={24}
               />
@@ -311,12 +330,66 @@ export function Navbar() {
             src={TopRightArrowIcon.src}
             className={Styles.arrow}
             alt="arrowIcon"
-            // layout="fixed"
             width={24}
             height={24}
           />
         </button>
+
+        <button className={Styles.menuIconButton} onClick={toggleMobileMenu}>
+          <Image
+            src={MenuIcon.src}
+            alt="logo"
+            className={Styles.menuIcon}
+            width={40}
+            height={49}
+          />
+        </button>
       </header>
+
+      {/* Mobile Menu */}
+      <div className={`${Styles.mobileMenu} ${isMobileMenuOpen ? Styles.active : ""}`}>
+        <div className={Styles.mobileMenuHeader}>
+          <Image
+            onClick={toggleMobileMenu}
+            src={CloseIcon.src}
+            alt="Close"
+            className={Styles.closeIcon}
+            width={40}
+            height={49}
+          />
+        </div>
+        {navLinks.map((link, index) => (
+          <div key={link.text} className={Styles.mobileMenuItem}>
+            <div
+              onClick={() => handleChangeMenuItems(link.menuItems, link.title, index)}
+              className={Styles.mobileMenuLink}
+            >
+              <Link href={link.href}>
+                <span>{link.text}</span>
+              </Link>
+              <Image
+                src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
+                alt={activeMenuIndex === index ? "Remove" : "Add"}
+                width={20}
+                height={20}
+              />
+            </div>
+            {activeMenuIndex === index && (
+              <div className={Styles.mobileSubMenu}>
+                {link.menuItems.map((item, subIndex) => (
+                  <div
+                    key={subIndex}
+                    onClick={() => handleSubItemClick(item.href)}
+                    className={Styles.mobileSubItem}
+                  >
+                    {item.text}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
 
       {/* Main Content */}
       {menuItem.length > 0 && (
@@ -330,7 +403,6 @@ export function Navbar() {
           }}
           id="verticals-section"
         >
-          {/* Dynamic Heading */}
           <div className={Styles.verticals}>
             <h2>{heading}</h2>
             <div className={Styles.grid}>
@@ -352,20 +424,18 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Image Section */}
           {activeMenuIndex !== null && activeMenuIndex > 0 ? (
             <div className={Styles.imageContainer}>
               <Image
                 src={
-                  activeMenuIndex == 1
+                  activeMenuIndex === 1
                     ? SolutionsImage.src
-                    : activeMenuIndex == 2
+                    : activeMenuIndex === 2
                     ? VerticalsImage.src
                     : AboutUsImage.src
                 }
                 className={Styles.navImages}
                 alt="Verticals"
-                // layout="fixed"
                 width={500}
                 height={300}
               />

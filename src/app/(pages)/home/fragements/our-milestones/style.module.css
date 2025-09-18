@@ -5,26 +5,6 @@
   /* font-family: "Roboto", sans-serif; Match the font */
 }
 
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 3.8rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  padding-left: 3rem;
-  font-weight: 100;
-  margin: 0rem;
-} */
-
-.header div {
-  width: 80;
-  height: 80;
-  margin-right: 2rem;
-}
-
 .videoContainer {
   position: relative;
   width: 100%;
@@ -107,4 +87,103 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+
+
+/* MOBILE VERSION */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+    /* font-family: "Roboto", sans-serif; Match the font */
+  }
+
+  .videoContainer {
+    height: 100%;
+    /* overflow-y: scroll; */
+  }
+
+  .circleImage {
+    width: 50px;
+    display: none;
+    height: 50px;
+  }
+
+  .gridContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -4rem;
+    overflow: scroll;
+    /* background-color: green; */
+  }
+
+  .cardsGrid1 {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    width: 65%;
+    margin-top: 20rem;
+    z-index: 1;
+  }
+
+  .cardsGrid2 {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    width: 65%;
+    z-index: 1;
+    margin-top: 20rem;
+
+  }
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    height: 150px;
+    margin: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    clip-path: polygon(9% 0, 100% 0, 100% 87%, 91% 100%, 0 100%, 0 13%);
+    background: linear-gradient(180deg, #ff2b0a 0%, #d22008 100%);
+    box-shadow: 0px 51.02px 102.04px 0px #3208023d;
+    box-shadow: 0px 15.87px 15.87px 0px #ff2c0a inset;
+    box-shadow: -0px -15.87px 15.87px 0px #c81e07 inset;
+    color: #ffffff;
+    padding: 0 0.5rem;
+  }
+
+  .card span {
+    color: var(--text-color);
+    /* font-family: "Neue Montreal"; */
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .card p {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }

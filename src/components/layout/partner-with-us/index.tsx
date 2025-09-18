@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Styles from "./style.module.css";
 
@@ -6,26 +9,78 @@ import WaveImage from "../../../../public/home/partner-with-us/wave.svg";
 import GodRays from "../../../../public/home/partner-with-us/god_rays.svg";
 
 export const PartnerWIthUs = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    country: '',
+    phone: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      // Send data to your API endpoint
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.'
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          country: '',
+          phone: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+      });
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <div className={Styles.partnerSection} id="partner-with-us">
-      {/* Background Video */}
-      {/* <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className={Styles.backgroundVideo}
-        style={{ zIndex: 10 }}
-      >
-        <source src="/home/partner-with-us/bg-lights.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-
       <Image
         src={GodRays}
         alt="SlideImg"
         className={Styles.bgImage}
-        // layout="fixed"
         width={10}
         height={10}
       />
@@ -48,60 +103,100 @@ export const PartnerWIthUs = () => {
 
         {/* Right Panel */}
         <div className={Styles.rightPanel}>
-          <form className={Styles.form}>
+          <form className={Styles.form} onSubmit={handleSubmit}>
             <div className={Styles.formGroup}>
               <input
                 type="text"
+                name="firstName"
                 placeholder="First Name"
                 className={Styles.input}
+                value={formData.firstName}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
               <input
                 type="text"
+                name="lastName"
                 placeholder="Last Name"
                 className={Styles.input}
+                value={formData.lastName}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className={Styles.formGroup}>
               <input
                 type="text"
+                name="country"
                 placeholder="Country"
                 className={Styles.input}
+                value={formData.country}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
                 className={Styles.input}
+                value={formData.phone}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className={Styles.formGroup}>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 className={Styles.input}
+                value={formData.email}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className={Styles.formGroup}>
               <input
                 type="text"
+                name="company"
                 placeholder="Company"
                 className={Styles.input}
+                value={formData.company}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className={Styles.formGroup}>
               <textarea
+                name="message"
                 placeholder="Message"
                 className={Styles.textarea}
+                value={formData.message}
+                onChange={handleInputChange}
                 required
+                disabled={isSubmitting}
               ></textarea>
             </div>
-            <button type="submit" className={Styles.submitButton}>
-              Submit
+            
+            {/* Status Message */}
+            {submitStatus.message && (
+              <div className={submitStatus.type === 'success' ? Styles.successMessage : Styles.errorMessage}>
+                {submitStatus.message}
+              </div>
+            )}
+            
+            <button 
+              type="submit" 
+              className={Styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </div>
