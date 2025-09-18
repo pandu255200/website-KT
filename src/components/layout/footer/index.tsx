@@ -98,45 +98,45 @@ export function Footer() {
         </div>
 
         <div className={Styles.lastRow}>
-          <div style={{ fontWeight: 500, fontSize: "1rem", width: "25rem" }}>
+          <div style={{ fontWeight: 500, fontSize: "1rem"}}>
             Resolute AI Software Private Limited,
             <br />
             5th Floor, 91Springboard, #175, Dollars Colony, Phase 4, JP Nagar,
             <br />
             Bannerghatta Main Road, Bangalore 560076, India.
           </div>
-         <div className={Styles.lastRowColumn}>
-  <span style={{ fontWeight: 600, fontSize: "1.375rem" }}>Contact</span>
+          <div className={Styles.lastRowColumn}>
+            <span style={{ fontWeight: 600, fontSize: "1.375rem" }}>Contact</span>
 
-  <a
-    href="tel:7406938888"
-    style={{
-      display: "block", // ⬅️ This makes it stack vertically
-      margin: "0.4rem 0",
-      fontWeight: 400,
-      fontSize: "1rem",
-      cursor: "pointer",
-      textDecoration: "none",
-      color: "inherit"
-    }}
-  >
-    7406938888
-  </a>
+            <a
+              href="tel:7406938888"
+              style={{
+                display: "block", // ⬅️ This makes it stack vertically
+                margin: "0.4rem 0",
+                fontWeight: 400,
+                fontSize: "1rem",
+                cursor: "pointer",
+                textDecoration: "none",
+                color: "inherit"
+              }}
+            >
+              7406938888
+            </a>
 
-  <a
-    href="tel:7406937777"
-    style={{
-      display: "block", // ⬅️ This also stacks it
-      fontWeight: 400,
-      fontSize: "1rem",
-      cursor: "pointer",
-      textDecoration: "none",
-      color: "inherit"
-    }}
-  >
-    7406937777
-  </a>
-</div>
+            <a
+              href="tel:7406937777"
+              style={{
+                display: "block", // ⬅️ This also stacks it
+                fontWeight: 400,
+                fontSize: "1rem",
+                cursor: "pointer",
+                textDecoration: "none",
+                color: "inherit"
+              }}
+            >
+              7406937777
+            </a>
+          </div>
 
           <div style={{ fontWeight: 500, fontSize: "1rem" }}>
             © 2025 ResoluteAI Software.in, All rights reserved.

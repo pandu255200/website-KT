@@ -255,7 +255,7 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
           {/* MOBILE DEVICE CONTENT */}
           <div className={Styles.contentMobile}>
             {/* LEFT SECTION */}
-            <div className={Styles.leftMobile}>
+            <div className={Styles.leftMobile} >
               <div className={Styles.count}>
                 {verticalsData[currentVertical].id}
               </div>

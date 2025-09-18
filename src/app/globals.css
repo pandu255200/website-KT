@@ -399,6 +399,19 @@ button {
     font-size: 36px;
     line-height: 44px;
     letter-spacing: 0%;
-
   }
+
+  .goBackButton {
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  .goBackButton span{
+    display: none;
+  }
+  .goBackButton .arrow {
+    padding: 0.5rem;
+    border: 1px solid red;
+    transition: 0.2s linear;
+  }
+
 }
