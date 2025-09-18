@@ -50,40 +50,67 @@
 
 
 
+/* Default (already for desktops/laptops) */
+
+/* For screens up to 480px */
 @media (max-width: 480px) {
   .footer {
-    padding: 1.5rem 1rem; 
+    padding: 1.5rem 2rem; /* reduce padding */
   }
 
   .gridContainer {
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 2rem; 
-    margin: 2rem 0; 
+    margin: 2rem 0;
   }
 
   .heading {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .list {
-    text-align: center;
   }
 
   .listItem {
-    width: 100%; 
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem; 
+    font-size: 0.95rem;
+    width: auto; /* allow flexible width */
   }
 
   .lastRow {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* stack last row */
+    text-align: center;
     gap: 1rem;
-    text-align: center; 
   }
 
   .lastRowColumn {
-    margin: 0.5rem auto; 
+    margin: 0.5rem 0;
   }
+}
+
+/* For extra small screens up to 380px */
+@media (max-width: 380px) {
+  .footer {
+    padding: 0.5rem ;
+    margin-left: 40px; /* even smaller padding */
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr; /* single column */
+    gap: 1.5rem;
+    margin: 1.6rem 0;
+  }
+
+  .heading {
+    font-size: 1.1rem;
+  }
+
+  .listItem {
+    font-size: 0.9rem;
+  }
+
+  .lastRow {
+    grid-template-columns: 1fr; /* single column */
+    gap: 0.6rem;
+    font-size: 10px;
+    margin-right: 0.7rem;
+  }
+  
 }

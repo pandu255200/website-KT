@@ -97,7 +97,7 @@ export function Footer() {
         </div>
 
         <div className={Styles.lastRow}>
-          <div style={{ fontWeight: 500, fontSize: "1rem", width: "25rem" }}>
+          <div className={Styles.lastOne} style={{ fontWeight: 500, fontSize: "1rem", width: "25rem" }}>
             Resolute AI Software Private Limited,
             <br />
             5th Floor, 91Springboard, #175, Dollars Colony, Phase 4, JP Nagar,
