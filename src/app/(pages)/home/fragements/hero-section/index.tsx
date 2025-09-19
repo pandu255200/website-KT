@@ -82,14 +82,15 @@ export default function HeroSection() {
     <div className="flex">
       <section className={Styles.hero}>
 
-        {/* {animationDiv > 0 && (
+        {animationDiv > 0 && (
           <div className={Styles.animatedDiv}>
             <div className={Styles.innerAnimation}>
               <div className={Styles.content}>
                 <div className={Styles.fadeInText}>
                   <h1 className={Styles.h1}>Empowering the future</h1>
                   <p className={Styles.para}>
-                    Our Purpose is to make AI accessible to everyone.
+                    From Dynamic to Compact and Pro, we utilize the benefits of AI to the furthest extent possible to give you the competitive edge
+
                   </p>
                 </div>
               </div>
@@ -105,7 +106,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        )} */}
+        )}
 
         <div className={Styles.flex}>
           {/* LEFT SECTION */}
@@ -164,8 +165,8 @@ export default function HeroSection() {
                 height={300}
                 unoptimized
                 layout="responsive"
-                />
-              )}
+              />
+            )}
             <Image
               src={contentData[activeButton].image}
               alt="ProductImage"

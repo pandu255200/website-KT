@@ -12,6 +12,8 @@
   align-items: center;
   z-index: 2;
   margin: 0 2.5rem 1.5rem;
+
+
 }
 
 .header h1 {
@@ -225,7 +227,7 @@
   }
 
   .header {
-    flex-direction: column;
+    /* align-items: flex-start; */
     margin: 0 1rem 1rem;
   }
 

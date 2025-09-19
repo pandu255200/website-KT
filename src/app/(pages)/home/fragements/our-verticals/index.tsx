@@ -163,7 +163,7 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
           <div className={Styles.header}>
             <h1 className="font-anta">OUR VERTICALS</h1>
             <div className={Styles.countSection}>
-              <div className={Styles.count}>
+              <div className={`${Styles.count} font-inter`}>
                 {verticalsData[currentVertical].id}
               </div>
               <div className={`flex flex-col items-center`}>
@@ -255,8 +255,8 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
           {/* MOBILE DEVICE CONTENT */}
           <div className={Styles.contentMobile}>
             {/* LEFT SECTION */}
-            <div className={Styles.leftMobile}>
-              <div className={Styles.count}>
+            <div className={Styles.leftMobile} >
+              <div className={`${Styles.count} font-inter`}>
                 {verticalsData[currentVertical].id}
               </div>
             </div>
