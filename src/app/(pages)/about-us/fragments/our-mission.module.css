@@ -163,9 +163,11 @@
   }
 
   .content .introduction .title h1 {
-    font-size: 2rem;
+    /* text-align: center; */
+    font-size: 1.8rem;
     line-height: normal;
-    /* gap: 1rem; */
+    gap: 1rem;
+    margin-right: 20px;
   }
 
   .content .introduction .description {
@@ -207,19 +209,21 @@
   }
 
   .illustration img {
-    width: 90%; /* scale down */
-    height: 90%;
+    align-items: center;
+    /* margin-right: 30px; */
+    width: 80%; /* scale down */
+    height: 85%;
   }
 }
 
 /* For extra small screens up to 380px */
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   .content {
     padding: 0.8rem;
     gap: 0.8rem;
   }
   .content .introduction .title h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: normal;
     /* gap: 1rem; */
   }
@@ -254,3 +258,5 @@
     display: none;                  /* hide scrollbar */
   }
 }
+
+
