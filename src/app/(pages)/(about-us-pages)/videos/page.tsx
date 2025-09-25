@@ -72,6 +72,15 @@ const Videos = () => {
     return currentBlogs[1]?.snippet?.title || "No video selected";
   };
 
+  // Helper to detect mobile (480px or less)
+  const [isMobile, setIsMobile] = useState(false);
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 480);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className={Styles.container} id="videos">
       <h1 className="globalHeaderStyle">
@@ -94,123 +103,229 @@ const Videos = () => {
         ))}
       </div>
 
-      <div className={Styles.slider}>
-        <div className={Styles.sliderMain}>
-          <div className={Styles.mainCrousel}>
-            {/* Left Image */}
-            <div className={Styles.item}>
-              <div className={Styles.leftContent}>
-                <div className={Styles.leftBlurCurtain}></div>
-                <div className={Styles.leftRightImageContainer}>
-                  {getImageUrl(currentBlogs[0]) && (
-                    <Image
-                      src={getImageUrl(currentBlogs[0])}
-                      className={Styles.leftRightImage}
-                      alt="Blog Image"
-                      layout="fill"
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Content */}
-            <div className={Styles.item}>
-              <div className={Styles.content}>
-                <div
-                  className={Styles.watchVideo}
-                  onClick={() => {
-                    const selectedItem = currentBlogs[1];
-                    const url = getVideoUrl(selectedItem);
-                    if (url) {
-                      setSelectedVideoUrl(url);
-                      setIsDialogOpen(true);
-                    }
-                  }}
-                >
-                  <span>Watch Video</span>
-                  <div className={Styles.pauseVideo}>
-                    <Image
-                      src={PauseIcon}
-                      alt="Pause Icon"
-                      layout="fixed"
-                      width={18}
-                      height={18}
-                    />
+      {/* Desktop/Tablet: Show carousel, Mobile: Show all videos in a list */}
+      {!isMobile ? (
+        <>
+          <div className={Styles.slider}>
+            <div className={Styles.sliderMain}>
+              <div className={Styles.mainCrousel}>
+                {/* Left Image */}
+                <div className={Styles.item}>
+                  <div className={Styles.leftContent}>
+                    <div className={Styles.leftBlurCurtain}></div>
+                    <div className={Styles.leftRightImageContainer}>
+                      {getImageUrl(currentBlogs[0]) && (
+                        <Image
+                          src={getImageUrl(currentBlogs[0])}
+                          className={Styles.leftRightImage}
+                          alt="Blog Image"
+                          layout="fill"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className={Styles.imageContainer}>
-                  {getImageUrl(currentBlogs[1]) && (
-                    <Image
-                      src={getImageUrl(currentBlogs[1])}
-                      className={Styles.image}
-                      alt="Main Blog"
-                      layout="fill"
-                    />
-                  )}
+                {/* Middle Content */}
+                <div className={Styles.item}>
+                  <div className={Styles.content}>
+                    <div
+                      className={Styles.watchVideo}
+                      onClick={() => {
+                        const selectedItem = currentBlogs[1];
+                        const url = getVideoUrl(selectedItem);
+                        if (url) {
+                          setSelectedVideoUrl(url);
+                          setIsDialogOpen(true);
+                        }
+                      }}
+                    >
+                      <span>Watch Video</span>
+                      <div className={Styles.pauseVideo}>
+                        <Image
+                          src={PauseIcon}
+                          alt="Pause Icon"
+                          layout="fixed"
+                          width={18}
+                          height={18}
+                        />
+                      </div>
+                    </div>
+
+                    <div className={Styles.imageContainer}>
+                      {getImageUrl(currentBlogs[1]) && (
+                        <Image
+                          src={getImageUrl(currentBlogs[1])}
+                          className={Styles.image}
+                          alt="Main Blog"
+                          layout="fill"
+                        />
+                      )}
+                    </div>
+                    <div className={Styles.videoDescription}>
+                      {getDescription(currentBlogs[1])}
+                    </div>
+                  </div>
                 </div>
-                <div className={Styles.videoDescription}>
-                  {getDescription(currentBlogs[1])}
+
+                {/* Right Image */}
+                <div className={Styles.item}>
+                  <div className={Styles.rightContent}>
+                    <div className={Styles.rightBlurCurtain}></div>
+                    <div className={Styles.leftRightImageContainer}>
+                      {getImageUrl(currentBlogs[2]) && (
+                        <Image
+                          src={getImageUrl(currentBlogs[2])}
+                          className={Styles.leftRightImage}
+                          alt="Blog Image"
+                          layout="fill"
+                        />
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className={Styles.item}>
-              <div className={Styles.rightContent}>
-                <div className={Styles.rightBlurCurtain}></div>
-                <div className={Styles.leftRightImageContainer}>
-                  {getImageUrl(currentBlogs[2]) && (
-                    <Image
-                      src={getImageUrl(currentBlogs[2])}
-                      className={Styles.leftRightImage}
-                      alt="Blog Image"
-                      layout="fill"
-                    />
-                  )}
-                </div>
-              </div>
+            <div
+              className={`${Styles.previousButton} ${hasPrevious ? Styles.active : ""}`}
+              onClick={handlePrevious}
+            >
+              <Image
+                src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.previousIcon}
+                alt="Previous"
+                width={20}
+                height={20}
+              />
+            </div>
+
+            <div
+              className={`${Styles.nextButton} ${hasNext ? Styles.active : ""}`}
+              onClick={handleNext}
+            >
+              <Image
+                src={hasNext ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.nextIcon}
+                alt="Next"
+                width={20}
+                height={20}
+              />
             </div>
           </div>
-        </div>
 
-        <div
-          className={`${Styles.previousButton} ${hasPrevious ? Styles.active : ""}`}
-          onClick={handlePrevious}
-        >
-          <Image
-            src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.previousIcon}
-            alt="Previous"
-            width={20}
-            height={20}
-          />
+          <div className={Styles.videoTitle}>
+            <div className={Styles.videoTitleContent}>{getCurrentVideoTitle()}</div>
+            <div className={Styles.previousNumber} onClick={handlePrevious}>
+              {String(currentIndex + 1).padStart(2, "0")}
+            </div>
+            <div className={Styles.nextNumber} onClick={handleNext}>
+              {hasNext ? String(currentIndex + 3).padStart(2, "0") : ""}
+            </div>
+          </div>
+        </>
+      ) : (
+        // Mobile: Show all videos in a vertical list
+        <div style={{ width: "100%", margin: "0 auto", marginTop: "1rem" }}>
+          {currentData.map((item: any, idx: number) => (
+            <div
+              key={item?.id || idx}
+              style={{
+                marginBottom: "2rem",
+                background: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+                padding: "1rem",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "180px",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  marginBottom: "0.75rem",
+                  background: "#eee",
+                }}
+                onClick={() => {
+                  const url = getVideoUrl(item);
+                  if (url) {
+                    setSelectedVideoUrl(url);
+                    setIsDialogOpen(true);
+                  }
+                }}
+              >
+                {getImageUrl(item) && (
+                  <Image
+                    src={getImageUrl(item)}
+                    alt={getDescription(item)}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                )}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 10,
+                    right: 10,
+                    background: "#fa2609",
+                    borderRadius: "50%",
+                    width: 36,
+                    height: 36,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    src={PauseIcon}
+                    alt="Pause Icon"
+                    width={18}
+                    height={18}
+                  />
+                </div>
+              </div>
+              <div
+                style={{
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  marginBottom: "0.5rem",
+                  color: "#fa2609",
+                  textAlign: "left",
+                }}
+              >
+                {getDescription(item)}
+              </div>
+              <button
+                style={{
+                  background: "#fa2609",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "6px",
+                  padding: "0.5rem 1.2rem",
+                  fontWeight: 500,
+                  fontSize: "1rem",
+                  cursor: "pointer",
+                  marginTop: "0.5rem",
+                  width: "100%",
+                }}
+                onClick={() => {
+                  const url = getVideoUrl(item);
+                  if (url) {
+                    setSelectedVideoUrl(url);
+                    setIsDialogOpen(true);
+                  }
+                }}
+              >
+                Watch Video
+              </button>
+            </div>
+          ))}
         </div>
-
-        <div
-          className={`${Styles.nextButton} ${hasNext ? Styles.active : ""}`}
-          onClick={handleNext}
-        >
-          <Image
-            src={hasNext ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.nextIcon}
-            alt="Next"
-            width={20}
-            height={20}
-          />
-        </div>
-      </div>
-
-      <div className={Styles.videoTitle}>
-        <div className={Styles.videoTitleContent}>{getCurrentVideoTitle()}</div>
-        <div className={Styles.previousNumber} onClick={handlePrevious}>
-          {String(currentIndex + 1).padStart(2, "0")}
-        </div>
-        <div className={Styles.nextNumber} onClick={handleNext}>
-          {hasNext ? String(currentIndex + 3).padStart(2, "0") : ""}
-        </div>
-      </div>
+      )}
 
       {isDialogOpen && selectedVideoUrl && (
         <div className={Styles.dialogBackdrop} onClick={() => setIsDialogOpen(false)}>

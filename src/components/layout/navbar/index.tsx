@@ -269,7 +269,9 @@ export function Navbar() {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
  
+
   return (
     <div className={Styles.container} ref={navRef}>
       <header className={Styles.navbar}>

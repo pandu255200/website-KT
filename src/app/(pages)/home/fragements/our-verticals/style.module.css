@@ -339,8 +339,9 @@
   }
 
   .leftMobile .count {
-    margin-top: 3rem;
-    width: 5rem;
+    margin: 1rem;
+    width: auto;
+    /* background-color: green; */
   }
 
   .rightMobile {
