@@ -41,6 +41,22 @@ const Blogs = () => {
     },
   ];
 
+  // Detect if screen is <= 480px
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    // Function to check screen size
+    const checkScreen = () => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth <= 480);
+      }
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // On mobile, show all blogs; on desktop, show slider of 3
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const hasPrevious = currentIndex > 0;
@@ -58,7 +74,10 @@ const Blogs = () => {
     }
   };
 
-  const currentBlogs = blogsData.slice(currentIndex, currentIndex + 3);
+  // For mobile, show all blogs; for desktop, show 3 at a time
+  const currentBlogs = isMobile
+    ? blogsData
+    : blogsData.slice(currentIndex, currentIndex + 3);
 
   return (
     <div className={Styles.container} id="blogs">
@@ -68,14 +87,7 @@ const Blogs = () => {
       </h1>
 
       <div className={Styles.slider}>
-        <div
-          className={Styles.mainCrousel}
-          // style={{
-          //   transform: `translateX(-${
-          //     (currentIndex / blogsData.length) * 100
-          //   }%)`,
-          // }}
-        >
+        <div className={Styles.mainCrousel}>
           {currentBlogs.map((blog, index) => (
             <div className={Styles.item} key={index}>
               <div className={Styles.content}>
@@ -97,7 +109,6 @@ const Blogs = () => {
                     <Image
                       src={TopRightArrowIcon}
                       alt="arrowIcon"
-                      // layout="fixed"
                       width={25}
                       height={25}
                     />
@@ -108,33 +119,36 @@ const Blogs = () => {
           ))}
         </div>
 
-        <div
-          className={`${Styles.previousButton} ${hasPrevious && Styles.active}`}
-          onClick={handlePrevious}
-        >
-          <Image
-            src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.previousIcon}
-            alt="arrowIcon"
-            // layout="fixed"
-            width={20}
-            height={20}
-          />
-        </div>
+        {/* Hide navigation buttons on mobile */}
+        {!isMobile && (
+          <>
+            <div
+              className={`${Styles.previousButton} ${hasPrevious && Styles.active}`}
+              onClick={handlePrevious}
+            >
+              <Image
+                src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.previousIcon}
+                alt="arrowIcon"
+                width={20}
+                height={20}
+              />
+            </div>
 
-        <div
-          className={`${Styles.nextButton} ${hasNext && Styles.active}`}
-          onClick={handleNext}
-        >
-          <Image
-            src={hasNext ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.nextIcon}
-            alt="arrowIcon"
-            // layout="fixed"
-            width={20}
-            height={20}
-          />
-        </div>
+            <div
+              className={`${Styles.nextButton} ${hasNext && Styles.active}`}
+              onClick={handleNext}
+            >
+              <Image
+                src={hasNext ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.nextIcon}
+                alt="arrowIcon"
+                width={20}
+                height={20}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

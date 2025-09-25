@@ -2,7 +2,8 @@
 
 .container {
   /* font-family: Arial, sans-serif; */
-  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   margin: 0;
   padding: 0;
 }
@@ -14,13 +15,15 @@
 .article {
   position: relative;
   margin-bottom: 2rem;
-  position: relative; /* Enable positioning for the hover effect */
+  position: relative;
+  /* Enable positioning for the hover effect */
   transition: 0.5s ease-in-out;
 }
 
 .articleTitle {
   margin: 0;
-  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   font-size: 2rem;
   font-weight: 500;
   line-height: 45.36px;
@@ -31,15 +34,19 @@
 
 .articleDate {
   margin: 5px 0;
-  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
 }
-.hoveredArticle{
+
+.hoveredArticle {
   padding: 4rem 0;
 }
+
 .separator {
   border: 0;
   height: 1px;
-  background: rgba(250, 38, 9, 1); /* Exact red background color */
+  background: rgba(250, 38, 9, 1);
+  /* Exact red background color */
   margin-top: 2rem;
 }
 
@@ -54,8 +61,10 @@
   /* margin-top: 1rem; */
   transition: 5s ease-in-out;
   padding: 1rem;
-  background-color: #fff; /* White background for contrast */
-  border: 1px solid rgba(250, 38, 9, 1); /* Exact red background color */
+  background-color: #fff;
+  /* White background for contrast */
+  border: 1px solid rgba(250, 38, 9, 1);
+  /* Exact red background color */
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -71,16 +80,88 @@
 
 .textContent {
   width: 60%;
-  color: #000; /* Black text color for better readability */
+  color: #000;
+  /* Black text color for better readability */
 }
 
 .textContent h2 {
   margin: 0 0 0.5rem 0;
-  color: rgba(250, 38, 9, 1); /* Exact red background color */
+  color: rgba(250, 38, 9, 1);
+  /* Exact red background color */
 }
 
 .textContent p {
   margin: 0.5rem 0;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .container {
+    color: rgba(250, 38, 9, 1);
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .article {
+    margin-bottom: 1rem;
+  }
+
+  .articleTitle {
+    font-size: 1.5rem;
+  }
+
+  .articleDate {
+    margin: 0px 0;
+    font-size: 1rem;
+  }
+
+  .hoveredArticle {
+    padding: 2rem 0;
+  }
+
+  .separator {
+    border: 0;
+    height: 1px;
+    background: rgba(250, 38, 9, 1);
+    /* Exact red background color */
+    margin-top: 2rem;
+  }
+
+  .hoverContent {
+    padding: 0rem;
+    /* flex-direction: column; */
+  }
+
+  .videoThumbnail {
+    width: 50%;
+    height: 6rem;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .textContent {
+    width: 60%;
+    color: #000;
+    /* Black text color for better readability */
+  }
+
+  .textContent h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .textContent p {
+    margin: 0;
+    font-size: 0.5rem;
+  }
+
 }

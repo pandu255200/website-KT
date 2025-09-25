@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./style.module.css";
 import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
 // import TopLeftArrowIcon from "../../../../../../public/home/case-study/top-left-arrow.svg";
@@ -66,6 +66,17 @@ const CaseStudy = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check on mount and on resize if screen is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const hasPrevious = currentIndex > 0;
   const hasNext = currentIndex < blogsData.length - 3;
@@ -82,7 +93,10 @@ const CaseStudy = () => {
     }
   };
 
-  const currentBlogs = blogsData.slice(currentIndex, currentIndex + 3);
+  // Show all cards on mobile, else show 3 at a time
+  const currentBlogs = isMobile
+    ? blogsData
+    : blogsData.slice(currentIndex, currentIndex + 3);
 
   return (
     <div className={Styles.container} id="case-study">
@@ -92,14 +106,7 @@ const CaseStudy = () => {
       </h1>
 
       <div className={Styles.slider}>
-        <div
-          className={Styles.mainCrousel}
-          // style={{
-          //   transform: `translateX(-${
-          //     (currentIndex / blogsData.length) * 100
-          //   }%)`,
-          // }}
-        >
+        <div className={Styles.mainCrousel}>
           {currentBlogs.map((blog, index) => (
             <div className={Styles.item} key={index}>
               <div className={Styles.content}>
@@ -132,7 +139,6 @@ const CaseStudy = () => {
                       src={TopRightArrowIcon}
                       alt="arrowIcon"
                       className={Styles.arrow}
-                      // layout="fixed"
                       width={25}
                       height={25}
                     />
@@ -143,35 +149,38 @@ const CaseStudy = () => {
           ))}
         </div>
 
-        <div
-          className={`${Styles.previousButton} ${
-            hasPrevious ? Styles.active : ""
-          }`}
-          onClick={handlePrevious}
-        >
-          <Image
-            src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.previousIcon}
-            alt="arrowIcon"
-            // layout="fixed"
-            width={20}
-            height={20}
-          />
-        </div>
+        {/* Hide navigation buttons on mobile */}
+        {!isMobile && (
+          <>
+            <div
+              className={`${Styles.previousButton} ${
+                hasPrevious ? Styles.active : ""
+              }`}
+              onClick={handlePrevious}
+            >
+              <Image
+                src={hasPrevious ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.previousIcon}
+                alt="arrowIcon"
+                width={20}
+                height={20}
+              />
+            </div>
 
-        <div
-          className={`${Styles.nextButton} ${hasNext ? Styles.active : ""}`}
-          onClick={handleNext}
-        >
-          <Image
-            src={hasNext ? WhiteArrowIcon : RedArrowIcon}
-            className={Styles.nextIcon}
-            alt="arrowIcon"
-            // layout="fixed"
-            width={20}
-            height={20}
-          />
-        </div>
+            <div
+              className={`${Styles.nextButton} ${hasNext ? Styles.active : ""}`}
+              onClick={handleNext}
+            >
+              <Image
+                src={hasNext ? WhiteArrowIcon : RedArrowIcon}
+                className={Styles.nextIcon}
+                alt="arrowIcon"
+                width={20}
+                height={20}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
