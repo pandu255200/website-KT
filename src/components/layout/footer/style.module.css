@@ -3,34 +3,34 @@
   color: #1a1a1a;
   width: 100%;
 }
-
+ 
 .footer {
   padding: 2rem 1rem;
 }
-
+ 
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin: 2rem 0;
 }
-
+ 
 .column {
   box-sizing: border-box;
 }
-
+ 
 .heading {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #000;
 }
-
+ 
 .list {
   list-style-type: none;
   padding: 0;
 }
-
+ 
 .listItem {
   font-size: 1rem;
   font-weight: 400;
@@ -39,7 +39,7 @@
   width: 100%;
   max-width: 12rem;
 }
-
+ 
 .lastRow {
   display: flex;
   flex-direction: column;
@@ -47,11 +47,11 @@
   color: #fa2609;
   margin-top: 2rem;
 }
-
+ 
 .lastRowColumn {
   margin: 0.5rem 0;
 }
-
+ 
 /* Responsive styles */
 @media (max-width: 480px) {
   .footer {
@@ -82,7 +82,7 @@
     margin: 0.3rem 0;
   }
 }
-
+ 
 @media (min-width: 600px) {
   .footer {
     padding: 2rem 2.5rem;
@@ -104,7 +104,7 @@
     margin: auto 0;
   }
 }
-
+ 
 @media (min-width: 900px) {
   .footer {
     padding: 2rem 7rem;
@@ -126,71 +126,4 @@
   .lastRowColumn {
     margin: auto;
   }
-}
-
-
-
-/* Default (already for desktops/laptops) */
-
-/* For screens up to 480px */
-@media (max-width: 480px) {
-  .footer {
-    padding: 1.5rem 2rem; /* reduce padding */
-  }
-
-  .gridContainer {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 2rem; 
-    margin: 2rem 0;
-  }
-
-  .heading {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .listItem {
-    font-size: 0.95rem;
-    width: auto; /* allow flexible width */
-  }
-
-  .lastRow {
-    grid-template-columns: 1fr; /* stack last row */
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .lastRowColumn {
-    margin: 0.5rem 0;
-  }
-}
-
-/* For extra small screens up to 380px */
-@media (max-width: 380px) {
-  .footer {
-    padding: 0.5rem ;
-    margin-left: 40px; /* even smaller padding */
-  }
-
-  .gridContainer {
-    grid-template-columns: 1fr; /* single column */
-    gap: 1.5rem;
-    margin: 1.6rem 0;
-  }
-
-  .heading {
-    font-size: 1.1rem;
-  }
-
-  .listItem {
-    font-size: 0.9rem;
-  }
-
-  .lastRow {
-    grid-template-columns: 1fr; /* single column */
-    gap: 0.6rem;
-    font-size: 10px;
-    margin-right: 0.7rem;
-  }
-  
 }

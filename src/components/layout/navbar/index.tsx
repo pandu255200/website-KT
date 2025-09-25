@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import React, { useState, useEffect, useRef } from "react";
 import Styles from "./style.module.css";
 import Image, { StaticImageData } from "next/image";
@@ -10,15 +10,15 @@ import MobileNavLogo from "../../../../public/home/mobile-navlogo.svg";
 import TopRightArrowIcon from "../../../../public/home/top-right-arrow.svg";
 import RemoveIcon from "../../../../public/home/removeIcon.svg";
 import AddIcon from "../../../../public/home/add-icon.svg";
-
+ 
 import ZondhaImage from "../../../../public/home/nav-icons/products/zodha.svg";
 import FaceGenaiImage from "../../../../public/home/nav-icons/products/faceGenai.svg";
 import AnalyticsImage from "../../../../public/home/nav-icons/products/analytics-kart.svg";
-
+ 
 import VerticalsImage from "../../../../public/home/verticals-image.svg";
 import AboutUsImage from "../../../../public/home/about-us-image.svg";
 import SolutionsImage from "../../../../public/home/solutions-image.svg";
-
+ 
 import TextileIcon from "../../../../public/home/nav-icons/verticals/textile.svg";
 import FMCGIcon from "../../../../public/home/nav-icons/verticals/fmcg.svg";
 import RetailIcon from "../../../../public/home/nav-icons/verticals/carrier.svg";
@@ -32,7 +32,7 @@ import LogisticsIcon from "../../../../public/home/nav-icons/verticals/logistics
 import HospitalsIcon from "../../../../public/home/nav-icons/verticals/hospitals.svg";
 import HotelsIcon from "../../../../public/home/nav-icons/verticals/hotels.svg";
 import EducationalIcon from "../../../../public/home/nav-icons/verticals/educational.svg";
-
+ 
 import AutomationIcon from "../../../../public/home/nav-icons/solution-and-services/automation.svg";
 import EhsIcon from "../../../../public/home/nav-icons/solution-and-services/ehs.svg";
 import DigitalIcon from "../../../../public/home/nav-icons/solution-and-services/digital.svg";
@@ -42,7 +42,7 @@ import AndroidIcon from "../../../../public/home/nav-icons/solution-and-services
 import FlutterIcon from "../../../../public/home/nav-icons/solution-and-services/flutter.svg";
 import AiIcon from "../../../../public/home/nav-icons/solution-and-services/ai.svg";
 import SupportIcon from "../../../../public/home/nav-icons/solution-and-services/support.svg";
-
+ 
 import TeamsIcon from "../../../../public/home/nav-icons/about-us/teams.svg";
 import Blogs from "../../../../public/home/nav-icons/about-us/blogs.svg";
 import VideosIcon from "../../../../public/home/nav-icons/about-us/videos.svg";
@@ -54,152 +54,152 @@ import PrivacyIcon from "../../../../public/home/nav-icons/about-us/privacy.svg"
 import CaseIcon from "../../../../public/home/nav-icons/about-us/case.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+ 
 interface MenuItem {
   icon: StaticImageData;
   href: string;
   text?: string;
 }
-
+ 
 interface NavLink {
   text: string;
   href: string;
   menuItems: MenuItem[];
   title: string;
 }
-
+ 
 const products: MenuItem[] = [
-  { icon: ZondhaImage, href: "/zodha-gpt" },
-  { icon: FaceGenaiImage, href: "/face-genie" },
-  { icon: AnalyticsImage, href: "/analyticskart" },
+  { icon: ZondhaImage, href: "zodha-gpt" },
+  { icon: FaceGenaiImage, href: "face-genie" },
+  { icon: AnalyticsImage, href: "analyticskart" },
 ];
-
+ 
 const verticals: MenuItem[] = [
   {
     icon: TextileIcon,
     text: "Textiles, Fabric & Yarn",
-    href: "/our-verticals/0",
+    href: "our-verticals/0",
   },
-  { icon: FMCGIcon, text: "FMCG", href: "/our-verticals/1" },
+  { icon: FMCGIcon, text: "FMCG", href: "our-verticals/1" },
   {
     icon: RetailIcon,
     text: "Retail, E-commerce & Market Places",
-    href: "/our-verticals/2",
+    href: "our-verticals/2",
   },
   {
     icon: ChemicalsIcon,
     text: "Chemicals & Pharmaceuticals",
-    href: "/our-verticals/3",
+    href: "our-verticals/3",
   },
   {
     icon: ConsumerIcon,
     text: "Consumer, Electronics & Medical Devices",
-    href: "/our-verticals/4",
+    href: "our-verticals/4",
   },
   {
     icon: PowerIcon,
     text: "Power, Energy, Oil & Gas",
-    href: "/our-verticals/5",
+    href: "our-verticals/5",
   },
   {
     icon: RealEstateIcon,
     text: "Real Estates & Heavy Infrastructure",
-    href: "/our-verticals/6",
+    href: "our-verticals/6",
   },
   {
     icon: MiningIcon,
     text: "Mining, Metals & Industrial Automation",
-    href: "/our-verticals/7",
+    href: "our-verticals/7",
   },
   {
     icon: AutomotiveIcon,
     text: "Automotives, Ancillaries & Heavy Machineries",
-    href: "/our-verticals/8",
+    href: "our-verticals/8",
   },
   {
     icon: LogisticsIcon,
     text: "Logistics, Warehousing & Transportation",
-    href: "/our-verticals/9",
+    href: "our-verticals/9",
   },
   {
     icon: HospitalsIcon,
     text: "Hospitals, Healthcare & Lifesciences",
-    href: "/our-verticals/10",
+    href: "our-verticals/10",
   },
   {
     icon: HotelsIcon,
     text: "Hotels, QSR & Hospitality",
-    href: "/our-verticals/11",
+    href: "our-verticals/11",
   },
-  { icon: HotelsIcon, text: "BFSI", href: "/our-verticals/12" },
+  { icon: HotelsIcon, text: "BFSI", href: "our-verticals/12" },
   {
     icon: EducationalIcon,
     text: "Educational Institutes",
-    href: "/our-verticals/13",
+    href: "our-verticals/13",
   },
   {
     icon: HotelsIcon,
     text: "Telecom, Media & Entertainment",
-    href: "/our-verticals/14",
+    href: "our-verticals/14",
   },
 ];
-
+ 
 const solutionAndServices: MenuItem[] = [
   {
     icon: AutomationIcon,
     text: "Permit to Work Automation",
-    href: "/solutions-and-services/0",
+    href: "solutions-and-services/0",
   },
   {
     icon: EhsIcon,
     text: "EHS Digitalization",
-    href: "/solutions-and-services/1",
+    href: "solutions-and-services/1",
   },
   {
     icon: DigitalIcon,
     text: "Digital Logbook",
-    href: "/solutions-and-services/2",
+    href: "solutions-and-services/2",
   },
   {
     icon: DataLakeIcon,
     text: "Data Lake Management",
-    href: "/solutions-and-services/3",
+    href: "solutions-and-services/3",
   },
   {
     icon: CloudIcon,
     text: "Cloud Engineering Services",
-    href: "/solutions-and-services/4",
+    href: "solutions-and-services/4",
   },
   {
     icon: AndroidIcon,
     text: "Android/iOS application development",
-    href: "/solutions-and-services/5",
+    href: "solutions-and-services/5",
   },
   {
     icon: FlutterIcon,
     text: "Flutter based application development",
-    href: "/solutions-and-services/6",
+    href: "solutions-and-services/6",
   },
-  { icon: AiIcon, text: "AI Trainings", href: "/solutions-and-services/7" },
+  { icon: AiIcon, text: "AI Trainings", href: "solutions-and-services/7" },
   {
     icon: SupportIcon,
     text: "Tech Support & AMC",
-    href: "/solutions-and-services/8",
+    href: "solutions-and-services/8",
   },
 ];
-
+ 
 const aboutUs: MenuItem[] = [
-  { icon: TeamsIcon, text: "Meet our Team", href: "/our-team" },
-  { icon: Blogs, text: "Blogs", href: "/blogs" },
-  { icon: VideosIcon, text: "Videos", href: "/videos" },
-  { icon: InternshipIcon, text: "Internships", href: "/internships" },
-  { icon: CareerIcon, text: "Careers", href: "/career" },
-  { icon: NewsIcon, text: "News & Press Coverage", href: "/news" },
-  { icon: TestimonialsIcon, text: "Testimonials", href: "/testimonials" },
-  { icon: PrivacyIcon, text: "Privacy Policy", href: "/#privacy" },
-  { icon: CaseIcon, text: "Case Studies", href: "/case-study" },
+  { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
+  { icon: Blogs, text: "Blogs", href: "blogs" },
+  { icon: VideosIcon, text: "Videos", href: "videos" },
+  { icon: InternshipIcon, text: "Internships", href: "internships" },
+  { icon: CareerIcon, text: "Careers", href: "career" },
+  { icon: NewsIcon, text: "News & Press Coverage", href: "news" },
+  { icon: TestimonialsIcon, text: "Testimonials", href: "testimonials" },
+  { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
+  { icon: CaseIcon, text: "Case Studies", href: "case-study" },
 ];
-
+ 
 const navLinks: NavLink[] = [
   {
     text: "Products & Platforms",
@@ -226,7 +226,7 @@ const navLinks: NavLink[] = [
     title: "About Resolute AI Software Pvt Ltd",
   },
 ];
-
+ 
 export function Navbar() {
   const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
   const [menuItem, setMenuItem] = useState<MenuItem[]>([]);
@@ -234,7 +234,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
+ 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -249,7 +249,7 @@ export function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+ 
   const handleChangeMenuItems = (
     selectItem: MenuItem[],
     title: string,
@@ -265,19 +265,11 @@ export function Navbar() {
       setHeading(title);
     }
   };
-
+ 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  const handleSubItemClick = (href: string) => {
-    router.push(href);
-    setIsMobileMenuOpen(false);
-    setActiveMenuIndex(null);
-    setMenuItem([]);
-    setHeading("");
-  };
-
+ 
   return (
     <div className={Styles.container} ref={navRef}>
       <header className={Styles.navbar}>
@@ -334,7 +326,7 @@ export function Navbar() {
             height={24}
           />
         </button>
-
+ 
         <button className={Styles.menuIconButton} onClick={toggleMobileMenu}>
           <Image
             src={MenuIcon.src}
@@ -345,14 +337,14 @@ export function Navbar() {
           />
         </button>
       </header>
-
+ 
       {/* Mobile Menu */}
       <div className={`${Styles.mobileMenu} ${isMobileMenuOpen ? Styles.active : ""}`}>
-        <div className={Styles.mobileMenuHeader}>
+        <div className="flex justify-end">
           <Image
             onClick={toggleMobileMenu}
             src={CloseIcon.src}
-            alt="Close"
+            alt="logo"
             className={Styles.closeIcon}
             width={40}
             height={49}
@@ -362,11 +354,11 @@ export function Navbar() {
           <div key={link.text} className={Styles.mobileMenuItem}>
             <div
               onClick={() => handleChangeMenuItems(link.menuItems, link.title, index)}
-              className={Styles.mobileMenuLink}
+              style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
             >
-              <Link href={link.href}>
-                <span>{link.text}</span>
-              </Link>
+              <span>
+                {link.text}
+              </span>
               <Image
                 src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
                 alt={activeMenuIndex === index ? "Remove" : "Add"}
@@ -377,20 +369,16 @@ export function Navbar() {
             {activeMenuIndex === index && (
               <div className={Styles.mobileSubMenu}>
                 {link.menuItems.map((item, subIndex) => (
-                  <div
-                    key={subIndex}
-                    onClick={() => handleSubItemClick(item.href)}
-                    className={Styles.mobileSubItem}
-                  >
-                    {item.text}
-                  </div>
+                  <Link href={item.href} key={subIndex} className={Styles.mobileSubItem}>
+                    {item.text}fdsf
+                  </Link>
                 ))}
               </div>
             )}
           </div>
         ))}
       </div>
-
+ 
       {/* Main Content */}
       {menuItem.length > 0 && (
         <div
@@ -423,16 +411,16 @@ export function Navbar() {
               ))}
             </div>
           </div>
-
+ 
           {activeMenuIndex !== null && activeMenuIndex > 0 ? (
             <div className={Styles.imageContainer}>
               <Image
                 src={
-                  activeMenuIndex === 1
+                  activeMenuIndex == 1
                     ? SolutionsImage.src
-                    : activeMenuIndex === 2
-                    ? VerticalsImage.src
-                    : AboutUsImage.src
+                    : activeMenuIndex == 2
+                      ? VerticalsImage.src
+                      : AboutUsImage.src
                 }
                 className={Styles.navImages}
                 alt="Verticals"
