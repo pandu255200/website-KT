@@ -1,5 +1,5 @@
 "use client";
- 
+
 import React, { useState, useEffect, useRef } from "react";
 import Styles from "./style.module.css";
 import Image, { StaticImageData } from "next/image";
@@ -10,15 +10,15 @@ import MobileNavLogo from "../../../../public/home/mobile-navlogo.svg";
 import TopRightArrowIcon from "../../../../public/home/top-right-arrow.svg";
 import RemoveIcon from "../../../../public/home/removeIcon.svg";
 import AddIcon from "../../../../public/home/add-icon.svg";
- 
+
 import ZondhaImage from "../../../../public/home/nav-icons/products/zodha.svg";
 import FaceGenaiImage from "../../../../public/home/nav-icons/products/faceGenai.svg";
 import AnalyticsImage from "../../../../public/home/nav-icons/products/analytics-kart.svg";
- 
+
 import VerticalsImage from "../../../../public/home/verticals-image.svg";
 import AboutUsImage from "../../../../public/home/about-us-image.svg";
 import SolutionsImage from "../../../../public/home/solutions-image.svg";
- 
+
 import TextileIcon from "../../../../public/home/nav-icons/verticals/textile.svg";
 import FMCGIcon from "../../../../public/home/nav-icons/verticals/fmcg.svg";
 import RetailIcon from "../../../../public/home/nav-icons/verticals/carrier.svg";
@@ -32,7 +32,7 @@ import LogisticsIcon from "../../../../public/home/nav-icons/verticals/logistics
 import HospitalsIcon from "../../../../public/home/nav-icons/verticals/hospitals.svg";
 import HotelsIcon from "../../../../public/home/nav-icons/verticals/hotels.svg";
 import EducationalIcon from "../../../../public/home/nav-icons/verticals/educational.svg";
- 
+
 import AutomationIcon from "../../../../public/home/nav-icons/solution-and-services/automation.svg";
 import EhsIcon from "../../../../public/home/nav-icons/solution-and-services/ehs.svg";
 import DigitalIcon from "../../../../public/home/nav-icons/solution-and-services/digital.svg";
@@ -42,7 +42,7 @@ import AndroidIcon from "../../../../public/home/nav-icons/solution-and-services
 import FlutterIcon from "../../../../public/home/nav-icons/solution-and-services/flutter.svg";
 import AiIcon from "../../../../public/home/nav-icons/solution-and-services/ai.svg";
 import SupportIcon from "../../../../public/home/nav-icons/solution-and-services/support.svg";
- 
+
 import TeamsIcon from "../../../../public/home/nav-icons/about-us/teams.svg";
 import Blogs from "../../../../public/home/nav-icons/about-us/blogs.svg";
 import VideosIcon from "../../../../public/home/nav-icons/about-us/videos.svg";
@@ -54,26 +54,26 @@ import PrivacyIcon from "../../../../public/home/nav-icons/about-us/privacy.svg"
 import CaseIcon from "../../../../public/home/nav-icons/about-us/case.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
- 
+
 interface MenuItem {
   icon: StaticImageData;
   href: string;
   text?: string;
 }
- 
+
 interface NavLink {
   text: string;
   href: string;
   menuItems: MenuItem[];
   title: string;
 }
- 
+
 const products: MenuItem[] = [
   { icon: ZondhaImage, href: "zodha-gpt" },
   { icon: FaceGenaiImage, href: "face-genie" },
   { icon: AnalyticsImage, href: "analyticskart" },
 ];
- 
+
 const verticals: MenuItem[] = [
   {
     icon: TextileIcon,
@@ -143,7 +143,7 @@ const verticals: MenuItem[] = [
     href: "our-verticals/14",
   },
 ];
- 
+
 const solutionAndServices: MenuItem[] = [
   {
     icon: AutomationIcon,
@@ -187,7 +187,7 @@ const solutionAndServices: MenuItem[] = [
     href: "solutions-and-services/8",
   },
 ];
- 
+
 const aboutUs: MenuItem[] = [
   { icon: TeamsIcon, text: "Meet our Team", href: "our-team" },
   { icon: Blogs, text: "Blogs", href: "blogs" },
@@ -199,7 +199,7 @@ const aboutUs: MenuItem[] = [
   { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
   { icon: CaseIcon, text: "Case Studies", href: "case-study" },
 ];
- 
+
 const navLinks: NavLink[] = [
   {
     text: "Products & Platforms",
@@ -226,7 +226,7 @@ const navLinks: NavLink[] = [
     title: "About Resolute AI Software Pvt Ltd",
   },
 ];
- 
+
 export function Navbar() {
   const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
   const [menuItem, setMenuItem] = useState<MenuItem[]>([]);
@@ -234,7 +234,18 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
- 
+  const [isMobile, setIsMobile] = useState(false);
+  const [openMobileIndex, setOpenMobileIndex] = useState<number | null>(null);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024); // adjust breakpoint as needed
+    };
+
+    handleResize(); // run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -249,7 +260,7 @@ export function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
- 
+
   const handleChangeMenuItems = (
     selectItem: MenuItem[],
     title: string,
@@ -265,12 +276,10 @@ export function Navbar() {
       setHeading(title);
     }
   };
- 
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
- 
 
   return (
     <div className={Styles.container} ref={navRef}>
@@ -291,14 +300,17 @@ export function Navbar() {
             height={49}
           />
         </Link>
-        <nav className={Styles.navLinks}>
+        <nav className={`${Styles.navLinks} ${Styles.desktopNavLinks}`}>
           {navLinks.map((link, index) => (
             <div
               className={Styles.links}
               key={link.text}
               onMouseEnter={(e) => {
-                e.preventDefault();
-                handleChangeMenuItems(link.menuItems, link.title, index);
+                if (!isMobile) {
+                  // 👈 only run on desktop
+                  e.preventDefault();
+                  handleChangeMenuItems(link.menuItems, link.title, index);
+                }
               }}
             >
               <Link href={link.href}>{link.text}</Link>
@@ -306,8 +318,11 @@ export function Navbar() {
                 src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
                 alt={activeMenuIndex === index ? "Remove" : "Add"}
                 onClick={(e) => {
-                  e.preventDefault();
-                  handleChangeMenuItems(link.menuItems, link.title, index);
+                  if (!isMobile) {
+                    // 👈 block on mobile
+                    e.preventDefault();
+                    handleChangeMenuItems(link.menuItems, link.title, index);
+                  }
                 }}
                 width={24}
                 height={24}
@@ -315,6 +330,7 @@ export function Navbar() {
             </div>
           ))}
         </nav>
+
         <button
           onClick={() => router.push("#partner-with-us")}
           className={Styles.partnerButton}
@@ -328,7 +344,7 @@ export function Navbar() {
             height={24}
           />
         </button>
- 
+
         <button className={Styles.menuIconButton} onClick={toggleMobileMenu}>
           <Image
             src={MenuIcon.src}
@@ -339,9 +355,13 @@ export function Navbar() {
           />
         </button>
       </header>
- 
+
       {/* Mobile Menu */}
-      <div className={`${Styles.mobileMenu} ${isMobileMenuOpen ? Styles.active : ""}`}>
+      <div
+        className={`${Styles.mobileMenu} ${
+          isMobileMenuOpen ? Styles.active : ""
+        }`}
+      >
         <div className="flex justify-end">
           <Image
             onClick={toggleMobileMenu}
@@ -352,27 +372,43 @@ export function Navbar() {
             height={49}
           />
         </div>
+
         {navLinks.map((link, index) => (
           <div key={link.text} className={Styles.mobileMenuItem}>
             <div
-              onClick={() => handleChangeMenuItems(link.menuItems, link.title, index)}
-              style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+              onClick={() =>
+                setOpenMobileIndex(openMobileIndex === index ? null : index)
+              }
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              <span>
-                {link.text}
-              </span>
+              <span>{link.text}</span>
               <Image
-                src={activeMenuIndex === index ? RemoveIcon.src : AddIcon.src}
-                alt={activeMenuIndex === index ? "Remove" : "Add"}
+                src={openMobileIndex === index ? RemoveIcon.src : AddIcon.src}
+                alt={openMobileIndex === index ? "Remove" : "Add"}
                 width={20}
                 height={20}
               />
             </div>
-            {activeMenuIndex === index && (
+            {openMobileIndex === index && (
               <div className={Styles.mobileSubMenu}>
                 {link.menuItems.map((item, subIndex) => (
-                  <Link href={item.href} key={subIndex} className={Styles.mobileSubItem}>
-                    {item.text}fdsf
+                  <Link
+                    href={item.href}
+                    key={subIndex}
+                    className={Styles.mobileSubItem}
+                  >
+                    <Image
+                      src={item.icon.src}
+                      alt={item.text || "icon"}
+                      width={100} // 👈 bigger size for mobile
+                      height={50}
+                      className={Styles.mobileSubIcon}
+                    />
+                    {item.text}
                   </Link>
                 ))}
               </div>
@@ -380,7 +416,7 @@ export function Navbar() {
           </div>
         ))}
       </div>
- 
+
       {/* Main Content */}
       {menuItem.length > 0 && (
         <div
@@ -413,7 +449,7 @@ export function Navbar() {
               ))}
             </div>
           </div>
- 
+
           {activeMenuIndex !== null && activeMenuIndex > 0 ? (
             <div className={Styles.imageContainer}>
               <Image
@@ -421,8 +457,8 @@ export function Navbar() {
                   activeMenuIndex == 1
                     ? SolutionsImage.src
                     : activeMenuIndex == 2
-                      ? VerticalsImage.src
-                      : AboutUsImage.src
+                    ? VerticalsImage.src
+                    : AboutUsImage.src
                 }
                 className={Styles.navImages}
                 alt="Verticals"
