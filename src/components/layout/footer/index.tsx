@@ -99,7 +99,7 @@ export function Footer() {
 
         <div className={Styles.lastRow}>
 
-          <div className={Styles.lastOne} style={{ fontWeight: 500, fontSize: "1rem", width: "25rem" }}>
+          <div className={Styles.lastOne} style={{ fontWeight: 500, fontSize: "1rem", width: "auto" }}>
 
           <div style={{ fontWeight: 500, fontSize: "1rem"}}>
 
