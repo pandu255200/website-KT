@@ -307,3 +307,20 @@
 
 
 
+
+.mobileToggleIcony {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
+
+
+   filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(7465%) hue-rotate(2deg) brightness(100%) contrast(119%);
+}
+
+
+
+.mobileMenuItem.active .mobileToggleIcony {
+  filter: brightness(0) invert(1);
+}

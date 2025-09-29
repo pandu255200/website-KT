@@ -391,6 +391,7 @@ export function Navbar() {
                 alt={openMobileIndex === index ? "Remove" : "Add"}
                 width={20}
                 height={20}
+                className={Styles.mobileToggleIcony}
               />
             </div>
             {openMobileIndex === index && (
