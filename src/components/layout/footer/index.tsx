@@ -1,28 +1,31 @@
 "use client";
 import React from "react";
-import Link from "next/link"; // ✅ Add this
+import Link from "next/link";
 import Styles from "./style.module.css";
-
 const linkMap = {
   // Core
-  // "AI - Products & Platforms": "/zodha-gpt",
   "AI - Products & Platforms": "#aiProductsPlatforms",
   "AI - Solutions & IT Services": "/solutions-and-services/0",
+
   // Explore
   About: "/about-us",
   Solutions: "/solutions-and-services/0",
   Videos: "/videos",
   Blogs: "/blogs",
   Testimonials: "/testimonials",
+
   // Products
   ZodhaGPT: "/zodha-gpt",
   AnalyticsKart: "/analyticskart",
   FaceGenie: "/face-genie",
+
   // Company
   Internships: "/internships",
   Careers: "/career",
-  "Privacy Policy": "/privacy-policy",
+  "Privacy Policy":
+    "https://drive.google.com/file/d/1f9miUqigNAr_QZJrtE78WHKV3n7YySU-/view?usp=sharing", // ✅ Your Google Drive PDF link
   "Terms of Use": "/terms-of-use",
+
   // Social
   LinkedIn: "https://linkedin.com",
   Instagram: "https://instagram.com",
@@ -70,6 +73,8 @@ export function Footer() {
                 {column.items.map((item, idx) => {
                   const href = linkMap[item] || "#";
                   const isExternal = href.startsWith("http");
+                  const isPDF = href.endsWith(".pdf"); // ⬅️ Detect PDF links
+
                   return (
                     <li key={idx} className={Styles.listItem}>
                       {isExternal ? (
@@ -98,55 +103,77 @@ export function Footer() {
         </div>
 
         <div className={Styles.lastRow}>
+          <div
+            className={Styles.lastOne}
+            style={{ fontWeight: 500, fontSize: "1rem", width: "auto" }}
+          >
+            <div style={{ fontWeight: 500, fontSize: "1rem" }}>
+              Resolute AI Software Private Limited,
+              <br />
+              5th Floor, 91Springboard, #175, Dollars Colony, Phase 4, JP Nagar,
+              <br />
+              Bannerghatta Main Road, Bangalore 560076, India.
+            </div>
 
-          <div className={Styles.lastOne} style={{ fontWeight: 500, fontSize: "1rem", width: "auto" }}>
+            <div className={Styles.lastRowColumn}>
+              <span style={{ fontWeight: 600, fontSize: "1.375rem" }}>
+                Contact
+              </span>
 
-          <div style={{ fontWeight: 500, fontSize: "1rem"}}>
+              <a
+                href="tel:7406938888"
+                style={{
+                  display: "block",
+                  margin: "0.4rem 0",
+                  fontWeight: 400,
+                  fontSize: "1rem",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                7406938888
+              </a>
 
-            Resolute AI Software Private Limited,
-            <br />
-            5th Floor, 91Springboard, #175, Dollars Colony, Phase 4, JP Nagar,
-            <br />
-            Bannerghatta Main Road, Bangalore 560076, India.
-          </div>
-          <div className={Styles.lastRowColumn}>
-            <span style={{ fontWeight: 600, fontSize: "1.375rem" }}>Contact</span>
+              <a
+                href="tel:7406937777"
+                style={{
+                  display: "block",
+                  fontWeight: 400,
+                  fontSize: "1rem",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                7406937777
+              </a>
+            </div>
 
-            <a
-              href="tel:7406938888"
+            {/* --- ISO CERTIFICATION LINE --- */}
+            <div
               style={{
-                display: "block", // ⬅️ This makes it stack vertically
-                margin: "0.4rem 0",
-                fontWeight: 400,
+                marginTop: "1rem",
+                fontWeight: 500,
                 fontSize: "1rem",
-                cursor: "pointer",
-                textDecoration: "none",
-                color: "inherit"
+                textAlign: "left",
+                lineHeight: "1.5",
               }}
             >
-              7406938888
-            </a>
-
-            <a
-              href="tel:7406937777"
-              style={{
-                display: "block", // ⬅️ This also stacks it
-                fontWeight: 400,
-                fontSize: "1rem",
-                cursor: "pointer",
-                textDecoration: "none",
-                color: "inherit"
-              }}
-            >
-              7406937777
-            </a>
+              © 2025 ResoluteAI Software.in, All rights reserved.
+              <br />
+              <span
+                style={{
+                  fontSize: "0.95rem",
+                  color: "#fa2f13",
+                  fontStyle: "italic",
+                }}
+              >
+                ISO/IEC 27001:2022 Certified Company
+              </span>
+            </div>
           </div>
-
-          <div style={{ fontWeight: 500, fontSize: "1rem" }}>
-            © 2025 ResoluteAI Software.in, All rights reserved.
-          </div>
-          </div>
-          </div>
+        </div>
       </footer>
     </div>
   );

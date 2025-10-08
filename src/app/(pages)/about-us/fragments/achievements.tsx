@@ -37,7 +37,7 @@ export const Achievements = () => {
             <Image
               src={Achievement1}
               alt="Achievement 1"
-              style={{ objectFit:"cover" }}
+              style={{ objectFit: "cover" }}
               height={360}
               width={320}
             />
@@ -46,7 +46,7 @@ export const Achievements = () => {
             <Image
               src={Achievement2}
               alt="Achievement 2"
-              style={{ objectFit:"cover" }}
+              style={{ objectFit: "cover" }}
               height={190}
               width={320}
             />
@@ -57,7 +57,7 @@ export const Achievements = () => {
               alt="Achievement 3"
               width={250}
               height={190}
-              style={{ objectFit:"cover" }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className={styles.box}>
@@ -65,23 +65,17 @@ export const Achievements = () => {
               src={Achievement4}
               alt="Achievement 4"
               width={320}
-              height={190}
-              style={{ objectFit:"cover" }}
+              height={240} // increased height for better clarity
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className={styles.box} style={{ overflow: "hidden" }}>
             <Image
               src={Achievement5}
               alt="Achievement 5"
-              width={240}
-              height={190}
-              style={{ 
-                marginTop:"6rem",
-                marginLeft:"-7rem",
-                objectFit: "cover",
-                objectPosition: "top top",
-                scale:"2"
-              }}
+              width={320} // match container width
+              height={240} // increased height
+              style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
         </div>
