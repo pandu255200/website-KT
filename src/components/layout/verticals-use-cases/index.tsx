@@ -63,6 +63,78 @@ interface VerticalsUseCasesSliderProps {
   link: string;
 }
 
+
+const optionsData: OptionsData[] = [
+  { title: "Textile, Fabric & Yarn", value: "/our-verticals/0" },
+  {
+    title: "FMCG",
+    value: "/our-verticals/1",
+  },
+  {
+    title: "Retail, E-commerce & Market Places",
+    value: "/our-verticals/2",
+  },
+  {
+    title: "Chemicals & Pharmaceuticals",
+    value: "/our-verticals/3",
+  },
+  {
+    title: "Consumer, Electronics & Medical Devices",
+    value: "/our-verticals/4",
+  },
+  {
+    title: "Power, Energy, Oil & Gas",
+    value: "/our-verticals/5",
+  },
+  {
+    title: "Real Estate & Heavy Infrastructure",
+    value: "/our-verticals/6",
+  },
+  {
+    title: "Mining, Metals & Industrial Automation",
+    value: "/our-verticals/7",
+  },
+  {
+    title: "Automotives, Ancillaries & Heavy Machineries",
+    value: "/our-verticals/8",
+  },
+  {
+    title: "Logistics, Warehousing & Transportation",
+    value: "/our-verticals/9",
+  },
+  {
+    title: "Hospitals, Healthcare & Lifesciences",
+    value: "/our-verticals/10",
+  },
+  {
+    title: "Hotels, QSR & Hospitality",
+    value: "/our-verticals/11",
+  },
+  {
+    title: "BFSI",
+    value: "/our-verticals/12",
+  },
+  {
+    title: "Educational Institutes",
+    value: "/our-verticals/13",
+  },
+  {
+    title: "Telecom, Media & Entertainment",
+    value: "/our-verticals/14",
+  },
+];
+
+export function VerticalsUseCasesSlider({
+  dataIds,
+  pageTitle,
+  link,
+}: VerticalsUseCasesSliderProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
+  let newData = data.filter((item) => dataIds.includes(item.id));
+
+
+  
 const data: SliderData[] = [
   {
     id: 1,
@@ -484,7 +556,7 @@ const data: SliderData[] = [
     title: "EHS Digitalization",
     description:
       "Our EHS Digitalization solution leverages AI to automate safety inspections, incident reporting, and compliance tracking. The platform provides real-time insights into safety metrics, ensuring proactive risk mitigation and improving workplace safety standards.",
-    image: SlideImg3,
+    image: currentSlide === 1 ? SlideImg3 : SlideImg3Red ,
     benefits: [
       "AI-powered incident detection and reporting",
       "Automated safety inspections and compliance checks",
@@ -596,75 +668,6 @@ const data: SliderData[] = [
     image: Solutions8,
   },
 ];
-
-const optionsData: OptionsData[] = [
-  { title: "Textile, Fabric & Yarn", value: "/our-verticals/0" },
-  {
-    title: "FMCG",
-    value: "/our-verticals/1",
-  },
-  {
-    title: "Retail, E-commerce & Market Places",
-    value: "/our-verticals/2",
-  },
-  {
-    title: "Chemicals & Pharmaceuticals",
-    value: "/our-verticals/3",
-  },
-  {
-    title: "Consumer, Electronics & Medical Devices",
-    value: "/our-verticals/4",
-  },
-  {
-    title: "Power, Energy, Oil & Gas",
-    value: "/our-verticals/5",
-  },
-  {
-    title: "Real Estate & Heavy Infrastructure",
-    value: "/our-verticals/6",
-  },
-  {
-    title: "Mining, Metals & Industrial Automation",
-    value: "/our-verticals/7",
-  },
-  {
-    title: "Automotives, Ancillaries & Heavy Machineries",
-    value: "/our-verticals/8",
-  },
-  {
-    title: "Logistics, Warehousing & Transportation",
-    value: "/our-verticals/9",
-  },
-  {
-    title: "Hospitals, Healthcare & Lifesciences",
-    value: "/our-verticals/10",
-  },
-  {
-    title: "Hotels, QSR & Hospitality",
-    value: "/our-verticals/11",
-  },
-  {
-    title: "BFSI",
-    value: "/our-verticals/12",
-  },
-  {
-    title: "Educational Institutes",
-    value: "/our-verticals/13",
-  },
-  {
-    title: "Telecom, Media & Entertainment",
-    value: "/our-verticals/14",
-  },
-];
-
-export function VerticalsUseCasesSlider({
-  dataIds,
-  pageTitle,
-  link,
-}: VerticalsUseCasesSliderProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const router = useRouter();
-  let newData = data.filter((item) => dataIds.includes(item.id));
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % newData.length);
