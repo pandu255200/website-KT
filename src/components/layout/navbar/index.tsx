@@ -196,7 +196,12 @@ const aboutUs: MenuItem[] = [
   { icon: CareerIcon, text: "Careers", href: "career" },
   { icon: NewsIcon, text: "News & Press Coverage", href: "news" },
   { icon: TestimonialsIcon, text: "Testimonials", href: "testimonials" },
-  { icon: PrivacyIcon, text: "Privacy Policy", href: "#privacy" },
+  {
+    icon: PrivacyIcon,
+    text: "Privacy Policy",
+    href: "https://drive.google.com/file/d/1f9miUqigNAr_QZJrtE78WHKV3n7YySU-/view?usp=sharing",
+  },
+
   { icon: CaseIcon, text: "Case Studies", href: "case-study" },
 ];
 
@@ -396,22 +401,41 @@ export function Navbar() {
             </div>
             {openMobileIndex === index && (
               <div className={Styles.mobileSubMenu}>
-                {link.menuItems.map((item, subIndex) => (
-                  <Link
-                    href={item.href}
-                    key={subIndex}
-                    className={Styles.mobileSubItem}
-                  >
-                    <Image
-                      src={item.icon.src}
-                      alt={item.text || "icon"}
-                      width={100} // 👈 bigger size for mobile
-                      height={50}
-                      className={Styles.mobileSubIcon}
-                    />
-                    {item.text}
-                  </Link>
-                ))}
+                {link.menuItems.map((item, subIndex) =>
+                  item.href.startsWith("http") ? (
+                    <a
+                      href={item.href}
+                      key={subIndex}
+                      className={Styles.mobileSubItem}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={item.icon.src}
+                        alt={item.text || "icon"}
+                        width={100}
+                        height={50}
+                        className={Styles.mobileSubIcon}
+                      />
+                      {item.text}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      key={subIndex}
+                      className={Styles.mobileSubItem}
+                    >
+                      <Image
+                        src={item.icon.src}
+                        alt={item.text || "icon"}
+                        width={100}
+                        height={50}
+                        className={Styles.mobileSubIcon}
+                      />
+                      {item.text}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>
