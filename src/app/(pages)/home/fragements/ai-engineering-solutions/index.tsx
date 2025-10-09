@@ -7,6 +7,8 @@ import Image from "next/image";
 import SlideImg from "../../../../../../public/home/ai-engineering/slide-img1.svg";
 import SlideImg2 from "../../../../../../public/home/ai-engineering/slide-img-2.svg";
 import SlideImg3 from "../../../../../../public/home/ai-engineering/slide-img-3.svg";
+import SlideImg3Red from "../../../../../../public/home/ai-engineering/slide-img-red-3.svg";
+
 import Solutions3 from "../../../../../../public/home/ai-engineering/solutions-3.svg";
 import Solutions4 from "../../../../../../public/home/ai-engineering/solutions-4.svg";
 import Solutions5 from "../../../../../../public/home/ai-engineering/solutions-5.svg";
@@ -23,71 +25,7 @@ interface EngineeringSolutionsProps {
   solution: number;
 }
 
-const slides = [
-  {
-    title: "Permit to Work Automation",
-    description:
-      "Our AI-led Permit to Work Automation streamlines the process of managing work permits, ensuring compliance and safety across industrial and operational environments. The system automates permit creation, tracking, and approvals while integrating with exist...",
-    image: SlideImg,
-    alt: "Work Permit Automation",
-  },
-  {
-    title: "EHS Digitalization",
-    description:
-      "Our EHS Digitalization solution leverages AI to automate safety inspections, incident reporting, and compliance tracking. The platform provides real-time insights into safety metrics, ensuring proactive risk mitigation and improving workplace safety standards.",
-    image: SlideImg3,
-    alt: "EHS Digitalization",
-  },
-  {
-    title: "Digital Logbook",
-    description:
-      "Our Digital Logbook replaces traditional paper-based logbooks with an AI-enabled digital platform. It captures operational data, maintenance records, and shift handovers in real time, ensuring accurate and secure data storage and retrieval.",
-    image: Solutions3,
-    alt: "Digital Logbook",
-  },
-  {
-    title: "Data Lake Management",
-    description:
-      "Our Data Lake Management solution organizes and manages large volumes of structured and unstructured data using AI and machine learning. It automates data ingestion, classification, and retrieval, providing actionable insights and enhancing data-driven decision-making.",
-    image: Solutions4,
-    alt: "Data Lake Management",
-  },
-  {
-    title: "Cloud Engineering Services",
-    description:
-      "Our Cloud Engineering Services provide end-to-end cloud infrastructure management, including deployment, monitoring, and optimization. AI-driven automation ensures scalability, security, and high availability of cloud-based applications.",
-    image: Solutions5,
-    alt: "Cloud Engineering Services",
-  },
-  {
-    title: "Android/iOS Application Development",
-    description:
-      "Our AI-enabled Android and iOS application development services deliver user-centric mobile apps with advanced features like real-time data processing, personalized recommendations, and seamless user experience.",
-    image: Solutions6,
-    alt: "Android/iOS Application Development",
-  },
-  {
-    title: "Flutter based Application Development",
-    description:
-      "Our Flutter-based application development leverages AI to create high-performance, cross-platform apps from a single codebase. The platform ensures consistent UI/UX, rapid deployment, and real-time feature updates.",
-    image: Solutions6,
-    alt: "Flutter based Application Development",
-  },
-  {
-    title: "AI Trainings",
-    description:
-      "Our AI Training programs equip businesses and teams with the knowledge and skills needed to implement and scale AI-driven solutions. The training covers AI model development, deployment, and performance optimization across industries.",
-    image: Solutions7,
-    alt: "AI Trainings",
-  },
-  {
-    title: "Tech Support & AMC",
-    description:
-      "Our Tech Support & AMC services ensure the smooth functioning and long-term performance of your deployed systems, platforms, and infrastructure. From proactive maintenance to rapid issue resolution, our expert team provides round-the-cl...",
-    image: Solutions8,
-    alt: "Tech Support & AMC",
-  },
-];
+
 
 const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
   goback,
@@ -95,6 +33,74 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
 }) => {
   const [currentSlide, setCurrentSlide] = useState(solution);
   const [bgImageRotation, setBgImageRotation] = useState(0);
+
+  const slides = [
+    {
+      title: "Permit to Work Automation",
+      description:
+        "Our AI-led Permit to Work Automation streamlines the process of managing work permits, ensuring compliance and safety across industrial and operational environments. The system automates permit creation, tracking, and approvals while integrating with exist...",
+      image: SlideImg,
+      alt: "Work Permit Automation",
+    },
+    {
+      title: "EHS Digitalization",
+      description:
+        "Our EHS Digitalization solution leverages AI to automate safety inspections, incident reporting, and compliance tracking. The platform provides real-time insights into safety metrics, ensuring proactive risk mitigation and improving workplace safety standards.",
+      image: currentSlide === 1 ? SlideImg3 : SlideImg3Red ,
+      alt: "EHS Digitalization",
+    },
+    {
+      title: "Digital Logbook",
+      description:
+        "Our Digital Logbook replaces traditional paper-based logbooks with an AI-enabled digital platform. It captures operational data, maintenance records, and shift handovers in real time, ensuring accurate and secure data storage and retrieval.",
+      image: Solutions3,
+      alt: "Digital Logbook",
+    },
+    {
+      title: "Data Lake Management",
+      description:
+        "Our Data Lake Management solution organizes and manages large volumes of structured and unstructured data using AI and machine learning. It automates data ingestion, classification, and retrieval, providing actionable insights and enhancing data-driven decision-making.",
+      image: Solutions4,
+      alt: "Data Lake Management",
+    },
+    {
+      title: "Cloud Engineering Services",
+      description:
+        "Our Cloud Engineering Services provide end-to-end cloud infrastructure management, including deployment, monitoring, and optimization. AI-driven automation ensures scalability, security, and high availability of cloud-based applications.",
+      image: Solutions5,
+      alt: "Cloud Engineering Services",
+    },
+    {
+      title: "Android/iOS Application Development",
+      description:
+        "Our AI-enabled Android and iOS application development services deliver user-centric mobile apps with advanced features like real-time data processing, personalized recommendations, and seamless user experience.",
+      image: Solutions6,
+      alt: "Android/iOS Application Development",
+    },
+    {
+      title: "Flutter based Application Development",
+      description:
+        "Our Flutter-based application development leverages AI to create high-performance, cross-platform apps from a single codebase. The platform ensures consistent UI/UX, rapid deployment, and real-time feature updates.",
+      image: Solutions6,
+      alt: "Flutter based Application Development",
+    },
+    {
+      title: "AI Trainings",
+      description:
+        "Our AI Training programs equip businesses and teams with the knowledge and skills needed to implement and scale AI-driven solutions. The training covers AI model development, deployment, and performance optimization across industries.",
+      image: Solutions7,
+      alt: "AI Trainings",
+    },
+    {
+      title: "Tech Support & AMC",
+      description:
+        "Our Tech Support & AMC services ensure the smooth functioning and long-term performance of your deployed systems, platforms, and infrastructure. From proactive maintenance to rapid issue resolution, our expert team provides round-the-cl...",
+      image: Solutions8,
+      alt: "Tech Support & AMC",
+    },
+  ];
+
+  console.log(currentSlide, "currentSlide");
 
   // Function to get visible slides (previous, current, next)
   const getVisibleSlides = () => {
@@ -155,13 +161,12 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
           {getVisibleSlides().map((item) => (
             <div
               key={item.index}
-              className={`${Styles.slide} ${
-                item.position === "current"
+              className={`${Styles.slide} ${item.position === "current"
                   ? Styles.centerSlide
                   : item.position === "previous"
-                  ? Styles.previousSlide
-                  : Styles.nextSlide
-              }`}
+                    ? Styles.previousSlide
+                    : Styles.nextSlide
+                }`}
             >
               <div className={Styles.rightSection}>
                 <Image
@@ -213,9 +218,8 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
         </button>
         <button
           disabled={currentSlide === slides.length - 1}
-          className={`${Styles.navBtn} ${
-            currentSlide === slides.length - 1 ? "disabled" : ""
-          }`}
+          className={`${Styles.navBtn} ${currentSlide === slides.length - 1 ? "disabled" : ""
+            }`}
           onClick={handleNext}
         >
           <Image src={RIghtAngleIcon.src} alt="Next" width={25} height={25} />
