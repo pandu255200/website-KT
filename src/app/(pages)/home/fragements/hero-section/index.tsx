@@ -31,8 +31,6 @@ export default function HeroSection() {
   const [isClient, setIsClient] = useState(false);
   const [showChatWindow, setShowChatWindow] = useState(false);
 
-
-
   useEffect(() => {
     setIsClient(true);
 
@@ -45,7 +43,6 @@ export default function HeroSection() {
 
     return () => clearTimeout(timeout);
   }, []);
-
 
   const contentData = {
     ZodhaGPT: {
@@ -76,12 +73,9 @@ export default function HeroSection() {
     setActiveButton(buttonName);
   };
 
-
-
   return (
     <div className="flex">
       <section className={Styles.hero}>
-
         {animationDiv > 0 && (
           <div className={Styles.animatedDiv}>
             <div className={Styles.innerAnimation}>
@@ -89,8 +83,8 @@ export default function HeroSection() {
                 <div className={Styles.fadeInText}>
                   <h1 className={Styles.h1}>Empowering the future</h1>
                   <p className={Styles.para}>
-                    From Dynamic to Compact and Pro, we utilize the benefits of AI to the furthest extent possible to give you the competitive edge
-
+                    Building a Future Where Enterprises Evolve Intelligently —
+                    Powered by Agentic AI, Gen AI, and Advanced Analytics.
                   </p>
                 </div>
               </div>
@@ -183,7 +177,9 @@ export default function HeroSection() {
             {Object.keys(contentData).map((button) => (
               <button
                 key={button}
-                className={`${Styles.tabButton} ${activeButton === button ? Styles.activeTab : ""}`}
+                className={`${Styles.tabButton} ${
+                  activeButton === button ? Styles.activeTab : ""
+                }`}
                 onClick={() => handleButtonClick(button as ButtonName)}
               >
                 {button}
@@ -303,7 +299,6 @@ export default function HeroSection() {
               </button>
             </div>
           )}
-
         </div>
       </section>
     </div>
