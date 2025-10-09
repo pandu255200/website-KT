@@ -36,6 +36,8 @@ import AnalyticsKart9 from "../../../../public/products-kart/analyticsKart/analy
 import AnalyticsKart10 from "../../../../public/products-kart/analyticsKart/analyticsKart10.svg";
 import SlideImg from "../../../../public/home/ai-engineering/slide-img1.svg";
 import SlideImg3 from "../../../../public/home/ai-engineering/slide-img-3.svg";
+import SlideImg3Red from "../../../../public/home/ai-engineering/slide-img-red-3.svg";
+
 import Solutions3 from "../../../../public/home/ai-engineering/solutions-3.svg";
 import Solutions4 from "../../../../public/home/ai-engineering/solutions-4.svg";
 import Solutions5 from "../../../../public/home/ai-engineering/solutions-5.svg";
@@ -666,6 +668,7 @@ export function VerticalsUseCasesSlider({
       image: Solutions8,
     },
   ];
+
   let newData = data.filter((item) => dataIds.includes(item.id));
 
   const handleNext = () => {
