@@ -105,19 +105,20 @@
 
 .centerSlide h2 {
   font-size: 2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0rem;
 }
 
 .centerSlide p {
   font-size: 1rem;
   padding: 1rem 1rem 1rem 0;
-  line-height: 2rem;
+  line-height: 1.8rem;
   letter-spacing: 0.5px;
 }
 
 .leftSection {
   width: 70%;
   text-align: left;
+  margin-left: 0.5rem;
 }
 
 .slide .exploreBtn {
