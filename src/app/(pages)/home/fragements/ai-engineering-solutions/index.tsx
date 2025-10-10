@@ -38,7 +38,7 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
     {
       title: "Permit to Work Automation",
       description:
-        "Our AI-led Permit to Work Automation streamlines the process of managing work permits, ensuring compliance and safety across industrial and operational environments. The system automates permit creation, tracking, and approvals while integrating with exist...",
+        "Our AI-led Permit to Work Automation streamlines permit management, ensuring safety and compliance across operations. It automates permit creation, tracking, and approvals while integrating seamlessly with existing workflows.",
       image: SlideImg,
       alt: "Work Permit Automation",
     },
@@ -182,7 +182,7 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
                 <p>{item.slide.description}</p>
                 <Link href={`/solutions-and-services/${item.index}`}>
                   <button className={Styles.exploreBtn}>
-                    <span>Explore more</span>
+                    <span>Contact us</span>
                     <Image
                       src={TopLeftArrow}
                       className={Styles.arrow}

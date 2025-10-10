@@ -16,7 +16,7 @@ export const Achievements = () => {
       <div className={styles.content}>
         <div>
           <h1 className="font-anta">ALLIANCES & ACHIEVEMENTS</h1>
-          <p>Details Section</p>
+          {/* <p>Details Section</p> */}
         </div>
         <div>
           <button>
@@ -76,11 +76,11 @@ export const Achievements = () => {
               width={240}
               height={190}
               style={{ 
-                marginTop:"6rem",
-                marginLeft:"-7rem",
-                objectFit: "cover",
-                objectPosition: "top top",
-                scale:"2"
+                // marginTop:"6rem",
+                // marginLeft:"-7rem",
+                // objectFit: "cover",
+                // objectPosition: "top top",
+                // scale:"2"
               }}
             />
           </div>
