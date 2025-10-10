@@ -16,7 +16,7 @@ export const Achievements = () => {
       <div className={styles.content}>
         <div>
           <h1 className="font-anta">ALLIANCES & ACHIEVEMENTS</h1>
-          <p>Details Section</p>
+          {/* <p>Details Section</p> */}
         </div>
         <div>
           <button>
@@ -73,9 +73,15 @@ export const Achievements = () => {
             <Image
               src={Achievement5}
               alt="Achievement 5"
-              width={320} // match container width
-              height={240} // increased height
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              width={240}
+              height={190}
+              style={{ 
+                // marginTop:"6rem",
+                // marginLeft:"-7rem",
+                // objectFit: "cover",
+                // objectPosition: "top top",
+                // scale:"2"
+              }}
             />
           </div>
         </div>

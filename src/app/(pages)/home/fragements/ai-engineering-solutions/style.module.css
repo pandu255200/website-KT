@@ -303,6 +303,8 @@
   .leftSection {
     width: 80%;
     text-align: left;
+    margin-left: 0rem;
+
   }
 
   .slide .exploreBtn {
@@ -325,6 +327,10 @@
     transform: rotate(90deg);
     width: 20px;
     height: 20px;
+  }
+
+  .rightSection {
+    width: 50%;
   }
 
   .rightSection img {

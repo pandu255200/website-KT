@@ -12,6 +12,7 @@
 
 .coreTeamSection {
   position: relative;
+  width: 100%;
   background: radial-gradient(
     74.56% 80.33% at 50% 58%,
     rgba(250, 38, 9, 1) 5.01%,
@@ -315,7 +316,7 @@
 }
 
 @media (max-width: 480px) {
-  .cardsContainer{
+  .cardsContainer {
     overflow-x: auto;
   }
   .imageContainer {
@@ -391,8 +392,8 @@
     /* margin: 0 auto; */
     max-width: 70%;
     align-items: justify;
-     margin: 0 7px 0 2pxpx;
-    padding: 0 9px; 
+    margin: 0 7px 0 2pxpx;
+    padding: 0 9px;
   }
   .coreTeamSection {
     margin-left: 0px;
@@ -411,18 +412,17 @@
     margin: 0 0 0.8rem 0;
   }
 
- .info{
-  width: 70%;
- }
- 
+  .info {
+    width: 70%;
+  }
+
   .infoContent h2 {
-    
     font-size: 0.9rem;
   }
 
   .infoContent p {
     /* width: 30%; */
-    font-size:9px;
+    font-size: 9px;
     padding: 0.15rem 0.35rem;
     /* margin-right: 40px; */
   }
@@ -457,24 +457,22 @@
   }
 }
 
-
 @media (max-width: 380px) {
   .cardsContainer {
     display: flex;
-    justify-content: flex-start;  
-    overflow-x: auto;              
-    scroll-snap-type: x mandatory; 
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 0.6rem;
-    padding: 0.4rem;              
-    width: 100%;                  
+    padding: 0.4rem;
+    width: 100%;
   }
 
   .cardsContainer::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
 
-
- .imageContainer{
-  width: 60%;
- }
+  .imageContainer {
+    width: 60%;
+  }
 }
