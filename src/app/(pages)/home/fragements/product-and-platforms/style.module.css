@@ -60,10 +60,10 @@
 }
 
 .leftSection p {
-  padding-right: 4rem;
+  /* padding-right: 4rem; */
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   color: #000;
 }
 
@@ -255,9 +255,8 @@
   }
 
   .leftSection p {
-    font-family: Outfit;
     font-weight: 400;
-    font-style: Regular;
+    /* font-style: Regular; */
     font-size: 14px;
     line-height: 22px;
     letter-spacing: 0px;

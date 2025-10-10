@@ -161,7 +161,7 @@
   z-index: 100;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
-   overflow-y: auto;   /* 👈 allow vertical scrolling */
+  overflow-y: auto; /* 👈 allow vertical scrolling */
   -webkit-overflow-scrolling: touch; /* 👈 smooth scroll on iOS */
 }
 .mobileMenuLink {
@@ -305,5 +305,17 @@
   }
 }
 
+.mobileToggleIcony {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
 
+  filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(7465%)
+    hue-rotate(2deg) brightness(100%) contrast(119%);
+}
 
+.mobileMenuItem.active .mobileToggleIcony {
+  filter: brightness(0) invert(1);
+}

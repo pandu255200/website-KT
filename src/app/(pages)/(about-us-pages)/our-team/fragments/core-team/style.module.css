@@ -12,6 +12,7 @@
 
 .coreTeamSection {
   position: relative;
+  width: 100%;
   background: radial-gradient(
     74.56% 80.33% at 50% 58%,
     rgba(250, 38, 9, 1) 5.01%,

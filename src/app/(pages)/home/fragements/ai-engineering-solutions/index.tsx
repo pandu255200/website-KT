@@ -180,7 +180,8 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
               <div className={Styles.leftSection}>
                 <h2 className="font-anta">{item.slide.title}</h2>
                 <p>{item.slide.description}</p>
-                <Link href={`/solutions-and-services/${item.index}`}>
+                {/* <Link href={`/solutions-and-services/${item.index}`}> */}
+                <Link href={"#partner-with-us"}>
                   <button className={Styles.exploreBtn}>
                     <span>Contact us</span>
                     <Image

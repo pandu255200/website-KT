@@ -45,20 +45,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       linkedin: "https://www.linkedin.com/in/jeenal-rajgor/",
       style: "5px"
     },
-    {
-      name: "Nancy Philip",
-      title: "Senior Director - Delivery and Program management",
-      image: Nancy,
-      linkedin: "https://www.linkedin.com/in/nancy-philip-8254657/",
-      style: "10px"
-    },
-    {
-      name: "Parikshit Bangde",
-      title: "Director - AI Labs (Product & Solutions)",
-      image: Parikshit,
-      linkedin: "https://www.linkedin.com/in/parikshit-bangde/",
-      style: "10px"
-    },
+   
     {
       name: "Rishika Agarwala",
       title: "Associate Director - Pre Sales & Marketing",
@@ -176,7 +163,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
                       alt={member.name}
                       layout="fill"
                       className={styles.image}
-                      style={{ marginTop: `${member.style}`, scale: `${index == 5 ? "3" : "0.9"}` }}
+                      style={{ marginTop: `${member.style}`, scale: `${index == teamMembers.length - 1  ? "3" : "0.9"}` }}
                     />
                   </div>
                   <div className={styles.info}>
