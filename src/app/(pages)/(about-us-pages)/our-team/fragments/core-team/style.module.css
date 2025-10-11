@@ -12,7 +12,6 @@
 
 .coreTeamSection {
   position: relative;
-  width: 100%;
   background: radial-gradient(
     74.56% 80.33% at 50% 58%,
     rgba(250, 38, 9, 1) 5.01%,
@@ -21,6 +20,7 @@
   color: #ffffff;
   min-height: 100vh;
   overflow: hidden;
+  width: 100%;
 }
 .coreTeamSection::before {
   content: "";
@@ -276,7 +276,8 @@
   word-wrap: break-word;
 }
 
-@media (max-width: 480px) {
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: center;
@@ -289,16 +290,17 @@
     font-size: 30px;
     line-height: 1.3;
     margin-bottom: 0.5rem;
+    width: 100%;
   }
 
-  .header div p {
+  .header div {
+    width: 100%;
     font-size: 15px;
     line-height: 1.6;
-    margin: 0 auto;
-    max-width: 80%;
   }
+
   .coreTeamSection {
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
     min-height: auto;
   }
 
@@ -313,33 +315,105 @@
     opacity: 0.3;
     z-index: 0;
   }
-}
 
-@media (max-width: 480px) {
-  .cardsContainer {
-    overflow-x: auto;
+  /* Carousel adjustments for mobile */
+  .carousel {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    margin-bottom: 0;
+    height: auto;
   }
-  .imageContainer {
+
+  .navButton {
+    display: none; /* Hide navigation buttons on mobile */
+  }
+
+  /* Vertical scrolling cards container */
+  .cardsContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 65vh;
+    padding: 0;
+    border: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    transition: none;
+    gap: 1rem;
+  }
+
+  /* Individual card styling for vertical scroll - Reduced size */
+  .card {
+    width: 85%;
+    height: 60vh;
+    margin: 5px 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:active {
+    transform: scale(0.98);
+  }
+
+  .card.activeCard {
+    transform: none;
+    width: 85%;
+    height: 60vh;
+    margin: 5px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 13rem;
-    border-radius: 10px;
+    height: 70%;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
     overflow: hidden;
-    margin: 0 2px 1rem 0;
-    /* margin-left: 10px; */
   }
 
   .image {
-    object-fit: contain;
+    object-fit: cover;
     scale: 1;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .image {
+    transform: scale(1.05);
   }
 
   .info {
-    height: auto;
     clip-path: none;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 0 0 10px 10px;
+    position: relative;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 0.8rem;
+    border-radius: 0 0 15px 15px;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
   }
 
   .infoContent {
@@ -347,90 +421,140 @@
     bottom: 0;
     left: 0;
     padding: 0;
-    gap: 0.3rem;
+    gap: 0.4rem;
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .infoContent h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
     margin-bottom: 0.3rem;
+    color: #fa2609;
   }
 
   .infoContent p {
-    font-size: 0.7m;
-    line-height: 1.2rem;
+    width: auto;
+    font-size: 0.75rem;
+    line-height: 1.1rem;
     padding: 0.2rem 0.4rem;
     border-radius: 12px;
-    margin: 0 10px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    background: rgba(250, 38, 9, 0.1);
   }
 
-  .infoContent a img {
-    margin-right: 100px;
-    width: 18px;
-    height: 18px;
+  .description {
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .description p {
+    width: 90%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .header div {
+    font-size: 14px;
+  }
+
+  .cardsContainer {
+    /* width: 100%; */
+    height: 60vh;
+  }
+
+  .card {
+    width: 60%;
+    height: 55vh;
+  }
+
+  .card.activeCard {
+    width: 60%;
+    height: 55vh;
+  }
+
+  .imageContainer {
+    margin-top: 50px;
+    margin-left: 20px;
+    height: 60%;
+    width: 80%;
+  }
+
+  .info {
+    height: 30%;
+
+    padding: 0.6rem;
+  }
+
+  .infoContent h2 {
+    font-size: 1.4rem;
+  }
+
+  .infoContent p {
+    font-size: 0.7rem;
+    line-height: 1rem;
   }
 }
 
 @media (max-width: 375px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-  }
-
   .header h1 {
-    font-size: 25px;
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
+    font-size: 22px;
   }
 
-  .header div p {
-    font-size: 15px;
-    line-height: 1.6;
-    /* margin: 0 auto; */
-    max-width: 70%;
-    align-items: justify;
-    margin: 0 7px 0 2pxpx;
-    padding: 0 9px;
-  }
-  .coreTeamSection {
-    margin-left: 0px;
-    padding: 1.5rem 0.5rem;
+  .header div {
+    font-size: 13px;
   }
 
-  .globe {
-    width: 90%;
-    height: auto;
-    top: 25%;
-    opacity: 0.25;
+  .cardsContainer {
+    height: 55vh;
+  }
+
+  .card {
+    width: 60%;
+    height: 50vh;
+  }
+
+  .card.activeCard {
+    width: 60%;
+    height: 50vh;
   }
 
   .imageContainer {
-    height: 11rem;
-    margin: 0 0 0.8rem 0;
+    margin-top: 50px;
+    margin-left: 20px;
+    height: 60%;
+    width: 80%;
   }
 
   .info {
-    width: 70%;
+    height: 30%;
+    padding: 0.6rem;
   }
 
   .infoContent h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .infoContent p {
-    /* width: 30%; */
-    font-size: 9px;
-    padding: 0.15rem 0.35rem;
-    /* margin-right: 40px; */
+    font-size: 0.65rem;
+    line-height: 0.9rem;
+    padding: 0.15rem 0.3rem;
   }
 
-  .infoContent a img {
-    width: 16px;
-    height: 16px;
-    margin-right: 20px;
+  .description p {
+    font-size: 13px;
   }
 }
 
@@ -439,40 +563,90 @@
     font-size: 20px;
   }
 
-  .header div p {
+  .header div {
     font-size: 12px;
-    line-height: 1.3;
+  }
+
+  .cardsContainer {
+    height: 50vh;
+  }
+
+  .card {
+    width: 60%;
+    height: 45vh;
+  }
+
+  .card.activeCard {
+    width: 60%;
+    height: 45vh;
   }
 
   .imageContainer {
-    height: 10rem;
+    margin-top: 40px;
+    margin-left: 20px;
+    height: 60%;
+    width: 80%;
+  }
+  .info {
+    height: 30%;
+    padding: 0.5rem;
   }
 
   .infoContent h2 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
   }
 
   .infoContent p {
     font-size: 0.6rem;
+    line-height: 0.8rem;
+  }
+
+  .description p {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 380px) {
-  .cardsContainer {
-    display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 0.6rem;
-    padding: 0.4rem;
-    width: 100%;
+/* Enhanced smooth scrolling for all devices */
+.cardsContainer {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift during scrolling */
+.card {
+  will-change: transform;
+}
+
+/* Optimize scrolling performance */
+.cardsContainer {
+  -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translateZ(0);
+}
+
+/* Add subtle scroll indicator for mobile */
+@media (max-width: 768px) {
+  .cardsContainer::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    animation: scrollPulse 2s infinite;
   }
 
-  .cardsContainer::-webkit-scrollbar {
-    display: none;
-  }
-
-  .imageContainer {
-    width: 60%;
+  @keyframes scrollPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 }
