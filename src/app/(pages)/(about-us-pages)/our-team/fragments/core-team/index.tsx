@@ -26,7 +26,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
   const teamMembers = [
     {
       name: "Sanjay Jha",
-      title: "Founder & CEO",
+      title: "Founder & CEO",       
       image: SanjayJhaImage,
       linkedin: "https://www.linkedin.com/in/sanjayjha",
       style: "5px"
@@ -51,7 +51,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       title: "Associate Director - Pre Sales & Marketing",
       image: Rishika,
       linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
-      style: "70px"
+      style: "90px"
     },
     // {
     //   name: "Nishi Maheshwari",

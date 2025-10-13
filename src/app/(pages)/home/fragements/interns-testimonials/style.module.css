@@ -29,7 +29,8 @@
 .grid {
   margin-top: 5rem;
   display: flex;
-  animation: scroll 15s linear infinite;
+  animation: scroll linear 100s infinite;
+  
 }
 
 .card {
@@ -47,6 +48,8 @@
   width: 25rem;
   /* Set a fixed width */
   transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -61,6 +64,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
+  flex-shrink: 0;
 }
 
 .profile .profileContentDiv {
@@ -73,11 +77,12 @@
   display: flex;
   align-items: center;
   margin-right: 0.6rem;
+  flex-shrink: 0;
 }
 
 .image {
-  object-position: top;
-  object-fit: none;
+  /* object-position: top; */
+  object-fit: contain;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -104,6 +109,13 @@
   /* font-family: "Plus Jakarta Sans", sans-serif; */
   font-weight: 500;
   line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  flex: 1;
 }
 
 .button {
@@ -139,7 +151,7 @@
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-1500%);
   }
 }
 
@@ -209,7 +221,7 @@
   /* .grid {
     margin-top: 5rem;
     display: flex;
-    animation: scroll 15s linear infinite;
+    animation: scroll 40s linear infinite;
   } */
 
   .card {
@@ -239,6 +251,7 @@
   .testimonial {
     font-size: 12px;
     line-height: 20px;
+    /* -webkit-line-clamp: 3; */
   }
 
   .button {
