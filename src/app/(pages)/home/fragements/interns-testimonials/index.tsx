@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Styles from "./style.module.css";
 import Image from "next/image";
 
@@ -8,9 +8,71 @@ import CardImage from "../../../../../../public/home/testimonials/card-image.svg
 import TopRightArrowIcon from "../../../../../../public/home/top-right-arrow.svg";
 import RIghtAngleIcon from "../../../../../../public/home/right-angle-icon.svg";
 import QuoteIcon from "../../../../../../public/home/quatation.svg";
+import { db } from "@/firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
+
+interface Candidate {
+  id: string;
+  name: string;
+  domain: string;
+  message?: string;
+  image?: string;
+  ExitForm?: any,
+  candidateDetails?: any,
+}
 
 const InternsTestimonials = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0); // State to track the current video
+
+
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCandidates = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "SelectedCandidates"));
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Candidate[];
+        setCandidates(data);
+      } catch (error) {
+        console.error("Error fetching SelectedCandidates:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCandidates();
+  }, []);
+
+  // photo
+  // candidateDetails.basicDetails.collegeName
+
+  // const exitForm = candidates.filter((item) => item?.candidateDetails?.internshipDetails?.domain === "AI/Machine Learning"
+  //   && item.ExitForm)
+  // const testimonialDetails = exitForm.map((item) => item.ExitForm)
+  // console.log(candidates.filter((item) => item?.candidateDetails?.internshipDetails?.domain === "AI/Machine Learning"
+  // && item.ExitForm));
+  // console.log(exitForm, "exitForm");
+  // console.log(testimonialDetails, "testimonialDetails");
+
+  const exitForm = candidates.filter(
+    (item) =>
+      item?.candidateDetails?.internshipDetails?.domain === "AI/Machine Learning" &&
+      item.ExitForm
+  );
+
+  const testimonialDetails = exitForm.map((item) => ({
+    ...item.ExitForm, // spread ExitForm data
+    collegeName: item?.candidateDetails?.basicDetails?.collegeName || "Unknown College", // add collegeName
+  }));
+
+  console.log(testimonialDetails, "testimonialDetails");
+
+
+  if (loading) return <p>Loading testimonials...</p>;
 
   const videos = [
     { id: 1, url: "/home/testimonials/people.mp4" }, // Corrected path
@@ -87,43 +149,42 @@ const InternsTestimonials = () => {
   return (
     <div className={Styles.container} id="testimonials">
       <h1 className={`${Styles.heading} font-anta`}>AI INTERNS TESTIMONIALS</h1>
-      <div className={Styles.grid}>
-        {duplicateTestimonials.map((testimonial, index) => (
+      <div className={Styles.grid} >
+        {testimonialDetails?.map((testimonial, index) => (
           <div
             key={index}
-            className={`${Styles.card} ${
-              index % 2 === 0 ? Styles.cardEven : Styles.cardOdd
-            }`}
+            className={`${Styles.card} ${index % 2 === 0 ? Styles.cardEven : Styles.cardOdd
+              }`}
           >
             <Image
-              src={QuoteIcon.src}
+              src={QuoteIcon}
               className={Styles.image}
               alt="CardImage"
-              // layout="fixed"
-              width={30}
-              height={30}
+              layout="fixed"
+              width={10}
+              height={10}
               style={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}
             />
 
             <div className={Styles.profile}>
               <div className={Styles.profileImgDiv}>
                 <Image
-                  src={CardImage.src}
+                  src={testimonial?.testimonialPhotoUrl}
                   className={Styles.image}
                   alt="CardImage"
-                  // layout="fixed"
+                  // layout="responsive"
                   width={10}
                   height={10}
                 />
               </div>
               <div className={Styles.profileContentDiv}>
-                <span className={Styles.name}>{testimonial.name}</span>
+                <span className={Styles.name}>{testimonial?.name}</span>
                 <span className={Styles.institute}>
-                  {testimonial.institute}
+                  {testimonial.collegeName}
                 </span>
               </div>
             </div>
-            <p className={Styles.testimonial}>{testimonial.testimonial}</p>
+            <p className={Styles.testimonial}>{testimonial?.testimonial}</p>
           </div>
         ))}
       </div>

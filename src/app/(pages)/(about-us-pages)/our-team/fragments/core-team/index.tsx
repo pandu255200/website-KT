@@ -29,29 +29,29 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       title: "Founder & CEO",
       image: SanjayJhaImage,
       linkedin: "https://www.linkedin.com/in/sanjayjha",
-      style: "5px",
+      style: "5px"
     },
     {
       name: "Preeti Joshi",
       title: "Chief Business & Operating Officer (Vice President)",
       image: Preeti,
       linkedin: "https://www.linkedin.com/in/preeti-j-a4433219a/",
-      style: "30px",
+      style: "30px"
     },
     {
       name: "Jeenal Rajgor",
       title: "Vice President & Head- HR, Operations & Shared Services",
       image: Jeenal,
       linkedin: "https://www.linkedin.com/in/jeenal-rajgor/",
-      style: "5px",
+      style: "5px"
     },
-
+   
     {
       name: "Rishika Agarwala",
       title: "Associate Director - Pre Sales & Marketing",
       image: Rishika,
       linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
-      style: "70px",
+      style: "70px"
     },
     // {
     //   name: "Nishi Maheshwari",
@@ -147,9 +147,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
             <div
               className={styles.cards}
               style={{
-                transform: `translateX(-${
-                  currentIndex * (3 * teamMembers.length)
-                }rem)`,
+                transform: `translateX(-${currentIndex * (3 * teamMembers.length)}rem)`,
               }}
             >
               {teamMembers.map((member, index) => (
@@ -165,12 +163,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
                       alt={member.name}
                       layout="fill"
                       className={styles.image}
-                      style={{
-                        marginTop: `${member.style}`,
-                        scale: `${
-                          index == teamMembers.length - 1 ? "3" : "0.9"
-                        }`,
-                      }}
+                      style={{ marginTop: `${member.style}`, scale: `${index == teamMembers.length - 1  ? "3" : "0.9"}` }}
                     />
                   </div>
                   <div className={styles.info}>
