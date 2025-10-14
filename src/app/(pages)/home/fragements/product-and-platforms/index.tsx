@@ -7,7 +7,7 @@ import Image from "next/image";
 import RedTopRightArrowIcon from "../../../../../../public/home/red-top-right-arrow.svg";
 import RobotGif from "../../../../../../public/home/product-and-platforms/robot.gif";
 import FacegenieGif from "../../../../../../public/home/product-and-platforms/facegenie.gif";
-import AnalyticsKartGif from "../../../../../../public/home/product-and-platforms/Analytics.gif";
+import AnalyticsKartGif from "../../../../../../public/home/product-and-platforms/AnalyticsKart2.gif";
 import Link from "next/link";
 
 const zodhaGPTContent = {
