@@ -18,6 +18,7 @@
 
 /* Content Layout */
 .contentContainer {
+  max-height: 35rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -223,6 +224,7 @@
 
   .contentContainer {
     width: 100%;
+    max-height: 50rem;
     position: relative;
     display: flex;
     flex-direction: column;
