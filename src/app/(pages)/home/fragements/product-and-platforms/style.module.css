@@ -50,7 +50,6 @@
   padding-right: 4rem;
 }
 
-
 .leftSection h2 {
   color: rgba(250, 38, 9, 1);
   /* Exact red background color */
@@ -208,10 +207,6 @@
   color: #ffffff; 
 }  */
 
-
-
-
-
 @media screen and (max-width: 480px) {
   .aiProductsPlatforms {
     padding: 1.5rem;
@@ -358,5 +353,4 @@
     background-color: transparent;
     border-radius: 4px 20px 4px 20px;
   }
-
 }
