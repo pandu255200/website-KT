@@ -18,7 +18,7 @@
 
 /* Content Layout */
 .contentContainer {
-  max-height: 35rem;
+  max-height: 30rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -44,12 +44,14 @@
 
 .leftSection {
   width: 60%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 
 .leftSection div {
   padding-right: 4rem;
 }
-
 
 .leftSection h2 {
   color: rgba(250, 38, 9, 1);
@@ -208,10 +210,6 @@
   color: #ffffff; 
 }  */
 
-
-
-
-
 @media screen and (max-width: 480px) {
   .aiProductsPlatforms {
     padding: 1.5rem;
@@ -358,5 +356,4 @@
     background-color: transparent;
     border-radius: 4px 20px 4px 20px;
   }
-
 }
