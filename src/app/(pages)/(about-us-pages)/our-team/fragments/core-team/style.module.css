@@ -151,9 +151,13 @@
 
 .cards {
   display: flex;
-  transition: transform 0.5s ease-in-out;
   align-items: flex-end;
   padding: 0rem 2rem 1rem 2rem;
+  transition: transform 0.10s cubic-bezier(0.22, 0.61, 0.36, 1); /* natural ease-out */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0); /* hardware acceleration */
+  perspective: 1000px;
 }
 
 /* Individual Card */

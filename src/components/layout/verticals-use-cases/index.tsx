@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import { GoBackButton } from "@/components/common/go-back-button";
@@ -668,6 +668,14 @@ export function VerticalsUseCasesSlider({
       image: Solutions8,
     },
   ];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 480);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   let newData = data.filter((item) => dataIds.includes(item.id));
 
@@ -693,7 +701,10 @@ export function VerticalsUseCasesSlider({
     <div className={styles.sliderContainer}>
       {/* Header */}
       <header className="globalHeaderStyle">
-        <h1 className="title" style={{ fontSize: "3.4rem" }}>
+        <h1
+          className="title"
+          style={{ fontSize: isMobile ? "1.7rem" : "3.4rem" }}
+        >
           {pageTitle}
         </h1>
         {/* <button className={styles.goBackButton}>Go Back</button> */}
