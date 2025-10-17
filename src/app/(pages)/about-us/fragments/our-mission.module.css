@@ -26,6 +26,7 @@
 }
 
 .content .introduction .title {
+  /* margin-top: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,23 +67,58 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   align-self: stretch;
 }
 
-/* .content .introduction .description p:nth-child(1) {
-  align-self: stretch;
+.content .introduction .description p {
   color: #3a3a3a;
   text-align: justify;
   font-family: "Plus Jakarta Sans";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.625rem;
+  font-size: 1.1rem; /* reduced from 1.125rem */
+  font-weight: 400;
+  line-height: 1.6rem; /* tighter, keeps line endings aligned */
   letter-spacing: -0.01563rem;
   text-transform: capitalize;
-} */
+  margin: 0;
+}
 
+.content .products {
+  display: flex;
+  flex-direction: row;
+  width: 38.57225rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  /* margin-top: 1rem; adds space between paragraph and logos */
+}
+
+.content .products h1 {
+  color: #fa2609;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.01563rem;
+  text-transform: capitalize;
+  margin-right: 1rem;
+  /* margin-bottom: 20px; */
+}
+
+.content .products .logos {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.container div:nth-child(2) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .content .introduction .description p :nth-child(2),
 .content .introduction .description p :nth-child(3) {
   align-self: stretch;
@@ -95,41 +131,6 @@
   line-height: 1.625rem; /* 144.444% */
   letter-spacing: -0.01563rem;
   text-transform: capitalize;
-}
-
-.content .products {
-  display: flex;
-  flex-direction: row;
-  width: 38.57225rem;
-  align-items: center;
-  gap: 2.25rem;
-}
-
-.content .products h1 {
-  align-self: stretch;
-  color: #fa2609;
-  text-align: center;
-  /* font-family: "Plus Jakarta Sans"; */
-  font-size: 1.625rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%; /* 1.95rem */
-  letter-spacing: -0.01563rem;
-  text-transform: capitalize;
-}
-
-.content .products .logos {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-}
-
-.container div:nth-child(2) {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (max-width: 480px) {
@@ -180,10 +181,10 @@
   .content .introduction .description p:nth-child(3) {
     width: 90%;
     font-size: 1rem;
-    line-height: 1.5rem; 
-    text-align: justify; 
+    line-height: 1.5rem;
+    text-align: justify;
     margin: 0 0 1rem -15px;
-    padding: 0 9px; 
+    padding: 0 9px;
   }
 
   .content .products {
@@ -240,23 +241,21 @@
 
   .content .products .logos {
     display: flex;
-    flex-wrap: nowrap;              /* prevent wrapping */
-    overflow-x: auto;               /* allow horizontal scroll */
+    flex-wrap: nowrap; /* prevent wrapping */
+    overflow-x: auto; /* allow horizontal scroll */
     -webkit-overflow-scrolling: touch;
     gap: 0.8rem;
-    justify-content: flex-start;    /* align items left */
+    justify-content: flex-start; /* align items left */
     padding-bottom: 0.5rem;
   }
 
   .content .products .logos img {
-    flex: 0 0 auto;                 /* prevent shrinking */
-    width: 110px;                    /* adjust logo size */
+    flex: 0 0 auto; /* prevent shrinking */
+    width: 110px; /* adjust logo size */
     height: auto;
   }
 
   .content .products .logos::-webkit-scrollbar {
-    display: none;                  /* hide scrollbar */
+    display: none; /* hide scrollbar */
   }
 }
-
-

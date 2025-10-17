@@ -168,8 +168,9 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
               </div>
               <div className={`flex flex-col items-center`}>
                 <button
-                  className={`${Styles.downArrow} ${Styles.rotateArrow} ${currentVertical === 0 && Styles.notActiveArrow
-                    }`}
+                  className={`${Styles.downArrow} ${Styles.rotateArrow} ${
+                    currentVertical === 0 && Styles.notActiveArrow
+                  }`}
                   onClick={handlePrevious}
                 >
                   <Image
@@ -183,9 +184,10 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
                   />
                 </button>
                 <button
-                  className={`${Styles.downArrow} ${currentVertical === verticalsData.length - 1 &&
+                  className={`${Styles.downArrow} ${
+                    currentVertical === verticalsData.length - 1 &&
                     Styles.notActiveArrow
-                    }`}
+                  }`}
                   onClick={handleNext}
                 >
                   <Image
@@ -215,7 +217,6 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
             )}
           </div>
 
-
           <div className={Styles.content}>
             {/* LEFT SECTION */}
             <div className={Styles.left}>
@@ -242,8 +243,9 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
               {/* <Button  className={Styles.exploreButton} text='Explore more' /> */}
               <button className={Styles.exploreButton}>
                 <Link
-                  href={`/our-verticals/${verticalsData[currentVertical].id - 1
-                    }`}
+                  href={`/our-verticals/${
+                    verticalsData[currentVertical].id - 1
+                  }`}
                 >
                   Explore More
                 </Link>
@@ -255,7 +257,7 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
           {/* MOBILE DEVICE CONTENT */}
           <div className={Styles.contentMobile}>
             {/* LEFT SECTION */}
-            <div className={Styles.leftMobile} >
+            <div className={Styles.leftMobile}>
               <div className={`${Styles.count} font-inter`}>
                 {verticalsData[currentVertical].id}
               </div>
@@ -287,27 +289,23 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
             {/* <Button  className={Styles.exploreButton} text='Explore more' /> */}
             <button className={Styles.exploreButton}>
               <Link
-                href={`/our-verticals/${verticalsData[currentVertical].id - 1
-                  }`}
+                href={`/our-verticals/${verticalsData[currentVertical].id - 1}`}
               >
                 Explore More
               </Link>
             </button>
           </div>
 
-
           <div className={` ${Styles.buttonGroup}`}>
             <button
-              className={`${Styles.downArrowMobile} ${Styles.rotateArrowMobile1} ${currentVertical === 0 && Styles.notActiveArrowMobile
-                }`}
+              className={`${Styles.downArrowMobile} ${
+                Styles.rotateArrowMobile1
+              } ${currentVertical === 0 && Styles.notActiveArrowMobile}`}
               onClick={handlePrevious}
             >
               <Image
-                src={
-                  currentVertical === 0 ? RedArrowIcon : DownArrowIcon.src
-                }
+                src={currentVertical === 0 ? RedArrowIcon : DownArrowIcon.src}
                 className={Styles.arrow}
-
                 alt="upArrowIcon"
                 // layout="fixed"
                 width={35}
@@ -315,9 +313,12 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
               />
             </button>
             <button
-              className={`${Styles.rotateArrowMobile2} ${Styles.downArrowMobile} ${currentVertical === verticalsData.length - 1 &&
+              className={`${Styles.rotateArrowMobile2} ${
+                Styles.downArrowMobile
+              } ${
+                currentVertical === verticalsData.length - 1 &&
                 Styles.notActiveArrowMobile
-                }`}
+              }`}
               onClick={handleNext}
             >
               <Image
@@ -342,18 +343,22 @@ export const OurVerticals: React.FC<OurVerticalsProps> = ({
           </div>
 
           {/* MOBILE DEVICE CONTENT */}
-
-
         </div>
         <div className={Styles.footer}>
           <div className={Styles.verticalTags}>
             {verticalsData.map((vertical, index) => (
               <span
                 key={vertical.id}
-                className={`${Styles.tag} ${currentVertical === vertical.id - 1 ? Styles.activeTag : ""
-                  }`}
+                className={`${Styles.tag} ${
+                  currentVertical === vertical.id - 1 ? Styles.activeTag : ""
+                }`}
                 onClick={() => {
                   setCurrentVertical(index);
+                }}
+                style={{
+                  fontWeight: "600", // Makes text bold (use 800 or 900 for heavier)
+                  // Optional: adjust font size if you want
+                  // color: "#000000ff", // Optional: ensure contrast
                 }}
               >
                 {vertical.title}

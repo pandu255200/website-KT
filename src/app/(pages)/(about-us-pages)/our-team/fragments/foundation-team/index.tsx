@@ -14,6 +14,7 @@ import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.sv
 import Nancy from "../../../../../../../public/core-team/nancy.png";
 // import Nishi from "../../../../../../../public/core-team/nishi.png";
 import Parikshit from "../../../../../../../public/core-team/parikshit.png";
+import raki from "../../../../../../../public/foundation-team/rakhiImage.jpeg";
 import Link from "next/link";
 
 const teamMembers = [
@@ -29,18 +30,7 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/pawankumarmp",
     style: "5px",
   },
-  {
-    name: "Rakhi Vipat",
-    image: RakhiImage,
-    linkedin: "https://www.linkedin.com/in/rakhivipat",
-    style: "5px",
-  },
-  {
-    name: "Monica",
-    image: MonicaImage,
-    linkedin: "https://www.linkedin.com/in/rtn-monica-hungund-6b04a2163",
-    style: "5px",
-  },
+
   {
     name: "Shailaja Vernekar",
     image: ShailajaImage,
@@ -51,6 +41,18 @@ const teamMembers = [
     name: "Shruti Nair",
     image: ShrutiImage,
     linkedin: "https://www.linkedin.com/in/shrutinair1",
+    style: "5px",
+  },
+  {
+    name: "Rakhi Vipat",
+    image: raki,
+    linkedin: "https://www.linkedin.com/in/rakhivipat",
+    style: "5px",
+  },
+  {
+    name: "Monica",
+    image: MonicaImage,
+    linkedin: "https://www.linkedin.com/in/rtn-monica-hungund-6b04a2163",
     style: "5px",
   },
   {

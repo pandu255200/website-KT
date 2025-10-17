@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Styles from "./style.module.css";
+
 const linkMap = {
   // Core
   "AI - Products & Platforms": "#aiProductsPlatforms",
@@ -22,8 +23,7 @@ const linkMap = {
   // Company
   Internships: "/internships",
   Careers: "/career",
-  "Privacy Policy":
-    "https://drive.google.com/file/d/1f9miUqigNAr_QZJrtE78WHKV3n7YySU-/view?usp=sharing", // ✅ Your Google Drive PDF link
+  "Privacy Policy": "/Privacy Policy.pdf", // ⬅️ stored in /public
   "Terms of Use": "/terms-of-use",
 
   // Social
@@ -73,11 +73,20 @@ export function Footer() {
                 {column.items.map((item, idx) => {
                   const href = linkMap[item] || "#";
                   const isExternal = href.startsWith("http");
-                  const isPDF = href.endsWith(".pdf"); // ⬅️ Detect PDF links
+                  const isPDF = href.toLowerCase().endsWith(".pdf"); // detect pdf
 
                   return (
-                    <li key={idx} className={Styles.listItem}>
-                      {isExternal ? (
+                    <li
+                      key={idx}
+                      className={Styles.listItem}
+                      style={
+                        item === "AI - Solutions & IT Services"
+                          ? { whiteSpace: "nowrap" }
+                          : {}
+                      }
+                    >
+                      {isExternal || isPDF ? (
+                        // 🟢 For PDF or external link → open in new tab
                         <a
                           href={href}
                           target="_blank"
@@ -87,6 +96,7 @@ export function Footer() {
                           {item}
                         </a>
                       ) : (
+                        // 🟠 Internal link → normal Next.js navigation
                         <Link
                           href={href}
                           style={{ textDecoration: "none", color: "inherit" }}

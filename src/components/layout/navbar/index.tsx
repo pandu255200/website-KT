@@ -199,7 +199,7 @@ const aboutUs: MenuItem[] = [
   {
     icon: PrivacyIcon,
     text: "Privacy Policy",
-    href: "https://drive.google.com/file/d/1f9miUqigNAr_QZJrtE78WHKV3n7YySU-/view?usp=sharing",
+    href: "/Privacy Policy.pdf",
   },
 
   { icon: CaseIcon, text: "Case Studies", href: "case-study" },
@@ -289,22 +289,26 @@ export function Navbar() {
   return (
     <div className={Styles.container} ref={navRef}>
       <header className={Styles.navbar}>
-        <Link href="/home">
-          <Image
-            src={NavLogo.src}
-            alt="logo"
-            className={Styles.logo}
-            width={170}
-            height={59}
-          />
-          <Image
-            src={MobileNavLogo.src}
-            alt="logo"
-            className={Styles.mobileNavLogo}
-            width={40}
-            height={49}
-          />
-        </Link>
+        <div className={Styles.logoContainer}>
+          <Link href="/home">
+            <Image
+              src={NavLogo.src}
+              alt="logo"
+              className={Styles.logo}
+              width={170}
+              height={59}
+            />
+            <Image
+              src={MobileNavLogo.src}
+              alt="logo"
+              className={Styles.mobileNavLogo}
+              width={40}
+              height={49}
+            />
+          </Link>
+          <p className={Styles.isoText}>ISO/IEC 27001:2022 Certified Company</p>
+        </div>
+
         <nav className={`${Styles.navLinks} ${Styles.desktopNavLinks}`}>
           {navLinks.map((link, index) => (
             <div
@@ -457,21 +461,51 @@ export function Navbar() {
           <div className={Styles.verticals}>
             <h2>{heading}</h2>
             <div className={Styles.grid}>
-              {menuItem.map((item, index) => (
-                <Link href={item.href} className={Styles.item} key={index}>
-                  <Image
-                    src={item.icon.src}
-                    alt={item.text || "icon"}
-                    width={
-                      activeMenuIndex !== null && activeMenuIndex > 0 ? 20 : 170
-                    }
-                    height={
-                      activeMenuIndex !== null && activeMenuIndex > 0 ? 20 : 110
-                    }
-                  />
-                  {item.text && <span>{item.text}</span>}
-                </Link>
-              ))}
+              {menuItem.map((item, index) =>
+                item.href.endsWith(".pdf") ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={Styles.item}
+                    key={index}
+                  >
+                    <Image
+                      src={item.icon.src}
+                      alt={item.text || "icon"}
+                      width={
+                        activeMenuIndex !== null && activeMenuIndex > 0
+                          ? 20
+                          : 170
+                      }
+                      height={
+                        activeMenuIndex !== null && activeMenuIndex > 0
+                          ? 20
+                          : 110
+                      }
+                    />
+                    {item.text && <span>{item.text}</span>}
+                  </a>
+                ) : (
+                  <Link href={item.href} className={Styles.item} key={index}>
+                    <Image
+                      src={item.icon.src}
+                      alt={item.text || "icon"}
+                      width={
+                        activeMenuIndex !== null && activeMenuIndex > 0
+                          ? 20
+                          : 170
+                      }
+                      height={
+                        activeMenuIndex !== null && activeMenuIndex > 0
+                          ? 20
+                          : 110
+                      }
+                    />
+                    {item.text && <span>{item.text}</span>}
+                  </Link>
+                )
+              )}
             </div>
           </div>
 

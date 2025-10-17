@@ -24,8 +24,8 @@ const OurMilestones = () => {
           src={DotCircle}
           alt="DotCircleImage"
           className={Styles.circleImage}
-          width={110}
-          height={110}
+          width={65}
+          height={65}
         />
       </h1>
 
