@@ -1,8 +1,8 @@
 export const chatbotData = {
   "start": {
     "response": [
-      { "type": "text", "content": "Hello! Welcome to ResoluteAI Software." },
-      { "type": "text", "content": "How can I help you today?" }
+      { "type": "text", "content": "Hello! Welcome to ResoluteAI Software. How can I help you today?" },
+     
     ],
     "options": [
       { "text": "Our Products", "next_id": "products_menu" },

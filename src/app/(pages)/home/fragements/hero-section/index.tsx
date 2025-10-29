@@ -41,7 +41,7 @@ type OptionType = {
 };
 
 export default function HeroSection() {
-  const router = useRouter()
+  const router = useRouter();
   const { counter } = useCounter();
   const [activeButton, setActiveButton] = useState<ButtonName>("ZodhaGPT");
   const [animationDiv, setAnimationDiv] = useState(0);
@@ -103,14 +103,16 @@ export default function HeroSection() {
       "see other",
       "back",
       "return to",
-      "main menu"
+      "main menu",
     ];
 
-    const isNavigationButton = navigationKeywords.some(keyword => 
+    const isNavigationButton = navigationKeywords.some((keyword) =>
       optionText.toLowerCase().includes(keyword.toLowerCase())
     );
 
-    return isNavigationButton ? Styles.redOptionButton : Styles.whiteOptionButton;
+    return isNavigationButton
+      ? Styles.redOptionButton
+      : Styles.whiteOptionButton;
   };
 
   const handleOptionClick = (nextId: string) => {
@@ -390,6 +392,14 @@ export default function HeroSection() {
             }}
           >
             <div className={Styles.chatWindow2ndLayer}>
+              <div className={Styles.chatHeader}>
+                <div className={Styles.chatHeaderContent}>
+                  <h2 className={Styles.chatHeaderTitle}>Chatbot</h2>
+                  <p className={Styles.chatHeaderSubtitle}>
+                    Ai Assistant to help you
+                  </p>
+                </div>
+              </div>
               <div className={Styles.crossButton1stLayer}>
                 <div
                   className={Styles.crossButton}
@@ -407,7 +417,7 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className={Styles.chatWindow3rdLayer}>
-                {/* Chat Messages */}
+                {/* Chat Messages - This contains BOTH messages and options */}
                 <div className={Styles.chatMessages}>
                   {messages.map((message) => (
                     <div
@@ -447,26 +457,28 @@ export default function HeroSection() {
                       )}
                     </div>
                   ))}
+
+                  {/* Options Buttons - NOW INSIDE chatMessages */}
+                  {options.length > 0 && (
+                    <div className={Styles.optionsContainer}>
+                      {options.map((option, index) => (
+                        <button
+                          key={index}
+                          className={`${Styles.optionButton} ${getButtonStyle(
+                            option.text
+                          )}`}
+                          onClick={() => handleOptionClick(option.next_id)}
+                        >
+                          {option.text}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Options Buttons */}
-                {options.length > 0 && (
-                  <div className={Styles.optionsContainer}>
-                    {options.map((option, index) => (
-                      <button
-                        key={index}
-                        className={`${Styles.optionButton} ${getButtonStyle(option.text)}`}
-                        onClick={() => handleOptionClick(option.next_id)}
-                      >
-                        {option.text}
-                      </button>
-                    ))}
-                  </div>
-                )}
-
-                {/* Chat Input */}
-         
+                {/* Chat Input Area (if you add one later) */}
               </div>
             </div>
           </div>
@@ -482,8 +494,8 @@ export default function HeroSection() {
                 <Image
                   src={images.ChatIcon}
                   alt="ChatIcon"
-                  width={25}
-                  height={25}
+                  width={30}
+                  height={30}
                   priority
                 />
               </button>
