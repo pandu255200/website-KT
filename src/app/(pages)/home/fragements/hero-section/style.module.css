@@ -215,13 +215,13 @@
 }
 
 .chatWindow .crossButton {
-  width: 3rem;
-  height: 3rem;
+  width: 20px;
+  height: 20px;
   margin-right: 0.8rem;
-  margin-top: 0.8rem;
-  background-color: red;
+  margin-top: 6px;
+  background-color: rgb(255, 12, 12);
   border-radius: 50%;
-  font-size: 36px;
+  font-size: 20px;
   text-align: center;
   float: right;
   cursor: pointer;
@@ -767,7 +767,7 @@
   position: fixed;
   bottom: 70px;
   right: 30px;
-  width: 900px;
+  width: 700px;
   height: 600px;
   background: white;
   border-radius: 20px;
@@ -788,7 +788,7 @@
 
 .chatWindow3rdLayer {
   width: 100%;
-  height: 100%;
+  height: 550px;
   background: white;
   border-radius: 20px;
   display: flex;
@@ -799,21 +799,22 @@
 /* ===== CROSS BUTTON ===== */
 .crossButton1stLayer {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 0px;
+  right: 0px;
   z-index: 10;
 }
 
 .crossButton {
-  width: 24px;
-  height: 24px;
-  background: #fa2609;
+  
+  width: 20px;
+  height: 20px;
+  background: #e3d1cf;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1033,7 +1034,7 @@
 /* ===== CHAT INPUT BOX - REDUCED SIZE ===== */
 .chatInputBox {
   padding: 12px 15px;
-  border-top: 1px solid #e1e5eb;
+  border-top: 1px solid #ffffff;
   background: #f8f9fa;
   display: flex;
   align-items: center;
@@ -1276,4 +1277,63 @@
   .message_box {
     animation: none;
   }
+}
+
+
+/* Option Button Styles */
+.optionButton {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-bottom: 6px;
+}
+
+.whiteOptionButton {
+  background: white;
+  color: #000000;
+  border: 1px solid #e1e5eb;
+}
+
+.whiteOptionButton:hover {
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.redOptionButton {
+  background: #fa2609;
+  color: white;
+  border: 1px solid #fa2609;
+}
+
+.redOptionButton:hover {
+  background: #e3452c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(250, 38, 9, 0.3);
+}
+
+
+/* Hide scrollbars but keep functionality */
+.chatMessages {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.chatMessages::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.optionsContainer {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.optionsContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

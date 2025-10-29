@@ -8,7 +8,7 @@ import { useCounter } from "@/store/AnimationContext";
 import SendButton from "../../../../../../public/chat/send-button.svg";
 import ResoluteLogo from "../../../../../../public/chat/resolute-logo.svg";
 import Sender from "../../../../../../public/chat/sender.jpg";
-import { chatbotData } from "./data"; // Import from data.js
+import { chatbotData } from "./data";
 
 const images = {
   AnalyticsImage: "/home/analytics-image.svg",
@@ -94,6 +94,25 @@ export default function HeroSection() {
     setOptions(startData.options);
     setCurrentStep("start");
   };
+
+  // Function to determine button style based on text content
+  const getButtonStyle = (optionText: string) => {
+    const navigationKeywords = [
+      "go to main menu",
+      "back to",
+      "see other",
+      "back",
+      "return to",
+      "main menu"
+    ];
+
+    const isNavigationButton = navigationKeywords.some(keyword => 
+      optionText.toLowerCase().includes(keyword.toLowerCase())
+    );
+
+    return isNavigationButton ? Styles.redOptionButton : Styles.whiteOptionButton;
+  };
+
   const handleOptionClick = (nextId: string) => {
     // Check if this is a redirect step
     const nextStepData = chatbotData[nextId as keyof typeof chatbotData];
@@ -163,6 +182,7 @@ export default function HeroSection() {
       setCurrentStep(nextId);
     }
   };
+
   const handleSendMessage = () => {
     const inputElement = document.querySelector(
       `.${Styles.chatInput}`
@@ -436,7 +456,7 @@ export default function HeroSection() {
                     {options.map((option, index) => (
                       <button
                         key={index}
-                        className={Styles.optionButton}
+                        className={`${Styles.optionButton} ${getButtonStyle(option.text)}`}
                         onClick={() => handleOptionClick(option.next_id)}
                       >
                         {option.text}
@@ -446,38 +466,7 @@ export default function HeroSection() {
                 )}
 
                 {/* Chat Input */}
-                <div className={Styles.chatInputBox}>
-                  <div
-                    className={Styles.chatInput}
-                    contentEditable
-                    suppressContentEditableWarning
-                    onKeyPress={handleKeyPress}
-                    onFocus={(e) => {
-                      if (e.currentTarget.textContent === "Type Here") {
-                        e.currentTarget.textContent = "";
-                      }
-                    }}
-                    onBlur={(e) => {
-                      if (!e.currentTarget.textContent?.trim()) {
-                        e.currentTarget.textContent = "Type Here";
-                      }
-                    }}
-                  >
-                    Type Here
-                  </div>
-                  <div
-                    className={Styles.sendButton}
-                    onClick={handleSendMessage}
-                  >
-                    <Image
-                      src={SendButton}
-                      alt="Send Button"
-                      className={Styles.sendButtonImage}
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-                </div>
+         
               </div>
             </div>
           </div>

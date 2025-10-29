@@ -349,6 +349,7 @@ export const chatbotData = {
       { "type": "text", "content": "What would you like to know about ResoluteAI Software?" }
     ],
     "options": [
+     { "text": "Visit  Page", "next_id": "redirect_aboutus" },
       { "text": "About the Company", "next_id": "about_us_company" },
       { "text": "Vision & Mission", "next_id": "about_us_vision_mission" },
       { "text": "Our Values", "next_id": "about_us_values" },
@@ -358,6 +359,14 @@ export const chatbotData = {
       { "text": "Intern Testimonials", "next_id": "about_us_testimonials" },
       { "text": "Go to Main Menu", "next_id": "start" }
     ]
+  },
+
+  "redirect_aboutus": {
+    "response": [
+      { "type": "text", "content": "Redirecting you to About us page..." }
+    ],
+    "options": [],
+    "redirect_url": "/about-us"
   },
   "about_us_company": {
     "response": [
