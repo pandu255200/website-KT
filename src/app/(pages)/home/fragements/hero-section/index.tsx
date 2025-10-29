@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Styles from "./style.module.css";
 import { useCounter } from "@/store/AnimationContext";
 import SendButton from "../../../../../../public/chat/send-button.svg";
 import ResoluteLogo from "../../../../../../public/chat/resolute-logo.svg";
 import Sender from "../../../../../../public/chat/sender.jpg";
+import { chatbotData } from "./data"; // Import from data.js
 
 const images = {
   AnalyticsImage: "/home/analytics-image.svg",
@@ -24,25 +26,196 @@ const images = {
 
 type ButtonName = "ZodhaGPT" | "FaceGenie" | "AnalyticsKart";
 
+type MessageType = {
+  id: string;
+  content: string;
+  isUser: boolean;
+  type: "text" | "list";
+  title?: string;
+  items?: string[];
+};
+
+type OptionType = {
+  text: string;
+  next_id: string;
+};
+
 export default function HeroSection() {
+  const router = useRouter()
   const { counter } = useCounter();
   const [activeButton, setActiveButton] = useState<ButtonName>("ZodhaGPT");
   const [animationDiv, setAnimationDiv] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [showChatWindow, setShowChatWindow] = useState(false);
 
+  // Chatbot state
+  const [currentStep, setCurrentStep] = useState("start");
+  const [messages, setMessages] = useState<MessageType[]>([]);
+  const [options, setOptions] = useState<OptionType[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     setIsClient(true);
-
-    // Always play animation on every page load
     setAnimationDiv(1);
 
     const timeout = setTimeout(() => {
       setAnimationDiv(0);
-    }, 10000); // Adjust duration if needed
+    }, 10000);
 
     return () => clearTimeout(timeout);
   }, []);
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // Initialize chatbot when chat window opens
+  useEffect(() => {
+    if (showChatWindow && messages.length === 0) {
+      initializeChatbot();
+    }
+  }, [showChatWindow]);
+
+  const initializeChatbot = () => {
+    const startData = chatbotData.start;
+    const newMessages: MessageType[] = startData.response.map(
+      (resp, index) => ({
+        id: `msg-${Date.now()}-${index}`,
+        content: resp.content,
+        isUser: false,
+        type: resp.type as "text" | "list",
+        title: (resp as any).title,
+        items: (resp as any).items,
+      })
+    );
+
+    setMessages(newMessages);
+    setOptions(startData.options);
+    setCurrentStep("start");
+  };
+  const handleOptionClick = (nextId: string) => {
+    // Check if this is a redirect step
+    const nextStepData = chatbotData[nextId as keyof typeof chatbotData];
+
+    if (nextStepData && nextStepData.redirect_url) {
+      // Add redirect message
+      const redirectMessages: MessageType[] = nextStepData.response.map(
+        (resp, index) => ({
+          id: `redirect-${Date.now()}-${index}`,
+          content: resp.content,
+          isUser: false,
+          type: resp.type as "text" | "list",
+          title: (resp as any).title,
+          items: (resp as any).items,
+        })
+      );
+
+      setMessages((prev) => [...prev, ...redirectMessages]);
+      setOptions([]);
+      setCurrentStep(nextId);
+
+      // Redirect after a short delay to show the message
+      setTimeout(() => {
+        setShowChatWindow(false);
+        router.push(nextStepData.redirect_url);
+        // Reset chat after redirect
+        setTimeout(() => {
+          setMessages([]);
+          setOptions([]);
+          setCurrentStep("start");
+        }, 1000);
+      }, 1500);
+
+      return;
+    }
+
+    // Add user's selection as a message
+    const selectedOption = options.find((opt) => opt.next_id === nextId);
+    if (selectedOption) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `user-${Date.now()}`,
+          content: selectedOption.text,
+          isUser: true,
+          type: "text",
+        },
+      ]);
+    }
+
+    // Get next step data
+    if (nextStepData) {
+      // Add bot responses
+      const botMessages: MessageType[] = nextStepData.response.map(
+        (resp, index) => ({
+          id: `bot-${Date.now()}-${index}`,
+          content: resp.content,
+          isUser: false,
+          type: resp.type as "text" | "list",
+          title: (resp as any).title,
+          items: (resp as any).items,
+        })
+      );
+
+      setMessages((prev) => [...prev, ...botMessages]);
+      setOptions(nextStepData.options);
+      setCurrentStep(nextId);
+    }
+  };
+  const handleSendMessage = () => {
+    const inputElement = document.querySelector(
+      `.${Styles.chatInput}`
+    ) as HTMLDivElement;
+    if (inputElement && inputElement.textContent?.trim()) {
+      const userMessage = inputElement.textContent.trim();
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `user-${Date.now()}`,
+          content: userMessage,
+          isUser: true,
+          type: "text",
+        },
+      ]);
+
+      // Clear input
+      inputElement.textContent = "Type Here";
+
+      // For now, redirect to main menu on manual input
+      setTimeout(() => {
+        handleOptionClick("start");
+      }, 500);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
+  const renderMessageContent = (message: MessageType) => {
+    if (message.type === "list" && message.items) {
+      return (
+        <div className={Styles.listContent}>
+          {message.title && (
+            <strong className={Styles.listTitle}>{message.title}</strong>
+          )}
+          <ul className={Styles.list}>
+            {message.items.map((item, index) => (
+              <li key={index} className={Styles.listItem}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    return <div className={Styles.textContent}>{message.content}</div>;
+  };
 
   const contentData = {
     ZodhaGPT: {
@@ -188,92 +361,120 @@ export default function HeroSection() {
           </div>
           <div
             className={Styles.chatWindow}
-            style={{ visibility: `${showChatWindow ? "visible" : "hidden"}` }}
+            style={{
+              visibility: `${showChatWindow ? "visible" : "hidden"}`,
+              opacity: `${showChatWindow ? "1" : "0"}`,
+              transform: `${
+                showChatWindow ? "translateY(0)" : "translateY(20px)"
+              }`,
+            }}
           >
             <div className={Styles.chatWindow2ndLayer}>
-              <div
-                className={Styles.crossButton1stLayer}
-                style={{
-                  visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                }}
-              >
+              <div className={Styles.crossButton1stLayer}>
                 <div
                   className={Styles.crossButton}
-                  onClick={() => setShowChatWindow(false)}
+                  onClick={() => {
+                    setShowChatWindow(false);
+                    // Reset chat when closing
+                    setTimeout(() => {
+                      setMessages([]);
+                      setOptions([]);
+                      setCurrentStep("start");
+                    }, 300);
+                  }}
                 >
-                  X
+                  ×
                 </div>
               </div>
               <div className={Styles.chatWindow3rdLayer}>
-                <div className={Styles.questionMessageBox}>
-                  <div
-                    className={Styles.senderPhoto}
-                    style={{
-                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                    }}
-                  >
-                    <Image
-                      src={Sender}
-                      alt="Sender Photo"
-                      className={Styles.senderPhotoImageTag}
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                  <div
-                    className={Styles.questionMessageInput}
-                    style={{
-                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                    }}
-                  >
-                    What document types are supported?
-                  </div>
+                {/* Chat Messages */}
+                <div className={Styles.chatMessages}>
+                  {messages.map((message) => (
+                    <div
+                      key={message.id}
+                      className={`${Styles.messageContainer} ${
+                        message.isUser ? Styles.userMessage : Styles.botMessage
+                      }`}
+                    >
+                      {!message.isUser && (
+                        <div className={Styles.resoluteLogo}>
+                          <Image
+                            src={ResoluteLogo}
+                            alt="Resolute Logo"
+                            className={Styles.resoluteLogoImage}
+                            width={12}
+                            height={12}
+                          />
+                        </div>
+                      )}
+                      <div
+                        className={`${Styles.messageBubble} ${
+                          message.isUser ? Styles.userBubble : Styles.botBubble
+                        }`}
+                      >
+                        {renderMessageContent(message)}
+                      </div>
+                      {message.isUser && (
+                        <div className={Styles.senderPhoto}>
+                          <Image
+                            src={Sender}
+                            alt="Sender Photo"
+                            className={Styles.senderPhotoImageTag}
+                            width={12}
+                            height={12}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  <div ref={messagesEndRef} />
                 </div>
-                <div className={Styles.answerMessageBox}>
+
+                {/* Options Buttons */}
+                {options.length > 0 && (
+                  <div className={Styles.optionsContainer}>
+                    {options.map((option, index) => (
+                      <button
+                        key={index}
+                        className={Styles.optionButton}
+                        onClick={() => handleOptionClick(option.next_id)}
+                      >
+                        {option.text}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Chat Input */}
+                <div className={Styles.chatInputBox}>
                   <div
-                    className={Styles.answerMessageInput}
-                    style={{
-                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
+                    className={Styles.chatInput}
+                    contentEditable
+                    suppressContentEditableWarning
+                    onKeyPress={handleKeyPress}
+                    onFocus={(e) => {
+                      if (e.currentTarget.textContent === "Type Here") {
+                        e.currentTarget.textContent = "";
+                      }
+                    }}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.textContent?.trim()) {
+                        e.currentTarget.textContent = "Type Here";
+                      }
                     }}
                   >
-                    The module supports a wide range of document types,
-                    including PDFs, Word documents, scanned images, and text
-                    files.
+                    Type Here
                   </div>
-                  <div
-                    className={Styles.resoluteLogo}
-                    style={{
-                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                    }}
-                  >
-                    <Image
-                      src={ResoluteLogo}
-                      alt="Resolute Logo"
-                      className={Styles.resoluteLogoImage}
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                </div>
-                <div
-                  className={Styles.chatInputBox}
-                  style={{
-                    visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                  }}
-                >
-                  <div className={Styles.chatInput}>Type Here</div>
                   <div
                     className={Styles.sendButton}
-                    style={{
-                      visibility: `${showChatWindow ? "visible" : "hidden"}`,
-                    }}
+                    onClick={handleSendMessage}
                   >
                     <Image
                       src={SendButton}
                       alt="Send Button"
                       className={Styles.sendButtonImage}
-                      width={10}
-                      height={10}
+                      width={20}
+                      height={20}
                     />
                   </div>
                 </div>
