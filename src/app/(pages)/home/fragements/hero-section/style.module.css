@@ -1199,10 +1199,10 @@
     border-radius: 14px;
   }
 
-  .messageBubble {
+  /* .messageBubble {
     max-width: 80%;
     padding: 10px 14px;
-  }
+  } */
 
   .chatButton {
     width: 50px;

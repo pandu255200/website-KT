@@ -8,7 +8,7 @@ export const chatbotData = {
       { "text": "Our Products", "next_id": "products_menu" },
       { "text": "Solutions & Services", "next_id": "services_menu" },
       { "text": "Industries We Serve (Verticals)", "next_id": "verticals_menu" },
-      { "text": "About ResoluteAI", "next_id": "about_us_menu" },
+      { "text": "About ResoluteAI Software", "next_id": "about_us_menu" },
       { "text": "Contact Us", "next_id": "contact_us" }
     ]
   },
