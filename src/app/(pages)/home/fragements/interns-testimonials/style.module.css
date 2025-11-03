@@ -29,7 +29,7 @@
 .grid {
   margin-top: 5rem;
   display: flex;
-  animation: scroll linear 100s infinite;
+  animation: scroll linear 200s infinite;
   
 }
 

@@ -285,15 +285,16 @@
   text-align: left;
 }
 
-.chatWindow .resoluteLogo {
-  width: 20px;
-  height: 20;
+.chatWindow .resoluteLogo  {
+  width: 30px;
+  height: 30px;
   /* margin-left:  0; */
   background-color: #fff;
   border-radius: 50%;
   font-size: 36px;
   cursor: pointer;
 }
+
 
 .chatWindow .resoluteLogo .resoluteLogoImage {
   width: inherit;
@@ -318,8 +319,8 @@
 }
 
 .chatWindow .senderPhoto {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-right: 0.5rem;
   background-color: #fff;
   border-radius: 50%;
@@ -572,13 +573,14 @@
   .chatWindow {
     width: 90vw;
     height: 80vh;
+    /* margin-top: 30px; */
     border-radius: 20px;
   }
 
   .chatWindow .crossButton {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0.5rem;
+    width: 30px;
+    height: 30px;
+    margin: 0;
     font-size: 24px;
   }
 
@@ -614,8 +616,8 @@
 
   .chatWindow .resoluteLogo,
   .chatWindow .senderPhoto {
-    width: 2rem;
-    height: 2rem;
+    width: 40px;
+    height: 40px;
   }
 
   .chatButton {
@@ -626,8 +628,8 @@
   }
 
   .message_box {
-    bottom: 6rem;
-    right: 1.5rem;
+    bottom: 80px;
+    right: 20px;
     font-size: 14px;
     max-width: 250px;
     padding: 6px 12px;
@@ -708,8 +710,8 @@
   }
 
   .chatButton {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 50px;
+    height: 50px;
     bottom: 1.5rem;
     right: 1.5rem;
   }
@@ -1161,8 +1163,8 @@
   }
 
   .chatButton {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .chatMessages {
@@ -1188,21 +1190,21 @@
 
 @media (max-width: 480px) {
   .chatWindow {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 50px);
     right: 20px;
     left: 20px;
     height: 70vh;
-    bottom: 20px;
+    bottom: 50px;
   }
 
   .chatWindow3rdLayer {
     border-radius: 14px;
   }
 
-  /* .messageBubble {
-    max-width: 80%;
+  .messageBubble {
+    max-width: 60%;
     padding: 10px 14px;
-  } */
+  }
 
   .chatButton {
     width: 50px;
@@ -1212,6 +1214,7 @@
   }
 
   .message_box {
+    margin-top: 0px;
     font-size: 11px;
     padding: 6px 10px;
     max-width: 180px;
@@ -1219,12 +1222,13 @@
 
   .resoluteLogo,
   .senderPhoto {
-    width: 24px;
-    height: 24px;
+    width: 10px;
+    height: 10px;
   }
 
   .optionsContainer {
     max-height: 100px;
+    width: 250px;
     margin-left: 35px;
   }
 }

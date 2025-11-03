@@ -432,8 +432,8 @@ export default function HeroSection() {
                             src={ResoluteLogo}
                             alt="Resolute Logo"
                             className={Styles.resoluteLogoImage}
-                            width={12}
-                            height={12}
+                            width={20}
+                            height={20}
                           />
                         </div>
                       )}
@@ -450,8 +450,8 @@ export default function HeroSection() {
                             src={Sender}
                             alt="Sender Photo"
                             className={Styles.senderPhotoImageTag}
-                            width={12}
-                            height={12}
+                            width={20}
+                            height={20}
                           />
                         </div>
                       )}
@@ -482,25 +482,25 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          {animationDiv === 0 && (
-            <div className={Styles.chatWrapper}>
-              <div className={Styles.message_box}>
-                Do you need any Assistance ?
-              </div>
-              <button
-                className={Styles.chatButton}
-                onClick={() => setShowChatWindow(true)}
-              >
-                <Image
-                  src={images.ChatIcon}
-                  alt="ChatIcon"
-                  width={30}
-                  height={30}
-                  priority
-                />
-              </button>
+          {/* {animationDiv === 0 && ( */}
+          <div className={Styles.chatWrapper}>
+            <div className={Styles.message_box}>
+              Do you need any Assistance ?
             </div>
-          )}
+            <button
+              className={Styles.chatButton}
+              onClick={() => setShowChatWindow(true)}
+            >
+              <Image
+                src={images.ChatIcon}
+                alt="ChatIcon"
+                width={30}
+                height={30}
+                priority
+              />
+            </button>
+          </div>
+          {/* )} */}
         </div>
       </section>
     </div>

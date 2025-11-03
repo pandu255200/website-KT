@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./mission.module.css";
 import GlobeGif from "../../../../../public/about-us/globe.gif";
+import GlobeGif1 from "../../../../../public/about-us/globe2.gif";
 import MissionImage from "../../../../../public/about-us/mission-image.png";
 
 export const Mission = () => {
@@ -20,7 +21,7 @@ export const Mission = () => {
         <h6>Partner and grow compassionate social ecosystem.</h6>
       </div>
       <div className={styles.illustration}>
-        <Image src={GlobeGif} alt="globe-gif" />
+        <Image src={GlobeGif1} alt="globe-gif" />
         <Image src={MissionImage} alt="mission-image" />
       </div>
     </div>

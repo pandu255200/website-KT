@@ -1,12 +1,7 @@
 /* Section Container */
 .container {
   display: flex;
-  /* justify-content: space-evenly; */
   align-items: center;
-  /* padding: 4rem 2rem; */
-  box-sizing: border-box;
-  /* height: 31.5rem; */
-  /* background: #fa2609; */
   width: 100%;
 }
 
@@ -63,6 +58,7 @@
   z-index: 0;
   object-fit: cover;
 }
+
 /* Header Section */
 .header {
   display: flex;
@@ -76,18 +72,15 @@
   color: white;
   font-size: 68px;
   font-weight: 400;
-  /* word-wrap: break-word; */
   width: 25rem;
 }
 
 .header div {
   width: 32rem;
-  /* width: 35%; */
   color: white;
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
-  /* word-wrap: break-word; */
 }
 
 .backButton {
@@ -122,6 +115,7 @@
   gap: 10px;
   margin-bottom: 1rem;
 }
+
 .navButton {
   background: rgba(255, 255, 255, 0.3);
   color: white;
@@ -139,7 +133,7 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Cards Container */
+/* Cards Container - CAROUSEL EFFECT */
 .cardsContainer {
   overflow: hidden;
   padding: 1.7rem 0;
@@ -153,11 +147,8 @@
   display: flex;
   align-items: flex-end;
   padding: 0rem 2rem 1rem 2rem;
-  transition: transform 0.10s cubic-bezier(0.22, 0.61, 0.36, 1); /* natural ease-out */
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translate3d(0, 0, 0); /* hardware acceleration */
-  perspective: 1000px;
+  transition: transform 0.5s ease-in-out;
+  gap: 2rem;
 }
 
 /* Individual Card */
@@ -172,8 +163,9 @@
   flex-shrink: 0;
   padding: 20px;
   text-align: center;
-  margin: 10px;
+  transition: all 0.3s ease-in-out;
 }
+
 .card::after {
   content: "";
   width: 100%;
@@ -185,14 +177,21 @@
   background: rgba(87, 10, 0, 0.2);
   backdrop-filter: blur(20px);
 }
+
+/* Active card styling */
 .card.activeCard {
-  transform: scale(1.2);
-  width: 16rem;
-  height: 19rem;
+  transform: scale(1.1);
+  opacity: 1;
+  filter: brightness(1);
   z-index: 2;
-  margin-right: 3rem;
-  border-radius: 10px;
 }
+
+/* Inactive cards */
+.card:not(.activeCard) {
+  transform: scale(0.9);
+  /* opacity: 0.7; */
+}
+
 .imageContainer {
   position: absolute;
   top: -1rem;
@@ -214,6 +213,7 @@
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
+
 .info {
   clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
   position: absolute;
@@ -236,6 +236,7 @@
   left: 0;
   padding: 0 5%;
 }
+
 .infoContent h2 {
   margin-bottom: 5px;
   text-align: left;
@@ -271,6 +272,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .description p {
   width: 35%;
   color: white;
@@ -279,6 +281,7 @@
   line-height: 30px;
   word-wrap: break-word;
 }
+
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {

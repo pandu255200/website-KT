@@ -5,17 +5,13 @@ import styles from "./style.module.css";
 import Image from "next/image";
 
 import SanjayJhaImage from "../../../../../../../public/core-team/sanjay-jha.png";
-// import Anusha from "../../../../../../../public/core-team/anusha.png";
 import Jeenal from "../../../../../../../public/core-team/jeenal.png";
 import Nancy from "../../../../../../../public/core-team/nancy.png";
-// import Nishi from "../../../../../../../public/core-team/nishi.png";
 import Parikshit from "../../../../../../../public/core-team/parikshit.png";
 import Preeti from "../../../../../../../public/core-team/preeti.png";
 import Rishika from "../../../../../../../public/core-team/rishika.png";
-// import Rishika from "../../../../../../../public/core-team/rishika.png";
 import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
 import Globe from "../../../../../../../public/core-team/globe.svg";
-// import TopLeftArrow from "../../../../public/core-team/top-left-arrow.svg"
 import { GoBackButton } from "@/components/common/go-back-button";
 
 interface CoreTeamProps {
@@ -29,7 +25,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       title: "Founder & CEO",
       image: SanjayJhaImage,
       linkedin: "https://www.linkedin.com/in/sanjayjha",
-      style: "5px"
+      style: "0px"
     },
     {
       name: "Preeti Joshi",
@@ -45,42 +41,16 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       linkedin: "https://www.linkedin.com/in/jeenal-rajgor/",
       style: "5px"
     },
-   
     {
       name: "Rishika Agarwala",
       title: "Associate Director - Pre Sales & Marketing",
       image: Rishika,
       linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
-      style: "70px"
+      style: "50px"
     },
-    // {
-    //   name: "Nishi Maheshwari",
-    //   title: "Senior Business Analyst",
-    //   image: Nishi,
-    //   linkedin: "https://www.linkedin.com/in/nishi-maheshwari-99b013128/",
-    //   style: "15px"
-    // },
-    // {
-    //   name: "Anusha Bai Kourampet",
-    //   title: "Senior Business Analyst",
-    //   image: Anusha,
-    //   linkedin: "https://www.linkedin.com/in/anusha-bai-kourampet-39815ba9/",
-    //   style: "10px"
-    // },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Automatically scroll to the next slide every 5 seconds
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       handleNext();
-  //     }, 5000);
-
-  //     return () => clearInterval(interval);
-  //   }, [currentIndex]);
-
-  console.log(currentIndex);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -106,7 +76,6 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
           width={100}
           height={100}
         />
-        {/* Globe image */}
 
         <div className={styles.header}>
           <h1 className="font-anta">CORE TEAM</h1>
@@ -120,16 +89,6 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
               </p>
             </div>
           )}
-          {/* <button className={styles.backButton}>
-                    <span>Go Back</span>
-                    <Image
-                        src={TopLeftArrow}
-                        alt="TopLeftArrow"
-                        className={styles.TopLeftArrow}
-                        width={16}
-                        height={16}
-                    />
-                </button> */}
         </div>
 
         <div className={styles.carousel}>
@@ -144,17 +103,12 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
           </button>
 
           <div className={styles.cardsContainer}>
-            <div
-              className={styles.cards}
-              style={{
-                transform: `translateX(-${currentIndex * (3 * teamMembers.length)}rem)`,
-              }}
-            >
+            <div className={styles.cards}>
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
                   className={`${styles.card} ${
-                    index === currentIndex ? styles.activeCard : ""
+                    index === currentIndex ? styles.activeCard : styles.inactiveCard
                   }`}
                 >
                   <div className={styles.imageContainer}>
@@ -163,7 +117,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
                       alt={member.name}
                       layout="fill"
                       className={styles.image}
-                      style={{ marginTop: `${member.style}`, scale: `${index == teamMembers.length - 1  ? "3" : "0.9"}` }}
+                      style={{ marginTop: `${member.style}` }}
                     />
                   </div>
                   <div className={styles.info}>
