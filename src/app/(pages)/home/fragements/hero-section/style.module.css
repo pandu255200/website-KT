@@ -207,6 +207,16 @@
   border-radius: 35px;
   background-color: white;
 }
+.chatWindow.hide {
+  display: none;
+}
+
+.chatWindow.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
 .chatWindow .chatWindow2ndLayer {
   width: inherit;
@@ -285,7 +295,7 @@
   text-align: left;
 }
 
-.chatWindow .resoluteLogo  {
+.chatWindow .resoluteLogo {
   width: 30px;
   height: 30px;
   /* margin-left:  0; */
@@ -294,7 +304,6 @@
   font-size: 36px;
   cursor: pointer;
 }
-
 
 .chatWindow .resoluteLogo .resoluteLogoImage {
   width: inherit;
@@ -762,7 +771,6 @@
     align-items: center;
   }
 }
-
 
 /* ===== CHAT WINDOW CONTAINER ===== */
 .chatWindow {

@@ -9,6 +9,7 @@ import SendButton from "../../../../../../public/chat/send-button.svg";
 import ResoluteLogo from "../../../../../../public/chat/resolute-logo.svg";
 import Sender from "../../../../../../public/chat/sender.jpg";
 import { chatbotData } from "./data";
+import Cookies from "js-cookie";
 
 const images = {
   AnalyticsImage: "/home/analytics-image.svg",
@@ -47,8 +48,8 @@ export default function HeroSection() {
   const [animationDiv, setAnimationDiv] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [showChatWindow, setShowChatWindow] = useState(false);
+  const [sessionId, setSessionId] = useState("");
 
-  // Chatbot state
   const [currentStep, setCurrentStep] = useState("start");
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [options, setOptions] = useState<OptionType[]>([]);
@@ -64,6 +65,35 @@ export default function HeroSection() {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    let id = Cookies.get("session_id");
+    if (!id) {
+      id = "sess_" + Math.random().toString(36).substring(2, 12);
+      Cookies.set("session_id", id, { expires: 7, path: "/" });
+    }
+    setSessionId(id);
+  }, []);
+
+  const sendToBackend = async (userMessage: string) => {
+    try {
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          message: userMessage,
+          session_id: sessionId,
+        }),
+      });
+
+      const data = await response.json();
+      return data.reply;
+    } catch (err) {
+      console.error(err);
+      return "⚠️ GenAI server is not responding.";
+    }
+  };
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -382,7 +412,9 @@ export default function HeroSection() {
             ))}
           </div>
           <div
-            className={Styles.chatWindow}
+            className={`${Styles.chatWindow} ${
+              showChatWindow ? Styles.show : Styles.hide
+            }`}
             style={{
               visibility: `${showChatWindow ? "visible" : "hidden"}`,
               opacity: `${showChatWindow ? "1" : "0"}`,
@@ -394,9 +426,9 @@ export default function HeroSection() {
             <div className={Styles.chatWindow2ndLayer}>
               <div className={Styles.chatHeader}>
                 <div className={Styles.chatHeaderContent}>
-                  <h2 className={Styles.chatHeaderTitle}>Chatbot</h2>
+                  <h2 className={Styles.chatHeaderTitle}>ZODHAGPT</h2>
                   <p className={Styles.chatHeaderSubtitle}>
-                    Ai Assistant to help you
+                    AI Assistant to help you
                   </p>
                 </div>
               </div>
@@ -477,8 +509,6 @@ export default function HeroSection() {
 
                   <div ref={messagesEndRef} />
                 </div>
-
-                {/* Chat Input Area (if you add one later) */}
               </div>
             </div>
           </div>

@@ -9,11 +9,13 @@ const OurMilestones = () => {
   const milestonesData1 = [
     { title: "300+", description: "Unique Challenges Solved" },
     { title: "3", description: "Proprietary Products Developed" },
+    // { title: "20+", description: "Successful Projects Delivered" },
   ];
   const milestonesData2 = [
     { title: "100+", description: "Corporate Professionals Upskilled" },
     { title: "500+", description: "Students Trained" },
     { title: "3+", description: "Patents Filed" },
+    
   ];
 
   return (
