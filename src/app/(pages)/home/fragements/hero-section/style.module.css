@@ -637,7 +637,7 @@
   }
 
   .message_box {
-    bottom: 80px;
+    bottom: 100px;
     right: 20px;
     font-size: 14px;
     max-width: 250px;
@@ -713,15 +713,15 @@
   }
 
   .chatWindow {
-    width: 95vw;
-    height: 90vh;
+    width: 60vw;
+    height: 60vh;
     border-radius: 15px;
   }
 
   .chatButton {
     width: 50px;
     height: 50px;
-    bottom: 1.5rem;
+    bottom: 1.9rem;
     right: 1.5rem;
   }
 
@@ -1201,8 +1201,8 @@
     width: calc(100vw - 50px);
     right: 20px;
     left: 20px;
-    height: 70vh;
-    bottom: 50px;
+    height: 60vh;
+    bottom: 80px;
   }
 
   .chatWindow3rdLayer {
@@ -1217,7 +1217,7 @@
   .chatButton {
     width: 50px;
     height: 50px;
-    bottom: 15px;
+    bottom: 50px;
     right: 15px;
   }
 
@@ -1236,7 +1236,7 @@
 
   .optionsContainer {
     max-height: 100px;
-    width: 250px;
+    width: 200px;
     margin-left: 35px;
   }
 }

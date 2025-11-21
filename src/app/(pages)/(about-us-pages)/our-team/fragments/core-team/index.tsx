@@ -10,6 +10,11 @@ import Nancy from "../../../../../../../public/core-team/nancy.png";
 import Parikshit from "../../../../../../../public/core-team/parikshit.png";
 import Preeti from "../../../../../../../public/core-team/preeti.png";
 import Rishika from "../../../../../../../public/core-team/rishika.png";
+import Rishika1 from "../../../../../../../public/core-team/rishika1.png";
+import Rishika2 from "../../../../../../../public/core-team/rishika2.jpg";
+import Rishika3 from "../../../../../../../public/core-team/rishika3.png";
+import Rishika4 from "../../../../../../../public/core-team/rishika4.png";
+import Rishika6 from "../../../../../../../public/core-team/rishika6.png";
 import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
 import Globe from "../../../../../../../public/core-team/globe.svg";
 import { GoBackButton } from "@/components/common/go-back-button";
@@ -44,9 +49,9 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
     {
       name: "Rishika Agarwala",
       title: "Associate Director - Pre Sales & Marketing",
-      image: Rishika,
+      image: Rishika6,
       linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
-      style: "50px"
+      style: "5px"
     },
   ];
 

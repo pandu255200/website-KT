@@ -227,6 +227,8 @@
   }
 
   .mobileNavLogo {
+    width: 50px;
+    top: 0;
     display: block;
     transition: 0.5s linear ease-in;
   }
@@ -327,7 +329,7 @@
 
 .isoText {
   position: absolute;
-  bottom: -20px; /* Adjust as needed */
+  bottom: -10px; /* Adjust as needed */
   left: 0;
   font-size: 14px;
   font-weight: 700;
@@ -338,20 +340,26 @@
 
 @media (max-width: 480px) {
   .isoText {
-    bottom: -14px; /* move closer to mobile logo */
-    left: 50%;
+    bottom: -17px; /* move closer to mobile logo */
+    left:64%;
     transform: translateX(-50%);
-    font-size: 9px; /* smaller text */
+    font-size: 10px; /* smaller text */
     margin-left: 60px;
-    font-weight: 500;
-    color: #f5f5f5;
+    font-weight: 700;
+    color: #ffffff;
     text-align: center;
   }
 }
 
 @media (max-width: 360px) {
   .isoText {
-    bottom: -12px;
-    font-size: 8px;
+    bottom: -17px; /* move closer to mobile logo */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px; /* smaller text */
+    margin-left: 60px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
   }
 }
