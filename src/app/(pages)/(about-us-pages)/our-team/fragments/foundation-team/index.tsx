@@ -74,17 +74,17 @@ const teamMembers = [
     style: "5px",
   },
   {
-    name: "Nancy Philip",
-    title: "Senior Director - Delivery and Program management",
-    image: Nancy,
-    linkedin: "https://www.linkedin.com/in/nancy-philip-8254657/",
-    style: "10px",
-  },
-  {
     name: "Parikshit Bangde",
     title: "Director - AI Labs (Product & Solutions)",
     image: Parikshit,
     linkedin: "https://www.linkedin.com/in/parikshit-bangde/",
+    style: "10px",
+  },
+  {
+    name: "Nancy Philip",
+    title: "Senior Director - Delivery and Program management",
+    image: Nancy,
+    linkedin: "https://www.linkedin.com/in/nancy-philip-8254657/",
     style: "10px",
   },
 ];

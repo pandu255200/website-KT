@@ -37,7 +37,7 @@ const linkMap = {
 const data1 = [
   {
     heading: "Core",
-    items: ["AI - Products & Platforms", "AI - Solutions & IT Services"],
+    items: ["AI - Products & Platforms", "AI - Solutions & Services"],
   },
   {
     heading: "Explore",

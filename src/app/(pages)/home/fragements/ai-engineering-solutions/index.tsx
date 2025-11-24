@@ -152,7 +152,7 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
     <div className={Styles.container} id="solutionsAndServices">
       {/* <div > */}
       <div className={Styles.header}>
-        <h1 className="font-anta">AI SOLUTIONS & IT SERVICES</h1>
+        <h1 className="font-anta">AI SOLUTIONS & SERVICES</h1>
         {goback && <GoBackButton text={"Go Back"} type="prev" />}
       </div>
       {/* </div> */}

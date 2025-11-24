@@ -8,8 +8,8 @@ import DotCircle from "../../../../../../public/home/our-milestones/dot_circle.p
 const OurMilestones = () => {
   const milestonesData1 = [
     { title: "300+", description: "Unique Challenges Solved" },
-    { title: "3", description: "Proprietary Products Developed" },
-    // { title: "20+", description: "Successful Projects Delivered" },
+    { title: "3+", description: "Proprietary Platforms Developed" },
+    // { title: "20+", description: "Successful Projects Delivered" }, Proprietary platforms developed
   ];
   const milestonesData2 = [
     { title: "100+", description: "Corporate Professionals Upskilled" },

@@ -9,6 +9,7 @@ export const Vision = () => {
       </div>
       <div className={styles.description}>
         <p>“Enhance trust using AI, for a safer and happier life”</p>
+        {/* <p>“Enhance trust using AI, for a safer and happier life”</p> */}
       </div>
     </div>
   );

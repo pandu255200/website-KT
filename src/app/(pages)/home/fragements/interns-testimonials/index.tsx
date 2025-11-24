@@ -148,7 +148,7 @@ const InternsTestimonials = () => {
 
   return (
     <div className={Styles.container} id="testimonials">
-      <h1 className={`${Styles.heading} font-anta`}>AI INTERNS TESTIMONIALS</h1>
+      <h1 className={`${Styles.heading} font-anta`}>TESTIMONIAL - AI INTERNS</h1>
       <div className={Styles.grid} >
         {testimonialDetails?.map((testimonial, index) => (
           <div

@@ -88,7 +88,7 @@ const InternsTestimonials = () => {
   return (
     <div className={Styles.container} id="testimonials">
       <header className="globalHeaderStyle">
-        <h1 className="title">AI INTERNS TESTIMONIALS</h1>
+        <h1 className="title">TESTIMONIAL - AI INTERNS</h1>
         <GoBackButton text={"Go Back"} type="prev" />
       </header>
       <div className={Styles.grid}>

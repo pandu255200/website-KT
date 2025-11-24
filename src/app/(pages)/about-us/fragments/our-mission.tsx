@@ -29,10 +29,10 @@ export const OurMission = () => {
               scientists — all working together toward this shared mission.
             </p>
             <p>
-              We empower compact enterprises and SMEs to address critical
-              challenges, enhance productivity, and improve profitability by
-              leveraging Generative AI, Agentic AI, LLMs, Computer Vision,
-              Machine Vision, Data Analytics, NLP, and IoT technologies.
+              We empower enterprises and SMEs to address critical challenges,
+              enhance productivity, and improve profitability by leveraging
+              Generative AI, Agentic AI, LLMs, Computer Vision, Machine Vision,
+              Data Analytics, NLP, and IoT technologies.
             </p>
             <p>
               At ResoluteAI Software, we focus on delivering plug-and-play as
@@ -46,7 +46,7 @@ export const OurMission = () => {
           </div>
         </div>
         <div className={styles.products}>
-          <h1 className="font-anta">Our Products</h1>
+          <h1 className="font-anta">Our Products, Solutions & Services</h1>
           <div className={styles.logos}>
             <Image src={Zodha} alt="zodhaGPT" />
             <Image src={FaceGenie} width={175} alt="faceGenie" />
