@@ -127,13 +127,19 @@
   cursor: pointer;
   z-index: 10;
   margin-bottom: 2rem;
+  transition: background 0.3s ease;
 }
 
-.navButton:hover {
+.navButton:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Cards Container - CAROUSEL EFFECT */
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Cards Container */
 .cardsContainer {
   overflow: hidden;
   padding: 1.7rem 0;
@@ -147,23 +153,24 @@
   display: flex;
   align-items: flex-end;
   padding: 0rem 2rem 1rem 2rem;
+  gap: 1rem;
+  justify-content: center;
   transition: transform 0.5s ease-in-out;
-  gap: 2rem;
 }
 
-/* Individual Card */
+/* Individual Card - All cards same size */
 .card {
   position: relative;
   background: transparent;
   color: black;
   border-radius: 10px;
   overflow: hidden;
-  width: 16.2rem;
-  height: 25rem;
+  width: 16.5rem;
+  height: 27rem;
   flex-shrink: 0;
   padding: 20px;
   text-align: center;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card::after {
@@ -173,28 +180,13 @@
   position: absolute;
   top: 3rem;
   left: 0;
-  background-color: pink;
   background: rgba(87, 10, 0, 0.2);
   backdrop-filter: blur(20px);
 }
 
-/* Active card styling */
-.card.activeCard {
-  transform: scale(1.1);
-  opacity: 1;
-  filter: brightness(1);
-  z-index: 2;
-}
-
-/* Inactive cards */
-.card:not(.activeCard) {
-  transform: scale(0.9);
-  /* opacity: 0.7; */
-}
-
 .imageContainer {
   position: absolute;
-  top: -1rem;
+  top: 1rem;
   left: 0;
   width: 100%;
   height: 20rem;
@@ -266,6 +258,38 @@
   margin-bottom: 0.7rem;
 }
 
+/* Carousel Indicators */
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.activeIndicator {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.indicator:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.indicator:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 /* Description Section */
 .description {
   font-size: 1rem;
@@ -281,7 +305,6 @@
   line-height: 30px;
   word-wrap: break-word;
 }
-
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -311,6 +334,12 @@
     min-height: auto;
   }
 
+  /* Hide desktop-specific elements */
+  .coreTeamSection::before,
+  .coreTeamSection::after {
+    display: none;
+  }
+
   /* Globe image */
   .globe {
     width: 80%;
@@ -333,14 +362,14 @@
   }
 
   .navButton {
-    display: none; /* Hide navigation buttons on mobile */
+    display: none;
   }
 
-  /* Vertical scrolling cards container */
+  /* Vertical scrolling cards container - Show ALL cards */
   .cardsContainer {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 65vh;
+    height: 70vh;
     padding: 0;
     border: none;
     scroll-snap-type: y mandatory;
@@ -357,16 +386,16 @@
   .cards {
     flex-direction: column;
     align-items: center;
-    padding: 0;
+    padding: 1rem 0;
     transition: none;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  /* Individual card styling for vertical scroll - Reduced size */
+  /* Individual card styling for vertical scroll */
   .card {
-    width: 85%;
+    width: 90%;
     height: 60vh;
-    margin: 5px 0;
+    margin: 0;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -375,18 +404,14 @@
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    scale: 1 !important;
   }
 
   .card:active {
     transform: scale(0.98);
-  }
-
-  .card.activeCard {
-    transform: none;
-    width: 85%;
-    height: 60vh;
-    margin: 5px 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
 
   .imageContainer {
@@ -466,6 +491,35 @@
     font-size: 14px;
     line-height: 1.4;
   }
+
+  /* Hide carousel indicators on mobile */
+  .carouselIndicators {
+    display: none;
+  }
+
+  /* Add subtle scroll indicator for mobile */
+  .cardsContainer::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    animation: scrollPulse 2s infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -478,35 +532,25 @@
   }
 
   .cardsContainer {
-    /* width: 100%; */
     height: 60vh;
   }
 
   .card {
-    width: 60%;
-    height: 55vh;
-  }
-
-  .card.activeCard {
-    width: 60%;
+    width: 90%;
     height: 55vh;
   }
 
   .imageContainer {
-    margin-top: 50px;
-    margin-left: 20px;
     height: 60%;
-    width: 80%;
   }
 
   .info {
-    height: 30%;
-
+    height: 40%;
     padding: 0.6rem;
   }
 
   .infoContent h2 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .infoContent p {
@@ -529,29 +573,21 @@
   }
 
   .card {
-    width: 60%;
-    height: 50vh;
-  }
-
-  .card.activeCard {
-    width: 60%;
+    width: 90%;
     height: 50vh;
   }
 
   .imageContainer {
-    margin-top: 50px;
-    margin-left: 20px;
     height: 60%;
-    width: 80%;
   }
 
   .info {
-    height: 30%;
+    height: 40%;
     padding: 0.6rem;
   }
 
   .infoContent h2 {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .infoContent p {
@@ -579,23 +615,16 @@
   }
 
   .card {
-    width: 60%;
-    height: 45vh;
-  }
-
-  .card.activeCard {
-    width: 60%;
+    width: 90%;
     height: 45vh;
   }
 
   .imageContainer {
-    margin-top: 40px;
-    margin-left: 20px;
     height: 60%;
-    width: 80%;
   }
+
   .info {
-    height: 30%;
+    height: 40%;
     padding: 0.5rem;
   }
 
@@ -611,49 +640,5 @@
 
   .description p {
     font-size: 12px;
-  }
-}
-
-/* Enhanced smooth scrolling for all devices */
-.cardsContainer {
-  scroll-behavior: smooth;
-}
-
-/* Prevent layout shift during scrolling */
-.card {
-  will-change: transform;
-}
-
-/* Optimize scrolling performance */
-.cardsContainer {
-  -webkit-overflow-scrolling: touch;
-  backface-visibility: hidden;
-  perspective: 1000;
-  transform: translateZ(0);
-}
-
-/* Add subtle scroll indicator for mobile */
-@media (max-width: 768px) {
-  .cardsContainer::after {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
-    animation: scrollPulse 2s infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%,
-    100% {
-      opacity: 0.5;
-    }
-    50% {
-      opacity: 1;
-    }
   }
 }
