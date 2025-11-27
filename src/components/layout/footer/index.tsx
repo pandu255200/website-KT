@@ -25,6 +25,7 @@ const linkMap = {
   Careers: "/career",
   "Privacy Policy": "/Privacy Policy.pdf", // ⬅️ stored in /public
   "Terms of Use": "/terms-of-use",
+  "Application-Form": "/Form-5A.pdf",
 
   // Social
   LinkedIn: "https://linkedin.com",
@@ -49,7 +50,13 @@ const data1 = [
   },
   {
     heading: "Company",
-    items: ["Internships", "Careers", "Privacy Policy", "Terms of Use"],
+    items: [
+      "Internships",
+      "Careers",
+      "Privacy Policy",
+      "Terms of Use",
+      "Application-Form",
+    ],
   },
   {
     heading: "Social",
