@@ -22,26 +22,26 @@ export const OurMission = () => {
           </div>
           <div className={styles.description}>
             <p>
-              ResoluteAI Software was founded in 2018 with a single vision — to
-              enhance trust with AI, for a safer and happier life. Today, our
-              team comprises seasoned enterprise leaders, solutioning experts,
-              problem solvers, technologists, domain specialists, and data
-              scientists — all working together toward this shared mission.
+              ResoluteAI Software was founded in 2018 with a vision — "To
+              enhance trust with AI, for a safer and happier life." Over the
+              years, we’ve grown into a team of enterprise leaders, solution
+              architects, problem-solvers, technologists, domain experts, and
+              data scientists — all united by the same mission.
             </p>
             <p>
-              We empower enterprises and SMEs to address critical challenges,
-              enhance productivity, and improve profitability by leveraging
-              Generative AI, Agentic AI, LLMs, Computer Vision, Machine Vision,
-              Data Analytics, NLP, and IoT technologies.
+              We help enterprises and SMEs solve complex challenges, boost
+              productivity, and improve profitability through Generative AI,
+              Agentic AI, LLMs, Computer Vision, Machine Vision, Data Analytics,
+              NLP, and IoT.
             </p>
             <p>
-              At ResoluteAI Software, we focus on delivering plug-and-play as
-              well as customized Gen AI-led products, services, and solutions
-              designed to help businesses compete globally. Our purpose is
-              simple yet powerful — to make AI accessible to everyone. With
-              ResoluteAI Software as your strategic partner, you can move closer
-              to achieving your company’s vision — confidently, intelligently,
-              and efficiently.
+              At ResoluteAI Software, we deliver both plug-and-play and fully
+              customized GenAI-led products, solutions, and services that
+              empower businesses to scale and stay competitive. Our purpose is
+              simple: to make AI accessible to everyone. With ResoluteAI
+              Software as your strategic partner, you move closer to your
+              organization’s vision — confidently, intelligently, and
+              efficiently.
             </p>
           </div>
         </div>

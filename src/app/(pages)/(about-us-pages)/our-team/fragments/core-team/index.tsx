@@ -14,7 +14,7 @@ import abhijit from "../../../../../../../public/core-team/abhijit1.png";
 import abhishek from "../../../../../../../public/core-team/abhiji1.png";
 import aghil from "../../../../../../../public/core-team/aghil1.png";
 import harshita from "../../../../../../../public/core-team/harshita1.png";
-import nishi1 from "../../../../../../../public/core-team/nishii1.png";
+import nishi1 from "../../../../../../../public/core-team/nishi.png";
 import prasanna from "../../../../../../../public/core-team/prasanna1.png";
 import sahil from "../../../../../../../public/core-team/sahil1.png";
 import sakchi from "../../../../../../../public/core-team/sakchi1.png";
@@ -104,7 +104,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       title: "Senior Business Analyst",
       image: nishi1,
       linkedin: "https://www.linkedin.com/in/nishi-maheshwari-99b013128/",
-      style: "65px",
+      style: "10px",
     },
     {
       name: "Aghil Menon U",
