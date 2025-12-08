@@ -1,6 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./achievements.module.css";
+import RectangleImage from "../../../../../public/about-us/rectangle.svg";
+import Achievement1 from "../../../../../public/about-us/achievement-1.png";
+import Achievement2 from "../../../../../public/about-us/achievement-2.png";
+import Achievement3 from "../../../../../public/about-us/achievement-3.png";
+import Achievement4 from "../../../../../public/about-us/achievement-4.png";
+import Achievement5 from "../../../../../public/about-us/achievement-5.png";
+import Achievement6 from "../../../../../public/about-us/achievement-6.png";
+import TopRightArrowIcon from "../../../../../public/home/top-right-arrow.svg";
 
 export const Achievements = () => {
   return (
@@ -8,73 +16,77 @@ export const Achievements = () => {
       <div className={styles.content}>
         <div>
           <h1 className="font-anta">ALLIANCES & ACHIEVEMENTS</h1>
+          {/* <p>Details Section</p> */}
         </div>
-
         <div>
           <button>
             Get in touch{" "}
             <Image
-              src="/home/top-right-arrow.svg"
+              src={TopRightArrowIcon.src}
               alt="arrowIcon"
+              // layout="fixed"
               width={24}
               height={24}
             />
           </button>
         </div>
       </div>
-
       <div className={styles.collageContainer}>
         <div className={styles.grid}>
-          <div className={`${styles.box} ${styles.left}`}>
+          <div className={styles.box + " " + styles.left}>
             <Image
-              src="/about-us/achievement-1.png"
+              src={Achievement1}
               alt="Achievement 1"
-              width={320}
+              style={{ objectFit: "cover" }}
               height={360}
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-
-          <div className={styles.box}>
-            <Image
-              src="/about-us/achievement-2.png"
-              alt="Achievement 2"
               width={320}
-              height={190}
-              style={{ objectFit: "cover" }}
             />
           </div>
-
           <div className={styles.box}>
             <Image
-              src="/about-us/achievement-3.png"
+              src={Achievement2}
+              alt="Achievement 2"
+              style={{ objectFit: "cover" }}
+              height={190}
+              width={320}
+            />
+          </div>
+          <div className={styles.box}>
+            <Image
+              src={Achievement3}
               alt="Achievement 3"
               width={250}
               height={190}
               style={{ objectFit: "cover" }}
             />
           </div>
-
           <div className={styles.box}>
             <Image
-              src="/about-us/achievement-4.png"
+              src={Achievement4}
               alt="Achievement 4"
               width={320}
-              height={240}
+              height={240} // increased height for better clarity
               style={{ objectFit: "cover" }}
             />
           </div>
-
           <div className={styles.box} style={{ overflow: "hidden" }}>
             <Image
-              src="/about-us/achievement-5.png"
+              src={Achievement5}
               alt="Achievement 5"
               width={240}
               height={190}
+              style={{ 
+                // marginTop:"6rem",
+                // marginLeft:"-7rem",
+                // objectFit: "cover",
+                // objectPosition: "top top",
+                // scale:"2"
+              }}
             />
           </div>
         </div>
       </div>
+      {/* <Image src={RectangleImage} alt="rectangle" /> */}
     </div>
   );
 };

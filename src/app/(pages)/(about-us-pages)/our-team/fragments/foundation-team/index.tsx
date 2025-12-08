@@ -1,72 +1,89 @@
 import Image from "next/image";
 import styles from "./style.module.css";
+import SmitaJhaImage from "../../../../../../../public/foundation-team/smita.svg";
+import PawanImage from "../../../../../../../public/foundation-team/pawan.svg";
+import PiyushImage from "../../../../../../../public/foundation-team/piyush.svg";
+import PriyaImage from "../../../../../../../public/foundation-team/priya.svg";
+import SheetalImage from "../../../../../../../public/foundation-team/sheetal.svg";
+import ShailajaImage from "../../../../../../../public/foundation-team/shailaja.svg";
+import ShrutiImage from "../../../../../../../public/foundation-team/shruti.svg";
+import RakhiImage from "../../../../../../../public/foundation-team/rakhi.svg";
+import MonicaImage from "../../../../../../../public/foundation-team/monica.svg";
+import Globe from "../../../../../../../public/core-team/globe.svg";
+import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
+import Nancy from "../../../../../../../public/core-team/nancy.png";
+// import Nishi from "../../../../../../../public/core-team/nishi.png";
+import Parikshit from "../../../../../../../public/core-team/parikshit.png";
+import raki from "../../../../../../../public/foundation-team/rakhiImage.jpeg";
 import Link from "next/link";
 
 const teamMembers = [
   {
     name: "Smita Jha",
-    image: "/foundation-team/smita.svg",
+    image: SmitaJhaImage,
     linkedin: "https://www.linkedin.com/in/smitajha",
     style: "5px",
   },
   {
     name: "Pawan Kumar",
-    image: "/foundation-team/pawan.svg",
+    image: PawanImage,
     linkedin: "https://www.linkedin.com/in/pawankumarmp",
     style: "5px",
   },
+
   {
     name: "Shailaja Vernekar",
-    image: "/foundation-team/shailaja.svg",
+    image: ShailajaImage,
+    // linkedin: "https://www.linkedin.com/in/shailaja",
     style: "5px",
   },
   {
     name: "Shruti Nair",
-    image: "/foundation-team/shruti.svg",
+    image: ShrutiImage,
     linkedin: "https://www.linkedin.com/in/shrutinair1",
     style: "5px",
   },
   {
     name: "Rakhi Vipat",
-    image: "/foundation-team/rakhiImage.jpeg",
+    image: raki,
     linkedin: "https://www.linkedin.com/in/rakhivipat",
     style: "5px",
   },
   {
     name: "Monica",
-    image: "/foundation-team/monica.svg",
+    image: MonicaImage,
     linkedin: "https://www.linkedin.com/in/rtn-monica-hungund-6b04a2163",
     style: "5px",
   },
   {
     name: "Sheetal More",
-    image: "/foundation-team/sheetal.svg",
+    image: SheetalImage,
     linkedin: "https://www.linkedin.com/in/sheetal-more-4461b4182",
     style: "5px",
   },
   {
     name: "Priya Koride",
-    image: "/foundation-team/priya.svg",
+    image: PriyaImage,
     linkedin: "https://www.linkedin.com/in/priya-srirambhat-k",
     style: "5px",
   },
   {
     name: "Piyush Patil",
-    image: "/foundation-team/piyush.svg",
+    image: PiyushImage,
     linkedin: "https://www.linkedin.com/in/jcob1289",
     style: "5px",
   },
   {
     name: "Parikshit Bangde",
     title: "Director - AI Labs (Product & Solutions)",
-    image: "/core-team/parikshit.png",
+    image: Parikshit,
     linkedin: "https://www.linkedin.com/in/parikshit-bangde/",
     style: "10px",
   },
   {
     name: "Nancy Philip",
     title: "Senior Director - Delivery and Program management",
-    image: "/core-team/nancy.png",
+    image: Nancy,
     linkedin: "https://www.linkedin.com/in/nancy-philip-8254657/",
     style: "10px",
   },
@@ -76,9 +93,10 @@ const FoundationTeam = () => {
   return (
     <div className={styles.container}>
       <Image
-        src="/core-team/globe.svg"
+        src={Globe}
         alt="Globe"
         className={styles.globe}
+        layout="fixed"
         width={100}
         height={100}
       />
@@ -92,32 +110,31 @@ const FoundationTeam = () => {
         {teamMembers.map((member, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.imageWrapper}>
-              <Image
-                src={member.image}
-                alt={member.name}
-                width={100}
-                height={100}
-                className={styles.avatar}
-              />
-
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank">
-                  <Image
-                    src="/core-team/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    width={20}
-                    height={20}
-                    className={styles.linkedin}
-                  />
-                </a>
+              {member.image ? (
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={100}
+                  height={100}
+                  className={styles.avatar}
+                />
+              ) : (
+                <div className={styles.placeholder}></div>
               )}
+              <a href={member.linkedin} target="_blank">
+                <Image
+                  src={LinkedinIcon}
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                  className={styles.linkedin}
+                />
+              </a>
             </div>
-
             <p className={styles.name}>{member.name}</p>
           </div>
         ))}
-
-        <Link href="#" className={styles.manyMore}>
+        <Link href={"#"} className={styles.manyMore}>
           & Many more
         </Link>
       </div>
