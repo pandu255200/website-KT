@@ -677,7 +677,7 @@ export function VerticalsUseCasesSlider({
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  let newData = data.filter((item) => dataIds.includes(item.id));
+  const newData = data.filter((item) => dataIds.includes(item.id));
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % newData.length);

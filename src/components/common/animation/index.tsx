@@ -10,7 +10,7 @@ export const WordFlick = () => {
 
   useEffect(() => {
     const words = ["Empowering the future"];
-    let wordIndex = 0;
+    const wordIndex = 0;
     let offset = 0;
     const speed = 80;
 
