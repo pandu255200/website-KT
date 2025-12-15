@@ -72,7 +72,7 @@ export const OurMission = () => {
             <h3>⚙️ How We Deliver Impact</h3>
 
             <p>
-              At ResoluteAI, we build plug-and-play AI accelerators, custom
+              At ResoluteAI Software, we build plug-and-play AI accelerators, custom
               enterprise-grade AI products, and domain-specific GenAI
               applications tailored to your business.
             </p>
