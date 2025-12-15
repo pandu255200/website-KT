@@ -1,37 +1,37 @@
+/* our-mission.module.css */
+
+/* Red background container */
 .container {
-  height: 44.25rem;
-  background: #fa2609;
-  display: flex;
+  height: auto;
   width: 100%;
-}
-
-.content {
   display: flex;
-  gap: 3rem;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 47.25rem;
-  height: 44.25rem;
-  flex-shrink: 0;
-  background: #fff;
+  background: #fa2609;     /* Red background */
+  padding: 4rem 0;
 }
 
-.content .introduction {
+/* Make content full width */
+.content {
+  width: 100%;
+  max-width: 1300px;     /* keeps layout clean on large screens */
+  background: #fff;      /* White background for content */
   display: flex;
-  width: 42.75rem;
   flex-direction: column;
-  align-items: flex-start;
   gap: 3rem;
+  align-items: center;
+  border-radius: 12px;   /* Optional: rounded corners for white content area */
+  padding: 3rem 1rem;    /* REDUCED from 2rem to 1rem */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 
+/* Title section - keep margin top 0 */
 .content .introduction .title {
-  /* margin-top: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   align-self: stretch;
+  margin-top: 0; /* Keep this as 0 */
 }
 
 .content .introduction .title h2 {
@@ -42,7 +42,7 @@
   font-size: 1.625rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 1.95rem */
+  line-height: 120%;
   letter-spacing: -0.01563rem;
   text-transform: capitalize;
 }
@@ -53,9 +53,7 @@
   text-align: center;
   font-family: "Plus Jakarta Sans";
   font-size: 2.875rem;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
   text-transform: capitalize;
 }
 
@@ -63,199 +61,157 @@
   color: #fa2609;
 }
 
+/* Description - Moved to left side */
 .content .introduction .description {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
-  align-self: stretch;
+  text-align: left;
+  gap: 1.5rem;
+  margin-left: 0; /* Added: Move text to left side */
+  padding-left: 0; /* Added: Remove any left padding */
+}
+
+/* If you want to align everything to the left including the container */
+.content .introduction {
+  width: 100%;
+  max-width: 1200px; /* INCREASED from 1100px to 1200px */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start; /* Align entire introduction section to left */
+  padding: 0 0.5rem; /* ADDED to reduce side spacing */
 }
 
 .content .introduction .description p {
   color: #3a3a3a;
-  text-align: justify;
+  text-align: left;
   font-family: "Plus Jakarta Sans";
-  font-size: 1.1rem; /* reduced from 1.125rem */
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.6rem; /* tighter, keeps line endings aligned */
-  letter-spacing: -0.01563rem;
-  text-transform: capitalize;
+  line-height: 1.7rem;
+  letter-spacing: -0.01rem;
   margin: 0;
+  text-transform: none;
+  width: 100%; /* Ensure paragraphs take full width */
+  padding: 0 0.25rem; /* ADDED to reduce side spacing further */
 }
 
+.content .introduction .description h3 {
+  color: #3a3a3a;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  width: 100%;
+  padding: 0 0.25rem; /* ADDED for consistency */
+}
+
+.content .introduction .description ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.content .introduction .description li {
+  color: #3a3a3a;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Products Section */
 .content .products {
+  width: 100%;
+  max-width: 1100px;
   display: flex;
-  flex-direction: row;
-  width: 38.57225rem;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  /* margin-top: 1rem; adds space between paragraph and logos */
+  margin-top: 1rem;
 }
 
 .content .products h1 {
   color: #fa2609;
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 120%;
-  letter-spacing: -0.01563rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   text-transform: capitalize;
-  margin-right: 1rem;
-  /* margin-bottom: 20px; */
+  margin: 0;
+  /* white-space: nowrap; */
 }
 
 .content .products .logos {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 3rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.container div:nth-child(2) {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.content .introduction .description p :nth-child(2),
-.content .introduction .description p :nth-child(3) {
-  align-self: stretch;
-  color: #3a3a3a;
-  text-align: justify;
-  font-family: "Plus Jakarta Sans";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.625rem; /* 144.444% */
-  letter-spacing: -0.01563rem;
-  text-transform: capitalize;
-}
-
-@media (max-width: 480px) {
-  .container {
-    height: auto;
-    min-height: 40.25rem;
-    flex-direction: column;
-  }
-
+/* Responsive design */
+@media (max-width: 1024px) {
   .content {
-    width: 100%;
-    height: auto;
-    padding: 1rem 1rem;
-    gap: 1rem;
+    padding: 2.5rem 1rem; /* REDUCED from 1.5rem to 1rem */
   }
-
-  .content .introduction {
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .content .introduction .title {
-    /* top: 20%; */
-    gap: 0.75rem;
-  }
-
-  .content .introduction .title h2 {
-    margin-top: 7%;
-    font-size: 1.25rem;
-    line-height: 60%;
-  }
-
-  .content .introduction .title h1 {
-    /* text-align: center; */
-    font-size: 1.8rem;
-    line-height: normal;
-    gap: 1rem;
-    margin-right: 20px;
-  }
-
-  .content .introduction .description {
-    gap: 0.5rem;
-  }
-
-  .content .introduction .description p,
-  .content .introduction .description p:nth-child(1),
-  .content .introduction .description p:nth-child(2),
-  .content .introduction .description p:nth-child(3) {
-    width: 90%;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    text-align: justify;
-    margin: 0 0 1rem -15px;
-    padding: 0 9px;
-  }
-
+  
   .content .products {
-    margin-top: 1%;
-    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .content .products h1 {
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .content .introduction {
+    padding: 0 0.25rem; /* REDUCED for mobile */
+  }
+  
+  .content .introduction .description p,
+  .content .introduction .description h3 {
+    padding: 0; /* REMOVE padding on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 0;
+  }
+  
+  .content {
+    padding: 2rem 0.75rem; /* REDUCED from 1rem to 0.75rem */
+  }
+  
+  .content .introduction .title h1 {
+    font-size: 2.2rem;
+  }
+  
+  .content .products .logos {
     flex-direction: column;
     gap: 1.5rem;
   }
-
-  .content .products h1 {
-    font-size: 1.375rem;
-    line-height: 120%;
+  
+  .content .introduction .description p,
+  .content .introduction .description li {
+    font-size: 1rem;
   }
-
-  .content .products .logos {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  
+  .content .introduction {
+    padding: 0; /* REMOVE padding on smaller screens */
   }
-
-  .container div:nth-child(2) {
-    padding: 2rem 1rem;
-  }
-
-  .illustration img {
-    align-items: center;
-    /* margin-right: 30px; */
-    width: 80%; /* scale down */
-    height: 85%;
-  }
-}
-
-/* For extra small screens up to 380px */
-@media (max-width: 400px) {
-  .content {
-    padding: 0.8rem;
-    gap: 0.8rem;
-  }
-  .content .introduction .title h1 {
-    font-size: 1.5rem;
-    line-height: normal;
-    /* gap: 1rem; */
-  }
-
-  .content .products {
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .content .products h1 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .content .products .logos {
-    display: flex;
-    flex-wrap: nowrap; /* prevent wrapping */
-    overflow-x: auto; /* allow horizontal scroll */
-    -webkit-overflow-scrolling: touch;
-    gap: 0.8rem;
-    justify-content: flex-start; /* align items left */
-    padding-bottom: 0.5rem;
-  }
-
-  .content .products .logos img {
-    flex: 0 0 auto; /* prevent shrinking */
-    width: 110px; /* adjust logo size */
-    height: auto;
-  }
-
-  .content .products .logos::-webkit-scrollbar {
-    display: none; /* hide scrollbar */
+  
+  .content .introduction .description p,
+  .content .introduction .description h3 {
+    padding: 0;
   }
 }

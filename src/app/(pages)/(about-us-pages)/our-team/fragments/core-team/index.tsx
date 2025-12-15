@@ -57,12 +57,13 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       linkedin: "https://www.linkedin.com/in/rishika-agarwala-204297190/",
       style: "65px",
     },
+
     {
-      name: "Sahil Patial",
-      title: "Technical Lead – AI Solutions & Services",
-      image: sahil,
-      linkedin: "https://www.linkedin.com/in/sahil-patial-a6ab69240/",
-      style: "30px",
+      name: "Sakchi Agrawal",
+      title: "Associate Director - Accounts & HR Operations",
+      image: sakchi,
+      linkedin: "https://www.linkedin.com/in/sakchiagrawal/",
+      style: "10px",
     },
     {
       name: "Harshita Kothari",
@@ -70,6 +71,27 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       image: harshita,
       linkedin: "https://www.linkedin.com/in/harshita-kothari1997/",
       style: "15px",
+    },
+    {
+      name: "Nishi Maheshwari",
+      title: "Senior Business Analyst",
+      image: nishi1,
+      linkedin: "https://www.linkedin.com/in/nishi-maheshwari-99b013128/",
+      style: "10px",
+    },
+    {
+      name: "Anusha BaiKourampet",
+      title: "Senior Business Analyst",
+      image: anusha,
+      linkedin: "https://www.linkedin.com/in/anusha-bai-kourampet-39815ba9/",
+      style: "30px",
+    },
+    {
+      name: "Sahil Patial",
+      title: "Technical Lead – AI Solutions & Services",
+      image: sahil,
+      linkedin: "https://www.linkedin.com/in/sahil-patial-a6ab69240/",
+      style: "30px",
     },
     {
       name: "Abhijit Sutar",
@@ -85,39 +107,19 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
       linkedin: "https://www.linkedin.com/in/abhishek-tripathy-aimlcv/",
       style: "40px",
     },
+
     {
-      name: "Sakchi Agrawal",
-      title: "Associate Director - Accounts & HR Operations",
-      image: sakchi,
-      linkedin: "https://www.linkedin.com/in/sakchiagrawal/",
-      style: "10px",
-    },
-    {
-      name: "Anusha BaiKourampet",
-      title: "Senior Business Analyst",
-      image: anusha,
-      linkedin: "https://www.linkedin.com/in/anusha-bai-kourampet-39815ba9/",
-      style: "30px",
-    },
-    {
-      name: "Nishi Maheshwari",
-      title: "Senior Business Analyst",
-      image: nishi1,
-      linkedin: "https://www.linkedin.com/in/nishi-maheshwari-99b013128/",
-      style: "10px",
+      name: "Prasanna Varpe",
+      title: "Senior AI Solution Engineer",
+      image: prasanna,
+      linkedin: "https://www.linkedin.com/in/prasanna-varpe-628693215/",
+      style: "65px",
     },
     {
       name: "Aghil Menon U",
       title: "Project Manager - AI Products, Platforms & Solutions",
       image: aghil,
       linkedin: "https://www.linkedin.com/in/aghilmenonudayakumaran/",
-      style: "65px",
-    },
-    {
-      name: "Prasanna Varpe",
-      title: "Senior AI Solution Engineer",
-      image: prasanna,
-      linkedin: "https://www.linkedin.com/in/prasanna-varpe-628693215/",
       style: "65px",
     },
   ];
@@ -136,10 +138,10 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
+    window.addEventListener("resize", checkMobile);
+
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
@@ -160,7 +162,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
     // On desktop, return current set of 4 cards
     const startIndex = currentSet * cardsToShow;
     const visibleCards = [];
-    
+
     for (let i = 0; i < cardsToShow; i++) {
       const index = startIndex + i;
       if (index < teamMembers.length) {
