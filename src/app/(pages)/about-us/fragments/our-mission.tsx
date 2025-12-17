@@ -37,7 +37,7 @@ export const OurMission = () => {
               state-of-the-art artificial intelligence.
             </p>
 
-            <h3>🌐 What We Do</h3>
+            <h3>What We Do</h3>
 
             <p>
               We empower enterprises and high-growth industries with end-to-end
@@ -69,7 +69,7 @@ export const OurMission = () => {
               customer experience, and drive measurable ROI and business impact.
             </p>
 
-            <h3>⚙️ How We Deliver Impact</h3>
+            <h3>How We Deliver Impact</h3>
 
             <p>
               At ResoluteAI Software, we build plug-and-play AI accelerators, custom
@@ -98,7 +98,7 @@ export const OurMission = () => {
               cloud-native engineering.
             </p>
 
-            <h3>📈 Our Purpose</h3>
+            <h3>Our Purpose</h3>
 
             <p>
               Our purpose is simple yet powerful: to democratize AI and make

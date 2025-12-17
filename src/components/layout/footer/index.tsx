@@ -25,7 +25,7 @@ const linkMap = {
   Careers: "/career",
   "Privacy Policy": "/Privacy Policy.pdf", // ⬅️ stored in /public
   "Terms of Use": "/terms-of-use",
-  "Application-Form": "/Form-5A.pdf",
+  "Application Form - EPF Document": "/Form-5A.pdf",
 
   // Social
   LinkedIn: "https://linkedin.com",
@@ -55,7 +55,7 @@ const data1 = [
       "Careers",
       "Privacy Policy",
       "Terms of Use",
-      "Application-Form",
+      "Application Form - EPF Document",
     ],
   },
   {
@@ -87,7 +87,8 @@ export function Footer() {
                       key={idx}
                       className={Styles.listItem}
                       style={
-                        item === "AI - Solutions & IT Services"
+                        item === "AI - Solutions & IT Services" ||
+                        item === "Application Form - EPF Document"
                           ? { whiteSpace: "nowrap" }
                           : {}
                       }
