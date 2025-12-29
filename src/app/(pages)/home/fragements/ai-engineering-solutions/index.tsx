@@ -36,68 +36,68 @@ const EngineeringSolutions: React.FC<EngineeringSolutionsProps> = ({
 
   const slides = [
     {
-      title: "Permit to Work Automation",
+      title: "Enterprise Mobility Application",
       description:
-        "Our AI-led Permit to Work Automation streamlines permit management, ensuring safety and compliance across operations. It automates permit creation, tracking, and approvals while integrating seamlessly with existing workflows.",
+        "We design and build secure, scalable enterprise mobility applications for Android, iOS, and cross-platform environments. Our solutions streamline field operations, enhance workforce productivity, and enable real-time decision-making through intuitive, performance-driven mobile experiences.",
       image: SlideImg,
-      alt: "Work Permit Automation",
+      alt: "Enterprise Mobility Application",
     },
     {
-      title: "EHS Digitalization",
+      title: "Data, AI, ML, Agentic AI & GenAI",
       description:
-        "Our EHS Digitalization solution leverages AI to automate safety inspections, incident reporting, and compliance tracking. The platform provides real-time insights into safety metrics, ensuring proactive risk mitigation and improving workplace safety standards.",
+        "We help organizations unify, engineer, and govern data through robust data lakes and AI-led architectures. Our solutions enable advanced analytics, predictive insights, autonomous decision systems, and GenAI-driven intelligence tailored to real business use cases.",
       image: currentSlide === 1 ? SlideImg3 : SlideImg3Red ,
-      alt: "EHS Digitalization",
+      alt: "Data, AI, ML, Agentic AI & GenAI – Data Engineering & Data Lakes",
     },
     {
-      title: "Digital Logbook",
+      title: "Cloud Transformation Services",
       description:
-        "Our Digital Logbook replaces traditional paper-based logbooks with an AI-enabled digital platform. It captures operational data, maintenance records, and shift handovers in real time, ensuring accurate and secure data storage and retrieval.",
+        "We enable seamless cloud transformation by modernizing applications, optimizing infrastructure, and ensuring secure cloud adoption. Our cloud services improve scalability, performance, and cost efficiency while supporting business agility and long-term digital growth.",
       image: Solutions3,
-      alt: "Digital Logbook",
+      alt: "Cloud Transformation Services",
     },
     {
-      title: "Data Lake Management",
+      title: "IT Services & Tech Support",
       description:
-        "Our Data Lake Management solution organizes and manages large volumes of structured and unstructured data using AI and machine learning. It automates data ingestion, classification, and retrieval, providing actionable insights and enhancing data-driven decision-making.",
+        "We provide reliable IT services and proactive technical support to ensure business continuity and system stability. From ongoing maintenance to AMC and managed services, we help organizations operate efficiently with minimal downtime and dependable support.",
       image: Solutions4,
-      alt: "Data Lake Management",
+      alt: "IT Services & Tech Support",
     },
-    {
-      title: "Cloud Engineering Services",
-      description:
-        "Our Cloud Engineering Services provide end-to-end cloud infrastructure management, including deployment, monitoring, and optimization. AI-driven automation ensures scalability, security, and high availability of cloud-based applications.",
-      image: Solutions5,
-      alt: "Cloud Engineering Services",
-    },
-    {
-      title: "Android/iOS Application Development",
-      description:
-        "Our AI-enabled Android and iOS application development services deliver user-centric mobile apps with advanced features like real-time data processing, personalized recommendations, and seamless user experience.",
-      image: Solutions6,
-      alt: "Android/iOS Application Development",
-    },
-    {
-      title: "Flutter based Application Development",
-      description:
-        "Our Flutter-based application development leverages AI to create high-performance, cross-platform apps from a single codebase. The platform ensures consistent UI/UX, rapid deployment, and real-time feature updates.",
-      image: Solutions6,
-      alt: "Flutter based Application Development",
-    },
-    {
-      title: "AI Trainings",
-      description:
-        "Our AI Training programs equip businesses and teams with the knowledge and skills needed to implement and scale AI-driven solutions. The training covers AI model development, deployment, and performance optimization across industries.",
-      image: Solutions7,
-      alt: "AI Trainings",
-    },
-    {
-      title: "Tech Support & AMC",
-      description:
-        "Our Tech Support & AMC services ensure the smooth functioning and long-term performance of your deployed systems, platforms, and infrastructure. From proactive maintenance to rapid issue resolution, our expert team provides round-the-cl...",
-      image: Solutions8,
-      alt: "Tech Support & AMC",
-    },
+    // {
+    //   title: "Cloud Engineering Services",
+    //   description:
+    //     "Our Cloud Engineering Services provide end-to-end cloud infrastructure management, including deployment, monitoring, and optimization. AI-driven automation ensures scalability, security, and high availability of cloud-based applications.",
+    //   image: Solutions5,
+    //   alt: "Cloud Engineering Services",
+    // },
+    // {
+    //   title: "Android/iOS Application Development",
+    //   description:
+    //     "Our AI-enabled Android and iOS application development services deliver user-centric mobile apps with advanced features like real-time data processing, personalized recommendations, and seamless user experience.",
+    //   image: Solutions6,
+    //   alt: "Android/iOS Application Development",
+    // },
+    // {
+    //   title: "Flutter based Application Development",
+    //   description:
+    //     "Our Flutter-based application development leverages AI to create high-performance, cross-platform apps from a single codebase. The platform ensures consistent UI/UX, rapid deployment, and real-time feature updates.",
+    //   image: Solutions6,
+    //   alt: "Flutter based Application Development",
+    // },
+    // {
+    //   title: "AI Trainings",
+    //   description:
+    //     "Our AI Training programs equip businesses and teams with the knowledge and skills needed to implement and scale AI-driven solutions. The training covers AI model development, deployment, and performance optimization across industries.",
+    //   image: Solutions7,
+    //   alt: "AI Trainings",
+    // },
+    // {
+    //   title: "Tech Support & AMC",
+    //   description:
+    //     "Our Tech Support & AMC services ensure the smooth functioning and long-term performance of your deployed systems, platforms, and infrastructure. From proactive maintenance to rapid issue resolution, our expert team provides round-the-cl...",
+    //   image: Solutions8,
+    //   alt: "Tech Support & AMC",
+    // },
   ];
 
   console.log(currentSlide, "currentSlide");

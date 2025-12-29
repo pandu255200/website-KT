@@ -45,7 +45,7 @@ export const CoreTeam: React.FC<CoreTeamProps> = ({ goback }) => {
     },
     {
       name: "Jeenal Rajgor",
-      title: "Vice President & Head- HR, Operations & Shared Services",
+      title: "Adviser - HR & Shared Services",
       image: Jeenal,
       linkedin: "https://www.linkedin.com/in/jeenal-rajgor/",
       style: "20px",

@@ -147,45 +147,45 @@ const verticals: MenuItem[] = [
 const solutionAndServices: MenuItem[] = [
   {
     icon: AutomationIcon,
-    text: "Permit to Work Automation",
+    text: "Enterprise Mobility Application",
     href: "solutions-and-services/0",
   },
   {
     icon: EhsIcon,
-    text: "EHS Digitalization",
+    text: "Data, AI, ML, Agentic AI & GenAI",
     href: "solutions-and-services/1",
   },
   {
     icon: DigitalIcon,
-    text: "Digital Logbook",
+    text: "Cloud Transformation Services",
     href: "solutions-and-services/2",
   },
   {
     icon: DataLakeIcon,
-    text: "Data Lake Management",
+    text: "IT Services & Tech Support",
     href: "solutions-and-services/3",
   },
-  {
-    icon: CloudIcon,
-    text: "Cloud Engineering Services",
-    href: "solutions-and-services/4",
-  },
-  {
-    icon: AndroidIcon,
-    text: "Android/iOS application development",
-    href: "solutions-and-services/5",
-  },
-  {
-    icon: FlutterIcon,
-    text: "Flutter based application development",
-    href: "solutions-and-services/6",
-  },
-  { icon: AiIcon, text: "AI Trainings", href: "solutions-and-services/7" },
-  {
-    icon: SupportIcon,
-    text: "Tech Support & AMC",
-    href: "solutions-and-services/8",
-  },
+  // {
+  //   icon: CloudIcon,
+  //   text: "Cloud Engineering Services",
+  //   href: "solutions-and-services/4",
+  // },
+  // {
+  //   icon: AndroidIcon,
+  //   text: "Android/iOS application development",
+  //   href: "solutions-and-services/5",
+  // },
+  // {
+  //   icon: FlutterIcon,
+  //   text: "Flutter based application development",
+  //   href: "solutions-and-services/6",
+  // },
+  // { icon: AiIcon, text: "AI Trainings", href: "solutions-and-services/7" },
+  // {
+  //   icon: SupportIcon,
+  //   text: "Tech Support & AMC",
+  //   href: "solutions-and-services/8",
+  // },
 ];
 
 const aboutUs: MenuItem[] = [
@@ -406,23 +406,21 @@ export function Navbar() {
             {openMobileIndex === index && (
               <div className={Styles.mobileSubMenu}>
                 {link.menuItems.map((item, subIndex) =>
-                  item.href.startsWith("http") ? (
-                    <a
+                  index === 0 ? ( // 👉 This applies only to Products & Platforms
+                    <Link
                       href={item.href}
                       key={subIndex}
                       className={Styles.mobileSubItem}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       <Image
                         src={item.icon.src}
                         alt={item.text || "icon"}
-                        width={100}
-                        height={50}
-                        className={Styles.mobileSubIcon}
+                        width={160} // 🔥 Bigger Size
+                        height={90}
+                        style={{ margin: "0 auto" }} // centers them
                       />
                       {item.text}
-                    </a>
+                    </Link>
                   ) : (
                     <Link
                       href={item.href}
@@ -432,9 +430,8 @@ export function Navbar() {
                       <Image
                         src={item.icon.src}
                         alt={item.text || "icon"}
-                        width={100}
+                        width={50}
                         height={50}
-                        className={Styles.mobileSubIcon}
                       />
                       {item.text}
                     </Link>

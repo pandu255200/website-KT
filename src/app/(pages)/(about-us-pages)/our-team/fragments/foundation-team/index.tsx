@@ -9,6 +9,8 @@ import ShailajaImage from "../../../../../../../public/foundation-team/shailaja.
 import ShrutiImage from "../../../../../../../public/foundation-team/shruti.svg";
 import RakhiImage from "../../../../../../../public/foundation-team/rakhi.svg";
 import MonicaImage from "../../../../../../../public/foundation-team/monica.svg";
+import Sushant from "../../../../../../../public/foundation-team/sushant.jpg";
+import Arshida from "../../../../../../../public/foundation-team/arshida.jpg";
 import Globe from "../../../../../../../public/core-team/globe.svg";
 import LinkedinIcon from "../../../../../../../public/core-team/linkedin-icon.svg";
 import Nancy from "../../../../../../../public/core-team/nancy.png";
@@ -28,6 +30,13 @@ const teamMembers = [
     name: "Pawan Kumar",
     image: PawanImage,
     linkedin: "https://www.linkedin.com/in/pawankumarmp",
+    style: "5px",
+  },
+  {
+    name: "Sushant Jha",
+    image: Sushant,
+    linkedin:
+      "https://www.linkedin.com/in/sushantkjha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     style: "5px",
   },
 
@@ -59,6 +68,13 @@ const teamMembers = [
     name: "Sheetal More",
     image: SheetalImage,
     linkedin: "https://www.linkedin.com/in/sheetal-more-4461b4182",
+    style: "5px",
+  },
+  {
+    name: "Arshidha Asmi",
+    image: Arshida,
+    linkedin:
+      "https://www.linkedin.com/in/arshidhaasmi15?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     style: "5px",
   },
   {
