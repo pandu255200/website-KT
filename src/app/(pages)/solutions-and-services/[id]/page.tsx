@@ -10,7 +10,7 @@ interface PageProps {
 
 // ✅ REQUIRED for static export with dynamic routes
 export async function generateStaticParams() {
-  const solutionsCount = 9;
+  const solutionsCount = 4;
   return Array.from({ length: solutionsCount }, (_, i) => ({
     id: i.toString(),
   }));
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 export default async function SolutionsAndServicesPage({ params = {} }: PageProps) {
   const solutionIndex = Number(params.id ?? -1);
 
-  if (isNaN(solutionIndex) || solutionIndex < 0 || solutionIndex >= 9) {
+  if (isNaN(solutionIndex) || solutionIndex < 0 || solutionIndex >= 4) {
     notFound();
   }
 
