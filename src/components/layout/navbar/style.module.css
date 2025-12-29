@@ -266,9 +266,12 @@
   /* Mobile dropdown red card */
   .mobileSubMenu {
     display: block;
-    background: #fa1d00; /* red background */
-    border-radius: 12px;
-    margin: 0.5rem 0;
+    background: #ffa69a;
+    margin-top: 1.5rem; /* increase gap */
+
+    /* border-radius: 12px 0 0 12px;  */
+    width: 100vw; /* full viewport width */
+    margin-left: calc(-50vw + 50%); /* pulls it fully to the left edge */
     padding: 1rem;
     color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -276,7 +279,7 @@
 
   /* Mobile submenu heading */
   .mobileSubMenu h3 {
-    font-size: 1rem;
+    font-size: 0.5rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
     display: flex;
@@ -291,7 +294,7 @@
     align-items: center;
     gap: 0.6rem;
     padding: 0.6rem 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -341,7 +344,7 @@
 @media (max-width: 480px) {
   .isoText {
     bottom: -17px; /* move closer to mobile logo */
-    left:64%;
+    left: 64%;
     transform: translateX(-50%);
     font-size: 10px; /* smaller text */
     margin-left: 60px;
@@ -361,5 +364,19 @@
     font-weight: 500;
     color: #ffffff;
     text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .mobileSubMenu {
+    display: block;
+    background: #ffa69a;
+    margin-top: 1.5rem; /* increase gap */
+
+    /* border-radius: 12px 0 0 12px;  */
+    width: 100vw; /* full viewport width */
+    /* margin-left: calc(-50vw + 50%); pulls it fully to the left edge */
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 }

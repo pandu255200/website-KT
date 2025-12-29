@@ -154,7 +154,7 @@ export function Footer() {
               </a>
 
               <a
-                href="tel:7406937777"
+                href="mailto:yourmail@example.com"
                 style={{
                   display: "block",
                   fontWeight: 400,
@@ -164,7 +164,7 @@ export function Footer() {
                   color: "inherit",
                 }}
               >
-                7406937777
+                contact@resoluteai.in
               </a>
             </div>
 
